@@ -1,17 +1,17 @@
-- name: Dennis Brotzky
+- name: Javier Zapata
+  slug: javier-zapata
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+    Web developer and consultant interested in security, privacy and decentralization technologies.
+  avatar: ./avatars/jzfgo.jpg
   featured: true
   social:
     - name: github
-      url: https://github.com
+      url: https://github.com/jzfgo
     - name: twitter
-      url: https://github.com
+      url: https://twitter.com/jzfgo
     - name: instagram
-      url: https://github.com
+      url: https://instagram.com/jzfgo
     - name: dribbble
-      url: https://github.com
+      url: https://dribbble.com/javi
     - name: linkedin
-      url: https://github.com
+      url: https://www.linkedin.com/in/jzfgo

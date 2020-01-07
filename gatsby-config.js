@@ -1,61 +1,61 @@
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    title: `Hic sunt dracones`,
+    name: `Javier Zapata`,
+    siteUrl: `https://javi.io`,
+    description: `Divagando sobre mi vida explorando el mundo de la tecnología.`,
     hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
-      maxWidth: 652,
+      heading: `Divagando sobre mi vida explorando el mundo de la tecnología.`,
+      maxWidth: 652
     },
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/narative`,
+        url: `https://twitter.com/jzfgo`
       },
       {
         name: `github`,
-        url: `https://github.com/narative`,
+        url: `https://github.com/jzfgo`
       },
       {
         name: `instagram`,
-        url: `https://instagram.com/narative.co`,
+        url: `https://instagram.com/jzfgo`
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
+        url: `https://www.linkedin.com/in/jzfgo`
       },
       {
         name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
-      },
-    ],
+        url: `https://dribbble.com/javi`
+      }
+    ]
   },
   plugins: [
     {
-      resolve: "@narative/gatsby-theme-novela",
+      resolve: '@narative/gatsby-theme-novela',
       options: {
-        contentPosts: "content/posts",
-        contentAuthors: "content/authors",
-        basePath: "/",
+        contentPosts: 'content/posts',
+        contentAuthors: 'content/authors',
+        basePath: '/',
         authorsPage: true,
         sources: {
-          local: true,
+          local: true
           // contentful: true,
-        },
-      },
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Novela by Narative`,
-        short_name: `Novela`,
+        name: `Hic sunt dracones`,
+        short_name: `Dracones`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`,
-      },
+        icon: `src/assets/favicon.png`
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
