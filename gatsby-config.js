@@ -57,5 +57,17 @@ module.exports = {
         icon: `src/assets/favicon.png`,
       },
     },
-  ],
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-7695020-1',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: [],
+        pageTransitionDelay: 0,
+        cookieDomain: 'javi.io'
+      }
+    }
+  ]
 };
