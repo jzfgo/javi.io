@@ -7,7 +7,7 @@
     "dev": "gatsby develop",
     "clean": "gatsby clean",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages --dotfiles -d public"
+    "deploy": "gh-pages --dotfiles -d public"
   },
   "dependencies": {
     "@narative/gatsby-theme-novela": "^0.13.2",
