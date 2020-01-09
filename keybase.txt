@@ -11,38 +11,38 @@ I hereby claim:
 To do so, I am signing this object:
 
 {
-  body: {
-    key: {
-      eldest_kid: 012097c778ae300d1af1a4f4ad519277179b275b0c0bc7804b9ca636a24f72ffa52f0a,
-      fingerprint: 201c51dd5a86501424efb38b4f153898a5ee27f9,
-      host: keybase.io,
-      key_id: 4f153898a5ee27f9,
-      kid: 0101636720d3da7612251d6889b8b2fa12211ad7b25851a2176235e5c0befb8471440a,
-      uid: 32261d8ce94c155cc4185725acd16e19,
-      username: jzf
+  "body": {
+    "key": {
+      "eldest_kid": "012097c778ae300d1af1a4f4ad519277179b275b0c0bc7804b9ca636a24f72ffa52f0a",
+      "fingerprint": "201c51dd5a86501424efb38b4f153898a5ee27f9",
+      "host": "keybase.io",
+      "key_id": "4f153898a5ee27f9",
+      "kid": "0101636720d3da7612251d6889b8b2fa12211ad7b25851a2176235e5c0befb8471440a",
+      "uid": "32261d8ce94c155cc4185725acd16e19",
+      "username": "jzf"
     },
-    merkle_root: {
-      ctime: 1578558413,
-      hash_meta: 475438eef175315503b175a96811fc9984559d9b9f4af9958394f3d2b8469656,
-      seqno: 14150697
+    "merkle_root": {
+      "ctime": 1578562886,
+      "hash_meta": "0e42d3582a80f3140e837b4d16228402a005498e1f07714de25ec7cacb6aebfc",
+      "seqno": 14151434
     },
-    revoke: {
-      sig_ids: [
-        7636fab95f9a5d401d3c108908ce3c9966551b68ee9a71dadae5488ae6a9b2b30f
+    "revoke": {
+      "sig_ids": [
+        "c845451351b4b86fa21dcdf8e3e727eb433d1259159bc52da27a673bdabe4cfb0f"
       ]
     },
-    service: {
-      hostname: javi.io,
-      protocol: https:
+    "service": {
+      "hostname": "javi.io",
+      "protocol": "https:"
     },
-    type: web_service_binding,
-    version: 1
+    "type": "web_service_binding",
+    "version": 1
   },
-  ctime: 1578558415,
-  expire_in: 157680000,
-  prev: a695035611118c534056c683aeef2cc21034694c69bdc4c10c9f90ef0e6403c8,
-  seqno: 38,
-  tag: signature
+  "ctime": 1578562895,
+  "expire_in": 157680000,
+  "prev": "a74684b053cecfa4fb42059ad2ade3b8b91ed9c0cf2fcf1820367e11f03e2203",
+  "seqno": 43,
+  "tag": "signature"
 }
 
 which yields the signature:
@@ -51,33 +51,33 @@ which yields the signature:
 Version: Keybase OpenPGP v2.1.3
 Comment: https://keybase.io/crypto
 
-yMP0AnicbVN5TBVHGAcqKCBKbSCtZ1zaYlvEmd2d3Rn+MFpv60HVNto+fM7uzsKC
-vH3sLg8Fn7USNF7VULWNaGpqiW1I1CrWA6mRolZMPWrU2Kb2gEIxClHjXX2dR2ua
-NJ1/Zufb7/t+xzfTnPJMTFLszDT8cW1X5oPY003FpTHz01vPVgiabSwWciqEItaz
-sYUGcz1/kWUIOQKAIiCqrqqYMgkAA1ITUtmUqYEgEVUVqkQTVaQBHWi6ioGsEZ0q
-kkJF2VRF06RINAEVsgTTCuQzJ+hYAY+3FQHUETQMRLGCAJRFmZmahDXZhEjCBFPE
-mKiahBcW2G60gpPTqMuyLZvH+MHfQ+9/8p/yBpDTUEVgSAZVFSiKHE/BmGhYE03K
-zxBSQ9VEhBGkIlQVUUIMcRmcCZZVKMs9vEt72kmiqEAD64zIOkRI12WIkSoiqhtQ
-YTCKW+oyJ0CLGc8uLDeFcJZQzJyihczv2LYX9VX3rOhfiFSMEJahxLVRt8BfzDwa
-laIiWcKMmVBFEscAksa/KFEwhKZOCJYRIgbRCDffJARhicimZIicrEIUpHAKLisJ
-2BxBhggoROUUHBayi1gU3bXyuWWukPOuoHJjTKoRZBKKDBlAQ9IhwARwfRJHUhSE
-oKZwLoSq0KAGZUjG/AIolA9bk4Ap5IWjaE7I0nuaR2f0VDsNWX8PKejYnq3bC3mw
-wPOCbk7UE29xMJpVxjT/P/V+zQoY/HLwihBzXMsOcAU88792oSyBLQpaDvNbgZ6w
-ggFfURwW4i2pQrhnSIF8YR1JMkCKrmCJcktFXRchkLhRsq4QzdD5FIFOTAKYCZgi
-A0nH//onYc6T5vOe3LQA9UodJoSbjvl6xcQmxSTEx0VfTUxSYurTt7Rjaf+I+cnr
-WQ+rprcMSdmy3n2hu+zItdmpcQfKpBPZq2Nrzl1fPeWXK8fL+/W6kjyw40b7pkQ8
-7bXLHT9HkI90zk2uu3D33paSWfm3a5JPTu7eWTnkvcKWO359XvhWbVtlsHNmXMuS
-Dc8nPCdm3N7B9qQ1n9x4nvnevPGgX+2c1L4TSVrOpeQJ/vojbW17fut8Of+oEjM4
-c0RgjH248Nate0LSV+lnlnw6aXRz1vCS7LlnVqbFz6DhVdkVY6urCjeX5m48/hCM
-rn92drqmHrqeV/JWn51nhyZM2nUfzLrf9WSk0r7o/KGGCZc/j7RXDpQvdR5YmuAv
-+90YPgcP6Br3zg+NK8ZklH+2abNv+6sWYmvCiVfzpNze0/bOiz+04uDKRvfx8oJH
-bkv1KLd/zSlfwaq2c6G7v340eF/HvH1bvwwNHTdDbpTLuhOmntu1O+5C7kWY2ipc
-a2JXpfs/Trz4YGl8SlNL4bCXajO9osmR2nWtd67sH/T9+2v3l79x+u1Int/X1HER
-1X1bPXV8demSPyoG7V55dPif2ujN6dPzt3/wuKp7QWTW2GVWfdOGh/1vNmx7NOaw
-r+/45TkH1920Tg8dYGdOq3sFDBtRc+BYXT1s2O9fs+BESuWL3t72DxPnDB7S6m7r
-av56ijO3sfdIIWN+LjzTt/DJ1u3Xv7h0yqmux5GfvvkuwVpf1dDHHnstvCx4yuse
-5fsLR7/7ig==
-=TnDM
+yMPzAnicbVN/TFVVHOflT0BFJMqaunUV3ZDRPeeec++5uGqlS90c/ppJe+DbOeee
+Azce78G7D0wE19YyaU5xYv6MttRSEWeohNNKCAtxzmGmaJJNLXUZzkmKStJ5lGtr
+3X/uvt/z/X4+n+/ne07ryEFxCb65qWTTzu4pD3wnW4pK45Y888fc5RoLO8u0rOVa
+oRj4iaAjvGig0HW0LE0HULctblmECkPXHUAloEgi6mBgQ8sCls2ghZnOdcYtoiNm
+c2oaJoVIWlBKiqHUqZahSTeULyLFETcUVbBQBxwDx8GUmFgHCCIhmUEYkgAbxCYU
+CwEtaavGgrAX61DiGPVEphtWORUEBuT9T/0T3TpQMiyoO4ZDLRNAqPhMQmxGGJRU
+xQBQx2IQEwwoBJYJDSywGkMpIcgCCA3oLh2AMyA0gUO4sBEHGHOOAMEWxJQ7wBQg
+xlvqiUiIFglV/Va51CoztCIRKQyKQCQcjsZ85VE3dgqwRbAJCTHVbNQrCBSJKI0p
+Fgg6BiaQEl0aAOmCGBZDCh9CgnRIdR0jmwggdWU7cgTEgluccmZSwSRXEjxREgor
+BgQwQAZSEiKiLFwoYuyem68s87Qsv8YJwggDAwOGGDGlmt7hjiTCEBa0BEOG4QCI
+bYBtxjF0KLSoaRnMoUwgLpkutbzKGFukzOUD4LEdPZmdlrl/L6k4Eo6GeTiokgXR
+aLGXFfMkuqw4VrVUsMA//QHmhhx1OVRHmYh4bjikJlCV/7HLxhmaeLvYjYiAGxpI
+m0RXX4xHlClIaiGTIKZjgwsu1R1lCOrYpg6kjjDU1m0gHJvrXELJJSBQV9dDAGWn
+IaAK/vUPGUonzVeYyrQQjZZGhFbZ0pw7OM6XEDd0yFOxVxOXED/6yVuqb0t6nOY9
+cP3je0f/PDo3aWjT1Pnb8y4sAEZf0rkVR7Y9PjeElc++F3rzl1k/7Vl/7Nn46z90
+L9poTHcmiNvlnYmdeRc3LN8Yd6B5559eWs68b7+/0JG748y+xOJLdbkNsnbUzNNL
+FrTkhXJvbL/eMeS+c8K3pf1if5qoTz1V0WqkuJ+bHyfdftgULKjqqEz5sqSvWnZ0
+7d8Tn+H6f7/bOebWmnmz04etDTetbrd3dFUdP15af3+VRnhN49ruz1rf2MvyX329
+KnuVH2UXnRl36FpyeuPJ0If7+msmy/Se6vXnku+sfjmnmUY/6eMrzre8NP79yKGz
+Sdvm9LyyvS3tq91fk1tNft+vKb5HXziT4+rmjF3UsCt54ZWKze1Zvf6KeOvajB+v
+TKue0HM+SLJT+1+bVTd98cqVR2+d7VyafWDzRXF1VWXZjIajU9lwcHBhNDp9zYTm
+QPWRLt/T73h1qYM+ujD2VL970rkvtzy6/nxF//C7x0X1ktqC3fcSEyUruWl85zva
+OKLkyrtD9xeVf3rst+dA18rFmTtDH8zcvGBdR+3lvd/ceBipyenxT0qO93Lmn3Zr
+5gUPr+sdO6N8x4gXT4S2urv39U5snbii8SGR8zNfwMsauiZVtR88NY1cvnrzZnfK
+uF0Jw9qCwdXp1xqyNt3durD+Tu/IwYcOTykZczZnRAFoG9ZXPeZebd17c0Y9vuTP
+/AvLGwPo
+=TQJs
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -86,4 +86,3 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/jzf
 
 ==================================================================
-
