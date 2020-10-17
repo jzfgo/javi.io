@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@narative/gatsby-theme-novela": "^0.13.3",
-    "gatsby": "^2.20.11",
-    "gatsby-plugin-google-analytics": "^2.2.2",
-    "gatsby-plugin-manifest": "^2.3.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^2.24.80",
+    "gatsby-plugin-google-analytics": "^2.3.19",
+    "gatsby-plugin-manifest": "^2.4.35",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }
