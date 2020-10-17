@@ -10,25 +10,21 @@ module.exports = {
     },
     social: [
       {
-        name: `twitter`,
-        url: `https://twitter.com/jzfgo`
+        name: `linkedin`,
+        url: `https://www.linkedin.com/in/jzfgo`
       },
       {
         name: `github`,
         url: `https://github.com/jzfgo`
       },
       {
+        name: `twitter`,
+        url: `https://twitter.com/jzfgo`
+      },
+      {
         name: `instagram`,
         url: `https://instagram.com/jzfgo`
       },
-      {
-        name: `linkedin`,
-        url: `https://www.linkedin.com/in/jzfgo`
-      },
-      {
-        name: `dribbble`,
-        url: `https://dribbble.com/javi`
-      }
     ]
   },
   plugins: [
