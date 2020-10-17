@@ -3,9 +3,9 @@ module.exports = {
     title: `Hic sunt dracones`,
     name: `Javier Zapata`,
     siteUrl: `https://javi.io`,
-    description: `Divagando sobre mi vida explorando el mundo de la tecnología.`,
+    description: `Divagando.`,
     hero: {
-      heading: `Divagando sobre mi vida explorando el mundo de la tecnología.`,
+      heading: `Divagando.`,
       maxWidth: 652
     },
     social: [
