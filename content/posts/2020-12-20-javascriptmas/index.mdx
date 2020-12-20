@@ -1,0 +1,730 @@
+---
+title: 'My recap of Scrimba’s #JavaScriptmas'
+author: Javier Zapata
+date: 2020-12-20
+hero: ./images/michael-hacker-OM5Zy3_7pGU-unsplash.jpg
+excerpt: It was a fun ride!
+---
+
+This year [**Scrimba**](https://scrimba.com) is holding an [Advent calendar](https://scrimba.com/learn/adventcalendar) by releasing daily coding challenges from December 1st to the 24th. They are also giving away **free yearly subscriptions** each day and **\$1,000 grand prize** at the end.
+
+I’ve been doing them since day one and I have to say that I’m having a blast! They are fun little challenges that don’t take more than five minutes and I find them as a perfect way to end my –coding– day. I specially like to check other’s people solutions, as some of them are pretty clever and I can always learn something new.
+
+So, if you haven’t joined yet, what are your waiting for? It’s a lot of fun and you could end up winning the big prize! 🤑
+
+In case you don’s know them already, **Scrimba** is a learning platform for developers that teaches coding and other related skills through interactive screencasts, called "scrims" (they’re pretty neat, you can actually pause them at any time, edit and run code directly!).
+
+I’ve been using it since 2018 and it has become one of my favourite learning platforms. By the way, they have a lot of [**free courses**](https://scrimba.com/topic/free) if you want to check them out!.
+
+Well, witought further ado, here are my solutions:
+
+## Day 1: Candies
+
+**Challenge:** `n` children have got `m` pieces of candy. They want to eat as much candy as they can, but each child must eat exactly the same amount of candy as any other child. Determine how many pieces of candy will be eaten by all the children together. Individual pieces of candy cannot be split.
+
+**Official solution:** [Link](https://scrimba.com/learn/adventcalendar/javascript-challenge-candies-solution-cGmMvmU6?a=613.347.8.L4_36)
+
+```js
+function candies(children, candy) {
+  const candyPerChild = Math.floor(candy / children);
+
+  return candyPerChild * children;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/learn/adventcalendar/note-at-1-04-coe27449cbdbcdfa608f3b2e0)
+
+```js
+function candies(children, candy) {
+  return Math.floor(candy / children) * children;
+}
+```
+
+## Day 2: Deposit Profit
+
+**Challenge:** You have deposited a specific amount of dollars into your bank account. Each year your balance increases at the same growth rate. Find out how long it would take for your balance to pass a specific threshold with the assumption that you don’t make any additional deposits.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co5324b9dacc7bba7b8cd2ebd)
+
+```js
+function depositProfit(deposit, rate, threshold) {
+  let year = 0;
+  let currentAccountValue = deposit;
+
+  while (threshold > currentAccountValue) {
+    currentAccountValue += currentAccountValue * (rate / 100);
+    year++;
+  }
+
+  return year;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/coe4d49ac871b2d4e4338b2bc)
+
+```js
+function depositProfit(deposit, rate, threshold) {
+  const COMPOUND_RATE = 1 + rate / 100;
+  let years = 0;
+  let holdings = deposit;
+
+  while (holdings < threshold) {
+    years++;
+    holdings *= COMPOUND_RATE;
+  }
+
+  return years;
+}
+```
+
+## Day 3: Chunky Monkey
+
+**Challenge:** Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.
+
+**Official solution:** [Link](https://scrimba.com/scrim/codc845fc9d84a45730390a31)
+
+```js
+function chunkyMonkey(values, size) {
+  const nested = [];
+  let count = 0;
+
+  while (count < values.length) {
+    nested.push(values.slice(count, (count += size)));
+  }
+
+  return nested;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/learn/adventcalendar/note-at-0-50-co8a646d9b9a9108f60356b16)
+
+```js
+function chunkyMonkey(values, size) {
+  let arr = [];
+  let offset = 0;
+  for (let i = 0; i < values.length / size; i++) {
+    offset = size * i;
+    arr.push(values.slice(offset, offset + size));
+  }
+  return arr;
+}
+```
+
+## Day 4: Century From Year
+
+**Challenge:** Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co0294451a881cd3a2dcbedf6)
+
+```js
+function centuryFromYear(year) {
+  const century = year / 100;
+
+  if (year % 100 === 0) {
+    return century;
+  }
+
+  return Math.floor(century) + 1;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/learn/adventcalendar/note-at-1-03-co3984e8f8c6d266ad876e22c)
+
+```js
+function centuryFromYear(num) {
+  const rest = num % 100;
+
+  let century = Math.floor(num / 100);
+  century += rest > 0 ? 1 : 0;
+
+  return century;
+}
+```
+
+## Day 5: Reverse a string
+
+**Challenge:** Reverse the provided string. You may need to turn the string into an array before you can reverse it. Your result must be a string.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co29e4357b8ef128ad176480c)
+
+```js
+function reverseAString(str) {
+  let reversedStr = '';
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i];
+  }
+
+  return reversedStr;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/coab24925bb2d8fe8248d809f)
+
+```js
+function reverseAString(str) {
+  return str
+    .split('')
+    .reverse()
+    .join('');
+}
+```
+
+## Day 6: Sort by Length
+
+**Challenge:** Given an array of strings, sort them in the order of increasing lengths. If two strings have the same length, their relative order must be the same as in the initial array.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co8764ca48d38e57cd814a9cf)
+
+```js
+function sortByLength(strs) {
+  return strs.sort((str1, str2) => str1.length - str2.length);
+}
+```
+
+**My solution:** [Link](https://scrimba.com/learn/adventcalendar/note-at-0-44-co8224dac94a7ab3f0b9c1f26)
+
+```js
+function sortByLength(strs) {
+  return strs.sort((a, b) => a.length - b.length);
+}
+```
+
+## Day 7: Count Vowel Consonant
+
+**Challenge:** You are given a string s that consists of only lowercase English letters. If vowels ('a', 'e', 'i', 'o', and 'u') are given a value of 1 and consonants are given a value of 2, return the sum of all of the letters in the input string.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co2e747a2b78b050870fcdf87)
+
+```js
+function countVowelConsonant(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const chars = str.split('');
+  const total = chars.reduce((acc, char) => {
+    if (vowels.includes(char)) {
+      return acc + 1;
+    }
+
+    return acc + 2;
+  }, 0);
+
+  return total;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/learn/adventcalendar/note-at-1-11-coa0f45b1bde9f4a4d292a5a6)
+
+```js
+function countVowelConsonant(str) {
+  const counter = (count, char) => {
+    const isVowel = 'aeiou'.indexOf(char) !== -1;
+    return count + (isVowel ? 1 : 2);
+  };
+
+  return str.split('').reduce(counter, 0);
+}
+```
+
+## Day 8: Rolling Dice
+
+**Note:** This challenge involves additional HTML and CSS, so I recommend checking the solutions directly at Scrimba.
+
+**Challenge:** In this challenge a casino has asked you to make an online dice that works just like
+it would in real life. Using the pre-made dice face that represents ‘one’, make the
+faces for ‘two’, ‘three’, ‘four’, ‘five’ and ‘six’. Now when the users clicks the
+dice on the screen the dice is expected to show one of the faces randomly.
+
+**Official solution:** [Link](https://scrimba.com/scrim/cob2040579afbc1f3f3642272)
+
+```js
+const dice = document.querySelector('.dice');
+const allDots = Array.from(document.querySelectorAll('.dice div'));
+
+function rollDice() {
+  let randomNumber = 1 + Math.floor(Math.random() * 6);
+  console.log(randomNumber);
+
+  allDots.forEach((dot) => dot.classList.remove(...dot.classList));
+
+  if (randomNumber === 1) {
+    allDots[4].classList.add('dot');
+  }
+
+  if (randomNumber === 2) {
+    allDots[0].classList.add('dot');
+    allDots[8].classList.add('dot');
+  }
+  if (randomNumber === 3) {
+    allDots[0].classList.add('dot');
+    allDots[4].classList.add('dot');
+    allDots[8].classList.add('dot');
+  }
+  if (randomNumber === 4) {
+    allDots[0].classList.add('dot');
+    allDots[2].classList.add('dot');
+    allDots[6].classList.add('dot');
+    allDots[8].classList.add('dot');
+  }
+  if (randomNumber === 5) {
+    allDots[0].classList.add('dot');
+    allDots[2].classList.add('dot');
+    allDots[4].classList.add('dot');
+    allDots[6].classList.add('dot');
+    allDots[8].classList.add('dot');
+  }
+  if (randomNumber === 6) {
+    allDots[0].classList.add('dot');
+    allDots[2].classList.add('dot');
+    allDots[3].classList.add('dot');
+    allDots[5].classList.add('dot');
+    allDots[6].classList.add('dot');
+    allDots[8].classList.add('dot');
+  }
+}
+dice.addEventListener('click', rollDice);
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co49f43f4b775ebce95adae72)
+
+```js
+const dice = document.querySelector('.dice');
+const face = dice.querySelector('.face');
+const message = document.querySelector('.message');
+
+const roll = () => Math.ceil(Math.random() * 6);
+
+dice.addEventListener('click', (e) => {
+  const number = roll();
+  face.className = `face dot-${number}`;
+  message.innerHTML = `You got a ${number}!`;
+});
+```
+
+## Day 9: Sum Odd Fibonacci Numbers
+
+**Challenge:** Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num. The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8. For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co1c7479ab799481dfd8a3cd4)
+
+```js
+function sumOddFibonacciNumbers(num) {
+  let sum = 0;
+  let previous = 0;
+  let current = 1;
+
+  while (current <= num) {
+    if (current % 2 === 1) {
+      sum += current;
+    }
+
+    const nextValue = current + previous;
+    previous = current;
+    current = nextValue;
+  }
+
+  return sum;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/cof644d16996ae275c88bb200)
+
+```js
+function sumOddFibonacciNumbers(num) {
+  let a = 1,
+    b = 1,
+    sum = a,
+    tmp;
+  while (sum < num) {
+    sum += b % 2 === 0 ? 0 : b;
+    tmp = a;
+    a = b;
+    b += tmp;
+  }
+  return sum;
+}
+```
+
+## Day 10: Adjacent Elements Product
+
+**Challenge:** Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co93f4a82bb211a995c761055)
+
+```js
+function adjacentElementsProduct(nums) {
+  let largestProduct = nums[0] * nums[1];
+
+  for (let i = 1; i < nums.length - 1; i++) {
+    const adjacentProduct = nums[i] * nums[i + 1];
+
+    if (largestProduct < adjacentProduct) {
+      largestProduct = adjacentProduct;
+    }
+  }
+
+  return largestProduct;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co060435d87af0c11b4bf4620)
+
+```js
+function adjacentElementsProduct(nums) {
+  const products = nums.map((num, i, nums) => num * (nums[i + 1] ?? 1));
+  return Math.max(...products);
+}
+```
+
+## Day 11: Avoid Obstacles
+
+**Challenge:** You are given an array of integers representing coordinates of obstacles situated on a straight line.
+
+Assume that you are jumping from the point with coordinate 0 to the right. You are allowed only to make jumps of the same length represented by some integer.
+
+Find the minimal length of the jump enough to avoid all the obstacles.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co31c40f387bf0f984dc7a893)
+
+```js
+function avoidObstacles(nums) {
+  const largestNum = nums.sort((a, b) => a - b)[nums.length - 1];
+
+  for (let i = 1; i <= largestNum + 1; i++) {
+    if (nums.every((value) => value % i !== 0)) {
+      return i;
+    }
+  }
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/cobf54396b86fe97b55b00046)
+
+```js
+function avoidObstacles(nums) {
+  let min = 1;
+  while (nums.some((num) => num % min === 0)) {
+    min++;
+  }
+  return min;
+}
+```
+
+## Day 12: Valid Time
+
+**Challenge:** Check if the given string is a correct time representation of the 24-hour clock.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co32941feaed0a92639e65ee3)
+
+```js
+function validTime(str) {
+  const [hours, minutes] = str.split(':');
+
+  if (parseInt(hours) > 23 || parseInt(hours) < 0) {
+    return false;
+  }
+
+  if (parseInt(minutes) > 59 || parseInt(minutes) < 0) {
+    return false;
+  }
+
+  return true;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/codee494c94137c46bb5434e4)
+
+```js
+function validTime(str) {
+  const [hour, minute] = str.split(':').map((x) => parseInt(x, 10));
+
+  return hour >= 0 && hour < 24 && minute >= 0 && minute < 60;
+}
+```
+
+## Day 13: Extract Each Kth
+
+**Challenge:** Given array of integers, remove each K​th element from it.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co095422ebfd362d9a8441303)
+
+```js
+function extractEachKth(nums, index) {
+  return nums.filter((value, i) => (i + 1) % index !== 0);
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co55a459fbd4e155596f12dbe)
+
+```js
+function extractEachKth(nums, index) {
+  return nums.filter((num) => num % index !== 0);
+}
+```
+
+## Day 14: Maximal Adjacent Difference
+
+**Challenge:** Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co3fa430188d7c9254d88f38c)
+
+```js
+function arrayMaximalAdjacentDifference(nums) {
+  let maxDifference = 0;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    const absoluteDifference = Math.abs(nums[i] - nums[i + 1]);
+
+    if (maxDifference < absoluteDifference) {
+      maxDifference = absoluteDifference;
+    }
+  }
+
+  return maxDifference;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co44743c890a8038a8bc2242a)
+
+```js
+function arrayMaximalAdjacentDifference(nums) {
+  const diffs = nums.map((num, i, nums) =>
+    i ? Math.abs(num - nums[i - 1]) : 0
+  );
+
+  return Math.max(...diffs);
+}
+```
+
+## Day 15: JavaScript Carousel
+
+**Note:** This challenge involves additional HTML and CSS, so I recommend checking the solutions directly at Scrimba.
+
+**Challenge:** Create a carousel with JavaScript.
+
+**Official solution:** [Link](https://scrimba.com/scrim/cobad4d3fb2d3f06ef4cf12f3)
+
+```js
+const gallery = document.getElementsByClassName('gallery')[0];
+const prevBtn = document.getElementsByClassName('previous')[0];
+const nextBtn = document.getElementsByClassName('next')[0];
+const galleryCardCount = document.getElementsByClassName('card').length;
+
+let currentGalleryXOffset = 0;
+const endGalleryXOffset = (galleryCardCount - 1) * -220;
+
+prevBtn.addEventListener('click', galleryClickHandler);
+nextBtn.addEventListener('click', galleryClickHandler);
+
+function galleryClickHandler(event) {
+  let targetBtn = event.target.className;
+  if (targetBtn == 'previous' && currentGalleryXOffset < 0) {
+    currentGalleryXOffset += 220;
+  } else if (targetBtn == 'next' && currentGalleryXOffset > endGalleryXOffset) {
+    currentGalleryXOffset -= 220;
+  }
+
+  if (currentGalleryXOffset == 0) {
+    prevBtn.style.opacity = 0.3;
+    prevBtn.style.cursor = 'default';
+  } else {
+    prevBtn.style.opacity = 1; //disabled
+    prevBtn.style.cursor = 'pointer';
+  }
+
+  if (currentGalleryXOffset == endGalleryXOffset) {
+    nextBtn.style.opacity = 0.3;
+    nextBtn.style.cursor = 'default';
+  } else {
+    nextBtn.style.opacity = 1;
+    nextBtn.style.cursor = 'pointer';
+  }
+
+  gallery.style.transform = `translateX(${currentGalleryXOffset}px)`;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co83944a0825c858480e73f09)
+
+```js
+const prevButton = document.querySelector('.previous');
+const nextButton = document.querySelector('.next');
+const gallery = document.querySelector('.gallery');
+const cards = document.querySelectorAll('.card');
+
+let currentCard = 0;
+const lastCard = cards.length - 1;
+
+const slide = (num) => {
+  const prevCard = currentCard;
+  const nextCard = currentCard + num;
+
+  currentCard = Math.max(nextCard, 0);
+  currentCard = Math.min(currentCard, lastCard);
+
+  gallery.style = `transform: translateX(-${currentCard * 220}px);`;
+  cards[prevCard].classList.remove('current');
+  cards[currentCard].classList.add('current');
+
+  prevButton.style = 'opacity: 1';
+  nextButton.style = 'opacity: 1';
+  if (currentCard === 0) {
+    prevButton.style = 'opacity: .3';
+  } else if (currentCard === lastCard) {
+    nextButton.style = 'opacity: .3';
+  }
+};
+
+nextButton.addEventListener('click', () => slide(1));
+prevButton.addEventListener('click', () => slide(-1));
+```
+
+## Day 16: Insert Dashes
+
+**Challenge:** Transform a given sentence into a new one with dashes between each two consecutive letters.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co13a435c9bcd067fcb72cce0)
+
+```js
+function insertDashes(str) {
+  const words = str.split(' ');
+  const dashedWords = words.map((word) => {
+    const chars = word.split('');
+
+    return chars.join('-');
+  });
+
+  return dashedWords.join(' ');
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/cob9e41f6825a596cde72c2be)
+
+```js
+function insertDashes(arr) {
+  return arr
+    .split('')
+    .join('-')
+    .replace('- -', ' ');
+}
+```
+
+## Day 17: Different symbols naive
+
+**Challenge:** Given a string, find the number of different characters in it.
+
+**Official solution:** [Link](https://scrimba.com/scrim/co8d44f3ca6dcb38828a7a014)
+
+```js
+function differentSymbolsNaive(str) {
+  const chars = str.split('');
+
+  return new Set(chars).size;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co3da4d45bf8193ecddbe85d8)
+
+```js
+function differentSymbolsNaive(str) {
+  return new Set(str.split('')).size;
+}
+```
+
+## Day 18: Array previous less
+
+**Challenge:** Given array of integers, for each position i, search among the previous positions for the last (from the left) position that contains a smaller value. Store this value at position i in the answer. If no such value can be found, store -1 instead.
+
+**Official solution:** [Link](https://scrimba.com/scrim/cobe04a8a9b7115311ee775cf)
+
+```js
+function arrayPreviousLess(nums) {
+  const previousLess = [];
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    for (let j = i; j >= 0; j--) {
+      if (nums[i] > nums[j]) {
+        previousLess.unshift(nums[j]);
+        break;
+      } else if (j === 0) {
+        previousLess.unshift(-1);
+      }
+    }
+  }
+
+  return previousLess;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co39143659b16c7e834157219)
+
+```js
+function arrayPreviousLess(nums) {
+  return nums.map((num, i) => {
+    const prevNum = nums[i - 1] ?? -1;
+    return prevNum < num ? prevNum : -1;
+  });
+}
+```
+
+## Day 19: Alphabet Subsequence
+
+**Challenge:** Check whether the given string is a subsequence of the plaintext alphabet.
+
+**Official solution:** [Link](https://scrimba.com/scrim/coa0146cbb5b839828a496942)
+
+```js
+function alphabetSubsequence(str) {
+  const chars = str.split('');
+  const charCodes = chars.map((char) => char.charCodeAt(0));
+
+  if (new Set(charCodes).size !== charCodes.length) {
+    return false;
+  }
+
+  for (let i = 0; i < charCodes.length - 1; i++) {
+    if (charCodes[i] > charCodes[i + 1]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+
+**My solution:** [Link](https://scrimba.com/scrim/co04f4940ba8c88e9479175a7)
+
+```js
+function alphabetSubsequence(str) {
+  const expectedStr = [...new Set(str.split(''))].sort().join('');
+  return str === expectedStr;
+}
+```
+
+## Day 20: Domain Type
+
+**Challenge:** GoDaddy makes a lot of different top-level domains available to its customers. A top-level domain is one that goes directly after the last dot ('.') in the domain name, for example .com in example.com. To help the users choose from available domains, GoDaddy is introducing a new feature that shows the type of the chosen top-level domain. You have to implement this feature. To begin with, you want to write a function that labels the domains as "commercial", "organization", "network" or "information" for .com, .org, .net or .info respectively. For the given list of domains return the list of their labels.
+
+**Official solution:** TBD
+
+**My solution:** [Link](https://scrimba.com/scrim/cobf9470496535112dfadcae8)
+
+```js
+function domainType(domains) {
+  const types = new Map([
+    ['org', 'organization'],
+    ['com', 'commercial'],
+    ['net', 'network'],
+    ['info', 'information'],
+  ]);
+
+  return domains.map((domain) => {
+    const tld = domain
+      .split('.')
+      .pop()
+      .toLowerCase();
+    return types.has(tld) ? types.get(tld) : 'unknown';
+  });
+}
+```
+
+Photo by [Michael Hacker](https://unsplash.com/@michael_hacker) on [Unsplash](https://unsplash.com/photos/OM5Zy3_7pGU)
