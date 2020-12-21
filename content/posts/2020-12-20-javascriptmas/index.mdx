@@ -765,6 +765,45 @@ function domainType(domains) {
 }
 ```
 
+### Official solution ([🔗](https://scrimba.com/scrim/co4b94f019e17b4f43ea59095))
+
+```js
+function domainType(domains) {
+  const domainTypes = [];
+
+  for (let i = 0; i < domains.length; i++) {
+    const urlPieces = domains[i].split('.');
+    const domain = urlPieces[urlPieces.length - 1];
+
+    if (domain === 'org') {
+      domainTypes.push('organization');
+    } else if (domain === 'com') {
+      domainTypes.push('commercial');
+    } else if (domain === 'net') {
+      domainTypes.push('network');
+    } else if (domain === 'info') {
+      domainTypes.push('information');
+    }
+  }
+
+  return domainTypes;
+}
+```
+
+## Day 21: Sum of Two
+
+### Challenge
+
+You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one number is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.
+
+### My solution ([🔗](https://scrimba.com/scrim/coad04d9e9c250a097f0ba542))
+
+```js
+function sumOfTwo(nums1, nums2, value) {
+  return nums1.some((num1) => nums2.includes(value - num1));
+}
+```
+
 ### Official solution
 
 TBD
