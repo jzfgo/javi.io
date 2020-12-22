@@ -804,6 +804,41 @@ function sumOfTwo(nums1, nums2, value) {
 }
 ```
 
+### Official solution ([🔗](https://scrimba.com/scrim/co72347e49afa5a04bd990906))
+
+```js
+function sumOfTwo(nums1, nums2, value) {
+  const map = {};
+
+  for (let num of nums1) {
+    const difference = value - num;
+    map[difference] = difference;
+  }
+
+  for (let num of nums2) {
+    if (map.hasOwnProperty(num)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+```
+
+## Day 22: Extract Matrix Column
+
+### Challenge
+
+Given a rectangular matrix and an integer column, return an array containing the elements of the columnth column of the given matrix (the leftmost column is the 0th one).
+
+### My solution ([🔗](https://scrimba.com/scrim/co2c547abb03b9db3767c6ec0))
+
+```js
+function extractMatrixColumn(matrix, column) {
+  return matrix.map((rect) => rect[column]);
+}
+```
+
 ### Official solution
 
 TBD
