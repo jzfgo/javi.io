@@ -841,6 +841,50 @@ function extractMatrixColumn(matrix, column) {
 
 ### Official solution
 
+```js
+function extractMatrixColumn(matrix, column) {
+  return matrix.map((row) => row[column]);
+}
+```
+
+## Day 23: Social Media Input
+
+**Note:** This challenge involves additional HTML and CSS, so I recommend checking the solutions directly at Scrimba.
+
+### Challenge
+
+We are making a Social Media Character Counter! We want to display the available characters LEFT.
+Using the Keydown event should help you here. When the characters reach 20 and below, we want them to turn red. So we will use Javascript to add that styling to it. If the characters drop below 0, we want the button to be disabled BUT if there are only 0 characters left, we should still be able to tweet.
+
+Keydown, addEventListeners, add and remove a class
+
+### My solution ([🔗](https://scrimba.com/scrim/coacc463194b0a48086530fe9))
+
+```js
+const string = document.querySelector('#string');
+const btn = document.querySelector('#btn');
+const counter = document.querySelector('#counterFooter');
+const MAX_LENGTH = 140;
+
+string.addEventListener('keyup', (event) => {
+  const length = event.target.value.length;
+  const remaining = MAX_LENGTH - length;
+
+  counter.innerText = `${remaining}/${MAX_LENGTH}`;
+  counter.style.color = remaining <= 20 ? 'red' : 'white';
+
+  if (remaining <= 0) {
+    btn.setAttribute('disabled', 'disabled');
+    btn.className = 'buttonDisabled';
+  } else {
+    btn.setAttribute('disabled', '');
+    btn.className = '';
+  }
+});
+```
+
+### Official solution
+
 TBD
 
 Photo by [Michael Hacker](https://unsplash.com/@michael_hacker) on [Unsplash](https://unsplash.com/photos/OM5Zy3_7pGU)
