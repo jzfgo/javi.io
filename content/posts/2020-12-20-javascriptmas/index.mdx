@@ -873,7 +873,7 @@ string.addEventListener('keyup', (event) => {
   counter.innerText = `${remaining}/${MAX_LENGTH}`;
   counter.style.color = remaining <= 20 ? 'red' : 'white';
 
-  if (remaining <= 0) {
+  if (remaining < 0) {
     btn.setAttribute('disabled', 'disabled');
     btn.className = 'buttonDisabled';
   } else {
