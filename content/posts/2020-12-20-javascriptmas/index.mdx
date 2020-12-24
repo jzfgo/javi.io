@@ -885,6 +885,137 @@ string.addEventListener('keyup', (event) => {
 
 ### Official solution
 
-TBD
+N/A
+
+# Day 24: Test your agility
+
+**Note:** This challenge involves additional HTML and CSS, so I recommend checking the solutions directly at Scrimba.
+
+### Challenge
+
+Make a counter that increments every 75 milliseconds in the spin() function and display whether the player wins or loses in the stop() function.
+
+### My solution ([🔗](https://scrimba.com/scrim/co89c4c789b44186c1a4e08a2))
+
+```js
+// Globals
+let targetInt; // The target number to stop the wheel on
+let pushed = false; // Has the stop button been pushed - false is default
+
+// DOM Elements
+const spinningElem = document.getElementById('spinning'); // The spinning number
+const buttonElem = document.getElementById('buttonPressed');
+const targetElem = document.getElementById('targetNum');
+const resultElem = document.getElementById('result'); // Display your result message here
+
+// Functions
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const buttonPressed = () => (pushed = true);
+
+const setTargetInt = () => {
+  targetInt = Math.floor(Math.random() * 101);
+  targetElem.innerText = targetInt;
+};
+
+const spin = async () => {
+  let i = 0;
+  while (!pushed) {
+    i = i >= 100 ? 0 : i + 1;
+    spinningElem.innerText = i;
+    await sleep(75); // Paste this wherever you need to sleep the incrimentor
+  }
+
+  stop(i); // Trigger this function when the STOP button has been pushed
+};
+
+const stop = (i) => {
+  const diff = Math.abs(i - targetInt);
+
+  if (diff === 0) {
+    resultElem.innerText = `Yay! You did it!`;
+  } else {
+    resultElem.innerText = `Oh no, you lose! Off by ${diff}`;
+  }
+};
+
+// Event listeners
+buttonElem.addEventListener('click', buttonPressed);
+
+// Init
+setTargetInt();
+spin();
+```
+
+### Official solution ([🔗](https://scrimba.com/scrim/co088427fb17f3f8ff74259e2))
+
+```js
+// javascript
+
+//globals
+var pushed = false; //Has the stop button been pushed - false is default
+var targetInt; //The target number to stop the wheel on
+var spinningElem = document.getElementById('spinning'); //The spinning number
+
+//event listener
+document
+  .getElementById('buttonPressed')
+  .addEventListener('click', buttonPressed);
+
+//When the stop button is pushed
+function buttonPressed() {
+  pushed = true;
+}
+
+//set the target Int
+function setTargetInt() {
+  var targetElem = document.getElementById('targetNum');
+  targetInt = Math.floor(Math.random() * 101);
+  targetElem.innerHTML = targetInt;
+}
+
+//sleep const
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
+
+//number spinner
+const spin = async () => {
+  for (var i = 0; i < 101; i++) {
+    if (i == 100) {
+      i = 0;
+    }
+    if (pushed == true) {
+      stop(i); //Trigger this function when the STOP button has been pushed
+      break;
+    } else {
+      spinningElem.innerHTML = i;
+      await sleep(75); //Paste this
+    }
+  }
+};
+
+function stop(i) {
+  var offBy = Math.abs(targetInt - (i - 1));
+  var message;
+
+  if (offBy == 0) {
+    message = 'You Win!';
+  } else {
+    message = 'Oh no, you lose! Off by ' + offBy.toString();
+  }
+  var result = document.getElementById('result');
+  result.innerHTML = message;
+}
+
+setTargetInt();
+spin();
+```
+
+And that's it!
+
+I would like to thank [**Scrimba**](https://scrimba.com) for organizing this (it was a lot of fun!). And congratulations to [**@bhagwan_gb**](https://twitter.com/bhagwan_gb), who won the big prize!
+
+See you all on [**\#JavaScriptmas**](https://twitter.com/hashtag/JavaScriptmas) 2021!
 
 Photo by [Michael Hacker](https://unsplash.com/@michael_hacker) on [Unsplash](https://unsplash.com/photos/OM5Zy3_7pGU)
