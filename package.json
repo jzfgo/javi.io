@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
     "clean": "gatsby clean",
-    "build": "gatsby build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider gatsby build",
     "deploy": "gh-pages --dotfiles -d public"
   },
   "dependencies": {
