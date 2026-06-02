@@ -54,6 +54,15 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "GTM-N7RN8K79",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+      },
+    },
+    /*
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-7695020-1',
@@ -65,5 +74,6 @@ module.exports = {
         cookieDomain: 'javi.io'
       }
     }
+    */
   ]
 };
