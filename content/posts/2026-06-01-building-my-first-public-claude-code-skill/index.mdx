@@ -1,0 +1,84 @@
+---
+title: "Building My First Public Skill for Claude Code: The 1on1"
+slug: "building-my-first-public-claude-code-skill-the-1on1"
+author: Javier Zapata
+date: 2026-06-01
+hero: ./images/hero.png
+excerpt: I built a /1on1 slash command for Claude Code that runs a structured professional check-in between me and my AI collaborator. This is the story of how and why.
+---
+
+**TL;DR:** I built a `/1on1` slash command for Claude Code to run a structured check-in with my AI collaborator. It preps silently from git history, asks one question at a time, self-reflects, delivers a report, persists action items where Claude sees them, and schedules the next session. It is my first public skill, available at [github.com/jzfgo/agents](https://github.com/jzfgo/agents).
+
+---
+
+I have used Claude Code daily for several months. I soon noticed that every session starts fresh. Claude reads the codebase, extracts context from `CLAUDE.md`, and begins work—yet retains no memory of our past collaboration. It lacks accountability and a systematic way to improve. An infinitely patient assistant, it forgets everything when the window closes.
+
+While effective for completing tasks, this approach misses a vital element.
+
+Regular 1on1s—structured check-ins between managers and direct reports—exist for this reason. They surface issues before they compound, establish commitments, and demand accountability. Over time, the relationship improves.
+
+I wanted that accountability in Claude Code.
+
+## What the skill does
+
+The `/1on1` skill conducts this check-in in seven steps:
+
+**1. Silent preparation.** First, Claude reads the `git log`, `CLAUDE.md`, open TODOs, and past reviews in `.claude/reviews/`. It assesses what shipped, what failed, what was promised, and what themes recur.
+
+**2. Opening.** Claude states the project name, recent git activity, and session themes, then immediately asks the first question without warmup.
+
+**3. The interview.** Asking one question at a time, Claude evaluates its own performance (quality, errors, tools, and style) and your workflow (prompts, underused features, and friction). The goal is candid assessment, not validation.
+
+**4. The report.** Claude saves a structured markdown report—detailing wins, improvements, commitments, observations, action items, and a future review date—to `.claude/reviews/YYYY-MM-DD.md`.
+
+**5. CLAUDE.md persistence.** It writes open action items directly into `CLAUDE.md`, the file Claude reads at the start of every session. These items become active context. An inline instruction directs Claude to surface relevant issues immediately rather than waiting for the next check-in.
+
+**6. Scheduling.** Claude offers to schedule a remote agent that runs before the next review. The agent reads the git log, identifies changes, and saves a prep briefing to `.claude/reviews/YYYY-MM-DD-prep.md` to assemble context beforehand.
+
+**7. Done.** In practice, this means: "See you next week."
+
+## The hard parts
+
+### Making self-reflection honest
+
+In early drafts, Claude's self-assessments were politely useless, offering generic critiques like "I could improve my communication."
+
+I resolved this by enforcing specificity: the skill scans the git history for `fix:`, `revert:`, `wip`, or `attempt` in commit messages. When it finds these signs of struggle, it demands that Claude name the exact failures.
+
+Without this, the review is mere theater.
+
+### The follow-through problem
+
+Initial feedback raised a critical question: "How will Claude Code act on these action items?"
+
+Most review processes fail here: insights are recorded in a report and promptly forgotten.
+
+Because Claude reads `CLAUDE.md` at the start of every session, writing action items there puts them in context immediately. The pressure to keep `CLAUDE.md` lean creates a natural incentive to complete and remove these items.
+
+### The scheduling problem
+
+A second question arose: "How will Claude Code know when it is time for a review?"
+
+To create a forcing function, the skill schedules a remote agent. This one-shot cloud routine compiles a prep briefing before the next scheduled date. While you must still trigger `/1on1` manually, the prep is automated and scheduled.
+
+## The first real session
+
+I first tested the skill against [CarroQueSí](https://github.com/jzfgo/carroquesi), a collaborative grocery list app. Shipping three versions in four days provided ample material.
+
+Silent preparation revealed patterns I would have missed: `fix:` commits appearing immediately after features landed, and an Alembic migration conflict that required a recovery commit. The cause was clear: I run Claude Code, Codex CLI, and Antigravity CLI in parallel across separate git worktrees as a tiered-capability system. Two worktrees had generated migrations from the same parent commit, causing a classic split-head conflict.
+
+We resolved this by establishing a convention: write migrations as the final step before merging, after rebasing on `main`. We documented this in `AGENTS.md` during our session. The 1on1 surfaced this pattern clearly enough to prompt action.
+
+The check-in also codified another known issue: agents routinely bypass worktree rules and neglect `TODO` and `CHANGELOG` files, treating them as optional cleanups rather than requirements for completion. Writing these action items where all three agent harnesses read them is far more durable than repeating them in prompts.
+
+The next review is scheduled. A remote agent will prepare the briefing on June 8 at 11:00 AM to assess how our commitments held up.
+
+## Try it
+
+The skill is available in my repository: [github.com/jzfgo/agents](https://github.com/jzfgo/agents). Run `/1on1` in any project directory to start.
+
+---
+
+My primary takeaway is that mechanism matters more than content. A review saved in a forgotten file is merely documentation. Those same action items embedded in `CLAUDE.md` remain active: they shape every session, invite natural follow-up, and demand resolution.
+
+Periodic reflection is useful; persistent reflection is essential.
