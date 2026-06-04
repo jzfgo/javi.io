@@ -1,6 +1,7 @@
 ---
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
+import Logo from "@components/Logo.astro";
 import { SITE } from "@consts";
 
 const locale = Astro.currentLocale ?? "es";
@@ -13,10 +14,8 @@ const altPath = Astro.url.pathname.startsWith(`/${locale}`)
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href={`/${locale}/`} underline={false}>
-        <div class="font-semibold">
-          {SITE.NAME}
-        </div>
+      <Link href={`/${locale}/`} underline={false} aria-label={SITE.NAME}>
+        <Logo />
       </Link>
       <nav class="flex gap-1 items-center">
         <Link href={`/${locale}/blog`}>
