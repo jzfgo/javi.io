@@ -30,10 +30,6 @@ const altPath = Astro.url.pathname.startsWith(`/${locale}`)
           projects
         </Link>
         <span>{`/`}</span>
-        <Link href="/about">
-          about
-        </Link>
-        <span>{`/`}</span>
         <Link href={altPath} aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
           {otherLocale.toUpperCase()}
         </Link>
