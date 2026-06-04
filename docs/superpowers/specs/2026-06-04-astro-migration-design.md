@@ -22,23 +22,24 @@ Migrate javi.io from Gatsby v2 + `@narative/gatsby-theme-novela` to Astro v4 + A
 
 ## Section 2 — i18n Architecture
 
-- Astro built-in i18n: `defaultLocale: "es"`, `locales: ["es", "en"]`, `routing: "prefix-other-locales"`
+- Astro built-in i18n: `defaultLocale: "es"`, `locales: ["es", "en"]`, `routing: "prefix-always"`
 - URL structure:
-  - Spanish (default): `/blog/slug` — no prefix
+  - Spanish: `/es/blog/slug`
   - English: `/en/blog/slug`
-  - Listings: `/blog` (ES) and `/en/blog` (EN)
+  - Listings: `/es/blog` (ES) and `/en/blog` (EN)
+  - Root `/`: JS redirect to `/es/` or `/en/` based on `navigator.language`
 - Astro filenames are derived from the live Gatsby slugs, sanitized to remove special characters (`!`, `'`, `()`). Each redirect is a `public/<old-gatsby-slug>/index.html` file with a `<meta http-equiv="refresh">` pointing to the new URL.
 
 | Old Gatsby URL | New Astro URL | Redirect needed? |
 |---|---|---|
-| `/hola-mundo!` | `/blog/hola-mundo` | yes (`!` removed) |
-| `/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio` | `/blog/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio` | no (slug identical, only prefix changes) |
-| `/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19` | `/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19` | no (slug identical, only prefix changes) |
-| `/sudo-en-linux-con-touch-id-(sin-morir-en-el-intento)` | `/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento` | yes (`()` removed) |
+| `/hola-mundo!` | `/es/blog/hola-mundo` | yes (`!` removed) |
+| `/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio` | `/es/blog/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio` | no (slug identical, only prefix changes) |
+| `/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19` | `/es/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19` | no (slug identical, only prefix changes) |
+| `/sudo-en-linux-con-touch-id-(sin-morir-en-el-intento)` | `/es/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento` | yes (`()` removed) |
 | `/my-recap-of-scrimba's-javascriptmas` | `/en/blog/my-recap-of-scrimbas-javascriptmas` | yes (`'` removed) |
 | `/building-my-first-public-claude-code-skill-the-1on1` | `/en/blog/building-my-first-public-claude-code-skill-the-1on1` | no (slug identical, only prefix changes) |
 
-Note: all posts also need a root→`/blog/` prefix redirect (e.g. `/diez-cosas-...` → `/blog/diez-cosas-...`), since Novela serves at root and Astro Nano serves under `/blog/`.
+Note: all ES posts also need a root→`/es/blog/` prefix redirect (e.g. `/diez-cosas-...` → `/es/blog/diez-cosas-...`), since Novela serves at root and Astro Nano serves under `/es/blog/`. The root `/` itself is a static `public/index.html` that JS-redirects to `/es/` or `/en/` via `navigator.language`.
 
 - Posts with both translations share the same slug across languages (e.g., `es/diez-cosas-...` ↔ `en/diez-cosas-...`)
 - Posts not yet translated simply absent from the other language's listing
@@ -106,7 +107,7 @@ Astro Nano used as-is. Only the minimum changes needed for i18n and content to w
 1. **`astro.config.mjs`** — add `i18n` config, `site: "https://javi.io"`, `@astrojs/sitemap` with i18n locales
 2. **`src/consts.ts`** — `SITE.title = "Hic sunt dracones"`, `SITE.description = "Divagando."`, social links (LinkedIn, GitHub, Twitter, Instagram)
 3. **`src/content/config.ts`** — define two separate collections (`blog-es`, `blog-en`) sharing the same zod schema (`title`, `description`, `date`, `draft?`, `translationKey?`). Separate collections avoid per-query language filtering and map cleanly onto the two locale route files.
-4. **Routing** — duplicate Nano's `src/pages/blog/` routes into `src/pages/en/blog/` for the EN locale
+4. **Routing** — rename Nano's `src/pages/blog/` to `src/pages/es/blog/` for the ES locale; duplicate into `src/pages/en/blog/` for EN. `src/pages/index.astro` moves to `src/pages/es/index.astro`; root `/` is handled by a static `public/index.html` that JS-redirects (`navigator.language` → `/es/` or `/en/`)
 5. **Language switcher** — post layout queries the other collection for a matching `translationKey`; renders a link to the translation if found, renders nothing if not. No special handling needed for untranslated posts.
 6. **`<BaseHead>`** — add GTM head/body snippet
 7. **`public/`** — add `CNAME` and all redirect files per the table in Section 2
