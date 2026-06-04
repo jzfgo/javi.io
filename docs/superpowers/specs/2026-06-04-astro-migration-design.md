@@ -11,7 +11,7 @@ Migrate javi.io from Gatsby v2 + `@narative/gatsby-theme-novela` to Astro v4 + A
 
 ## Section 1 — Repository & Infrastructure
 
-- New git branch `astro-migration` with a worktree at `../javi.io-astro`
+- New git branch `astro-migration` with a worktree at `.worktrees/astro-migration`
 - Base: scaffolded from `markhorn-dev/astro-nano`
 - Gatsby code stays untouched on `master` until the new site is ready to ship
 - Deployment: manual `npm run deploy` via `gh-pages` package (unchanged)
