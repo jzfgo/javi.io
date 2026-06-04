@@ -27,7 +27,8 @@ Migrate javi.io from Gatsby v2 + `@narative/gatsby-theme-novela` to Astro v4 + A
   - Spanish (default): `/blog/slug` — no prefix
   - English: `/en/blog/slug`
   - Listings: `/blog` (ES) and `/en/blog` (EN)
-- Gym post redirect: static HTML redirect file at `public/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio/index.html` pointing to `/blog/cqha-gym` (exact current Gatsby URL to be verified at implementation time)
+- All 6 existing posts get a static HTML redirect from their current Gatsby URL to their new Astro Nano URL. Gatsby Novela derives slugs from the post title (or the explicit `slug` frontmatter field where present); exact current URLs must be verified against the live site or Novela's slug logic at implementation time. Each redirect is a `public/<old-slug>/index.html` file with a `<meta http-equiv="refresh">` pointing to the new URL.
+- Known explicit slugs in frontmatter: `1password-ssh-agent-touchid-linux` has `slug: sudo en Linux con Touch ID (sin morir en el intento)` and `building-my-first-public-claude-code-skill` has `slug: building-my-first-public-claude-code-skill-the-1on1`
 - Posts with both translations share the same slug across languages (e.g., `es/cqha-gym.md` ↔ `en/cqha-gym.md`)
 - Posts not yet translated simply absent from the other language's listing
 
