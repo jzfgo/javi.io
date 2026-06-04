@@ -98,7 +98,7 @@ Expected: `src/content/` contains only `config.ts`. `src/pages/` contains `blog/
 export const collections = {};
 ```
 
-Also open `src/pages/rss.xml.ts` and change `getCollection("blog")` to `getCollection("blog-es")` now, so the file doesn't fail type-checking before Task 15 sets up the full RSS config. Just update the one reference — leave the rest of the file as-is for now.
+Also open `src/pages/rss.xml.ts` and change `getCollection("blog")` to `getCollection("blog-es")` now, so the file doesn't fail type-checking before Task 14 sets up the full RSS config. Just update the one reference — leave the rest of the file as-is for now.
 
 - [ ] **Step 4: Commit**
 
@@ -835,15 +835,38 @@ git commit -m "feat: wire EN blog listing and post pages from blog-en collection
 
 ---
 
-### Task 11: Update homepage
+### Task 11: Update homepage and root redirect
 
 **Files:**
-- Create: `src/pages/es/index.astro`
-- Delete: `src/pages/index.astro` (replaced by `src/pages/es/index.astro`; root `/` handled by Task 12's `public/index.html`)
+- Modify: `src/pages/index.astro` (root `/` — language-detection redirect)
+- Create: `src/pages/es/index.astro` (ES homepage at `/es/`)
 
-The Nano homepage shows blog, work experience, and projects. We keep only the latest blog posts (ES) and the social links section. With `prefix-always` routing, the ES homepage lives at `/es/` (`src/pages/es/index.astro`) and root `/` redirects via `public/index.html`.
+With `prefix-always` routing, the ES homepage lives at `/es/`. Astro does not auto-redirect `/` to the default locale with `prefix-always`, so we convert the existing `src/pages/index.astro` into a language-detection redirect — no extra files needed.
 
-- [ ] **Step 1: Create `src/pages/es/index.astro`**
+- [ ] **Step 1: Replace `src/pages/index.astro` with the locale redirect**
+
+```astro
+---
+---
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javi.io</title>
+    <script>
+      var lang = (navigator.language || navigator.userLanguage || "es").toLowerCase();
+      window.location.replace(lang.startsWith("en") ? "/en/" : "/es/");
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/es/" />
+    </noscript>
+  </head>
+  <body>
+    <p><a href="/es/">Ir al blog en español</a> / <a href="/en/">Go to blog in English</a></p>
+  </body>
+</html>
+```
+
+- [ ] **Step 2: Create `src/pages/es/index.astro`**
 
 ```bash
 mkdir -p src/pages/es
@@ -918,7 +941,7 @@ const blog = (await getCollection("blog-es"))
 </PageLayout>
 ```
 
-- [ ] **Step 2: Run type check**
+- [ ] **Step 3: Run type check**
 
 ```bash
 npx astro check
@@ -926,63 +949,24 @@ npx astro check
 
 Expected: 0 errors.
 
-- [ ] **Step 3: Start dev server and verify the homepage**
+- [ ] **Step 4: Start dev server and verify**
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:4321/es/` — should show "Divagando." text, 3 most recent ES posts, and social links. Stop the server.
+Open `http://localhost:4321` — should immediately redirect to `/es/` or `/en/`. Open `http://localhost:4321/es/` directly — should show "Divagando." text, 3 most recent ES posts, and social links. Stop the server.
 
-- [ ] **Step 4: Remove old index.astro and commit**
+- [ ] **Step 5: Commit**
 
 ```bash
-git rm src/pages/index.astro
-git add src/pages/es/index.astro
-git commit -m "feat: move ES homepage to /es/ (src/pages/es/index.astro)"
+git add src/pages/index.astro src/pages/es/index.astro
+git commit -m "feat: add locale redirect at / and ES homepage at /es/"
 ```
 
 ---
 
-### Task 12: Add root locale redirect
-
-**Files:**
-- Create: `public/index.html`
-
-Root `/` is not served by Astro with `prefix-always` routing — we serve a static HTML file that JS-redirects the visitor to the right locale based on `navigator.language`. Falls back to `/es/` for non-English browsers; English browsers go to `/en/`.
-
-- [ ] **Step 1: Create `public/index.html`**
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>javi.io</title>
-    <script>
-      var lang = (navigator.language || navigator.userLanguage || "es").toLowerCase();
-      window.location.replace(lang.startsWith("en") ? "/en/" : "/es/");
-    </script>
-    <noscript>
-      <meta http-equiv="refresh" content="0; url=/es/" />
-    </noscript>
-  </head>
-  <body>
-    <p><a href="/es/">Ir al blog en español</a> / <a href="/en/">Go to blog in English</a></p>
-  </body>
-</html>
-```
-
-- [ ] **Step 2: Commit**
-
-```bash
-git add public/index.html
-git commit -m "feat: add root locale redirect (navigator.language → /es/ or /en/)"
-```
-
----
-
-### Task 13: Inject Google Tag Manager
+### Task 12: Inject Google Tag Manager
 
 **Files:**
 - Modify: `src/components/Head.astro`
@@ -1032,7 +1016,7 @@ git commit -m "feat: inject GTM-N7RN8K79"
 
 ---
 
-### Task 14: Add CNAME and URL redirects
+### Task 13: Add CNAME and URL redirects
 
 **Files:**
 - Create: `public/CNAME`
@@ -1183,7 +1167,7 @@ git commit -m "feat: add CNAME and URL redirects from old Gatsby slugs"
 
 ---
 
-### Task 15: Update RSS feed and deployment scripts
+### Task 14: Update RSS feed and deployment scripts
 
 **Files:**
 - Modify: `src/pages/rss.xml.ts`
@@ -1250,7 +1234,7 @@ git commit -m "feat: update RSS feed for blog-es and add deploy script"
 
 ---
 
-### Task 16: Full build verification
+### Task 15: Full build verification
 
 - [ ] **Step 1: Run full build**
 
