@@ -7,7 +7,7 @@ import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog"))
+  const posts = (await getCollection("blog-en"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post) => ({
@@ -15,19 +15,29 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"blog-en">;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const esPosts = await getCollection("blog-es");
+const translation = post.data.translationKey
+  ? esPosts.find(p => p.data.translationKey === post.data.translationKey)
+  : undefined;
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrev href="/blog">
+      <BackToPrev href="/en/blog">
         Back to blog
       </BackToPrev>
     </div>
+    {translation && (
+      <div class="animate text-sm mt-4 opacity-75">
+        <a href={`/es/blog/${translation.slug}`}>Leer en español →</a>
+      </div>
+    )}
     <div class="space-y-1 my-10">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
