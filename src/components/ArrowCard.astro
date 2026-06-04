@@ -2,20 +2,22 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  entry: CollectionEntry<"blog-es"> | CollectionEntry<"blog-en"> | CollectionEntry<"projects">;
+  entry: CollectionEntry<"blog-es"> | CollectionEntry<"blog-en"> | CollectionEntry<"projects"> | CollectionEntry<"work">;
   href: string;
 };
 
 const { entry, href } = Astro.props;
+const title = entry.collection === "work" ? entry.data.company : entry.data.title;
+const description = entry.collection === "work" ? entry.data.role : entry.data.description;
 ---
 
 <a href={href} class="relative group flex flex-nowrap gap-4 py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
   <div class="flex flex-col flex-1 truncate justify-center">
     <div class="font-semibold">
-      {entry.data.title}
+      {title}
     </div>
     <div class="text-sm">
-      {entry.data.description}
+      {description}
     </div>
   </div>
   <svg
