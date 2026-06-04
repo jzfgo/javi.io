@@ -27,9 +27,20 @@ Migrate javi.io from Gatsby v2 + `@narative/gatsby-theme-novela` to Astro v4 + A
   - Spanish (default): `/blog/slug` — no prefix
   - English: `/en/blog/slug`
   - Listings: `/blog` (ES) and `/en/blog` (EN)
-- All 6 existing posts get a static HTML redirect from their current Gatsby URL to their new Astro Nano URL. Gatsby Novela derives slugs from the post title (or the explicit `slug` frontmatter field where present); exact current URLs must be verified against the live site or Novela's slug logic at implementation time. Each redirect is a `public/<old-slug>/index.html` file with a `<meta http-equiv="refresh">` pointing to the new URL.
-- Known explicit slugs in frontmatter: `1password-ssh-agent-touchid-linux` has `slug: sudo en Linux con Touch ID (sin morir en el intento)` and `building-my-first-public-claude-code-skill` has `slug: building-my-first-public-claude-code-skill-the-1on1`
-- Posts with both translations share the same slug across languages (e.g., `es/cqha-gym.md` ↔ `en/cqha-gym.md`)
+- Astro filenames are derived from the live Gatsby slugs, sanitized to remove special characters (`!`, `'`, `()`). Each redirect is a `public/<old-gatsby-slug>/index.html` file with a `<meta http-equiv="refresh">` pointing to the new URL.
+
+| Old Gatsby URL | New Astro URL | Redirect needed? |
+|---|---|---|
+| `/hola-mundo!` | `/blog/hola-mundo` | yes (`!` removed) |
+| `/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio` | `/blog/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio` | no (slug identical, only prefix changes) |
+| `/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19` | `/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19` | no (slug identical, only prefix changes) |
+| `/sudo-en-linux-con-touch-id-(sin-morir-en-el-intento)` | `/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento` | yes (`()` removed) |
+| `/my-recap-of-scrimba's-javascriptmas` | `/en/blog/my-recap-of-scrimbas-javascriptmas` | yes (`'` removed) |
+| `/building-my-first-public-claude-code-skill-the-1on1` | `/en/blog/building-my-first-public-claude-code-skill-the-1on1` | no (slug identical, only prefix changes) |
+
+Note: all posts also need a root→`/blog/` prefix redirect (e.g. `/diez-cosas-...` → `/blog/diez-cosas-...`), since Novela serves at root and Astro Nano serves under `/blog/`.
+
+- Posts with both translations share the same slug across languages (e.g., `es/diez-cosas-...` ↔ `en/diez-cosas-...`)
 - Posts not yet translated simply absent from the other language's listing
 
 ---
@@ -40,17 +51,17 @@ Migrate javi.io from Gatsby v2 + `@narative/gatsby-theme-novela` to Astro v4 + A
 
 ```
 src/content/blog-es/
-  cqha-gym.md
   hola-mundo.md
-  coronafreemium.md
-  1password-ssh-agent-touchid-linux.md
+  diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio.md
+  servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19.md
+  sudo-en-linux-con-touch-id-sin-morir-en-el-intento.md
 
 src/content/blog-en/
-  javascriptmas.md
-  building-my-first-public-claude-code-skill.md
+  my-recap-of-scrimbas-javascriptmas.md
+  building-my-first-public-claude-code-skill-the-1on1.md
 
 public/blog/
-  cqha-gym/
+  diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio/
     (images)
   hola-mundo/
     (images)
@@ -76,14 +87,14 @@ public/blog/
 
 ### Initial language assignment
 
-| Post | Language |
+| Astro filename | Language |
 |---|---|
-| hola-mundo | `es` |
-| cqha-gym | `es` |
-| coronafreemium | `es` |
-| 1password-ssh-agent-touchid-linux | `es` |
-| javascriptmas | `en` |
-| building-my-first-public-claude-code-skill | `en` |
+| `hola-mundo.md` | `es` |
+| `diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio.md` | `es` |
+| `servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19.md` | `es` |
+| `sudo-en-linux-con-touch-id-sin-morir-en-el-intento.md` | `es` |
+| `my-recap-of-scrimbas-javascriptmas.md` | `en` |
+| `building-my-first-public-claude-code-skill-the-1on1.md` | `en` |
 
 ---
 
@@ -96,7 +107,7 @@ Astro Nano used as-is. Only the minimum changes needed for i18n and content to w
 3. **`src/content/config.ts`** — define two separate collections (`blog-es`, `blog-en`) sharing the same zod schema (`title`, `description`, `date`, `draft?`). Separate collections avoid per-query language filtering and map cleanly onto the two locale route files.
 4. **Routing** — duplicate Nano's `src/pages/blog/` routes into `src/pages/en/blog/` for the EN locale
 5. **`<BaseHead>`** — add GTM head/body snippet
-6. **`public/`** — add `CNAME`, gym post redirect file
+6. **`public/`** — add `CNAME` and all redirect files per the table in Section 2
 
 No visual, font, or color changes.
 
