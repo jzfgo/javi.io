@@ -78,6 +78,7 @@ public/blog/
 | `author` | — | dropped (single-author site) |
 | `hero` | — | dropped for now |
 | `slug` | — | becomes the filename |
+| — | `translationKey` | new optional field; posts sharing the same key are treated as translations of each other |
 
 ### Content changes per post
 
@@ -104,10 +105,11 @@ Astro Nano used as-is. Only the minimum changes needed for i18n and content to w
 
 1. **`astro.config.mjs`** — add `i18n` config, `site: "https://javi.io"`, `@astrojs/sitemap` with i18n locales
 2. **`src/consts.ts`** — `SITE.title = "Hic sunt dracones"`, `SITE.description = "Divagando."`, social links (LinkedIn, GitHub, Twitter, Instagram)
-3. **`src/content/config.ts`** — define two separate collections (`blog-es`, `blog-en`) sharing the same zod schema (`title`, `description`, `date`, `draft?`). Separate collections avoid per-query language filtering and map cleanly onto the two locale route files.
+3. **`src/content/config.ts`** — define two separate collections (`blog-es`, `blog-en`) sharing the same zod schema (`title`, `description`, `date`, `draft?`, `translationKey?`). Separate collections avoid per-query language filtering and map cleanly onto the two locale route files.
 4. **Routing** — duplicate Nano's `src/pages/blog/` routes into `src/pages/en/blog/` for the EN locale
-5. **`<BaseHead>`** — add GTM head/body snippet
-6. **`public/`** — add `CNAME` and all redirect files per the table in Section 2
+5. **Language switcher** — post layout queries the other collection for a matching `translationKey`; renders a link to the translation if found, renders nothing if not. No special handling needed for untranslated posts.
+6. **`<BaseHead>`** — add GTM head/body snippet
+7. **`public/`** — add `CNAME` and all redirect files per the table in Section 2
 
 No visual, font, or color changes.
 
