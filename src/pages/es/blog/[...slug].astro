@@ -38,6 +38,15 @@ const translation = post.data.translationKey
         <a href={`/en/blog/${translation.slug}`}>Read in English →</a>
       </div>
     )}
+    {post.data.hero && (
+      <div class="animate my-10">
+        <img
+          src={post.data.hero}
+          alt={post.data.title}
+          class="w-full rounded-lg object-cover max-h-96"
+        />
+      </div>
+    )}
     <div class="space-y-1 my-10">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">

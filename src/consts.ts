@@ -28,6 +28,12 @@ export const PROJECTS: Metadata = {
   DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
 };
 
+export const AUTHOR = {
+  NAME: "Javier Zapata",
+  BIO: "Soy un desarrollador Full Stack, diseñador de UX/UI y –aprendiz de– CRO que lleva cerca de 20 años ayudando a marcas a crecer.",
+  AVATAR: "/avatar.jpg",
+};
+
 export const SOCIALS: Socials = [
   { NAME: "linkedin", HREF: "https://www.linkedin.com/in/jzfgo" },
   { NAME: "github",   HREF: "https://github.com/jzfgo" },

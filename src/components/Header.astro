@@ -2,31 +2,41 @@
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
+
+const locale = Astro.currentLocale ?? "es";
+const otherLocale = locale === "es" ? "en" : "es";
+const altPath = Astro.url.pathname.startsWith(`/${locale}`)
+  ? Astro.url.pathname.replace(`/${locale}`, `/${otherLocale}`)
+  : `/${otherLocale}/`;
 ---
 
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
+      <Link href={`/${locale}/`} underline={false}>
         <div class="font-semibold">
           {SITE.NAME}
         </div>
       </Link>
-      <nav class="flex gap-1">
-        <Link href="/blog">
+      <nav class="flex gap-1 items-center">
+        <Link href={`/${locale}/blog`}>
           blog
         </Link>
-        <span>
-          {`/`}
-        </span>
+        <span>{`/`}</span>
         <Link href="/work">
           work
         </Link>
-        <span>
-          {`/`}
-        </span>
+        <span>{`/`}</span>
         <Link href="/projects">
           projects
+        </Link>
+        <span>{`/`}</span>
+        <Link href="/about">
+          about
+        </Link>
+        <span>{`/`}</span>
+        <Link href={altPath} aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
+          {otherLocale.toUpperCase()}
         </Link>
       </nav>
     </div>

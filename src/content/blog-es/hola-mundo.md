@@ -2,6 +2,7 @@
 title: "¡Hola Mundo!"
 description: "Esta entrada llega diez años tarde."
 date: 2020-01-01
+hero: "/blog/hola-mundo/yancy-min-842ofHC6MaI-unsplash.jpg"
 ---
 Esta entrada llega diez años tarde. Permíteme explicar.
 

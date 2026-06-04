@@ -2,6 +2,7 @@
 title: "Building My First Public Skill for Claude Code: The 1on1"
 description: "I built a /1on1 slash command for Claude Code that runs a structured professional check-in between me and my AI collaborator. This is the story of how and why."
 date: 2026-06-01
+hero: "/blog/building-my-first-public-claude-code-skill-the-1on1/hero.png"
 ---
 
 **TL;DR:** I built a `/1on1` slash command for Claude Code to run a structured check-in with my AI collaborator. It preps silently from git history, asks one question at a time, self-reflects, delivers a report, persists action items where Claude sees them, and schedules the next session. It is my first public skill, available at [github.com/jzfgo/agents](https://github.com/jzfgo/agents).

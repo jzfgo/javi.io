@@ -6,6 +6,7 @@ const blogSchema = z.object({
   date: z.coerce.date(),
   draft: z.boolean().optional(),
   translationKey: z.string().optional(),
+  hero: z.string().optional(),
 });
 
 const blogEs = defineCollection({ type: "content", schema: blogSchema });

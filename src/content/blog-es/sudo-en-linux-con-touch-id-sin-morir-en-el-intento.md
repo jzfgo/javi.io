@@ -2,6 +2,7 @@
 title: "sudo en Linux con Touch ID (sin morir en el intento)"
 description: "Configura el agente SSH de 1Password para usar Touch ID en tu servidor Linux."
 date: 2026-05-01
+hero: "/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/0a0a3aa8-69a7-43f9-8dbb-df2ab9e4c8c5.png"
 ---
 
 **TL;DR**: Con el agente SSH de 1Password, `ForwardAgent yes` en el Mac y `pam_rssh` en Linux puedes usar Touch ID para autenticarte en servidores remotos, incluyendo `sudo`.
