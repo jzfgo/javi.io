@@ -5,7 +5,7 @@ import Container from "@components/Container.astro";
 import { dateRange } from "@lib/utils";
 import { WORK } from "@consts";
 
-const collection = (await getCollection("work"))
+const collection = (await getCollection("work-es"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf());
 
 const work = await Promise.all(
@@ -20,10 +20,10 @@ const work = await Promise.all(
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
-        Work
+        Experiencia
       </div>
       <ul class="flex flex-col space-y-4">
-        { 
+        {
           work.map(entry => (
             <li class="animate">
               <div class="text-sm opacity-75">
@@ -42,10 +42,6 @@ const work = await Promise.all(
           ))
         }
       </ul>
-<!-- 
-      <ul class="animate flex flex-col gap-4">
-
-      </ul> -->
     </div>
   </Container>
 </PageLayout>

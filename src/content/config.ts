@@ -12,31 +12,33 @@ const blogSchema = z.object({
 const blogEs = defineCollection({ type: "content", schema: blogSchema });
 const blogEn = defineCollection({ type: "content", schema: blogSchema });
 
-const work = defineCollection({
-  type: "content",
-  schema: z.object({
-    company: z.string(),
-    role: z.string(),
-    dateStart: z.coerce.date(),
-    dateEnd: z.union([z.coerce.date(), z.string()]),
-  }),
+const workSchema = z.object({
+  company: z.string(),
+  role: z.string(),
+  dateStart: z.coerce.date(),
+  dateEnd: z.union([z.coerce.date(), z.string()]),
 });
 
-const projects = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    draft: z.boolean().optional(),
-    demoURL: z.string().optional(),
-    repoURL: z.string().optional(),
-  }),
+const workEs = defineCollection({ type: "content", schema: workSchema });
+const workEn = defineCollection({ type: "content", schema: workSchema });
+
+const projectsSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  date: z.coerce.date(),
+  draft: z.boolean().optional(),
+  demoURL: z.string().optional(),
+  repoURL: z.string().optional(),
 });
+
+const projectsEs = defineCollection({ type: "content", schema: projectsSchema });
+const projectsEn = defineCollection({ type: "content", schema: projectsSchema });
 
 export const collections = {
   "blog-es": blogEs,
   "blog-en": blogEn,
-  work,
-  projects,
+  "work-es": workEs,
+  "work-en": workEn,
+  "projects-es": projectsEs,
+  "projects-en": projectsEn,
 };

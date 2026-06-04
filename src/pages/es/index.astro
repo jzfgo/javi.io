@@ -11,11 +11,12 @@ const blog = (await getCollection("blog-es"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const work = (await getCollection("work"))
+const work = (await getCollection("work-es"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
   .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
-const projects = (await getCollection("projects"))
+const projects = (await getCollection("projects-es"))
+  .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 ---
@@ -57,14 +58,14 @@ const projects = (await getCollection("projects"))
           <h5 class="font-semibold text-black dark:text-white">
             Experiencia
           </h5>
-          <Link href="/work">
+          <Link href="/es/work">
             Ver todo
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
           {work.map(entry => (
             <li>
-              <ArrowCard entry={entry} href={`/work/${entry.slug}`} />
+              <ArrowCard entry={entry} href={`/es/work/${entry.slug}`} />
             </li>
           ))}
         </ul>
@@ -75,14 +76,14 @@ const projects = (await getCollection("projects"))
           <h5 class="font-semibold text-black dark:text-white">
             Proyectos
           </h5>
-          <Link href="/projects">
+          <Link href="/es/projects">
             Ver todos
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
           {projects.map(project => (
             <li>
-              <ArrowCard entry={project} href={`/projects/${project.slug}`} />
+              <ArrowCard entry={project} href={`/es/projects/${project.slug}`} />
             </li>
           ))}
         </ul>

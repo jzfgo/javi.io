@@ -22,11 +22,11 @@ const altPath = Astro.url.pathname.startsWith(`/${locale}`)
           blog
         </Link>
         <span>{`/`}</span>
-        <Link href="/work">
+        <Link href={`/${locale}/work`}>
           work
         </Link>
         <span>{`/`}</span>
-        <Link href="/projects">
+        <Link href={`/${locale}/projects`}>
           projects
         </Link>
         <span>{`/`}</span>

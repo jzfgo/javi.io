@@ -5,7 +5,7 @@ import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
 
-const projects = (await getCollection("projects"))
+const projects = (await getCollection("projects-es"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
@@ -14,13 +14,13 @@ const projects = (await getCollection("projects"))
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
-        Projects
+        Proyectos
       </div>
       <ul class="animate flex flex-col gap-4">
         {
           projects.map((project) => (
             <li>
-              <ArrowCard entry={project} href={`/projects/${project.slug}`} />
+              <ArrowCard entry={project} href={`/es/projects/${project.slug}`} />
             </li>
           ))
         }

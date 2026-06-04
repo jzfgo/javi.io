@@ -6,13 +6,13 @@ import { dateRange } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 
 export async function getStaticPaths() {
-  const work = await getCollection("work");
+  const work = await getCollection("work-es");
   return work.map((entry) => ({
     params: { slug: entry.slug },
     props: entry,
   }));
 }
-type Props = CollectionEntry<"work">;
+type Props = CollectionEntry<"work-es">;
 
 const entry = Astro.props;
 const { Content } = await entry.render();
@@ -21,8 +21,8 @@ const { Content } = await entry.render();
 <PageLayout title={entry.data.company} description={entry.data.role}>
   <Container>
     <div class="animate">
-      <BackToPrev href="/work">
-        Back to work
+      <BackToPrev href="/es/work">
+        Volver a experiencia
       </BackToPrev>
     </div>
     <div class="space-y-1 my-10">
