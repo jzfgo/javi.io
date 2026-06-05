@@ -22,7 +22,7 @@ const workSchema = z.object({
   role: z.string(),
   dateStart: z.string().transform(parseWorkDate),
   dateEnd: z.string().transform(val =>
-    ["Current", "Actualidad"].includes(val) ? val : parseWorkDate(val)
+    ["current", "actualidad"].includes(val.trim().toLowerCase()) ? val : parseWorkDate(val)
   ),
 });
 
