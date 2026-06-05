@@ -9,6 +9,10 @@ const otherLocale = locale === "es" ? "en" : "es";
 const altPath = Astro.url.pathname.startsWith(`/${locale}`)
   ? Astro.url.pathname.replace(`/${locale}`, `/${otherLocale}`)
   : `/${otherLocale}/`;
+
+const nav = locale === "es"
+  ? { blog: "blog", work: "experiencia", projects: "proyectos" }
+  : { blog: "blog", work: "work", projects: "projects" };
 ---
 
 <header>
@@ -19,15 +23,15 @@ const altPath = Astro.url.pathname.startsWith(`/${locale}`)
       </Link>
       <nav class="flex gap-1 items-center">
         <Link href={`/${locale}/blog`}>
-          blog
+          {nav.blog}
         </Link>
         <span>{`/`}</span>
         <Link href={`/${locale}/work`}>
-          work
+          {nav.work}
         </Link>
         <span>{`/`}</span>
         <Link href={`/${locale}/projects`}>
-          projects
+          {nav.projects}
         </Link>
         <span>{`/`}</span>
         <Link href={altPath} aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
