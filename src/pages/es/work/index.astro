@@ -33,13 +33,13 @@ const icons = Object.fromEntries(
       <ul class="flex flex-col space-y-4">
         {
           work.map(entry => (
-            <li class="animate flex gap-4">
+            <li id={entry.slug} class="animate flex gap-4">
               {icons[entry.slug] && (
                 <img src={icons[entry.slug]} alt="" class="size-16 rounded object-cover shrink-0 mt-1" />
               )}
               <div>
                 <div class="text-sm opacity-75">
-                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd, "es")}
                 </div>
                 <div class="font-semibold text-black dark:text-white">
                   {entry.data.company}

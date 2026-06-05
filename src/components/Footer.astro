@@ -4,6 +4,10 @@ import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
 
 const year = new Date().getFullYear();
+const locale = Astro.currentLocale ?? "es";
+const labels = locale === "es"
+  ? { light: "Tema claro", dark: "Tema oscuro", system: "Tema del sistema" }
+  : { light: "Light theme", dark: "Dark theme", system: "System theme" };
 ---
 
 <footer class="animate">
@@ -20,7 +24,7 @@ const year = new Date().getFullYear();
       <div class="flex flex-wrap gap-1 items-center">
         <button
           id="light-theme-button"
-          aria-label="Light theme"
+          aria-label={labels.light}
           class="group size-8 flex items-center justify-center rounded-full"
         >
           <svg
@@ -48,7 +52,7 @@ const year = new Date().getFullYear();
         </button>
         <button
           id="dark-theme-button"
-          aria-label="Dark theme"
+          aria-label={labels.dark}
           class="group size-8 flex items-center justify-center rounded-full"
         >
           <svg
@@ -68,7 +72,7 @@ const year = new Date().getFullYear();
         </button>
         <button
           id="system-theme-button"
-          aria-label="System theme"
+          aria-label={labels.system}
           class="group size-8 flex items-center justify-center rounded-full"
         >
           <svg

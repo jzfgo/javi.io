@@ -86,7 +86,7 @@ const projectIcons = Object.fromEntries(
         <ul class="flex flex-col gap-4">
           {work.map(entry => (
             <li>
-              <ArrowCard entry={entry} href={`/es/work/${entry.slug}`} icon={workIcons[entry.slug]} iconClass={entry.slug === 'interacso' ? 'dark:invert' : undefined} />
+              <ArrowCard entry={entry} href={`/es/work#${entry.slug}`} icon={workIcons[entry.slug]} iconClass={entry.slug === 'interacso' ? 'dark:invert' : undefined} />
             </li>
           ))}
         </ul>

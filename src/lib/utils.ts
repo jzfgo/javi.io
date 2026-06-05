@@ -20,21 +20,20 @@ export function readingTime(html: string) {
   return `${readingTimeMinutes} min read`;
 }
 
-export function dateRange(startDate: Date, endDate?: Date | string): string {
-  const startMonth = startDate.toLocaleString("default", { month: "short" });
+export function dateRange(startDate: Date, endDate?: Date | string, locale: string = "es"): string {
+  const startMonth = startDate.toLocaleString(locale, { month: "short" });
   const startYear = startDate.getFullYear().toString();
-  let endMonth;
-  let endYear;
 
+  let end = "";
   if (endDate) {
     if (typeof endDate === "string") {
-      endMonth = "";
-      endYear = endDate;
+      end = endDate;
     } else {
-      endMonth = endDate.toLocaleString("default", { month: "short" });
-      endYear = endDate.getFullYear().toString();
+      const endMonth = endDate.toLocaleString(locale, { month: "short" });
+      const endYear = endDate.getFullYear().toString();
+      end = `${endMonth} ${endYear}`;
     }
   }
 
-  return `${startMonth}${startYear} - ${endMonth}${endYear}`;
+  return `${startMonth} ${startYear} - ${end}`;
 }
