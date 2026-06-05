@@ -3,12 +3,47 @@ import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import Logo from "@components/Logo.astro";
 import { SITE } from "@consts";
+import { getCollection } from "astro:content";
 
 const locale = Astro.currentLocale ?? "es";
 const otherLocale = locale === "es" ? "en" : "es";
-const altPath = Astro.url.pathname.startsWith(`/${locale}/`)
-  ? Astro.url.pathname.replace(`/${locale}/`, `/${otherLocale}/`)
-  : `/${otherLocale}/`;
+
+// Attempt to resolve a translated equivalent for content detail pages
+const pathname = Astro.url.pathname;
+const blogDetailMatch = pathname.match(/^\/(en|es)\/blog\/(.+)$/);
+const projectDetailMatch = pathname.match(/^\/(en|es)\/projects\/(.+)$/);
+
+let altPath = `/${otherLocale}/`;
+
+if (blogDetailMatch) {
+  const slug = blogDetailMatch[2];
+  const currentPost = (await getCollection(`blog-${locale}` as "blog-en" | "blog-es"))
+    .find(p => p.slug === slug);
+  if (currentPost?.data.translationKey) {
+    const translation = (await getCollection(`blog-${otherLocale}` as "blog-en" | "blog-es"))
+      .find(p => p.data.translationKey === currentPost.data.translationKey);
+    altPath = translation
+      ? `/${otherLocale}/blog/${translation.slug}`
+      : `/${otherLocale}/blog`;
+  } else {
+    altPath = `/${otherLocale}/blog`;
+  }
+} else if (projectDetailMatch) {
+  const slug = projectDetailMatch[2];
+  const currentProject = (await getCollection(`projects-${locale}` as "projects-en" | "projects-es"))
+    .find(p => p.slug === slug);
+  if (currentProject) {
+    const translation = (await getCollection(`projects-${otherLocale}` as "projects-en" | "projects-es"))
+      .find(p => p.slug === currentProject.slug);
+    altPath = translation
+      ? `/${otherLocale}/projects/${translation.slug}`
+      : `/${otherLocale}/projects`;
+  } else {
+    altPath = `/${otherLocale}/projects`;
+  }
+} else if (pathname.startsWith(`/${locale}/`)) {
+  altPath = pathname.replace(`/${locale}/`, `/${otherLocale}/`);
+}
 
 const nav = locale === "es"
   ? { blog: "blog", work: "experiencia", projects: "proyectos" }

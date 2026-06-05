@@ -4,7 +4,7 @@ const robotsTxt = `
 User-agent: *
 Allow: /
 
-Sitemap: ${new URL("sitemap-index.xml", import.meta.env.SITE).href}
+Sitemap: ${new URL("sitemap-index.xml", import.meta.env.SITE ?? "http://localhost:4321").href}
 `.trim();
 
 export const GET: APIRoute = () => {

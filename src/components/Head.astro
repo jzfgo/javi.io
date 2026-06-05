@@ -18,7 +18,7 @@ interface Props {
   image?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 
 const { title, description, image = "/nano.png" } = Astro.props;
 ---
@@ -60,7 +60,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <ClientRouter  />
 
 <!-- RSS Link -->
-<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? Astro.url.origin)} />
 
 
 
