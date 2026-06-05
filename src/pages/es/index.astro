@@ -12,7 +12,7 @@ const blog = (await getCollection("blog-es"))
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const work = (await getCollection("work-es"))
-  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
+  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf())
   .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const projects = (await getCollection("projects-es"))

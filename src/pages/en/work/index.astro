@@ -6,7 +6,7 @@ import { dateRange } from "@lib/utils";
 import { WORK_EN as WORK } from "@consts";
 
 const collection = (await getCollection("work-en"))
-  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf());
+  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
 
 const work = await Promise.all(
   collection.map(async (item) => {

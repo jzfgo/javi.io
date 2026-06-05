@@ -15,7 +15,7 @@ export async function GET(context: Context) {
     description: HOME.DESCRIPTION,
     site: context.site,
     items: blog
-      .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+      .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
       .map((post) => ({
         title: post.data.title,
         description: post.data.description,
