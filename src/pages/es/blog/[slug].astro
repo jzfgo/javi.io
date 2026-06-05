@@ -21,9 +21,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 
 const enPosts = await getCollection("blog-en");
-const translation = post.data.translationKey
-  ? enPosts.find(p => p.data.translationKey === post.data.translationKey)
-  : undefined;
+const translation = enPosts.find(p => p.slug === post.slug);
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>

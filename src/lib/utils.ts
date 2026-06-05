@@ -13,16 +13,16 @@ export function readingTime(html: string): number {
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string, locale: string = "es"): string {
-  const startMonth = startDate.toLocaleString(locale, { month: "short" });
-  const startYear = startDate.getFullYear().toString();
+  const startMonth = startDate.toLocaleString(locale, { month: "short", timeZone: "UTC" });
+  const startYear = startDate.getUTCFullYear().toString();
 
   let end = "";
   if (endDate) {
     if (typeof endDate === "string") {
       end = endDate;
     } else {
-      const endMonth = endDate.toLocaleString(locale, { month: "short" });
-      const endYear = endDate.getFullYear().toString();
+      const endMonth = endDate.toLocaleString(locale, { month: "short", timeZone: "UTC" });
+      const endYear = endDate.getUTCFullYear().toString();
       end = `${endMonth} ${endYear}`;
     }
   }
