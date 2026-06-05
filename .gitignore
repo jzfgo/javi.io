@@ -13,7 +13,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
@@ -22,4 +21,11 @@ pnpm-debug.log*
 .DS_Store
 ._.DS_Store
 ._*
+
+# Backups
 *~bak*
+
+# Git worktrees
+.worktrees/
+
+.netlify/
