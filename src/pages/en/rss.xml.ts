@@ -17,7 +17,7 @@ export async function GET(context: APIContext) {
         title: post.data.title,
         description: post.data.description,
         pubDate: post.data.date,
-        link: `/en/blog/${post.slug}`,
+        link: new URL(`/en/blog/${post.slug}`, context.site ?? "https://javi.io").toString(),
       })),
   });
 }
