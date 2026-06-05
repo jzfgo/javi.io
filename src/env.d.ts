@@ -5,4 +5,5 @@ interface Window {
   themeInitialized?: boolean;
   gtmInitialized?: boolean;
   dataLayer?: Record<string, unknown>[];
+  appInitialized?: boolean;
 }

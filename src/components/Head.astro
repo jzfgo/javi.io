@@ -162,8 +162,8 @@ const { title, description, image = "/nano.png" } = Astro.props;
   }
 
   // Register persistent listeners once (survives client-side navigations)
-  if (!(window as any).appInitialized) {
-    (window as any).appInitialized = true;
+  if (!window.appInitialized) {
+    window.appInitialized = true;
 
     document.addEventListener("scroll", onScroll, { passive: true });
 
