@@ -7,8 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 
 export function readingTime(html: string): number {
-  const textOnly = html.replace(/<[^>]+>/g, "");
-  const wordCount = textOnly.split(/\s+/).length;
+  const noCode = html.replace(/<pre[^>]*>[\s\S]*?<\/pre>/gi, "").replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
+  const textOnly = noCode.replace(/<[^>]+>/g, "");
+  const wordCount = textOnly.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(wordCount / 200));
 }
 

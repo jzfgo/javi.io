@@ -111,7 +111,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
   }
 
   function animate() {
-    const animateElements = document.querySelectorAll(".animate");
+    const animateElements = document.querySelectorAll(".animate:not(.show)");
 
     animateElements.forEach((element, index) => {
       setTimeout(() => {
