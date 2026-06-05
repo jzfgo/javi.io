@@ -75,7 +75,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", (event) => {
-      if (window.history.length > 1) {
+      if (document.referrer && document.referrer.startsWith(window.location.origin)) {
         event.preventDefault();
         window.history.back();
       }
@@ -112,9 +112,11 @@ const { title, description, image = "/nano.png" } = Astro.props;
   }
 
   function onScroll() {
-    if (window.scrollY > 0) {
+    const isScrolled = window.scrollY > 0;
+    const hasClass = document.documentElement.classList.contains("scrolled");
+    if (isScrolled && !hasClass) {
       document.documentElement.classList.add("scrolled");
-    } else {
+    } else if (!isScrolled && hasClass) {
       document.documentElement.classList.remove("scrolled");
     }
   }
@@ -151,7 +153,7 @@ function toggleTheme(dark) {
       document.documentElement.classList.remove("dark");
     }
 
-  window.getComputedStyle(document.documentElement).opacity;
+  document.documentElement.offsetHeight;
   document.head.removeChild(css);
   }
 
@@ -191,7 +193,12 @@ if (!window.gtmInitialized) {
   j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,"script","dataLayer","GTM-N7RN8K79");
+  let initialLoad = true;
   document.addEventListener("astro:page-load", () => {
+    if (initialLoad) {
+      initialLoad = false;
+      return;
+    }
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "page_view", page_path: window.location.pathname, page_title: document.title });
   });

@@ -6,9 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-export function readingTime(html: string): number {
-  const noCode = html.replace(/<pre[^>]*>[\s\S]*?<\/pre>/gi, "").replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
-  const textOnly = noCode.replace(/<[^>]+>/g, "");
+export function readingTime(markdown: string): number {
+  const noCodeBlocks = markdown.replace(/```[\s\S]*?```/g, "");
+  const noInlineCode = noCodeBlocks.replace(/`[\s\S]*?`/g, "");
+  const textOnly = noInlineCode.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(wordCount / 200));
 }

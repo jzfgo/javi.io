@@ -24,7 +24,7 @@ const esPosts = await getCollection("blog-es");
 const translation = esPosts.find(p => p.slug === post.slug);
 ---
 
-<PageLayout title={post.data.title} description={post.data.description}>
+<PageLayout title={post.data.title} description={post.data.description} image={post.data.hero}>
   <Container>
     <div class="animate">
       <BackToPrev href="/en/blog">
