@@ -60,6 +60,10 @@ public
 
 # Mac files
 .DS_Store
+._*
+
+# Backups
+*~bak.*
 
 # Yarn
 yarn-error.log
