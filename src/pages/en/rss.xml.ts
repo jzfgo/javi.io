@@ -1,19 +1,16 @@
 import rss from "@astrojs/rss";
+import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 import { HOME_EN as HOME } from "@consts";
 
-type Context = {
-  site: string
-}
-
-export async function GET(context: Context) {
+export async function GET(context: APIContext) {
   const blog = (await getCollection("blog-en"))
   .filter(post => !post.data.draft);
 
   return rss({
     title: HOME.TITLE,
     description: HOME.DESCRIPTION,
-    site: context.site,
+    site: context.site ? context.site.toString() : "",
     items: blog
       .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
       .map((post) => ({
