@@ -10,7 +10,7 @@ const projects = (await getCollection("projects-en"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const icons = getIconMap(import.meta.glob('/public/projects/*/icon.*'));
+const icons = getIconMap(import.meta.glob("/public/projects/*/icon.*"));
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>

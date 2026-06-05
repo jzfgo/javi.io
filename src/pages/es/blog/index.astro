@@ -23,7 +23,7 @@ const posts = data.reduce((acc: Acc, post) => {
 
 const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 
-const icons = getIconMap(import.meta.glob('/public/blog/*/icon.*'));
+const icons = getIconMap(import.meta.glob("/public/blog/*/icon.*"));
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>

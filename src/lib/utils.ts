@@ -5,13 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatDate(date: Date) {
-  return Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "2-digit",
-    year: "numeric"
-  }).format(date);
-}
 
 export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "");
@@ -41,8 +34,8 @@ export function dateRange(startDate: Date, endDate?: Date | string, locale: stri
 export function getIconMap(globResult: Record<string, unknown>): Record<string, string> {
   return Object.fromEntries(
     Object.keys(globResult).map(p => [
-      p.split('/').at(-2)!,
-      p.replace(/^\/public/, ''),
+      p.split("/").at(-2)!,
+      p.replace(/^\/public/, ""),
     ])
   );
 }
