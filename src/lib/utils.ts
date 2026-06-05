@@ -37,3 +37,12 @@ export function dateRange(startDate: Date, endDate?: Date | string, locale: stri
 
   return `${startMonth} ${startYear} - ${end}`;
 }
+
+export function getIconMap(globResult: Record<string, unknown>): Record<string, string> {
+  return Object.fromEntries(
+    Object.keys(globResult).map(p => [
+      p.split('/').at(-2)!,
+      p.replace(/^\/public/, ''),
+    ])
+  );
+}

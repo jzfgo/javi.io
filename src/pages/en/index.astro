@@ -5,6 +5,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { SITE, HOME_EN as HOME, AUTHOR } from "@consts";
+import { getIconMap } from "@lib/utils";
 
 const blog = (await getCollection("blog-en"))
   .filter(post => !post.data.draft)
@@ -20,26 +21,9 @@ const projects = (await getCollection("projects-en"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
-const blogIcons = Object.fromEntries(
-  Object.keys(import.meta.glob('/public/blog/*/icon.*')).map(p => [
-    p.split('/').at(-2)!,
-    p.replace(/^\/public/, ''),
-  ])
-);
-
-const workIcons = Object.fromEntries(
-  Object.keys(import.meta.glob('/public/work/*/icon.*')).map(p => [
-    p.split('/').at(-2)!,
-    p.replace(/^\/public/, ''),
-  ])
-);
-
-const projectIcons = Object.fromEntries(
-  Object.keys(import.meta.glob('/public/projects/*/icon.*')).map(p => [
-    p.split('/').at(-2)!,
-    p.replace(/^\/public/, ''),
-  ])
-);
+const blogIcons = getIconMap(import.meta.glob('/public/blog/*/icon.*'));
+const workIcons = getIconMap(import.meta.glob('/public/work/*/icon.*'));
+const projectIcons = getIconMap(import.meta.glob('/public/projects/*/icon.*'));
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>

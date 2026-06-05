@@ -4,6 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG_EN as BLOG } from "@consts";
+import { getIconMap } from "@lib/utils";
 
 const data = (await getCollection("blog-en"))
   .filter(post => !post.data.draft)
@@ -22,12 +23,7 @@ const posts = data.reduce((acc: Acc, post) => {
 
 const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 
-const icons = Object.fromEntries(
-  Object.keys(import.meta.glob('/public/blog/*/icon.*')).map(p => [
-    p.split('/').at(-2)!,
-    p.replace(/^\/public/, ''),
-  ])
-);
+const icons = getIconMap(import.meta.glob('/public/blog/*/icon.*'));
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>

@@ -4,17 +4,13 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS_ES as PROJECTS } from "@consts";
+import { getIconMap } from "@lib/utils";
 
 const projects = (await getCollection("projects-es"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const icons = Object.fromEntries(
-  Object.keys(import.meta.glob('/public/projects/*/icon.*')).map(p => [
-    p.split('/').at(-2)!,
-    p.replace(/^\/public/, ''),
-  ])
-);
+const icons = getIconMap(import.meta.glob('/public/projects/*/icon.*'));
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>

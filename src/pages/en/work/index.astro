@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { dateRange } from "@lib/utils";
+import { dateRange, getIconMap } from "@lib/utils";
 import { WORK_EN as WORK } from "@consts";
 
 const collection = (await getCollection("work-en"))
@@ -15,12 +15,7 @@ const work = await Promise.all(
   })
 );
 
-const icons = Object.fromEntries(
-  Object.keys(import.meta.glob('/public/work/*/icon.*')).map(p => [
-    p.split('/').at(-2)!,
-    p.replace(/^\/public/, ''),
-  ])
-);
+const icons = getIconMap(import.meta.glob('/public/work/*/icon.*'));
 
 ---
 
