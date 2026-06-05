@@ -44,6 +44,7 @@ const projectsSchema = z.object({
   draft: z.boolean().optional(),
   demoURL: z.string().optional(),
   repoURL: z.string().optional(),
+  translationKey: z.string().optional(),
 });
 
 const projectsEs = defineCollection({ type: "content", schema: projectsSchema });

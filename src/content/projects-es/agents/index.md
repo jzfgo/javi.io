@@ -4,6 +4,7 @@ description: "Skills agénticas para flujos de trabajo de desarrollo profesional
 date: "May 30 2026"
 repoURL: "https://github.com/jzfgo/agents"
 demoURL: "https://www.skills.sh/jzfgo/agents"
+translationKey: "agents"
 ---
 
 Skills de IA personal de Javier Zapata, conformes con el [estándar abierto AgentSkills](https://agentskills.io). Compatible con cualquier harness de agentes que implemente el estándar.

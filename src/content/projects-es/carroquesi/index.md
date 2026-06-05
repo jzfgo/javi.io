@@ -4,6 +4,7 @@ description: "Lista de la compra colaborativa con listas compartidas, historial 
 date: "Mar 26 2026"
 repoURL: "https://github.com/jzfgo/carroquesi"
 demoURL: "https://carroquesi.web.app/"
+translationKey: "carroquesi"
 ---
 
 *Juntos compramos mejor · Together we shop better*

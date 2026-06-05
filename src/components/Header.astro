@@ -32,7 +32,13 @@ if (blogDetailMatch) {
   const slug = projectDetailMatch[2];
   const currentProject = (await getCollection(`projects-${locale}` as "projects-en" | "projects-es"))
     .find(p => p.slug === slug);
-  if (currentProject) {
+  if (currentProject?.data.translationKey) {
+    const translation = (await getCollection(`projects-${otherLocale}` as "projects-en" | "projects-es"))
+      .find(p => p.data.translationKey === currentProject.data.translationKey);
+    altPath = translation
+      ? `/${otherLocale}/projects/${translation.slug}`
+      : `/${otherLocale}/projects`;
+  } else if (currentProject) {
     const translation = (await getCollection(`projects-${otherLocale}` as "projects-en" | "projects-es"))
       .find(p => p.slug === currentProject.slug);
     altPath = translation

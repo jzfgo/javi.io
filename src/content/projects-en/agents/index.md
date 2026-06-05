@@ -4,6 +4,7 @@ description: "Agentic skills for professional developer workflows — structured
 date: "May 30 2026"
 repoURL: "https://github.com/jzfgo/agents"
 demoURL: "https://www.skills.sh/jzfgo/agents"
+translationKey: "agents"
 ---
 
 Personal AI agent skills by Javier Zapata, conforming to the [AgentSkills open standard](https://agentskills.io). Works with any compatible agent harness.

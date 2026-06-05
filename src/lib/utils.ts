@@ -21,7 +21,7 @@ export function dateRange(startDate: Date, endDate?: Date | string, locale: stri
   let end = "";
   if (endDate) {
     if (typeof endDate === "string") {
-      end = endDate;
+      end = locale === "es" ? "Actualidad" : "Current";
     } else {
       const endMonth = endDate.toLocaleString(locale, { month: "short", timeZone: "UTC" });
       const endYear = endDate.getUTCFullYear().toString();
