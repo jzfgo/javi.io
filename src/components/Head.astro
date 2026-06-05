@@ -60,7 +60,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <ClientRouter  />
 
 <!-- RSS Link -->
-<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? "https://javi.io")} />
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`/${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? "https://javi.io")} />
 
 
 
