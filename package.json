@@ -21,7 +21,7 @@
     "@fontsource/inter": "^5.0.17",
     "@fontsource/lora": "^5.0.16",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^5.0.5",
+    "astro": "^6.1.10",
     "clsx": "^2.1.0",
     "sharp": "^0.33.3",
     "tailwind-merge": "^2.2.2",
