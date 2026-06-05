@@ -10,7 +10,7 @@ export const SITE: Site = {
 
 export const HOME_EN: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Divagando.",
+  DESCRIPTION: "Rambling.",
 };
 
 export const HOME_ES: Metadata = {
@@ -40,30 +40,34 @@ export const WORK_ES: Metadata = {
 
 export const PROJECTS_EN: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+  DESCRIPTION:
+    "A collection of my projects, with links to repositories and demos.",
 };
 
 export const PROJECTS_ES: Metadata = {
   TITLE: "Proyectos",
-  DESCRIPTION: "Una colección de mis proyectos, con enlaces a repositorios y demos.",
+  DESCRIPTION:
+    "Una colección de mis proyectos, con enlaces a repositorios y demos.",
 };
 
 export const CREDITS_EN: Metadata = {
   TITLE: "Credits",
-  DESCRIPTION: "Acknowledgements and attribution for third-party work used in this site.",
+  DESCRIPTION:
+    "Acknowledgements and attribution for third-party work used in this site.",
 };
 
 export const CREDITS_ES: Metadata = {
   TITLE: "Créditos",
-  DESCRIPTION: "Agradecimientos y atribución del trabajo de terceros utilizado en este sitio.",
+  DESCRIPTION:
+    "Agradecimientos y atribución del trabajo de terceros utilizado en este sitio.",
 };
 
 export const AUTHOR = {
   NAME: "Javier Zapata",
   BIO_EN:
-    "Developer, tech lead, recovering designer. 20 years of shipping things. Still learning.",
+    "I’m a developer, tech lead, and recovering designer that has been shipping things for more than 20 years. Still learning, though.",
   BIO_ES:
-    "Desarrollador, tech lead, diseñador en recuperación. 20 años lanzando cosas. Aún aprendiendo.",
+    "Soy desarrollador, tech lead y diseñador en rehabilitación que lleva más de 20 años lanzando cosas. Aun así, sigo aprendiendo.",
   AVATAR: "/avatar.jpg",
 };
 
