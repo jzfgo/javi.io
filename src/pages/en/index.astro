@@ -20,8 +20,22 @@ const projects = (await getCollection("projects-en"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
-const icons = Object.fromEntries(
+const blogIcons = Object.fromEntries(
   Object.keys(import.meta.glob('/public/blog/*/icon.*')).map(p => [
+    p.split('/').at(-2)!,
+    p.replace(/^\/public/, ''),
+  ])
+);
+
+const workIcons = Object.fromEntries(
+  Object.keys(import.meta.glob('/public/work/*/icon.*')).map(p => [
+    p.split('/').at(-2)!,
+    p.replace(/^\/public/, ''),
+  ])
+);
+
+const projectIcons = Object.fromEntries(
+  Object.keys(import.meta.glob('/public/projects/*/icon.*')).map(p => [
     p.split('/').at(-2)!,
     p.replace(/^\/public/, ''),
   ])
@@ -54,7 +68,7 @@ const icons = Object.fromEntries(
         <ul class="flex flex-col gap-4">
           {blog.map(post => (
             <li>
-              <ArrowCard entry={post} href={`/en/blog/${post.slug}`} icon={icons[post.slug]} />
+              <ArrowCard entry={post} href={`/en/blog/${post.slug}`} icon={blogIcons[post.slug]} />
             </li>
           ))}
         </ul>
@@ -72,7 +86,7 @@ const icons = Object.fromEntries(
         <ul class="flex flex-col gap-4">
           {work.map(entry => (
             <li>
-              <ArrowCard entry={entry} href={`/en/work/${entry.slug}`} />
+              <ArrowCard entry={entry} href={`/en/work/${entry.slug}`} icon={workIcons[entry.slug]} iconClass={entry.slug === 'interacso' ? 'dark:invert' : undefined} />
             </li>
           ))}
         </ul>
@@ -90,7 +104,7 @@ const icons = Object.fromEntries(
         <ul class="flex flex-col gap-4">
           {projects.map(project => (
             <li>
-              <ArrowCard entry={project} href={`/en/projects/${project.slug}`} />
+              <ArrowCard entry={project} href={`/en/projects/${project.slug}`} icon={projectIcons[project.slug]} />
             </li>
           ))}
         </ul>
