@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { dateRange, getIconMap } from "@lib/utils";
+import { WORK_EN as WORK } from "@consts";
+
+const collection = (await getCollection("work-en"))
+  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
+
+const work = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  })
+);
+
+const icons = getIconMap(import.meta.glob("/public/work/*/icon.*"));
+
+---
+
+<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Work
+      </div>
+      <ul class="flex flex-col space-y-4">
+        {
+          work.map(entry => {
+            const { Content } = entry;
+            return (
+              <li id={entry.slug} class="animate flex gap-4">
+                {icons[entry.slug] && (
+                  <img src={icons[entry.slug]} alt="" class="size-16 rounded object-cover shrink-0 mt-1" />
+                )}
+                <div>
+                  <div class="text-sm opacity-75">
+                    {dateRange(entry.data.dateStart, entry.data.dateEnd, "en")}
+                  </div>
+                  <div class="font-semibold text-black dark:text-white">
+                    {entry.data.company}
+                  </div>
+                  <div class="text-sm opacity-75">
+                    {entry.data.role}
+                  </div>
+                  <article>
+                    <Content />
+                  </article>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

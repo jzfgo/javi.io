@@ -1,0 +1,216 @@
+---
+import "../styles/global.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/lora/400.css";
+import "@fontsource/lora/600.css";
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
+import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
+import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
+import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
+
+import { ClientRouter } from "astro:transitions";
+import { SITE } from "@consts";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://javi.io");
+
+const { title, description, image = "/nano.png" } = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="generator" content={Astro.generator} />
+
+<!-- Font preloads -->
+<link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={inter600} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={lora400} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={lora600} as="font" type="font/woff2" crossorigin/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<ClientRouter  />
+
+<!-- RSS Link -->
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`/${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? "https://javi.io")} />
+
+
+
+<script>
+  import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
+  document.addEventListener("astro:before-swap", (e) =>
+    [
+      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
+        "link[as=\"font\"]"
+      ),
+    ].forEach((link) => link.remove())
+  );
+</script>
+
+<!-- Minimal inline script: applies theme immediately to prevent FOUC -->
+<script is:inline>
+  (function () {
+    function toggleTheme(dark) {
+      if (dark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+
+    try {
+      const userTheme = localStorage.theme;
+      if (userTheme === "light" || userTheme === "dark") {
+        toggleTheme(userTheme === "dark");
+      } else {
+        toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+    } catch (e) {
+      // localStorage may be blocked by privacy settings
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  })();
+</script>
+
+<!-- Bundled interactive script: animations, scroll, theme buttons -->
+<script>
+  function toggleTheme(dark: boolean) {
+    const css = document.createElement("style");
+    css.appendChild(
+      document.createTextNode(
+        `* {
+           -webkit-transition: none !important;
+           -moz-transition: none !important;
+           -o-transition: none !important;
+           -ms-transition: none !important;
+           transition: none !important;
+         }`,
+      )
+    );
+    document.head.appendChild(css);
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    document.documentElement.offsetHeight;
+    document.head.removeChild(css);
+  }
+
+  function animate() {
+    document.querySelectorAll(".animate:not(.show)").forEach((el, i) => {
+      setTimeout(() => el.classList.add("show"), i * 150);
+    });
+  }
+
+  function onScroll() {
+    const isScrolled = window.scrollY > 0;
+    document.documentElement.classList.toggle("scrolled", isScrolled);
+  }
+
+  function init() {
+    try {
+      const userTheme = localStorage.theme;
+      if (userTheme === "light" || userTheme === "dark") {
+        toggleTheme(userTheme === "dark");
+      } else {
+        toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+    } catch (_) {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+
+    animate();
+    onScroll();
+
+    document.getElementById("back-to-top")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.getElementById("light-theme-button")?.addEventListener("click", () => {
+      try { localStorage.setItem("theme", "light"); } catch (_) {}
+      toggleTheme(false);
+    });
+
+    document.getElementById("dark-theme-button")?.addEventListener("click", () => {
+      try { localStorage.setItem("theme", "dark"); } catch (_) {}
+      toggleTheme(true);
+    });
+
+    document.getElementById("system-theme-button")?.addEventListener("click", () => {
+      try { localStorage.setItem("theme", "system"); } catch (_) {}
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+  }
+
+  // Register persistent listeners once (survives client-side navigations)
+  if (!window.appInitialized) {
+    window.appInitialized = true;
+
+    document.addEventListener("scroll", onScroll, { passive: true });
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      try {
+        if (localStorage.theme === "system" || !localStorage.theme) {
+          toggleTheme(e.matches);
+        }
+      } catch (_) {
+        toggleTheme(e.matches);
+      }
+    });
+  }
+
+  // Re-run on every page load (initial + client-side navigation)
+  document.addEventListener("astro:page-load", init);
+</script>
+
+<!-- Google Tag Manager -->
+<script is:inline>
+if (!window.gtmInitialized) {
+  window.gtmInitialized = true;
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+  new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+  "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,"script","dataLayer","GTM-N7RN8K79");
+  let initialLoad = true;
+  document.addEventListener("astro:page-load", () => {
+    if (initialLoad) {
+      initialLoad = false;
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "page_view", page_path: window.location.pathname, page_title: document.title });
+  });
+}
+</script>
+<!-- End Google Tag Manager -->

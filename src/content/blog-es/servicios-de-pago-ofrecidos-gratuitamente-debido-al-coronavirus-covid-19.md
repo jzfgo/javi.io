@@ -1,0 +1,51 @@
+---
+title: "Servicios de pago ofrecidos gratuitamente debido al Coronavirus COVID-19"
+description: "Recursos para sobrellevar el confinamiento."
+date: 2020-03-20
+translationKey: "coronafreemium"
+hero: "/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
+---
+
+Desde el incio del estado de alarma tanto en España como en otros paises muchas empresas (grandes y pequeñas) están facilitando el acceso a sus servicios de pago de forma grauita, con el objetivo de ayudar a otras empresas, autónomos y demás ciudadanos a sobrellevar esta crisis.
+
+Para aportar mi granito de arena, he empezado a recopilar una lista de estos servicios que comparto aquí. La iré actualizando según encuentre nuevos y reciba vuestras contribuciones.
+
+Si quieres contribuir a esta lista, puedes escribirme a [javierzapata82@gmail.com](mailto:javierzapata82@gmail.com?subject=%5BCoronafreemium%5D%20Servicio) y si quieres ayudarme a difundirlo, puedes hacerlo utilizando el **hashtag** [#coronafreemium](https://twitter.com/search?q=%23coronafreemium).
+
+## Aprendizaje
+
+- **Domestika (acceso indefinido):** Selección de cursos creativos. [Enlace](https://www.domestika.org/quedateencasa)
+- **Capaball (2 meses gratis):** Planes de formación impulsados por Inteligencia Artificial. [Enlace](https://capaball.com/)
+- **NeuroK (acceso indefinido):** Comunidad de aprendizaje basada en la neurodidáctica. [Enlace](https://neurok.es/coronavirus-acceso-gratis/)
+- **Cambridge University Press (acceso hasta final de mayo):** Editorial de la Universidad de Cambridge [Enlace](https://www.cambridge.org/about-us/covid-19/)
+- **CodelyTV (1 mes gratis):** Plataforma de aprendizaje para programadores. [Enlace](https://twitter.com/CodelyTV/status/1240272977830305792)
+- **Coursera (75 certificados gratuitos):** Plataforma de aprendizaje con cursos de universidades y empresas de todo el mundo. [Enlace](https://www.freecodecamp.org/news/coronavirus-coursera-free-certificate/)
+- **Google Cloud (1 mes gratis Coursera/Pluralsight/Qwiklabs):** Proveedor de servicios de computación en la nube. [Enlace](https://inthecloud.withgoogle.com/training-discount/register.html)
+- **Execute Program (gratis durante el mes de abril):** Plataforma de aprendizaje orientada a desarrolladores web. [Enlace](https://twitter.com/exec_prog/status/1245757921922895872)
+- **Pluralsight (gratis durante el mes de abril):** Plataforma de aprendizaje para profesionales tecnológicos. [Enlace](https://www.pluralsight.com/blog/news/stay-home-skill-up-for-free)
+
+## Salud
+
+- **Fitbit Coach (90 días gratis):** Rutinas de entrenamiento en vídeo. [Enlace](https://blog.fitbit.com/letter-from-ceo/)
+
+## Comunicación
+
+- **Microsoft Teams (6 meses gratis):** Herramienta de comunicación y trabajo en equipo. [Enlace](https://teams.microsoft.com/start)
+
+## Creatividad
+
+- **Affinity (90 días gratis):** Suite de herramientas creativas profesionales. [Enlace](https://affinity.serif.com/es/supporting-the-creative-community/)
+
+## Seguridad
+
+- **1Password Business (6 meses gratis):** Gestor de contraseñas para empresas en la nube. [Enlace](https://1password.com/es/business/)
+
+## Gestión administrativa
+
+- **Infoautónomos (1 mes gratis):** Plantillas, seminarios, guías y más recursos útiles para autónomos. [Enlace](https://www.infoautonomos.com/login/?next=/cuenta/mes-regalo/)
+
+## Entretenimiento
+
+- **My Opera Player:** Óperas en vídeo bajo demanda. [Enlace](https://likes.movistar.es/cultura-y-ocio/cultura/my-opera-player-gratis-todos)
+
+Foto por [Fusion Medical Animation](https://unsplash.com/@fusion_medical_animation) en [Unsplash](https://unsplash.com/photos/EAgGqOiDDMg)

@@ -1,61 +1,70 @@
-<a href="https://novela.narative.co" target="_blank">
-<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-hero.jpg" alt="gatsby-novela-theme hero image" />
-</a>
+![Astro Nano](_astro_nano.png)
 
-<br/>
+Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
 
-# Gatsby Starter Novela
+Built with Astro, Tailwind and Typescript, an no frameworks.
 
-With minimal styling and maximum features — including multiple homepage layouts, built-in social sharing and dark mode — Novela makes it easy to start publishing beautiful articles and stories with Gatsby.
+It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
 
-Novela is built by the team at [Narative](https://www.narative.co), and built for everyone that loves the web.
+## 🚀 Deploy your own
 
-<div>
-<a href="https://novela.narative.co" target="_blank">
-<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-cta-demo.jpg" alt="gatsby-novela-theme live demo" width="295px" />
-</a>
-</div>
+[![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano)  [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
 
-<div>
-<a href="https://www.narative.co/design/open/novela" target="_blank">
-<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-cta-figma.jpg" alt="gatsby-novela-theme figma link" width="295px" />
-</a>
-</div>
+## 📋 Features
 
-# Using Gatsby Starter Novela
+- ✅ 100/100 Lighthouse performance
+- ✅ Responsive
+- ✅ Accessible
+- ✅ SEO-friendly
+- ✅ Typesafe
+- ✅ Minimal style
+- ✅ Light/Dark Theme
+- ✅ Animated UI
+- ✅ Tailwind styling
+- ✅ Auto generated sitemap
+- ✅ Auto generated RSS Feed
+- ✅ Markdown support
+- ✅ MDX Support (components in your markdown)
 
-This guide will take you through setting up Novela with Gatsby Starter Novela.
+## 💯 Lighthouse score
+![Astro Nano Lighthouse Score](_lighthouse.png)
 
-### Step 1: Starter installation
+## 🕊️ Lightweight
+No frameworks or added bulk
 
-##### With `gatsby-cli`:
+## ⚡︎ Fast
+Rendered in ~40ms on localhost
 
-```sh
-gatsby new novela-site https://github.com/narative/gatsby-starter-novela
-```
+## 📄 Configuration
 
-##### With `git clone`:
+The blog posts on the demo serve as the documentation and configuration.
 
-```sh
-git clone git@github.com:narative/gatsby-starter-novela.git novela-site
+## 💻 Commands
 
-cd novela-site
+All commands are run from the root of the project, from a terminal:
 
-yarn
-```
+Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
 
-### Step 2: Develop & Build
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run dev:network`     | Starts local dev server on local network         |
+| `npm run sync`            | Generates TypeScript types for all Astro modules.|
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run preview:network` | Preview build on local network                   |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm run lint`            | Run ESLint                                       |
+| `npm run lint:fix`        | Auto-fix ESLint issues                           |
 
-Once installed or cloned locally and all packages are installed you can begin developing your site.
+## 🏛️ License
 
-```sh
-# Run localhost
-yarn dev
+MIT
 
-# Build your Gatsby site
-yarn build
-```
+## 🙏 Credits
 
-### Help
-
-For more information visit the [Theme repository](https://github.com/narative/gatsby-theme-novela)
+- **Theme**: [Astro Nano](https://github.com/markhorn-dev/astro-nano) by [markhorn-dev](https://github.com/markhorn-dev), licensed under [MIT](https://github.com/markhorn-dev/astro-nano/blob/main/LICENSE)
+- **Framework**: [Astro](https://astro.build), licensed under [MIT](https://github.com/withastro/astro/blob/main/LICENSE)
+- **Logo icon**: ["Double Dragon"](https://game-icons.net/1x1/lorc/double-dragon.html) by [Lorc](https://lorcblog.blogspot.com), licensed under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
