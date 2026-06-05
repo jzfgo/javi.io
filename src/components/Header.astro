@@ -6,8 +6,8 @@ import { SITE } from "@consts";
 
 const locale = Astro.currentLocale ?? "es";
 const otherLocale = locale === "es" ? "en" : "es";
-const altPath = Astro.url.pathname.startsWith(`/${locale}`)
-  ? Astro.url.pathname.replace(`/${locale}`, `/${otherLocale}`)
+const altPath = Astro.url.pathname.startsWith(`/${locale}/`)
+  ? Astro.url.pathname.replace(`/${locale}/`, `/${otherLocale}/`)
   : `/${otherLocale}/`;
 
 const nav = locale === "es"

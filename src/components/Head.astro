@@ -174,30 +174,36 @@ function toggleTheme(dark) {
     }
   }
 
-  window.matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", event => {
-      if (localStorage.theme === "system" || !localStorage.theme) {
-        toggleTheme(event.matches);
-      }
-    });
+  if (!window.themeInitialized) {
+    window.themeInitialized = true;
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system" || !localStorage.theme) {
+          toggleTheme(event.matches);
+        }
+      });
 
-  document.addEventListener("scroll", onScroll);
+    document.addEventListener("scroll", onScroll);
 
-  document.addEventListener("DOMContentLoaded", () => init());
-  document.addEventListener("astro:after-swap", () => init());
+    document.addEventListener("DOMContentLoaded", () => init());
+    document.addEventListener("astro:after-swap", () => init());
+  }
   preloadTheme();
 </script>
 
 <!-- Google Tag Manager -->
 <script is:inline>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N7RN8K79');
-document.addEventListener('astro:after-swap', () => {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'page_view', page_path: window.location.pathname, page_title: document.title });
-});
+if (!window.gtmInitialized) {
+  window.gtmInitialized = true;
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N7RN8K79');
+  document.addEventListener('astro:after-swap', () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'page_view', page_path: window.location.pathname, page_title: document.title });
+  });
+}
 </script>
 <!-- End Google Tag Manager -->
