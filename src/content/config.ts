@@ -2,6 +2,9 @@ import { defineCollection, z } from "astro:content";
 
 const parseWorkDate = (val: string): Date => {
   const [m, d, y] = val.split("/").map(Number);
+  if (m < 1 || m > 12 || d < 1 || d > 31) {
+    throw new Error(`Invalid date values in: "${val}". Expected MM/DD/YYYY`);
+  }
   const date = new Date(Date.UTC(y, m - 1, d));
   if (isNaN(date.getTime())) {
     throw new Error(`Invalid date format: "${val}". Expected MM/DD/YYYY`);

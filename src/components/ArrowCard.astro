@@ -17,11 +17,11 @@ const description = "company" in entry.data ? entry.data.role : entry.data.descr
   {icon && (
     <img src={icon} alt="" class={`size-16 rounded object-cover shrink-0 self-center${iconClass ? ` ${iconClass}` : ""}`} />
   )}
-  <div class="flex flex-col flex-1 truncate justify-center">
-    <div class="font-semibold">
+  <div class="flex flex-col flex-1 min-w-0 justify-center">
+    <div class="font-semibold truncate">
       {title}
     </div>
-    <div class="text-sm">
+    <div class="text-sm truncate">
       {description}
     </div>
   </div>
