@@ -62,3 +62,9 @@ Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, e
 ## 🏛️ License
 
 MIT
+
+## 🙏 Credits
+
+- **Theme**: [Astro Nano](https://github.com/markhorn-dev/astro-nano) by [markhorn-dev](https://github.com/markhorn-dev), licensed under [MIT](https://github.com/markhorn-dev/astro-nano/blob/main/LICENSE)
+- **Framework**: [Astro](https://astro.build), licensed under [MIT](https://github.com/withastro/astro/blob/main/LICENSE)
+- **Logo icon**: ["Double Dragon"](https://game-icons.net/1x1/lorc/double-dragon.html) by [Lorc](https://lorcblog.blogspot.com), licensed under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

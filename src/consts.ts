@@ -48,6 +48,16 @@ export const PROJECTS_ES: Metadata = {
   DESCRIPTION: "Una colección de mis proyectos, con enlaces a repositorios y demos.",
 };
 
+export const CREDITS_EN: Metadata = {
+  TITLE: "Credits",
+  DESCRIPTION: "Acknowledgements and attribution for third-party work used in this site.",
+};
+
+export const CREDITS_ES: Metadata = {
+  TITLE: "Créditos",
+  DESCRIPTION: "Agradecimientos y atribución del trabajo de terceros utilizado en este sitio.",
+};
+
 export const AUTHOR = {
   NAME: "Javier Zapata",
   BIO_EN:
