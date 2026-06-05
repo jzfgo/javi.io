@@ -2,6 +2,7 @@
 title: "Ten Things I Learned After Three Years at the Gym"
 description: "JUST DO IT."
 date: 2020-02-01
+translationKey: "gym-lessons"
 hero: "/blog/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio/george-pagan-iii-PsifAN6_z-k-unsplash.jpg"
 ---
 It feels like yesterday, but last November marked three years since I first walked into a gym.

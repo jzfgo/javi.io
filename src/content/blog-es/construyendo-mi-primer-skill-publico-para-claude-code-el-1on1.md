@@ -2,6 +2,7 @@
 title: "Construyendo mi primer Skill público para Claude Code: el 1on1"
 description: "Construí un comando /1on1 para Claude Code que ejecuta una reunión de seguimiento estructurada entre mi IA colaboradora y yo. Esta es la historia de cómo y por qué."
 date: 2026-06-01
+translationKey: "1on1-skill"
 hero: "/blog/building-my-first-public-claude-code-skill-the-1on1/hero.png"
 ---
 

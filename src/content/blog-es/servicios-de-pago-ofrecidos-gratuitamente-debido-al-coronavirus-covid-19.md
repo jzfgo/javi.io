@@ -2,6 +2,7 @@
 title: "Servicios de pago ofrecidos gratuitamente debido al Coronavirus COVID-19"
 description: "Recursos para sobrellevar el confinamiento."
 date: 2020-03-20
+translationKey: "coronafreemium"
 hero: "/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
 ---
 

@@ -2,6 +2,7 @@
 title: "Paid Services Offered for Free Due to COVID-19"
 description: "Resources to help get through lockdown."
 date: 2020-03-20
+translationKey: "coronafreemium"
 hero: "/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
 ---
 

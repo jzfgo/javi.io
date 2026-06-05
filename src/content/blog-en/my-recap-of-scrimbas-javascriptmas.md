@@ -2,6 +2,7 @@
 title: "My recap of Scrimba's #JavaScriptmas"
 description: "It was a fun ride!"
 date: 2020-12-20
+translationKey: "javascriptmas"
 hero: "/blog/my-recap-of-scrimbas-javascriptmas/michael-hacker-OM5Zy3_7pGU-unsplash.jpg"
 ---
 

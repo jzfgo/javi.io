@@ -2,6 +2,7 @@
 title: "Hello, World!"
 description: "This post is ten years late."
 date: 2020-01-01
+translationKey: "hello-world"
 hero: "/blog/hola-mundo/yancy-min-842ofHC6MaI-unsplash.jpg"
 ---
 This post is ten years late. Let me explain.
