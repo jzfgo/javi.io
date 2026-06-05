@@ -29,7 +29,7 @@ export function dateRange(startDate: Date, endDate?: Date | string, locale: stri
     }
   }
 
-  return `${startMonth} ${startYear} - ${end}`;
+  return end ? `${startMonth} ${startYear} - ${end}` : `${startMonth} ${startYear}`;
 }
 
 export function getIconMap(globResult: Record<string, unknown>): Record<string, string> {
