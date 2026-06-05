@@ -6,11 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-export function readingTime(html: string) {
+export function readingTime(html: string): number {
   const textOnly = html.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).length;
-  const readingTimeMinutes = ((wordCount / 200) + 1).toFixed();
-  return `${readingTimeMinutes} min read`;
+  return Math.max(1, Math.ceil(wordCount / 200));
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string, locale: string = "es"): string {
