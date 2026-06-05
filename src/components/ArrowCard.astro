@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  entry: CollectionEntry<"blog-es"> | CollectionEntry<"blog-en"> | CollectionEntry<"projects-es"> | CollectionEntry<"projects-en"> | CollectionEntry<"work-es"> | CollectionEntry<"work-en">;
+  entry: CollectionEntry<"blog-es" | "blog-en" | "projects-es" | "projects-en" | "work-es" | "work-en">;
   href: string;
   icon?: string;
   iconClass?: string;
