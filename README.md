@@ -61,7 +61,7 @@ Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, e
 
 ## 🏛️ License
 
-Site code and content © 2025 Javier Zapata, all rights reserved.
+Site code and content © 2026 Javier Zapata, all rights reserved.
 Based on [Astro Nano](https://github.com/markhorn-dev/astro-nano) by Mark Horn, licensed under MIT.
 
 ## 🙏 Credits
