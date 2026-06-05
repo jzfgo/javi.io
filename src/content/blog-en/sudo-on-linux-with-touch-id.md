@@ -3,6 +3,7 @@ title: "sudo on Linux with Touch ID (and live to tell the tale)"
 description: "Configure 1Password's SSH agent to use Touch ID on your remote Linux server."
 date: 2026-05-01
 translationKey: "sudo-touch-id"
+assetSlug: "sudo-en-linux-con-touch-id-sin-morir-en-el-intento"
 hero: "/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/0a0a3aa8-69a7-43f9-8dbb-df2ab9e4c8c5.png"
 ---
 

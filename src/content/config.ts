@@ -12,6 +12,7 @@ const blogSchema = z.object({
   draft: z.boolean().optional(),
   translationKey: z.string().optional(),
   hero: z.string().optional(),
+  assetSlug: z.string().optional(),
 });
 
 const blogEs = defineCollection({ type: "content", schema: blogSchema });

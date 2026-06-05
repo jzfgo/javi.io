@@ -3,6 +3,7 @@ title: "Mi recapitulación del #JavaScriptmas de Scrimba"
 description: "¡Fue muy divertido!"
 date: 2020-12-20
 translationKey: "javascriptmas"
+assetSlug: "my-recap-of-scrimbas-javascriptmas"
 hero: "/blog/my-recap-of-scrimbas-javascriptmas/michael-hacker-OM5Zy3_7pGU-unsplash.jpg"
 ---
 

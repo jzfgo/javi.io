@@ -41,7 +41,7 @@ const icons = getIconMap(import.meta.glob("/public/blog/*/icon.*"));
             <ul class="flex flex-col gap-4">
               {posts[year].map((post) => (
                 <li>
-                  <ArrowCard entry={post} href={`/es/blog/${post.slug}`} icon={icons[post.slug]} />
+                  <ArrowCard entry={post} href={`/es/blog/${post.slug}`} icon={icons[post.data.assetSlug ?? post.slug]} />
                 </li>
               ))}
             </ul>

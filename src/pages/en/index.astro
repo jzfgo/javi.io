@@ -52,7 +52,7 @@ const projectIcons = getIconMap(import.meta.glob("/public/projects/*/icon.*"));
         <ul class="flex flex-col gap-4">
           {blog.map(post => (
             <li>
-              <ArrowCard entry={post} href={`/en/blog/${post.slug}`} icon={blogIcons[post.slug]} />
+              <ArrowCard entry={post} href={`/en/blog/${post.slug}`} icon={blogIcons[post.data.assetSlug ?? post.slug]} />
             </li>
           ))}
         </ul>
