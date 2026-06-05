@@ -1,0 +1,62 @@
+---
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import Link from "@components/Link.astro";
+import { CREDITS_EN as CREDITS } from "@consts";
+---
+
+<PageLayout title={CREDITS.TITLE} description={CREDITS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <section class="animate space-y-4">
+        <h1 class="text-3xl font-semibold text-black dark:text-white">
+          Credits
+        </h1>
+        <p>
+          This site is built on the shoulders of great open source work.
+          Thank you to all authors and contributors.
+        </p>
+      </section>
+
+      <section class="animate space-y-4">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Framework</h2>
+        <div class="space-y-1">
+          <p>
+            <Link href="https://astro.build">Astro</Link>
+          </p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            Licensed under the <Link href="https://github.com/withastro/astro/blob/main/LICENSE">MIT License</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section class="animate space-y-4">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Theme</h2>
+        <div class="space-y-1">
+          <p>
+            <Link href="https://github.com/markhorn-dev/astro-nano">Astro Nano</Link>
+            {" "}by{" "}
+            <Link href="https://github.com/markhorn-dev">markhorn-dev</Link>
+          </p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            Licensed under the <Link href="https://github.com/markhorn-dev/astro-nano/blob/main/LICENSE">MIT License</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section class="animate space-y-4">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Logo Icon</h2>
+        <div class="space-y-1">
+          <p>
+            <Link href="https://game-icons.net/1x1/lorc/double-dragon.html">&ldquo;Double Dragon&rdquo;</Link>
+            {" "}by{" "}
+            <Link href="https://lorcblog.blogspot.com">Lorc</Link>
+          </p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            Licensed under <Link href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</Link>.
+          </p>
+        </div>
+      </section>
+    </div>
+  </Container>
+</PageLayout>

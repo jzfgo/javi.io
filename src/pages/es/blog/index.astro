@@ -1,0 +1,53 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import { BLOG_ES as BLOG } from "@consts";
+import { getIconMap } from "@lib/utils";
+
+const data = (await getCollection("blog-es"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+type Acc = {
+  [year: string]: CollectionEntry<"blog-es">[];
+};
+
+const posts = data.reduce((acc: Acc, post) => {
+  const year = post.data.date.getUTCFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {} as Acc);
+
+const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
+
+const icons = getIconMap(import.meta.glob("/public/blog/*/icon.*"));
+---
+
+<PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Blog
+      </div>
+      <div class="space-y-4">
+        {years.map(year => (
+          <section class="animate space-y-4">
+            <div class="font-semibold text-black dark:text-white">
+              {year}
+            </div>
+            <ul class="flex flex-col gap-4">
+              {posts[year].map((post) => (
+                <li>
+                  <ArrowCard entry={post} href={`/es/blog/${post.slug}`} icon={icons[post.data.assetSlug ?? post.slug]} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </div>
+  </Container>
+</PageLayout>
