@@ -1,18 +1,35 @@
 ---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { SITE } from "@consts";
 ---
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>javi.io</title>
-    <script is:inline>
-      var lang = (navigator.language || "es").toLowerCase();
-      window.location.replace(lang.startsWith("en") ? "/en/" : "/es/");
-    </script>
-    <noscript>
-      <meta http-equiv="refresh" content="0; url=/es/" />
-    </noscript>
-  </head>
-  <body>
-    <p><a href="/es/">Ir al blog en español</a> / <a href="/en/">Go to blog in English</a></p>
-  </body>
-</html>
+
+<PageLayout title={SITE.NAME} description="Choose your language / Elige tu idioma">
+  <Container>
+    <div class="flex flex-col items-center justify-center min-h-[50vh] space-y-8 text-center">
+      <p class="animate text-sm text-black/50 dark:text-white/50 uppercase tracking-widest">
+        Choose your language
+      </p>
+      <div class="animate flex gap-6 text-2xl font-semibold">
+        <a
+          href="/es/"
+          class="text-black dark:text-white hover:underline underline-offset-4 decoration-black/30 dark:decoration-white/30 transition-colors duration-300"
+        >
+          Español
+        </a>
+        <span class="text-black/20 dark:text-white/20">/</span>
+        <a
+          href="/en/"
+          class="text-black dark:text-white hover:underline underline-offset-4 decoration-black/30 dark:decoration-white/30 transition-colors duration-300"
+        >
+          English
+        </a>
+      </div>
+    </div>
+  </Container>
+</PageLayout>
+
+<script is:inline>
+  var lang = (navigator.language || "es").toLowerCase();
+  window.location.replace(lang.startsWith("en") ? "/en/" : "/es/");
+</script>
