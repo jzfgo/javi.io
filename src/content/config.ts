@@ -2,7 +2,11 @@ import { defineCollection, z } from "astro:content";
 
 const parseWorkDate = (val: string): Date => {
   const [m, d, y] = val.split("/").map(Number);
-  return new Date(Date.UTC(y, m - 1, d));
+  const date = new Date(Date.UTC(y, m - 1, d));
+  if (isNaN(date.getTime())) {
+    throw new Error(`Invalid date format: "${val}". Expected MM/DD/YYYY`);
+  }
+  return date;
 };
 
 const blogSchema = z.object({

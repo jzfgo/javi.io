@@ -9,7 +9,7 @@ const locale = Astro.currentLocale ?? "es";
 const otherLocale = locale === "es" ? "en" : "es";
 
 // Attempt to resolve a translated equivalent for content detail pages
-const pathname = Astro.url.pathname;
+const pathname = Astro.url.pathname.replace(/\/$/, "");
 const blogDetailMatch = pathname.match(/^\/(en|es)\/blog\/(.+)$/);
 const projectDetailMatch = pathname.match(/^\/(en|es)\/projects\/(.+)$/);
 

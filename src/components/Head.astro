@@ -18,7 +18,7 @@ interface Props {
   image?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://javi.io");
 
 const { title, description, image = "/nano.png" } = Astro.props;
 ---
@@ -60,7 +60,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <ClientRouter  />
 
 <!-- RSS Link -->
-<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? Astro.url.origin)} />
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? "https://javi.io")} />
 
 
 
@@ -161,7 +161,12 @@ function toggleTheme(dark) {
   }
 
   function preloadTheme() {
-    const userTheme = localStorage.theme;
+    let userTheme;
+    try {
+      userTheme = localStorage.theme;
+    } catch (e) {
+      // localStorage may be blocked by privacy settings
+    }
 
     if (userTheme === "light" || userTheme === "dark") {
       toggleTheme(userTheme === "dark");
