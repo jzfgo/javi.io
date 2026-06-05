@@ -4,7 +4,7 @@ import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
-import { SITE, HOME, AUTHOR } from "@consts";
+import { SITE, HOME_EN as HOME, AUTHOR } from "@consts";
 
 const blog = (await getCollection("blog-en"))
   .filter(post => !post.data.draft)
@@ -19,6 +19,13 @@ const projects = (await getCollection("projects-en"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
+const icons = Object.fromEntries(
+  Object.keys(import.meta.glob('/public/blog/*/icon.*')).map(p => [
+    p.split('/').at(-2)!,
+    p.replace(/^\/public/, ''),
+  ])
+);
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -30,7 +37,7 @@ const projects = (await getCollection("projects-en"))
             {HOME.DESCRIPTION}
           </h1>
           <p class="animate">
-            {AUTHOR.BIO}
+            {AUTHOR.BIO_EN}
           </p>
         </article>
       </section>
@@ -47,7 +54,7 @@ const projects = (await getCollection("projects-en"))
         <ul class="flex flex-col gap-4">
           {blog.map(post => (
             <li>
-              <ArrowCard entry={post} href={`/en/blog/${post.slug}`} />
+              <ArrowCard entry={post} href={`/en/blog/${post.slug}`} icon={icons[post.slug]} />
             </li>
           ))}
         </ul>

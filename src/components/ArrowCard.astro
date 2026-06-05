@@ -4,15 +4,19 @@ import type { CollectionEntry } from "astro:content";
 type Props = {
   entry: CollectionEntry<"blog-es"> | CollectionEntry<"blog-en"> | CollectionEntry<"projects-es"> | CollectionEntry<"projects-en"> | CollectionEntry<"work-es"> | CollectionEntry<"work-en">;
   href: string;
+  icon?: string;
 };
 
-const { entry, href } = Astro.props;
+const { entry, href, icon } = Astro.props;
 const isWork = entry.collection === "work-es" || entry.collection === "work-en";
 const title = isWork ? (entry as CollectionEntry<"work-es">).data.company : (entry as CollectionEntry<"blog-es">).data.title;
 const description = isWork ? (entry as CollectionEntry<"work-es">).data.role : (entry as CollectionEntry<"blog-es">).data.description;
 ---
 
 <a href={href} class="relative group flex flex-nowrap gap-4 py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
+  {icon && (
+    <img src={icon} alt="" class="size-16 rounded object-cover shrink-0 self-center" />
+  )}
   <div class="flex flex-col flex-1 truncate justify-center">
     <div class="font-semibold">
       {title}
