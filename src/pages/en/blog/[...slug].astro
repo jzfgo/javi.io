@@ -20,7 +20,7 @@ type Props = CollectionEntry<"blog-en">;
 const post = Astro.props;
 const { Content } = await post.render();
 
-const esPosts = await getCollection("blog-es");
+const esPosts = await getCollection("blog-es", ({ data }) => !data.draft);
 const translation = post.data.translationKey
   ? esPosts.find(p => p.data.translationKey === post.data.translationKey)
   : esPosts.find(p => p.slug === post.slug);

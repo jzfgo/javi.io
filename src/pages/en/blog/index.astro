@@ -15,7 +15,7 @@ type Acc = {
 };
 
 const posts = data.reduce((acc: Acc, post) => {
-  const year = post.data.date.getFullYear().toString();
+  const year = post.data.date.getUTCFullYear().toString();
   if (!acc[year]) acc[year] = [];
   acc[year].push(post);
   return acc;
