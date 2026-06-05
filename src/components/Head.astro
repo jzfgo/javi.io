@@ -60,7 +60,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <ClientRouter  />
 
 <!-- RSS Link -->
-<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL("rss.xml", Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site)} />
 
 <script>
   import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
@@ -103,15 +103,6 @@ const { title, description, image = "/nano.png" } = Astro.props;
       toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
     });
 
-    window.matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", event => {
-        if (localStorage.theme === "system" || !localStorage.theme) {
-          toggleTheme(event.matches);
-        }
-      }
-    );
-
-    document.addEventListener("scroll", onScroll);
   }
 
   function animate() {
@@ -178,6 +169,15 @@ function toggleTheme(dark) {
     }
   }
 
+  window.matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", event => {
+      if (localStorage.theme === "system" || !localStorage.theme) {
+        toggleTheme(event.matches);
+      }
+    });
+
+  document.addEventListener("scroll", onScroll);
+
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
   preloadTheme();
@@ -190,5 +190,9 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-N7RN8K79');
+document.addEventListener('astro:after-swap', () => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'page_view', page_path: window.location.pathname, page_title: document.title });
+});
 </script>
 <!-- End Google Tag Manager -->

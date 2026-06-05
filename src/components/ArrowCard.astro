@@ -9,9 +9,8 @@ type Props = {
 };
 
 const { entry, href, icon, iconClass } = Astro.props;
-const isWork = entry.collection === "work-es" || entry.collection === "work-en";
-const title = isWork ? (entry as CollectionEntry<"work-es">).data.company : (entry as CollectionEntry<"blog-es">).data.title;
-const description = isWork ? (entry as CollectionEntry<"work-es">).data.role : (entry as CollectionEntry<"blog-es">).data.description;
+const title = "company" in entry.data ? entry.data.company : entry.data.title;
+const description = "company" in entry.data ? entry.data.role : entry.data.description;
 ---
 
 <a href={href} class="relative group flex flex-nowrap gap-4 py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
