@@ -75,121 +75,111 @@ const { title, description, image = "/nano.png" } = Astro.props;
   );
 </script>
 
+<!-- Minimal inline script: applies theme immediately to prevent FOUC -->
 <script is:inline>
-  function init() {
-    preloadTheme();
-    onScroll();
-    animate();
-
-    const backToTop = document.getElementById("back-to-top");
-    backToTop?.addEventListener("click", (event) => scrollToTop(event));
-
-    const lightThemeButton = document.getElementById("light-theme-button");
-    lightThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "light");
-      toggleTheme(false);
-    });
-
-    const darkThemeButton = document.getElementById("dark-theme-button");
-    darkThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "dark");
-      toggleTheme(true);
-    });
-
-    const systemThemeButton = document.getElementById("system-theme-button");
-    systemThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "system");
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    });
-
-  }
-
-  function animate() {
-    const animateElements = document.querySelectorAll(".animate:not(.show)");
-
-    animateElements.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add("show");
-      }, index * 150);
-    });
-  }
-
-  function onScroll() {
-    const isScrolled = window.scrollY > 0;
-    const hasClass = document.documentElement.classList.contains("scrolled");
-    if (isScrolled && !hasClass) {
-      document.documentElement.classList.add("scrolled");
-    } else if (!isScrolled && hasClass) {
-      document.documentElement.classList.remove("scrolled");
+  (function () {
+    function toggleTheme(dark) {
+      if (dark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     }
-  }
 
-  function scrollToTop(event) {
-    event.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
+    try {
+      const userTheme = localStorage.theme;
+      if (userTheme === "light" || userTheme === "dark") {
+        toggleTheme(userTheme === "dark");
+      } else {
+        toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+    } catch (e) {
+      // localStorage may be blocked by privacy settings
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  })();
+</script>
 
-function toggleTheme(dark) {
+<!-- Bundled interactive script: animations, scroll, theme buttons -->
+<script>
+  function toggleTheme(dark: boolean) {
     const css = document.createElement("style");
-
     css.appendChild(
       document.createTextNode(
         `* {
-             -webkit-transition: none !important;
-             -moz-transition: none !important;
-             -o-transition: none !important;
-             -ms-transition: none !important;
-             transition: none !important;
-          }
-        `,
+           -webkit-transition: none !important;
+           -moz-transition: none !important;
+           -o-transition: none !important;
+           -ms-transition: none !important;
+           transition: none !important;
+         }`,
       )
     );
-
     document.head.appendChild(css);
-
     if (dark) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-
-  document.documentElement.offsetHeight;
-  document.head.removeChild(css);
+    document.documentElement.offsetHeight;
+    document.head.removeChild(css);
   }
 
-  function preloadTheme() {
-    let userTheme;
-    try {
-      userTheme = localStorage.theme;
-    } catch (e) {
-      // localStorage may be blocked by privacy settings
-    }
+  function animate() {
+    document.querySelectorAll(".animate:not(.show)").forEach((el, i) => {
+      setTimeout(() => el.classList.add("show"), i * 150);
+    });
+  }
 
-    if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark");
-    } else {
+  function onScroll() {
+    const isScrolled = window.scrollY > 0;
+    document.documentElement.classList.toggle("scrolled", isScrolled);
+  }
+
+  function init() {
+    animate();
+    onScroll();
+
+    document.getElementById("back-to-top")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.getElementById("light-theme-button")?.addEventListener("click", () => {
+      try { localStorage.setItem("theme", "light"); } catch (_) {}
+      toggleTheme(false);
+    });
+
+    document.getElementById("dark-theme-button")?.addEventListener("click", () => {
+      try { localStorage.setItem("theme", "dark"); } catch (_) {}
+      toggleTheme(true);
+    });
+
+    document.getElementById("system-theme-button")?.addEventListener("click", () => {
+      try { localStorage.setItem("theme", "system"); } catch (_) {}
       toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }
+    });
   }
 
-  if (!window.themeInitialized) {
-    window.themeInitialized = true;
-    window.matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", event => {
+  // Register persistent listeners once (survives client-side navigations)
+  if (!(window as any).appInitialized) {
+    (window as any).appInitialized = true;
+
+    document.addEventListener("scroll", onScroll, { passive: true });
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      try {
         if (localStorage.theme === "system" || !localStorage.theme) {
-          toggleTheme(event.matches);
+          toggleTheme(e.matches);
         }
-      });
-
-    document.addEventListener("scroll", onScroll);
-
-    document.addEventListener("DOMContentLoaded", () => init());
-    document.addEventListener("astro:after-swap", () => init());
+      } catch (_) {
+        toggleTheme(e.matches);
+      }
+    });
   }
-  preloadTheme();
+
+  // Re-run on every page load (initial + client-side navigation)
+  document.addEventListener("astro:page-load", init);
 </script>
 
 <!-- Google Tag Manager -->
