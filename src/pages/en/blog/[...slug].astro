@@ -7,7 +7,7 @@ import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog-es"))
+  const posts = (await getCollection("blog-en"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post) => ({
@@ -15,25 +15,27 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog-es">;
+type Props = CollectionEntry<"blog-en">;
 
 const post = Astro.props;
 const { Content } = await post.render();
 
-const enPosts = await getCollection("blog-en");
-const translation = enPosts.find(p => p.slug === post.slug);
+const esPosts = await getCollection("blog-es");
+const translation = post.data.translationKey
+  ? esPosts.find(p => p.data.translationKey === post.data.translationKey)
+  : esPosts.find(p => p.slug === post.slug);
 ---
 
 <PageLayout title={post.data.title} description={post.data.description} image={post.data.hero}>
   <Container>
     <div class="animate">
-      <BackToPrev href="/es/blog">
-        Volver al blog
+      <BackToPrev href="/en/blog">
+        Back to blog
       </BackToPrev>
     </div>
     {translation && (
       <div class="animate text-sm mt-4 opacity-75">
-        <a href={`/en/blog/${translation.slug}`}>Read in English →</a>
+        <a href={`/es/blog/${translation.slug}`}>Leer en español →</a>
       </div>
     )}
     {post.data.hero && (
@@ -52,7 +54,7 @@ const translation = enPosts.find(p => p.slug === post.slug);
         </div>
         &bull;
         <div class="font-base text-sm">
-          {readingTime(post.body)} min de lectura
+          {readingTime(post.body)} min read
         </div>
       </div>
       <div class="animate text-2xl font-semibold text-black dark:text-white">
