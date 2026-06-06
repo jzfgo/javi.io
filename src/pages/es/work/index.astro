@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { dateRange, getIconMap } from "@lib/utils";
+import { dateRange, getIconMap, idToSlug } from "@lib/utils";
 import { WORK_ES as WORK } from "@consts";
 
 const collection = (await getCollection("work-es"))
@@ -10,7 +10,7 @@ const collection = (await getCollection("work-es"))
 
 const work = await Promise.all(
   collection.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
   })
 );
@@ -30,9 +30,9 @@ const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: 
           work.map(entry => {
             const { Content } = entry;
             return (
-              <li id={entry.slug} class="animate flex gap-4">
-                {icons[entry.slug] && (
-                  <img src={icons[entry.slug]} alt="" class="size-16 rounded object-cover shrink-0 mt-1" />
+              <li id={idToSlug(entry.id)} class="animate flex gap-4">
+                {icons[idToSlug(entry.id)] && (
+                  <img src={icons[idToSlug(entry.id)]} alt="" class="size-16 rounded object-cover shrink-0 mt-1" />
                 )}
                 <div>
                   <div class="text-sm opacity-75">

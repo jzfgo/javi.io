@@ -2,3 +2,5 @@ allowBuilds:
   esbuild: true
   sharp: true
 minimumReleaseAge: 10080
+overrides:
+  vite: "7.3.2"

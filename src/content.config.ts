@@ -1,4 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, type SchemaContext } from "astro:content";
+import { z } from "zod";
+import { glob } from "astro/loaders";
 
 const parseWorkDate = (val: string): Date => {
   const [m, d, y] = val.split("/").map(Number);
@@ -12,7 +14,7 @@ const parseWorkDate = (val: string): Date => {
   return date;
 };
 
-const blogSchema = ({ image }: { image: () => z.ZodTypeAny }) =>
+const blogSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
     description: z.string(),
@@ -23,8 +25,14 @@ const blogSchema = ({ image }: { image: () => z.ZodTypeAny }) =>
     assetSlug: z.string().optional(),
   });
 
-const blogEs = defineCollection({ type: "content", schema: blogSchema });
-const blogEn = defineCollection({ type: "content", schema: blogSchema });
+const blogEs = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog-es" }),
+  schema: blogSchema,
+});
+const blogEn = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog-en" }),
+  schema: blogSchema,
+});
 
 const workSchema = z.object({
   company: z.string(),
@@ -35,8 +43,14 @@ const workSchema = z.object({
   ),
 });
 
-const workEs = defineCollection({ type: "content", schema: workSchema });
-const workEn = defineCollection({ type: "content", schema: workSchema });
+const workEs = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/work-es" }),
+  schema: workSchema,
+});
+const workEn = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/work-en" }),
+  schema: workSchema,
+});
 
 const projectsSchema = z.object({
   title: z.string(),
@@ -48,8 +62,14 @@ const projectsSchema = z.object({
   translationKey: z.string().optional(),
 });
 
-const projectsEs = defineCollection({ type: "content", schema: projectsSchema });
-const projectsEn = defineCollection({ type: "content", schema: projectsSchema });
+const projectsEs = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects-es" }),
+  schema: projectsSchema,
+});
+const projectsEn = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects-en" }),
+  schema: projectsSchema,
+});
 
 export const collections = {
   "blog-es": blogEs,

@@ -1,21 +1,21 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { dateRange } from "@lib/utils";
+import { dateRange, idToSlug } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 
 export async function getStaticPaths() {
   const work = await getCollection("work-es");
   return work.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: idToSlug(entry.id) },
     props: entry,
   }));
 }
 type Props = CollectionEntry<"work-es">;
 
 const entry = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <PageLayout title={entry.data.company} description={entry.data.role}>
