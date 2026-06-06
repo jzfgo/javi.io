@@ -13,7 +13,7 @@ export default [
     },
     rules: {
       "@stylistic/semi": ["error", "always"],
-      "@stylistic/quotes": ["error", "double", { allowTemplateLiterals: "always" }],
+      "@stylistic/quotes": ["error", "double", { allowTemplateLiterals: true }],
     },
   },
   js.configs.recommended,
