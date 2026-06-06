@@ -3,9 +3,19 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import astro from "eslint-plugin-astro";
 import globals from "globals";
+import stylistic from "@stylistic/eslint-plugin";
 
 export default [
   { ignores: [".astro/", ".vscode/", "dist/", "node_modules/", "public/"] },
+  {
+    plugins: {
+      "@stylistic": stylistic,
+    },
+    rules: {
+      "@stylistic/semi": ["error", "always"],
+      "@stylistic/quotes": ["error", "double", { allowTemplateLiterals: "always" }],
+    },
+  },
   js.configs.recommended,
   {
     files: ["**/*.{ts,tsx,mts,cts}"],
