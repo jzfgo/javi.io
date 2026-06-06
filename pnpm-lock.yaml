@@ -72,6 +72,9 @@ importers:
       gh-pages:
         specifier: ^6.3.0
         version: 6.3.0
+      globals:
+        specifier: ^16.0.0
+        version: 16.5.0
       typescript:
         specifier: ^6.0.0
         version: 6.0.3
