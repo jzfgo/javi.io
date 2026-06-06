@@ -2,6 +2,7 @@ import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 import { HOME_EN as HOME } from "@consts";
+import { idToSlug } from "@lib/utils";
 
 export async function GET(context: APIContext) {
   const blog = (await getCollection("blog-en"))
@@ -17,7 +18,7 @@ export async function GET(context: APIContext) {
         title: post.data.title,
         description: post.data.description,
         pubDate: post.data.date,
-        link: new URL(`/en/blog/${post.slug}`, context.site ?? "https://javi.io").toString(),
+        link: new URL(`/en/blog/${idToSlug(post.id)}`, context.site ?? "https://javi.io").toString(),
       })),
   });
 }

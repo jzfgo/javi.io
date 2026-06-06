@@ -4,7 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS_ES as PROJECTS } from "@consts";
-import { getIconMap } from "@lib/utils";
+import { getIconMap, idToSlug } from "@lib/utils";
 
 const projects = (await getCollection("projects-es"))
   .filter(project => !project.data.draft)
@@ -23,7 +23,7 @@ const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eag
         {
           projects.map((project) => (
             <li>
-              <ArrowCard entry={project} href={`/es/projects/${project.slug}`} icon={icons[project.slug]} />
+              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} />
             </li>
           ))
         }

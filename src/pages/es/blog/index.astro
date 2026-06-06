@@ -4,7 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG_ES as BLOG } from "@consts";
-import { getIconMap } from "@lib/utils";
+import { getIconMap, idToSlug } from "@lib/utils";
 
 const data = (await getCollection("blog-es"))
   .filter(post => !post.data.draft)
@@ -41,7 +41,7 @@ const icons = getIconMap(import.meta.glob("/src/assets/blog/*/icon.*", { eager: 
             <ul class="flex flex-col gap-4">
               {posts[year].map((post) => (
                 <li>
-                  <ArrowCard entry={post} href={`/es/blog/${post.slug}`} icon={icons[post.data.assetSlug ?? post.slug]} />
+                  <ArrowCard entry={post} href={`/es/blog/${idToSlug(post.id)}`} icon={icons[post.data.assetSlug ?? idToSlug(post.id)]} />
                 </li>
               ))}
             </ul>
