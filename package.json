@@ -2,6 +2,7 @@
   "name": "astro-nano",
   "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@11.5.0",
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
