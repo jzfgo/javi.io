@@ -21,9 +21,9 @@ const projects = (await getCollection("projects-es"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
-const blogIcons = getIconMap(import.meta.glob("/public/blog/*/icon.*"));
-const workIcons = getIconMap(import.meta.glob("/public/work/*/icon.*"));
-const projectIcons = getIconMap(import.meta.glob("/public/projects/*/icon.*"));
+const blogIcons = getIconMap(import.meta.glob("/src/assets/blog/*/icon.*", { eager: true }));
+const workIcons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: true }));
+const projectIcons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eager: true }));
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
