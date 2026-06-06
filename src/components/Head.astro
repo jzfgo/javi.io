@@ -93,7 +93,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
       } else {
         toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
       }
-    } catch (e) {
+    } catch (_) {
       // localStorage may be blocked by privacy settings
       toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
@@ -121,7 +121,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
     } else {
       document.documentElement.classList.remove("dark");
     }
-    document.documentElement.offsetHeight;
+    void document.documentElement.offsetHeight;
     document.head.removeChild(css);
   }
 

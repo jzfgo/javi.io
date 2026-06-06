@@ -5,7 +5,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { SITE, HOME_ES as HOME, AUTHOR } from "@consts";
-import { getIconMap } from "@lib/utils";
+import { getIconMap, idToSlug } from "@lib/utils";
 
 const blog = (await getCollection("blog-es"))
   .filter(post => !post.data.draft)
@@ -52,7 +52,7 @@ const projectIcons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*"
         <ul class="flex flex-col gap-4">
           {blog.map(post => (
             <li>
-              <ArrowCard entry={post} href={`/es/blog/${post.slug}`} icon={blogIcons[post.data.assetSlug ?? post.slug]} />
+              <ArrowCard entry={post} href={`/es/blog/${idToSlug(post.id)}`} icon={blogIcons[post.data.assetSlug ?? idToSlug(post.id)]} />
             </li>
           ))}
         </ul>
@@ -70,7 +70,7 @@ const projectIcons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*"
         <ul class="flex flex-col gap-4">
           {work.map(entry => (
             <li>
-              <ArrowCard entry={entry} href={`/es/work#${entry.slug}`} icon={workIcons[entry.slug]} />
+              <ArrowCard entry={entry} href={`/es/work#${idToSlug(entry.id)}`} icon={workIcons[idToSlug(entry.id)]} />
             </li>
           ))}
         </ul>
@@ -88,7 +88,7 @@ const projectIcons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*"
         <ul class="flex flex-col gap-4">
           {projects.map(project => (
             <li>
-              <ArrowCard entry={project} href={`/es/projects/${project.slug}`} icon={projectIcons[project.slug]} />
+              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={projectIcons[idToSlug(project.id)]} />
             </li>
           ))}
         </ul>
