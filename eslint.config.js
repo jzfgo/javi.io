@@ -17,6 +17,14 @@ export default [
   },
   ...astro.configs["flat/recommended"],
   {
+    files: ["**/*.astro"],
+    languageOptions: {
+      parserOptions: {
+        parser: tsParser,
+      },
+    },
+  },
+  {
     languageOptions: {
       globals: {
         ...globals.node,

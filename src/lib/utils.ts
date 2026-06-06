@@ -33,7 +33,7 @@ export function dateRange(startDate: Date, endDate?: Date | string, locale: stri
 }
 
 export function idToSlug(id: string): string {
-  return id.replace(/\/index\.(md|mdx)$/, "").replace(/\.(md|mdx)$/, "");
+  return id.replace(/(?:^|\/)index\.(md|mdx)$/, "").replace(/\.(md|mdx)$/, "");
 }
 
 export function getIconMap(globResult: Record<string, { default: { src: string } }>): Record<string, string> {

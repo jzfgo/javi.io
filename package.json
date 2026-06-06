@@ -15,7 +15,6 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/markdown-satteri": "^0.2.1",
     "@astrojs/mdx": "^6.0.1",
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
