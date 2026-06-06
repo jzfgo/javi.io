@@ -3,6 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@11.5.0",
+  "overrides": {
+    "vite": "7.3.2"
+  },
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
