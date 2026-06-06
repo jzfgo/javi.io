@@ -4,7 +4,7 @@ description: "I built a /1on1 slash command for Claude Code that runs a structur
 date: 2026-06-01
 translationKey: "1on1-skill"
 assetSlug: "building-my-first-public-claude-code-skill-the-1on1"
-hero: "/blog/building-my-first-public-claude-code-skill-the-1on1/hero.png"
+hero: "../../assets/blog/building-my-first-public-claude-code-skill-the-1on1/hero.png"
 ---
 
 **TL;DR:** I built a `/1on1` slash command for Claude Code to run a structured check-in with my AI collaborator. It preps silently from git history, asks one question at a time, self-reflects, delivers a report, persists action items where Claude sees them, and schedules the next session. It is my first public skill, available at [github.com/jzfgo/agents](https://github.com/jzfgo/agents).

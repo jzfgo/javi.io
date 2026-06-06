@@ -4,7 +4,7 @@ description: "Construí un comando /1on1 para Claude Code que ejecuta una reuni�
 date: 2026-06-01
 translationKey: "1on1-skill"
 assetSlug: "building-my-first-public-claude-code-skill-the-1on1"
-hero: "/blog/building-my-first-public-claude-code-skill-the-1on1/hero.png"
+hero: "../../assets/blog/building-my-first-public-claude-code-skill-the-1on1/hero.png"
 ---
 
 **TL;DR:** Construí un comando `/1on1` para Claude Code que ejecuta una reunión de seguimiento estructurada con mi colaborador de IA. Se prepara en silencio a partir del historial de git, hace una pregunta a la vez, hace una autoevaluación, genera un informe, persiste los puntos de acción donde Claude los puede ver y programa la próxima sesión. Es mi primer skill público, disponible en [github.com/jzfgo/agents](https://github.com/jzfgo/agents).

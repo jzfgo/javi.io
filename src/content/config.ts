@@ -12,15 +12,16 @@ const parseWorkDate = (val: string): Date => {
   return date;
 };
 
-const blogSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  date: z.coerce.date(),
-  draft: z.boolean().optional(),
-  translationKey: z.string().optional(),
-  hero: z.string().optional(),
-  assetSlug: z.string().optional(),
-});
+const blogSchema = ({ image }: { image: () => z.ZodTypeAny }) =>
+  z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    draft: z.boolean().optional(),
+    translationKey: z.string().optional(),
+    hero: image().optional(),
+    assetSlug: z.string().optional(),
+  });
 
 const blogEs = defineCollection({ type: "content", schema: blogSchema });
 const blogEn = defineCollection({ type: "content", schema: blogSchema });

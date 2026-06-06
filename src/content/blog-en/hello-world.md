@@ -4,7 +4,7 @@ description: "This post is ten years late."
 date: 2020-01-01
 translationKey: "hello-world"
 assetSlug: "hola-mundo"
-hero: "/blog/hola-mundo/yancy-min-842ofHC6MaI-unsplash.jpg"
+hero: "../../assets/blog/hola-mundo/yancy-min-842ofHC6MaI-unsplash.jpg"
 ---
 This post is ten years late. Let me explain.
 

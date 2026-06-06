@@ -15,7 +15,7 @@ const work = await Promise.all(
   })
 );
 
-const icons = getIconMap(import.meta.glob("/public/work/*/icon.*"));
+const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
 
 ---
 
