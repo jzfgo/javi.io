@@ -4,7 +4,7 @@ description: "Resources to help get through lockdown."
 date: 2020-03-20
 translationKey: "coronafreemium"
 assetSlug: "servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19"
-hero: "/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
+hero: "../../assets/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
 ---
 
 Since the state of alarm was declared in Spain and other countries, many companies — large and small — have been opening up access to their paid services for free, with the aim of helping other businesses, freelancers, and citizens get through this crisis.

@@ -1,4 +1,13 @@
+# agentic tooling
+.claude/
+cache/
+docs/superpowers/
+
+# Git worktrees
+.worktrees/
+
 # build output
+.cache/
 dist/
 
 # generated types
@@ -26,8 +35,5 @@ pnpm-debug.log*
 # Backups
 *~bak*
 
-# Git worktrees
-.worktrees/
-
+# Deployment targets
 .netlify/
-.claude/

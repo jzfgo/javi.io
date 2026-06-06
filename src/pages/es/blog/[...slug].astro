@@ -26,7 +26,7 @@ const translation = post.data.translationKey
   : enPosts.find(p => p.slug === post.slug);
 ---
 
-<PageLayout title={post.data.title} description={post.data.description} image={post.data.hero}>
+<PageLayout title={post.data.title} description={post.data.description} image={post.data.hero?.src}>
   <Container>
     <div class="animate">
       <BackToPrev href="/es/blog">
@@ -41,7 +41,7 @@ const translation = post.data.translationKey
     {post.data.hero && (
       <div class="animate my-10">
         <img
-          src={post.data.hero}
+          src={post.data.hero?.src}
           alt={post.data.title}
           class="w-full rounded-lg object-cover max-h-96"
         />

@@ -4,7 +4,7 @@ description: "JUST DO IT."
 date: 2020-02-01
 translationKey: "gym-lessons"
 assetSlug: "diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio"
-hero: "/blog/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio/george-pagan-iii-PsifAN6_z-k-unsplash.jpg"
+hero: "../../assets/blog/diez-cosas-que-he-aprendido-tras-tres-anos-yendo-al-gimnasio/george-pagan-iii-PsifAN6_z-k-unsplash.jpg"
 ---
 It feels like yesterday, but last November marked three years since I first walked into a gym.
 
