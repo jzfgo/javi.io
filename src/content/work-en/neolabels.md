@@ -5,4 +5,15 @@ dateStart: "05/01/2006"
 dateEnd: "06/01/2013"
 ---
 
-R&D consulting, frontend/backend development, and UX/UI design for clients including Movistar, Fundación Telefónica, Telefónica de España (Presidency Office), Cambridge University Press, and Aramón. Awarded the Smile 2013 prize with my team for the English Monstruo app for Cambridge University Press.
+Neo Labels was an online marketing agency focused on helping brands enter the digital age of media, social networks, and applications in Spain. Born from the experience gained through Sharemusic!, it was acquired by IPG Mediabrands in April 2021.
+
+## Role Evolution
+
+Over seven years, performed a wide variety of roles ranging from UX and UI design to frontend/backend development. During the final stage, served as R&D consultant and frontend mobile developer.
+
+## Key Projects
+
+- **English Monstruo** — Game Designer, UX Designer — iOS, Cambridge University Press
+- **Adrià en casa** — Technical Advisor — Android, iOS, Telefónica
+- **Movistar Bike & Go** — Technical Advisor, Frontend Developer — Android, iOS, Movistar
+- **Aramón Snow & Go** — Technical Advisor, Backend Developer — Android, BlackBerry, iOS, Movistar
