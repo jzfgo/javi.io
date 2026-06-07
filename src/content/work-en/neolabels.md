@@ -9,7 +9,7 @@ Neo Labels was an online marketing agency focused on helping brands enter the di
 
 ## Role Evolution
 
-Over seven years, performed a wide variety of roles ranging from UX and UI design to frontend/backend development. During the final stage, served as Research & Innovation consultant and frontend mobile developer.
+Over seven years, performed a wide variety of roles ranging from UX and UI design to frontend/backend development. During the final stage, served as R&D consultant and frontend mobile developer.
 
 ## Key Projects
 
