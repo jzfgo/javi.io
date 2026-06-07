@@ -5,7 +5,7 @@ dateStart: "05/01/2006"
 dateEnd: "12/01/2010"
 ---
 
-Sharemusic! es una productora de eventos y espectáculos musicales en Madrid. Fue pionera en la revolución de las redes sociales en España con atopechavalote.com (2005-2010), que alcanzó los 25.000 usuarios registrados.
+Sharemusic! es una productora de eventos y espectáculos musicales en Madrid. Fue pionera en la revolución de las redes sociales en España con atopechavalote.com (2005–2010), que alcanzó los 25.000 usuarios registrados.
 
 ## Evolución de Roles
 

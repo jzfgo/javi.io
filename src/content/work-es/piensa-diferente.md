@@ -5,7 +5,7 @@ dateStart: "07/01/2013"
 dateEnd: "03/01/2020"
 ---
 
-Piensa Diferente fue una joven startup que ofrecía servicios de consultoría a complejos turísticos medianos y pequeños y a establecimientos B&B. Se especializó en ofrecer soluciones personalizadas pero asequibles para permitir a sus clientes competir directamente con las grandes cadenas hoteleras a través de la tecnología y la innovación.
+Piensa Diferente fue una joven startup que ofrecía servicios de consultoría a pequeños y medianos complejos turísticos y establecimientos B&B. Se especializó en ofrecer soluciones personalizadas pero asequibles para permitir a sus clientes competir directamente con las grandes cadenas hoteleras a través de la tecnología y la innovación.
 
 ## Responsabilidades
 
@@ -15,11 +15,11 @@ Desde la creación de la empresa, ejercí como desarrollador principal de todas 
 
 ### Diseño UX / UI
 
-Responsable del diseño UX/UI de la web y el Property Management System (PMS) de Bahiazul, diseño UX para el Backoffice de UMA y diseño de branding/logotipos (incluyendo logotipos de Piensa Diferente y Bahiazul).
+Responsable del diseño UX/UI de la web y del Property Management System (PMS) de Bahiazul, del diseño UX para el Backoffice de UMA, y del diseño de branding y logotipos (incluyendo los logotipos de Piensa Diferente y Bahiazul).
 
 ### Gestión
 
-Supervisé todos los aspectos técnicos del negocio, incluyendo arquitectura en la nube, infraestructura de TI y coordinación de desarrolladores externos.
+Supervisé todos los aspectos técnicos del negocio, incluyendo la arquitectura en la nube, la infraestructura de TI y la coordinación de desarrolladores externos.
 
 ## Proyectos Clave
 

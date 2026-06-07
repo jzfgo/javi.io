@@ -19,7 +19,7 @@ Responsible for the UX/UI design of the Bahiazul website and Property Management
 
 ### Management
 
-Oversaw all technical aspects of the business including Cloud Architecture, IT infrastructure, and supervised external developers hired to build custom components.
+Oversaw all technical aspects of the business, including Cloud Architecture and IT infrastructure, and supervised external developers hired to build custom components.
 
 ## Key Projects
 

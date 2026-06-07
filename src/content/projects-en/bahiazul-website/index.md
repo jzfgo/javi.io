@@ -5,7 +5,7 @@ date: "Dec 01 2020"
 translationKey: "bahiazul-website"
 ---
 
-The **Bahiazul Website** redesign served as the resort's primary online presence, historically responsible for more than 50% of their bookings.
+The **Bahiazul Website** redesign served as the resort's primary online presence, historically responsible for more than 50% of its bookings.
 
 The goal of the project was to overhaul the outdated 2013 version and replace it with a high-performance web platform focused on a mobile-first approach, a more intuitive and personalized booking experience, and a clean and modern design.
 

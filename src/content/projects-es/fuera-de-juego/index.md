@@ -5,9 +5,9 @@ date: "Aug 01 2017"
 translationKey: "fuera-de-juego"
 ---
 
-**Fuera de Juego** fue una aplicación web promocional desarrollada para **Mahou** para involucrar a los aficionados al fútbol durante la temporada de LaLiga.
+**Fuera de Juego** fue una aplicación web promocional desarrollada para **Mahou** con el fin de involucrar a los aficionados al fútbol durante la temporada de LaLiga.
 
-La aplicación permitía a los usuarios enviar códigos promocionales de las botellas de cerveza Mahou para predecir los resultados de los próximos partidos de LaLiga, subir en la clasificación y ganar premios.
+La aplicación permitía a los usuarios enviar códigos promocionales encontrados en las botellas de cerveza Mahou para predecir los resultados de los próximos partidos de LaLiga, subir en la clasificación y ganar premios.
 
 ## Arquitectura y Desarrollo
 
