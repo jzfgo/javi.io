@@ -16,4 +16,4 @@ Over seven years, performed very different roles ranging from UX and UI design t
 - **English Monstruo** — Game Designer, UX Designer — iOS, Cambridge University Press
 - **Adrià en casa** — Technical Advisor — Android, iPadOS, Telefónica
 - **Movistar Bike & Go** — Technical Advisor, Frontend Developer — Android, iOS, Movistar
-- **Aramon Snow & Go** — Technical Advisor, Backend Developer — Android, BlackBerry, iOS, Movistar
+- **Aramón Snow & Go** — Technical Advisor, Backend Developer — Android, BlackBerry, iOS, Movistar

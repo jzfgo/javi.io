@@ -11,7 +11,7 @@ Piensa Diferente fue una startup que ofrecía servicios de consultoría a comple
 
 ### Desarrollo
 
-Desde la creación de la empresa, ejerció como desarrollador principal de todas las soluciones hoteleras, incluyendo los sistemas de Bahiazul y Las Colinas Resort.
+Desde la creación de la empresa, ejercí como desarrollador principal de todas las soluciones hoteleras, incluyendo los sistemas de Bahiazul y Las Colinas Resort.
 
 ### Diseño UX / UI
 
@@ -19,7 +19,7 @@ Responsable del diseño UX/UI de la web y el Property Management System (PMS) de
 
 ### Gestión
 
-Supervisó todos los aspectos técnicos del negocio, incluyendo arquitectura en la nube, infraestructura de TI y coordinación de desarrolladores externos.
+Supervisé todos los aspectos técnicos del negocio, incluyendo arquitectura en la nube, infraestructura de TI y coordinación de desarrolladores externos.
 
 ## Proyectos Clave
 

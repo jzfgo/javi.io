@@ -9,11 +9,11 @@ Neo Labels fue una agencia de marketing online enfocada en ayudar a marcas a ent
 
 ## Evolución de Roles
 
-A lo largo de siete años, desempeñó muy diversos roles que abarcaron desde diseño UX y UI hasta desarrollo frontend/backend. Durante la etapa final, ejerció como consultor de Investigación e Innovación y desarrollador móvil frontend.
+A lo largo de siete años, desempeñé muy diversos roles que abarcaron desde diseño UX y UI hasta desarrollo frontend/backend. Durante la etapa final, ejercí como consultor de Investigación e Innovación y desarrollador móvil frontend.
 
 ## Proyectos Clave
 
 - **English Monstruo** — Diseñador de Juego, Diseñador UX — iOS, Cambridge University Press
 - **Adrià en casa** — Asesor Técnico — Android, iPadOS, Telefónica
 - **Movistar Bike & Go** — Asesor Técnico, Desarrollador Frontend — Android, iOS, Movistar
-- **Aramon Snow & Go** — Asesor Técnico, Desarrollador Backend — Android, BlackBerry, iOS, Movistar
+- **Aramón Snow & Go** — Asesor Técnico, Desarrollador Backend — Android, BlackBerry, iOS, Movistar

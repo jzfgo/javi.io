@@ -9,7 +9,7 @@ Sharemusic! es una productora de eventos y espectáculos musicales en Madrid. Fu
 
 ## Evolución de Roles
 
-Evolucionó de diseñador a Director Creativo, impulsando la marca, el diseño UX/UI y la estrategia digital. Lideró patrocinios con marcas clave como Sony PlayStation, BBVA y Everlast.
+Evolucioné de diseñador a Director Creativo, impulsando la marca, el diseño UX/UI y la estrategia digital. Lideré patrocinios con marcas clave como Sony PlayStation, BBVA y Everlast.
 
 ## Proyectos Clave
 

@@ -5,7 +5,7 @@ dateStart: "07/01/2013"
 dateEnd: "03/01/2020"
 ---
 
-Piensa Diferente was an early startup that offered consulting services to small to medium-sized resorts and B&Bs. It specialised in offering tailored yet affordable solutions to enable its clients to compete directly with the big hospitality chains through technology and innovation.
+Piensa Diferente was an early startup that offered consulting services to small to medium-sized resorts and B&Bs. It specialized in offering tailored yet affordable solutions to enable its clients to compete directly with the big hospitality chains through technology and innovation.
 
 ## Responsibilities
 
