@@ -7,7 +7,7 @@ translationKey: "bahiazul-website"
 
 El rediseño del **Sitio Web de Bahiazul** sirvió como la principal presencia online del resort, históricamente responsable de más del 50% de sus reservas.
 
-El objetivo del proyecto era renovar la obsoleta versión de 2013 y sustituirla por una experiencia web de alto rendimiento centrada en un enfoque mobile-first, una experiencia de reserva más intuitiva y personalizada, y un diseño limpio y moderno.
+El objetivo del proyecto era renovar la obsoleta versión de 2013 y sustituirla por una plataforma web de alto rendimiento centrada en un enfoque mobile-first, una experiencia de reserva más intuitiva y personalizada, y un diseño limpio y moderno.
 
 ## Características Clave e Implementación
 

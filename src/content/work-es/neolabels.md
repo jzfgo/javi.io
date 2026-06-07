@@ -5,7 +5,7 @@ dateStart: "05/01/2006"
 dateEnd: "06/01/2013"
 ---
 
-Neo Labels fue una agencia de marketing online enfocada en ayudar a marcas a entrar en la era de los medios digitales, redes sociales y aplicaciones en España. Nacida de la experiencia adquirida por Sharemusic!, fue adquirida por IPG Mediabrands en abril de 2021.
+Neo Labels fue una agencia de marketing online enfocada en ayudar a marcas a entrar en la era de los medios digitales, redes sociales y aplicaciones en España. Nacida de la experiencia obtenida a través de Sharemusic!, fue adquirida por IPG Mediabrands en abril de 2021.
 
 ## Evolución de Roles
 

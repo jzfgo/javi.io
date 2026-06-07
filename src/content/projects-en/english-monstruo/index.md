@@ -13,7 +13,7 @@ It is a "Brain Trainer" style game designed to teach English learners how to avo
 
 As the **Game Designer** and **UX Designer**, I was in charge of:
 - **Information Architecture (IA)** and flow design.
-- **UX Design** and user experience.
+- **UX Design**.
 - **Game design mechanics**, balancing educational content with a fun gameplay loop.
 
 ## Results

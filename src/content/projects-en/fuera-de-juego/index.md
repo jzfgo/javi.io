@@ -7,7 +7,7 @@ translationKey: "fuera-de-juego"
 
 **Fuera de Juego** was a promotional web application developed for **Mahou** to engage football fans during the LaLiga season.
 
-The application allowed users to submit promotional codes found on Mahou beer bottles to predict results for upcoming LaLiga matches, allowing them to climb rankings and win prizes.
+The application allowed users to submit promotional codes found on Mahou beer bottles to predict results for upcoming LaLiga matches, enabling them to climb rankings and win prizes.
 
 ## Architecture & Development
 

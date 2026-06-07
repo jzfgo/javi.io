@@ -13,7 +13,7 @@ Es un juego al estilo "Brain Trainer" diseñado para enseñar a los estudiantes 
 
 Como **Diseñador de Juego** y **Diseñador UX**, estuve a cargo de:
 - **Arquitectura de la Información (IA)** y diseño de flujos.
-- **Diseño UX** y experiencia de usuario.
+- **Diseño UX**.
 - **Mecánicas de diseño de juego**, equilibrando el contenido educativo con un bucle de juego divertido.
 
 ## Resultados
