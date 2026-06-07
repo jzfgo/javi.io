@@ -17,3 +17,11 @@ As the **Full Stack Developer**, I led the technical development:
 - Incorporated **Sass** for bespoke, responsive styling based on a custom internal **Design System**.
 - Implemented rich media integrations including photography cinemagraphs, video banners, and **360º interactive photo elements** hosted on **Firebase Storage**.
 - Used **MDX** for flexible static content editing.
+
+![Price comparison table – Small screen size](../../../assets/projects/bahiazul-website/bahiazul-web-mobile.png)
+
+![Page cover – Medium screen size](../../../assets/projects/bahiazul-website/bahiazul-web-tablet.jpg)
+
+![Review showcase – Big screen size](../../../assets/projects/bahiazul-website/bahiazul-web-laptop.jpg)
+
+![Villa carousel – Huge screen size](../../../assets/projects/bahiazul-website/bahiazul-web-desktop.jpg)

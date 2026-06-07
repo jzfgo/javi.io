@@ -17,3 +17,11 @@ Como **Desarrollador Full Stack**, lideré el desarrollo técnico:
 - Incorporación de **Sass** para estilos personalizados y adaptables basados en un **Sistema de Diseño** interno.
 - Integración de contenido multimedia de alta calidad, incluyendo cinemagraphs fotográficos, banners de vídeo y **elementos interactivos de fotos en 360º** alojados en **Firebase Storage**.
 - Uso de **MDX** para la edición flexible de contenido estático.
+
+![Tabla comparativa de precios – Pantalla pequeña](../../../assets/projects/bahiazul-website/bahiazul-web-mobile.png)
+
+![Portada de página – Pantalla mediana](../../../assets/projects/bahiazul-website/bahiazul-web-tablet.jpg)
+
+![Sección de reseñas – Pantalla grande](../../../assets/projects/bahiazul-website/bahiazul-web-laptop.jpg)
+
+![Carrusel de villas – Pantalla muy grande](../../../assets/projects/bahiazul-website/bahiazul-web-desktop.jpg)
