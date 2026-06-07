@@ -21,3 +21,5 @@ Aspectos clave de la implementación:
 - Desarrollo del pipeline de vídeo que automatiza la ingesta, codificación y publicación de vídeos utilizando **Google Cloud Platform**.
 - Creación de un **pipeline de IA** para detectar eventos relevantes de los partidos a partir de la grabación de vídeo en bruto, acelerando el proceso de generación de resúmenes.
 - Implementación de sincronización en tiempo real y almacenamiento de bases de datos con **Firebase** y **PostgreSQL**.
+
+![Fly-Fut Ligas iOS App](../../../assets/projects/fly-fut-ligas/Fly-Fut_Ligas.png)

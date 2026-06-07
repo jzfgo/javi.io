@@ -21,3 +21,5 @@ Key highlights of the implementation:
 - Developed the video pipeline that automates video intake, encoding, and publishing using **Google Cloud Platform**.
 - Created an **AI pipeline** to detect relevant match events from raw video footage, accelerating the highlight generation process.
 - Implemented real-time synchronization and database storage with **Firebase** and **PostgreSQL**.
+
+![Fly-Fut Ligas iOS App](../../../assets/projects/fly-fut-ligas/Fly-Fut_Ligas.png)
