@@ -5,4 +5,29 @@ dateStart: "04/01/2021"
 dateEnd: "10/01/2022"
 ---
 
-Lideré dos productos: Fly-Fut Pro, una app de iPad para registrar y analizar sesiones de entrenamiento de fútbol con drones e IA para equipos profesionales; y Fly-Fut Ligas, una app móvil para la que lideré la infraestructura backend, herramientas internas y pipelines automatizados de procesado de vídeo. Desarrollo full-stack con Nuxt, Vue, NestJS, TypeScript y GCP.
+Fly-Fut es la primera empresa del mundo en protocolizar la grabación de fútbol con drones, asistida por IA.
+
+## Responsabilidades
+
+### Diseño de Sistemas
+
+A cargo del diseño de la nueva suite de aplicaciones profesionales de la compañía (Fly-Fut Pro), que incluye una aplicación para iPad para grabar sesiones de entrenamiento de fútbol con un dron autónomo y una herramienta para el análisis táctico de las sesiones grabadas.
+
+Anteriormente, lideró el diseño de la nueva versión de la plataforma para el producto de consumo de la empresa (Fly-Fut Ligas), que daba soporte a la aplicación móvil del usuario final, un pipeline de creación de vídeo en la nube asistido por IA y varias herramientas de gestión.
+
+### Desarrollo
+
+Lideró el desarrollo de una versión prototipo de la aplicación de control de drones.
+
+Anteriormente, desarrolló toda la infraestructura backend de la plataforma de consumo, incluyendo el pipeline de creación de vídeo, las herramientas de gestión y la aplicación móvil.
+
+### Gestión
+
+Supervisó el desarrollo de la suite de herramientas y servicios internos y asistió a los equipos encargados de integrar los servicios backend.
+
+Algunas de estas herramientas son: un software de edición de vídeo basado en navegador, un pipeline de vídeo totalmente automatizado que gestiona la ingesta, codificación y publicación, y un pipeline de IA que detecta eventos relevantes del partido a partir de la grabación en bruto.
+
+## Proyectos Clave
+
+- **Fly-Fut Ligas** — Arquitecto de Sistemas, Desarrollador Backend — DDD, Firebase, Google Cloud, NestJS, Node.js, OpenAPI, PostgreSQL, TypeScript
+- **Fly-Fut Pro** — Arquitecto de Sistemas, Diseñador UX/UI, Desarrollador Frontend — Figma, Firebase, Firestore, NuxtJS, Sass, TypeScript, VueJS
