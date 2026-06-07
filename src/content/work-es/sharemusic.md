@@ -13,6 +13,6 @@ Evolucioné de diseñador a Director Creativo, impulsando la marca, el diseño U
 
 ## Proyectos Clave
 
-- **Atopechavalote!** — Desarrollador Full Stack, Diseñador UI — CodeIgniter, MySQL, PHP (Lideró el proyecto de 2007 a 2009)
+- **Atopechavalote!** — Desarrollador Full Stack, Diseñador UI — CodeIgniter, MySQL, PHP (Lideré el proyecto de 2007 a 2009)
 - **PlayStation MegaPanic** — Director Creativo — Patrocinio de macroevento por Sony PlayStation
 - **Madrid Traffic Festival** — Director Creativo — Patrocinio de evento por BBVA
