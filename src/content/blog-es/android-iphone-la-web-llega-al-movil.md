@@ -2,6 +2,7 @@
 title: "Android, iPhone. La web llega al móvil"
 description: "Google y Apple lideran una revolución de la web móvil con Android e iPhone, dos plataformas que prometen cambiar para siempre cómo accedemos a internet desde el móvil."
 date: 2007-12-03
+translationKey: "android-iphone-mobile-web"
 ---
 
 Sí, ya se que hace años que se puede acceder a la web desde del teléfono móvil, pero sinceramente, ¿cuántos de vosotros accedíais (o accedéis) a ella regularmente? … Yo tampoco.

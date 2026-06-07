@@ -2,6 +2,7 @@
 title: "Workaholics"
 description: "Una reflexión sobre la diferencia entre la adicción al trabajo movida por el miedo y la pasión por el trabajo, a partir de un texto de Seth Godin."
 date: 2008-01-22
+translationKey: "workaholics"
 ---
 
 Anoche, mientras buceaba entre blogs en busca de información para uno de nuestros proyectos, topé casualmente con **uno de esos textos que te retratan de una forma tan precisa que consiguen emocionarte y hacerte sentir como si tú mismo los hubieras inspirado**.

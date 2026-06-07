@@ -2,6 +2,7 @@
 title: "La web asalta el escritorio: Silverlight"
 description: "Microsoft Silverlight, el rival de Adobe AIR basado en WPF y XAML, analizado desde la perspectiva de un desarrollador web acostumbrado a las tecnologías abiertas."
 date: 2008-03-25
+translationKey: "web-desktop-silverlight"
 ---
 
 Aunque como tal, Silverlight es realmente un plug-in para navegador (es ***el Flash de Microsoft***, hablando rápido y mal), WPF (Windows Presentation Foundation), la tecnología sobre la que está creado, sí que podría situarse al mismo nivel que [AIR](/es/blog/la-web-asalta-el-escritorio-adobe-air).

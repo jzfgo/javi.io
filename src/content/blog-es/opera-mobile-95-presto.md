@@ -2,6 +2,7 @@
 title: "Opera Mobile 9.5. Presto!"
 description: "Opera anuncia Opera Mobile 9.5, con un motor Presto reescrito desde cero, JavaScript Futhark y soporte para Flash, presentado en el Mobile World Congress 2008."
 date: 2008-02-11
+translationKey: "opera-mobile-95"
 ---
 
 [Opera](http://www.opera.com/) ha anunciado el lanzamiento de **Opera Mobile 9.5**, su navegador web para móviles avanzados y smart-phones. Con esta nueva versión, Opera pretende acercar la web de escritorio a los dispositivos móviles gracias a sus **nuevas características:**

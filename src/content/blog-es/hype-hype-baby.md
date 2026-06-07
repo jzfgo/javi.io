@@ -2,6 +2,7 @@
 title: "Hype, hype, Baby!"
 description: "Un análisis del marketing de Apple alrededor de sus grandes eventos: desde los rumores controlados hasta el efecto viral que convierte cada lanzamiento en un fenómeno de internet."
 date: 2008-01-15
+translationKey: "hype-hype-baby"
 ---
 
 Si preguntas a alguien que me conozca seguramente te dirá que soy un fan enfermizo de Apple… y **estará completamente en lo cierto**.

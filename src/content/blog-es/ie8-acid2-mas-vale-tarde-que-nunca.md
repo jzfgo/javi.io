@@ -2,6 +2,7 @@
 title: "IE8 ♥ Acid2: Más vale tarde que nunca"
 description: "IE8 anuncia que pasa el test Acid2, un hito histórico para los desarrolladores web que llevan años lidiando con los problemas de compatibilidad de Internet Explorer."
 date: 2007-12-20
+translationKey: "ie8-acid2"
 ---
 
 Parece que el equipo de desarrollo de [Internet Explorer](http://www.microsoft.com/spain/windows/products/winfamily/ie/default.mspx) se está poniendo las pilas y la futura versión 8 de su navegador al fin respetará los estándares. Y es que Dean Hachamovitch, Director General del equipo de desarrollo de IE, ha anunciado hoy en [IEblog](http://blogs.msdn.com/ie/) que [IE8 pasa el test Acid2](http://blogs.msdn.com/ie/archive/2007/12/19/internet-explorer-8-and-acid2-a-milestone.aspx) al igual que otros navegadores que ya lo hacen [Safari](http://www.apple.com/es/safari/) (el primero que lo superó), [Opera 9](http://www.opera.com/) y [Firefox 3](http://www.mozilla.com/en-US/firefox/all-beta.html), etc.

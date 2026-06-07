@@ -2,6 +2,7 @@
 title: "¿Microhoo?"
 description: "Microsoft lanza una oferta de 30.000 millones de euros para comprar Yahoo!, una operación que podría convertirse en la compra más grande de la historia de internet."
 date: 2008-02-07
+translationKey: "microhoo"
 ---
 
 Si vives en este planeta te habrás enterado de que el pasado viernes [Microsoft lanzó una oferta de compra por Yahoo!](http://www.nytimes.com/cnet/CNET_2100-1014_3-6228705.html). Pues, si ya *flipamos* cuando [Google adquirió YouTube por más de 1.000 millones de Euros](http://www.microsiervos.com/archivo/internet/confirmado-google-compra-youtube.html), esta vez Microsoft ha ofrecido unos 30.000, calderilla vamos.

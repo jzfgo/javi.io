@@ -2,6 +2,7 @@
 title: "Sobre Facebook + Nokia"
 description: "El rumor de una alianza entre Facebook y Nokia evoca los paralelismos con la antigua guerra de navegadores y plantea si la web social caerá en las mismas trampas del pasado."
 date: 2008-01-30
+translationKey: "facebook-nokia"
 ---
 
 Hace unos días que saltó el rumor de una **posible alianza entre Facebook y Nokia**, lo que supondría —entre otras cosas— la inclusión de la red social del momento como una aplicación más en los futuros terminales de la compañía finlandesa y entiendo que a su vez, el veto a cualquier otra red social a compartir sitio con ella.
