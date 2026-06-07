@@ -15,7 +15,7 @@ Como **Desarrollador Full Stack**, lideré el desarrollo técnico:
 - Construcción de la plataforma utilizando **Next.js** y **TypeScript** para lograr renderizado del lado del servidor (SSR) y rendimiento SEO.
 - Uso de **Firebase Hosting** y **Cloud Functions** para el despliegue y la lógica de renderizado del servidor.
 - Incorporación de **Sass** para estilos personalizados y adaptables basados en un **Sistema de Diseño** interno.
-- Integración de contenido multimedia de alta calidad, incluyendo cinemagrafías, banners de vídeo y **elementos interactivos de fotos en 360º** alojados en **Firebase Storage**.
+- Integración de contenido multimedia enriquecido, incluyendo cinemagrafías, banners de vídeo y **elementos interactivos de fotos en 360º** alojados en **Firebase Storage**.
 - Uso de **MDX** para la edición flexible de contenido estático.
 
 ![Tabla comparativa de precios – Pantalla pequeña](../../../assets/projects/bahiazul-website/bahiazul-web-mobile.png)
