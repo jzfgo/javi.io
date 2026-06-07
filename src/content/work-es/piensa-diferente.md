@@ -23,7 +23,7 @@ Supervisé todos los aspectos técnicos del negocio, incluyendo arquitectura en 
 
 ## Proyectos Clave
 
-- **Un Mundo Aparte** — Tech Lead, UX Lead — React Native, LoopBack 3, Sketch
+- **Un Mundo Aparte** — Líder Técnico, Líder de UX — React Native, LoopBack 3, Sketch
 - **Fuera de Juego** — Desarrollador Frontend — React, Redux, LoopBack 3, BeSoccer API
 - **Telefónica SDiE 2017** — Desarrollador Frontend — React Static, Recharts
 - **Bahiazul Website (v1)** — Desarrollador Full Stack, Diseñador UI — CodeIgniter, PHP, jQuery, Sketch
