@@ -16,3 +16,7 @@ As a **Frontend Developer** inside a five-developer team, I worked on:
 - Integrating the frontend with a **LoopBack 3** backend API.
 - Connecting real-time match scores via the **BeSoccer API**.
 - Integrating Mahou's authentication API for secure user validation.
+
+![Fuera de Juego – Small screens](../../../assets/projects/fuera-de-juego/fdj-mobile.png)
+
+![Fuera de Juego – Big screens](../../../assets/projects/fuera-de-juego/fdj-desktop.png)

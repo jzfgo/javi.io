@@ -16,3 +16,7 @@ Como **Desarrollador Frontend** dentro de un equipo de cinco desarrolladores, tr
 - Integración del frontend con una API backend basada en **LoopBack 3**.
 - Conexión de resultados de partidos en tiempo real mediante la **API de BeSoccer**.
 - Integración de la API de autenticación de Mahou para una validación segura de los usuarios.
+
+![Fuera de Juego – Pantallas pequeñas](../../../assets/projects/fuera-de-juego/fdj-mobile.png)
+
+![Fuera de Juego – Pantallas grandes](../../../assets/projects/fuera-de-juego/fdj-desktop.png)
