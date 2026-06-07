@@ -5,7 +5,7 @@ dateStart: "07/01/2013"
 dateEnd: "03/01/2020"
 ---
 
-Piensa Diferente fue una startup que ofrecía servicios de consultoría a complejos turísticos medianos y pequeños. Se especializó en soluciones personalizadas y asequibles para permitir a sus clientes competir directamente con las grandes cadenas hoteleras.
+Piensa Diferente fue una joven startup que ofrecía servicios de consultoría a complejos turísticos medianos y pequeños y a establecimientos B&B. Se especializó en ofrecer soluciones personalizadas pero asequibles para permitir a sus clientes competir directamente con las grandes cadenas hoteleras a través de la tecnología y la innovación.
 
 ## Responsabilidades
 
