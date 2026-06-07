@@ -16,4 +16,4 @@ Como **Arquitecto de Sistemas**, **Diseñador UX/UI** y **Desarrollador Frontend
 Aspectos clave de la implementación:
 - Diseño de interfaces y experiencias de usuario con **Figma**.
 - Desarrollo de las interfaces web frontend utilizando **NuxtJS** y **VueJS** en combinación con **TypeScript** y estilos con **Sass**.
-- Uso de **Firebase** y **Firestore** para la sincronización de estado en tiempo real y actualizaciones de comandos de baja latencia.
+- Uso de **Firebase** y **Firestore** para la sincronización de estado en tiempo real.

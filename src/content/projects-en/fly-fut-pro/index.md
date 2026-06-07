@@ -16,4 +16,4 @@ As the **System Architect**, **UX/UI Designer**, and **Frontend Developer**, I d
 Key highlights of the implementation:
 - Designed user interfaces and experiences using **Figma**.
 - Developed the frontend web interfaces using **NuxtJS** and **VueJS** combined with **TypeScript** and styled with **Sass**.
-- Leveraged **Firebase** and **Firestore** for real-time state synchronization and low-latency command updates.
+- Leveraged **Firebase** and **Firestore** for real-time state synchronization.
