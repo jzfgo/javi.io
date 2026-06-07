@@ -1,0 +1,19 @@
+---
+title: "Fly-Fut Pro"
+description: "Professional football analysis system with autonomous drone controls and tactical video analysis."
+date: "Jun 01 2022"
+translationKey: "fly-fut-pro"
+---
+
+**Fly-Fut Pro** is the company's professional offering. It enables football teams to self-record their training sessions, analyze them and share the results within the team.
+
+The platform is composed of autonomous drones, an iPad App for drone command & control, and a cloud-based video analysis tool assisted by AI.
+
+## Architecture & Implementation
+
+As the **System Architect**, **UX/UI Designer**, and **Frontend Developer**, I designed the new suite of professional applications and led the development of the prototype version of the drone control app.
+
+Key highlights of the implementation:
+- Designed user interfaces and experiences using **Figma**.
+- Developed the frontend web interfaces using **NuxtJS** and **VueJS** combined with **TypeScript** and styled with **Sass**.
+- Leveraged **Firebase** and **Firestore** for real-time state synchronization and low-latency command updates.
