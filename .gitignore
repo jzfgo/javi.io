@@ -2,6 +2,7 @@
 .claude/
 cache/
 docs/superpowers/
+.superpowers/
 
 # Git worktrees
 .worktrees/
