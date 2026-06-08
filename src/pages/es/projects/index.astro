@@ -32,11 +32,8 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       <ul id="project-list" class="animate flex flex-col gap-4">
         {
           projects.map((project) => (
-            <li data-type={project.data.type} class="flex items-center gap-3">
-              <div class="flex-1">
-                <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} />
-              </div>
-              <span class="type-label text-xs uppercase tracking-widest text-black/30 dark:text-white/30 shrink-0">{project.data.type}</span>
+            <li data-type={project.data.type}>
+              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} tag={project.data.type} />
             </li>
           ))
         }

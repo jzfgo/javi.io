@@ -6,9 +6,10 @@ type Props = {
   href: string;
   icon?: string;
   iconClass?: string;
+  tag?: string;
 };
 
-const { entry, href, icon, iconClass } = Astro.props;
+const { entry, href, icon, iconClass, tag } = Astro.props;
 const title = "company" in entry.data ? entry.data.company : entry.data.title;
 const description = "company" in entry.data ? entry.data.role : entry.data.description;
 ---
@@ -24,6 +25,7 @@ const description = "company" in entry.data ? entry.data.role : entry.data.descr
     <div class="text-sm truncate">
       {description}
     </div>
+    {tag && <span class="type-label text-xs uppercase tracking-widest text-black/30 dark:text-white/30 mt-0.5">{tag}</span>}
   </div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
