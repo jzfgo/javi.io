@@ -29,5 +29,5 @@ Some of these tools are: a browser-based video editing software, a fully automat
 
 ## Key Projects
 
-- **Fly-Fut Ligas** — System Architect, Backend Developer — DDD, Firebase, Google Cloud, NestJS, Node.js, OpenAPI, PostgreSQL, TypeScript
-- **Fly-Fut Pro** — System Architect, UX/UI Designer, Frontend Developer — Figma, Firebase, Firestore, NuxtJS, Sass, TypeScript, VueJS
+- [**Fly-Fut Ligas**](/en/projects/fly-fut-ligas)
+- [**Fly-Fut Pro**](/en/projects/fly-fut-pro)

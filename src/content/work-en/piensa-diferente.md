@@ -23,9 +23,9 @@ Oversaw all technical aspects of the business, including Cloud Architecture and 
 
 ## Key Projects
 
-- **Un Mundo Aparte** — Tech Lead, UX Lead — React Native, LoopBack 3, Sketch
-- **Fuera de Juego** — Frontend Developer — React, Redux, LoopBack 3, BeSoccer API
-- **Telefónica SDiE 2017** — Frontend Developer — React Static, Recharts
-- **Bahiazul Website (v1)** — Full Stack Developer, UI Designer — CodeIgniter, PHP, jQuery, Sketch
-- **Bahiazul PMS** — Full Stack Developer — Yii Framework, PHP, jQuery, Balsamiq
-- **Miscellaneous Design Work** — Designer — Piensa Diferente & Bahiazul branding
+- [**Un Mundo Aparte**](/en/projects/un-mundo-aparte)
+- [**Fuera de Juego**](/en/projects/fuera-de-juego)
+- [**Telefónica SDiE 2017**](/en/projects/telefonica-sdie-2017)
+- [**Bahiazul Website (v1)**](/en/projects/bahiazul-website-v1)
+- [**Bahiazul PMS**](/en/projects/bahiazul-pms)
+- **Miscellaneous Design Work**

@@ -13,7 +13,7 @@ Over seven years, performed a wide variety of roles ranging from UX and UI desig
 
 ## Key Projects
 
-- **English Monstruo** — Game Designer, UX Designer — iOS, Cambridge University Press
-- **Adrià en casa** — Technical Advisor — Android, iOS, Telefónica
-- **Movistar Bike & Go** — Technical Advisor, Frontend Developer — Android, iOS, Movistar
-- **Aramón Snow & Go** — Technical Advisor, Backend Developer — Android, BlackBerry, iOS, Movistar
+- [**English Monstruo**](/en/projects/english-monstruo)
+- [**Adrià en casa**](/en/projects/adria-en-casa)
+- [**Movistar Bike & Go**](/en/projects/movistar-bike-go)
+- [**Aramón Snow & Go**](/en/projects/aramon-snow-go)

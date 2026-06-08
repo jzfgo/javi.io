@@ -23,6 +23,6 @@ For the Digital Kiosk, chose Svelte, a fast and lightweight library for building
 
 ## Key Projects
 
-- **Website** — Full Stack Developer — Design Systems, Firebase, NextJS, React, Sass, Sketch, TypeScript
-- **Email Marketing Campaigns** — Technology Consultant — A/B Testing, Analytics, Automation, Campaign Monitor, Dynamic Content, Segmentation, Templates
-- **Digital Kiosk** — UX/UI Designer, Frontend Developer — Design Systems, Firebase, JavaScript, Sketch, Svelte
+- [**Website**](/en/projects/bahiazul-website)
+- [**Email Marketing Campaigns**](/en/projects/bahiazul-email-marketing)
+- [**Digital Kiosk**](/en/projects/bahiazul-kiosk)

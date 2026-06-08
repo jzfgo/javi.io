@@ -23,8 +23,8 @@ Lidera con confianza: el equipo es dueño de su trabajo y siempre hay ayuda disp
 
 ## Proyectos Clave
 
-- **Porcelanosa Ecommerce** — Tech Lead, Arquitecto Cloud, Desarrollador Full Stack — Google Cloud, GraphQL, Next.js, Node.js, Payload CMS, PostgreSQL, React, TypeScript
-- **Minerales de LaLiga** — Tech Lead, Arquitecto Cloud, Desarrollador Full Stack — Data Art, DataViz, Google Cloud, Next.js, Node.js, Payload CMS, React, Three.js, TypeScript
-- **Quadrant Travel Cloud** — Arquitecto Frontend, Desarrollador Frontend — Jest, Next.js, React, React Query, Tailwind CSS, Testing Library, TypeScript
-- **Sony Pictures Spain** — Tech Lead, Desarrollador Full Stack — Next.js, PostgreSQL, React, Strapi, Tailwind CSS, TypeScript
-- **Voltexa** — Tech Lead, Desarrollador Full Stack — Google Cloud, MongoDB, Payload CMS, React, TypeScript
+- [**Porcelanosa Ecommerce**](/es/projects/porcelanosa-ecommerce)
+- [**Minerales de LaLiga**](/es/projects/minerales-de-la-liga)
+- [**Quadrant Travel Cloud**](/es/projects/quadrant-travel-cloud)
+- [**Sony Pictures Spain**](/es/projects/sony-pictures-spain)
+- [**Voltexa**](/es/projects/voltexa)

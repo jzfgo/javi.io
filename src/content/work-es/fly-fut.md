@@ -29,5 +29,5 @@ Algunas de estas herramientas son: un software de edición de vídeo basado en n
 
 ## Proyectos Clave
 
-- **Fly-Fut Ligas** — Arquitecto de Sistemas, Desarrollador Backend — DDD, Firebase, Google Cloud, NestJS, Node.js, OpenAPI, PostgreSQL, TypeScript
-- **Fly-Fut Pro** — Arquitecto de Sistemas, Diseñador UX/UI, Desarrollador Frontend — Figma, Firebase, Firestore, NuxtJS, Sass, TypeScript, VueJS
+- [**Fly-Fut Ligas**](/es/projects/fly-fut-ligas)
+- [**Fly-Fut Pro**](/es/projects/fly-fut-pro)

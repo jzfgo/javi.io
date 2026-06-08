@@ -23,9 +23,9 @@ Supervisé todos los aspectos técnicos del negocio, incluyendo la arquitectura 
 
 ## Proyectos Clave
 
-- **Un Mundo Aparte** — Líder Técnico, Líder de UX — React Native, LoopBack 3, Sketch
-- **Fuera de Juego** — Desarrollador Frontend — React, Redux, LoopBack 3, BeSoccer API
-- **Telefónica SDiE 2017** — Desarrollador Frontend — React Static, Recharts
-- **Bahiazul Website (v1)** — Desarrollador Full Stack, Diseñador UI — CodeIgniter, PHP, jQuery, Sketch
-- **Bahiazul PMS** — Desarrollador Full Stack — Yii Framework, PHP, jQuery, Balsamiq
-- **Diseño de Marca** — Diseñador — Imagen corporativa de Piensa Diferente y Bahiazul
+- [**Un Mundo Aparte**](/es/projects/un-mundo-aparte)
+- [**Fuera de Juego**](/es/projects/fuera-de-juego)
+- [**Telefónica SDiE 2017**](/es/projects/telefonica-sdie-2017)
+- [**Bahiazul Website (v1)**](/es/projects/bahiazul-website-v1)
+- [**Bahiazul PMS**](/es/projects/bahiazul-pms)
+- **Diseño de Marca**

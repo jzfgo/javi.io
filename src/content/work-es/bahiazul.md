@@ -23,6 +23,6 @@ Para el Quiosco Digital, eligió Svelte, una biblioteca rápida y ligera para co
 
 ## Proyectos Clave
 
-- **Sitio Web** — Desarrollador Full Stack — Sistemas de Diseño, Firebase, NextJS, React, Sass, Sketch, TypeScript
-- **Campañas de Email Marketing** — Consultor Tecnológico — A/B Testing, Analítica, Automatización, Campaign Monitor, Contenido Dinámico, Segmentación, Plantillas
-- **Quiosco Digital** — Diseñador UX/UI, Desarrollador Frontend — Sistemas de Diseño, Firebase, JavaScript, Sketch, Svelte
+- [**Sitio Web**](/es/projects/bahiazul-website)
+- [**Campañas de Email Marketing**](/es/projects/bahiazul-email-marketing)
+- [**Quiosco Digital**](/es/projects/bahiazul-kiosk)

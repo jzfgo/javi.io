@@ -13,6 +13,6 @@ Transitioned from designer to Creative Director, driving the branding, UX/UI, an
 
 ## Key Projects
 
-- **Atopechavalote!** — Full Stack Developer, UI Designer — CodeIgniter, MySQL, PHP (Led project from 2007 to 2009)
-- **PlayStation MegaPanic** — Sony PlayStation macro-event sponsorship
-- **Madrid Traffic Festival** — BBVA event sponsorship
+- [**Atopechavalote!**](/en/projects/atopechavalote)
+- **PlayStation MegaPanic**
+- **Madrid Traffic Festival**
