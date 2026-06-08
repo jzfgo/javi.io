@@ -11,15 +11,15 @@ Después de que Piensa Diferente cerrara debido a la pandemia de COVID-19, Bahia
 
 ### Diseño UX / UI
 
-Diseñó la nueva versión del sitio web con un fuerte enfoque en el uso de fotografía, cinemagraphs, vídeo y elementos interactivos como fotos de 360º.
+Diseñé la nueva versión del sitio web con un fuerte enfoque en el uso de fotografía, cinemagraphs, vídeo y elementos interactivos como fotos de 360º.
 
-Junto a esto, creó un Sistema de Diseño interno para facilitar el desarrollo de productos digitales actuales y futuros y garantizar la coherencia visual entre ellos.
+Junto a esto, creé un Sistema de Diseño interno para facilitar el desarrollo de productos digitales actuales y futuros y garantizar la coherencia visual entre ellos.
 
 ### Desarrollo
 
 La nueva versión del sitio web se desarrolló con NextJS y TypeScript, alojada con una combinación de Firebase Hosting y Cloud Functions (para SSR). Utilizaba MDX para contenido estático y Firebase Storage para el alojamiento de medios.
 
-Para el Quiosco Digital, eligió Svelte, una biblioteca rápida y ligera para construir interfaces frontend con JavaScript. Es una SPA (Single Page Application) mobile-first alojada en Firebase.
+Para el Quiosco Digital, elegí Svelte, una biblioteca rápida y ligera para construir interfaces frontend con JavaScript. Es una SPA (Single Page Application) mobile-first alojada en Firebase.
 
 ## Proyectos Clave
 

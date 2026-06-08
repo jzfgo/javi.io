@@ -9,7 +9,7 @@ Sharemusic! is a nightlife event organizer in Madrid. It pioneered the social ne
 
 ## Role Evolution
 
-Transitioned from designer to Creative Director, driving the branding, UX/UI, and digital strategy. Collaborated with key brands like Sony PlayStation, BBVA, and Everlast for event sponsorships.
+I transitioned from designer to Creative Director, driving the branding, UX/UI, and digital strategy. I collaborated with key brands like Sony PlayStation, BBVA, and Everlast for event sponsorships.
 
 ## Key Projects
 

@@ -11,19 +11,19 @@ Fly-Fut es la primera empresa del mundo en protocolizar la grabación de fútbol
 
 ### Diseño de Sistemas
 
-A cargo del diseño de la nueva suite de aplicaciones profesionales de la compañía (Fly-Fut Pro), que incluye una aplicación para iPad para grabar sesiones de entrenamiento de fútbol con un dron autónomo y una herramienta para el análisis táctico de las sesiones grabadas.
+Estuve a cargo del diseño de la nueva suite de aplicaciones profesionales de la compañía (Fly-Fut Pro), que incluye una aplicación para iPad para grabar sesiones de entrenamiento de fútbol con un dron autónomo y una herramienta para el análisis táctico de las sesiones grabadas.
 
-Anteriormente, lideró el diseño de la nueva versión de la plataforma para el producto de consumo de la empresa (Fly-Fut Ligas), que daba soporte a la aplicación móvil del usuario final, un pipeline de creación de vídeo en la nube asistido por IA y varias herramientas de gestión.
+Anteriormente, lideré el diseño de la nueva versión de la plataforma para el producto de consumo de la empresa (Fly-Fut Ligas), que daba soporte a la aplicación móvil del usuario final, un pipeline de creación de vídeo en la nube asistido por IA y varias herramientas de gestión.
 
 ### Desarrollo
 
-Lideró el desarrollo de una versión prototipo de la aplicación de control de drones.
+Lideré el desarrollo de una versión prototipo de la aplicación de control de drones.
 
-Anteriormente, desarrolló toda la infraestructura backend de la plataforma de consumo, incluyendo el pipeline de creación de vídeo, las herramientas de gestión y la aplicación móvil.
+Anteriormente, desarrollé toda la infraestructura backend de la plataforma de consumo, incluyendo el pipeline de creación de vídeo, las herramientas de gestión y la aplicación móvil.
 
 ### Gestión
 
-Supervisó el desarrollo de la suite de herramientas y servicios internos y asistió a los equipos encargados de integrar los servicios backend.
+También supervisé el desarrollo de la suite de herramientas y servicios internos y asistí a los equipos encargados de integrar los servicios backend.
 
 Algunas de estas herramientas son: un software de edición de vídeo basado en navegador, un pipeline de vídeo totalmente automatizado que gestiona la ingesta, codificación y publicación, y un pipeline de IA que detecta eventos relevantes del partido a partir de la grabación en bruto.
 
