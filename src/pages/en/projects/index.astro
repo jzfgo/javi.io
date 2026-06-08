@@ -11,6 +11,11 @@ const projects = (await getCollection("projects-en"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
+
+const VALID_FILTERS = ["professional", "personal"] as const;
+type Filter = typeof VALID_FILTERS[number] | "all";
+const rawParam = Astro.url.searchParams.get("type");
+const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FILTERS[number]) ? rawParam as typeof VALID_FILTERS[number] : "all";
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
@@ -20,9 +25,9 @@ const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eag
         Projects
       </div>
       <div role="tablist" aria-label="Filter projects by type" class="animate flex gap-6 border-b border-black/10 dark:border-white/10">
-        <button data-filter="all" role="tab" aria-selected="true" class="projects-filter-tab">All</button>
-        <button data-filter="professional" role="tab" aria-selected="false" class="projects-filter-tab">Professional</button>
-        <button data-filter="personal" role="tab" aria-selected="false" class="projects-filter-tab">Personal</button>
+        <button data-filter="all" role="tab" aria-selected={activeFilter === "all" ? "true" : "false"} tabindex={activeFilter === "all" ? 0 : -1} class="projects-filter-tab">All</button>
+        <button data-filter="professional" role="tab" aria-selected={activeFilter === "professional" ? "true" : "false"} tabindex={activeFilter === "professional" ? 0 : -1} class="projects-filter-tab">Professional</button>
+        <button data-filter="personal" role="tab" aria-selected={activeFilter === "personal" ? "true" : "false"} tabindex={activeFilter === "personal" ? 0 : -1} class="projects-filter-tab">Personal</button>
       </div>
       <ul id="project-list" class="animate flex flex-col gap-4">
         {
@@ -85,11 +90,9 @@ const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eag
         if (label) label.style.display = filter === "all" ? "" : "none";
       });
       document.querySelectorAll(".projects-filter-tab").forEach(function (btn) {
-        if (btn.dataset.filter === filter) {
-          btn.setAttribute("aria-selected", "true");
-        } else {
-          btn.setAttribute("aria-selected", "false");
-        }
+        var selected = btn.dataset.filter === filter;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
+        btn.setAttribute("tabindex", selected ? "0" : "-1");
       });
     }
 
@@ -108,6 +111,24 @@ const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eag
         applyFilter(filter);
       });
     });
+
+    var tablist = document.querySelector('[role="tablist"]');
+    if (tablist) {
+      tablist.addEventListener("keydown", function (e) {
+        var tabs = Array.from(document.querySelectorAll(".projects-filter-tab"));
+        var idx = tabs.indexOf(document.activeElement);
+        if (idx === -1) return;
+        var next = -1;
+        if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
+        else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = tabs.length - 1;
+        if (next === -1) return;
+        e.preventDefault();
+        tabs[next].focus();
+        tabs[next].click();
+      });
+    }
 
     if (!window._projectsFilterListenerAttached) {
       window._projectsFilterListenerAttached = true;
