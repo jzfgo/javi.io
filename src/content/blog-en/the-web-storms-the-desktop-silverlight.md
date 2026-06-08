@@ -5,7 +5,7 @@ date: 2008-03-25
 translationKey: "web-desktop-silverlight"
 ---
 
-Strictly speaking, Silverlight is really a browser plug-in (it's ***Microsoft's Flash***, to put it bluntly), but WPF (Windows Presentation Foundation) — the technology it's built on — could legitimately be placed on the same level as [AIR](/en/blog/the-web-storms-the-desktop-adobe-air).
+Strictly speaking, Silverlight is really a browser plug-in (it's **_Microsoft's Flash_**, to put it bluntly), but WPF (Windows Presentation Foundation) — the technology it's built on — could legitimately be placed on the same level as [AIR](/en/blog/the-web-storms-the-desktop-adobe-air).
 
 That's because WPF allows desktop RIAs (Rich Internet Applications) to be created from any Silverlight application — and [apparently it's quite straightforward](http://weblogs.asp.net/scottgu/pages/silverlight-tutorial-part-8-creating-a-digg-desktop-application-using-wpf.aspx).
 

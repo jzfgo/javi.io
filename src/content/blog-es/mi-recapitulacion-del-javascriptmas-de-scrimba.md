@@ -3,8 +3,7 @@ title: "Mi recapitulación del #JavaScriptmas de Scrimba"
 description: "¡Fue muy divertido!"
 date: 2020-12-20
 translationKey: "javascriptmas"
-assetSlug: "my-recap-of-scrimbas-javascriptmas"
-hero: "../../assets/blog/my-recap-of-scrimbas-javascriptmas/michael-hacker-OM5Zy3_7pGU-unsplash.jpg"
+hero: "../../assets/blog/javascriptmas/michael-hacker-OM5Zy3_7pGU-unsplash.jpg"
 ---
 
 Este año [**Scrimba**](https://scrimba.com) ha organizado un [calendario de Adviento](https://scrimba.com/learn/adventcalendar) publicando retos de programación diarios del 1 al 24 de diciembre. Además, regalan **suscripciones anuales gratuitas** cada día y un **gran premio de 1.000 USD** al final.

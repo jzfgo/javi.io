@@ -2,6 +2,7 @@
 title: "Fly-Fut Ligas"
 description: "Consumer football platform with AI-assisted video production and mobile application."
 date: "Oct 01 2021"
+type: "professional"
 translationKey: "fly-fut-ligas"
 ---
 

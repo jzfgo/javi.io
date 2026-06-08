@@ -2,6 +2,7 @@
 title: "agents"
 description: "Skills agénticas para flujos de trabajo de desarrollo profesional — 1:1s estructurados, revisiones con contexto de git y seguimiento de acciones. Compatible con Claude Code, Cursor, Codex y más."
 date: "May 30 2026"
+type: "personal"
 repoURL: "https://github.com/jzfgo/agents"
 demoURL: "https://www.skills.sh/jzfgo/agents"
 translationKey: "agents"

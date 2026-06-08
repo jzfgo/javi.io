@@ -11,6 +11,11 @@ const projects = (await getCollection("projects-es"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
+
+const VALID_FILTERS = ["professional", "personal"] as const;
+type Filter = typeof VALID_FILTERS[number] | "all";
+const rawParam = Astro.url.searchParams.get("type");
+const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FILTERS[number]) ? rawParam as typeof VALID_FILTERS[number] : "all";
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
@@ -19,11 +24,16 @@ const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eag
       <div class="animate font-semibold text-black dark:text-white">
         Proyectos
       </div>
-      <ul class="animate flex flex-col gap-4">
+      <div role="tablist" aria-label="Filtrar proyectos por tipo" class="animate flex gap-6 border-b border-black/10 dark:border-white/10">
+        <button data-filter="all" role="tab" aria-selected={activeFilter === "all" ? "true" : "false"} tabindex={activeFilter === "all" ? 0 : -1} class="projects-filter-tab">Todos</button>
+        <button data-filter="professional" role="tab" aria-selected={activeFilter === "professional" ? "true" : "false"} tabindex={activeFilter === "professional" ? 0 : -1} class="projects-filter-tab">Profesional</button>
+        <button data-filter="personal" role="tab" aria-selected={activeFilter === "personal" ? "true" : "false"} tabindex={activeFilter === "personal" ? 0 : -1} class="projects-filter-tab">Personal</button>
+      </div>
+      <ul id="project-list" class="animate flex flex-col gap-4">
         {
           projects.map((project) => (
-            <li>
-              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} />
+            <li data-type={project.data.type}>
+              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} tag={project.data.type} />
             </li>
           ))
         }
@@ -31,3 +41,97 @@ const icons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eag
     </div>
   </Container>
 </PageLayout>
+
+<style is:global>
+  .projects-filter-tab {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: rgb(0 0 0 / 0.4);
+    border: none;
+    background: transparent;
+    padding-bottom: 12px;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+  .projects-filter-tab[aria-selected="true"] {
+    font-weight: 600;
+    color: rgb(0 0 0);
+    border-bottom-color: rgb(0 0 0);
+  }
+  .dark .projects-filter-tab {
+    color: rgb(255 255 255 / 0.4);
+  }
+  .dark .projects-filter-tab[aria-selected="true"] {
+    color: rgb(255 255 255);
+    border-bottom-color: rgb(255 255 255);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var VALID = ["professional", "personal"];
+
+    function getFilter() {
+      var p = new URLSearchParams(window.location.search).get("type");
+      return VALID.indexOf(p) !== -1 ? p : "all";
+    }
+
+    function applyFilter(filter) {
+      document.querySelectorAll("#project-list li").forEach(function (li) {
+        var match = filter === "all" || li.dataset.type === filter;
+        li.style.display = match ? "" : "none";
+        var label = li.querySelector(".type-label");
+        if (label) label.style.display = filter === "all" ? "" : "none";
+      });
+      document.querySelectorAll(".projects-filter-tab").forEach(function (btn) {
+        var selected = btn.dataset.filter === filter;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
+        btn.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+    }
+
+    applyFilter(getFilter());
+
+    document.querySelectorAll(".projects-filter-tab").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var filter = btn.dataset.filter;
+        var url = new URL(window.location.href);
+        if (filter === "all") {
+          url.searchParams.delete("type");
+        } else {
+          url.searchParams.set("type", filter);
+        }
+        history.pushState({}, "", url);
+        applyFilter(filter);
+      });
+    });
+
+    var tablist = document.querySelector('[role="tablist"]');
+    if (tablist) {
+      tablist.addEventListener("keydown", function (e) {
+        var tabs = Array.from(document.querySelectorAll(".projects-filter-tab"));
+        var idx = tabs.indexOf(document.activeElement);
+        if (idx === -1) return;
+        var next = -1;
+        if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
+        else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = tabs.length - 1;
+        if (next === -1) return;
+        e.preventDefault();
+        tabs[next].focus();
+        tabs[next].click();
+      });
+    }
+
+    if (!window._projectsFilterListenerAttached) {
+      window._projectsFilterListenerAttached = true;
+      window.addEventListener("popstate", function () {
+        applyFilter(getFilter());
+      });
+    }
+  })();
+</script>

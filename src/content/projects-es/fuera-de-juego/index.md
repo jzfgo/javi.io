@@ -2,6 +2,7 @@
 title: "Fuera de Juego"
 description: "Aplicación web mobile-first de página única que permite a los usuarios pronosticar partidos de fútbol y ganar premios promocionales."
 date: "Aug 01 2017"
+type: "professional"
 translationKey: "fuera-de-juego"
 ---
 

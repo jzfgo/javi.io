@@ -19,7 +19,7 @@ It's easy to grasp what this means:
 - From a **user's** perspective, they'll find an unprecedented range of applications on offer. Countless games, small utilities, and web services will land directly on their desktop.
 - From the perspective of a **brand or internet company**, this represents a new opportunity for marketing campaigns and extending web services.
 
-For example, imagine I'm **a mobile phone brand that wants to showcase its revolutionary new device**. Until now, to promote it online, I would have had to create a *micro-site* (or a space on the brand's main site) where users could view images, videos, technical specs, perhaps a 360° view, or even a demo of the device's interface.
+For example, imagine I'm **a mobile phone brand that wants to showcase its revolutionary new device**. Until now, to promote it online, I would have had to create a _micro-site_ (or a space on the brand's main site) where users could view images, videos, technical specs, perhaps a 360° view, or even a demo of the device's interface.
 
 But wouldn't it be great if — additionally or alternatively — the user could **download a virtual version of the phone to their desktop**? Rotate it, open it, close it, power it on and off, try out its interface, and view all the other information directly on their screen… (all without being confined to a window like a conventional application — "virtual version" is meant literally).
 

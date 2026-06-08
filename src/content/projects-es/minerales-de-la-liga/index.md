@@ -2,17 +2,18 @@
 title: "Minerales de LaLiga"
 description: "Experiencia interactiva de arte de datos en 3D para Solán de Cabras × LaLiga: generación paramétrica de cristales, visualización en Three.js y pipeline de vídeo."
 date: "Jun 01 2024"
-demoURL: "https://mineralesdelaliga.solandecabras.es/"
+type: "professional"
 translationKey: "minerales-de-la-liga"
 ---
 
 **Minerales de LaLiga** es una aplicación web interactiva desarrollada para **Solán de Cabras** y **LaLiga**, orientada a promover los beneficios de los minerales presentes en el agua mineral natural **Solán de Cabras** y su impacto en el rendimiento deportivo.
 
-Basándonos en datos reales de los jugadores de **LaLiga**, diseñamos un sistema capaz de generar representaciones de cristales para todos los equipos de **LaLiga EA Sports** y **LaLiga HyperMotion**. Estos cristales se pueden ver y manipular en **tres dimensiones** dentro de la aplicación web, diseñada con un enfoque *mobile-first*.
+Basándonos en datos reales de los jugadores de **LaLiga**, diseñamos un sistema capaz de generar representaciones de cristales para todos los equipos de **LaLiga EA Sports** y **LaLiga HyperMotion**. Estos cristales se pueden ver y manipular en **tres dimensiones** dentro de la aplicación web, diseñada con un enfoque _mobile-first_.
 
 Además de explorar y comparar los cristales y los valores que representan, los usuarios podían acceder a un **ranking de jugadores** para cada uno de estos parámetros. La campaña también incluía una promoción que permitía a los usuarios ganar una **camiseta oficial de su equipo favorito** mediante una integración con el CRM de **Solán de Cabras**.
 
 Para optimizar el desarrollo y permitir iteraciones rápidas, creamos varias **herramientas personalizadas**, incluyendo:
+
 - Un **gestor de transformación de datos** que nos permitía ajustar los parámetros de conversión de datos para generar cristales más atractivos visualmente.
 - Un **generador de vídeo** para compartir en redes sociales.
 - Un **sistema de ajuste en tiempo real** para afinar la apariencia de los cristales directamente desde el **CMS**.

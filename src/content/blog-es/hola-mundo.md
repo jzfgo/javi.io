@@ -3,7 +3,7 @@ title: "¡Hola Mundo!"
 description: "Esta entrada llega diez años tarde."
 date: 2020-01-01
 translationKey: "hello-world"
-hero: "../../assets/blog/hola-mundo/yancy-min-842ofHC6MaI-unsplash.jpg"
+hero: "../../assets/blog/hello-world/yancy-min-842ofHC6MaI-unsplash.jpg"
 ---
 Esta entrada llega diez años tarde. Permíteme explicar.
 

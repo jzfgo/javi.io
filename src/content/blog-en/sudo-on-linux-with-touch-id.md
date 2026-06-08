@@ -3,8 +3,7 @@ title: "sudo on Linux with Touch ID (and live to tell the tale)"
 description: "Configure 1Password's SSH agent to use Touch ID on your remote Linux server."
 date: 2026-05-01
 translationKey: "sudo-touch-id"
-assetSlug: "sudo-en-linux-con-touch-id-sin-morir-en-el-intento"
-hero: "../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/0a0a3aa8-69a7-43f9-8dbb-df2ab9e4c8c5.png"
+hero: "../../assets/blog/sudo-touch-id/0a0a3aa8-69a7-43f9-8dbb-df2ab9e4c8c5.png"
 ---
 
 **TL;DR**: With 1Password's SSH agent, `ForwardAgent yes` on the Mac, and `pam_rssh` on Linux, you can use Touch ID to authenticate on remote servers — including `sudo`.
@@ -35,13 +34,13 @@ When `ssh`-ing into my Linux box (Arch, btw) from the Mac:
 
 ## The complete stack
 
-![Flow diagram](../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/flow-diagram.png)
+![Flow diagram](../../assets/blog/sudo-touch-id/flow-diagram.png)
 
 ---
 
 ## 1. Enable the SSH agent in 1Password
 
-![1Password Agent settings](../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/1password-agent.png)
+![1Password Agent settings](../../assets/blog/sudo-touch-id/1password-agent.png)
 
 In **1Password → Preferences → Developer**, enable:
 
@@ -140,7 +139,7 @@ grep -r SSH_AUTH_SOCK ~/.zshrc ~/.zprofile ~/.zlogin ~/.zshenv
 
 There it was. A line in `.zshenv` was overwriting `SSH_AUTH_SOCK` **every time**, even after SSH had set it correctly. Since `.zshenv` is sourced in all zsh contexts (interactive, non-interactive, login, non-login), it always won — silently.
 
-![Infinite facepalm](../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/facepalm-react.gif)
+![Infinite facepalm](../../assets/blog/sudo-touch-id/facepalm-react.gif)
 
 The fix was simply removing that line. I had added it at some point for a systemd agent I no longer use and completely forgotten about it. You probably won't hit exactly this issue, but if forwarding isn't working, the first thing you should check is whether something in your shell config is overwriting that variable.
 

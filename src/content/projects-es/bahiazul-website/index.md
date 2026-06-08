@@ -2,6 +2,7 @@
 title: "Bahiazul Website"
 description: "Rediseño en Next.js y TypeScript de la web principal del resort, con elementos multimedia enriquecidos y una experiencia de reserva personalizada."
 date: "Dec 01 2020"
+type: "professional"
 translationKey: "bahiazul-website"
 ---
 

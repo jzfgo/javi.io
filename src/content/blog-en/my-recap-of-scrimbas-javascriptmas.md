@@ -3,7 +3,7 @@ title: "My recap of Scrimba's #JavaScriptmas"
 description: "It was a fun ride!"
 date: 2020-12-20
 translationKey: "javascriptmas"
-hero: "../../assets/blog/my-recap-of-scrimbas-javascriptmas/michael-hacker-OM5Zy3_7pGU-unsplash.jpg"
+hero: "../../assets/blog/javascriptmas/michael-hacker-OM5Zy3_7pGU-unsplash.jpg"
 ---
 
 This year [**Scrimba**](https://scrimba.com) is holding an [Advent calendar](https://scrimba.com/learn/adventcalendar) by releasing daily coding challenges from December 1st to the 24th. They are also giving away **free yearly subscriptions** each day and a **USD 1,000 grand prize** at the end.
