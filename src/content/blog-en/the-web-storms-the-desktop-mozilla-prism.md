@@ -2,6 +2,7 @@
 title: "The Web Storms the Desktop: Mozilla Prism"
 description: "Mozilla Prism lets anyone turn their favourite web services into desktop applications — remarkably simply, and without writing a single line of code."
 date: 2008-03-04
+assetSlug: "web-desktop-mozilla-prism"
 translationKey: "web-desktop-mozilla-prism"
 ---
 
@@ -9,7 +10,7 @@ The Mozilla Foundation's entry in this particular race to conquer the desktop is
 
 While it shares the same core concept as [Adobe AIR](/en/blog/the-web-storms-the-desktop-adobe-air) — running web applications on the desktop — the way it generates those applications is entirely different.
 
-Previously known as **WebRunner**, the *leitmotif* of Prism is to give users a tool for **creating desktop applications** from any web application, in an **extremely simple** way.
+Previously known as **WebRunner**, the _leitmotif_ of Prism is to give users a tool for **creating desktop applications** from any web application, in an **extremely simple** way.
 
 If AIR opened the desktop's doors to web developers, Prism opens that same door to everyone else.
 
@@ -25,7 +26,7 @@ Its Achilles' heel is that **the resulting applications aren't as visually rich*
 - With Prism, **web developers** would be relegated to a secondary role, their only real contribution being custom stylesheets to nudge the application's look as far from a web feel as possible.
 - From a **marketing** standpoint, its relevance would be virtually nil, as it lacks precisely the features that make AIR interesting in that context.
 
-In short, while Prism is very attractive and above all *useful* as a user, as a web developer who also moves in the world of marketing, I see gaps that make me view it as **a product at a very early stage**, with a long road still ahead.
+In short, while Prism is very attractive and above all _useful_ as a user, as a web developer who also moves in the world of marketing, I see gaps that make me view it as **a product at a very early stage**, with a long road still ahead.
 
 It's still in development, but if you want to try it, you can download it from [Mozilla Labs](http://labs.mozilla.com/).
 
