@@ -2,6 +2,7 @@
 title: "Quadrant Travel Cloud"
 description: "Corporate travel management platform simplifying booking, expense management, and policy compliance."
 date: "Mar 01 2023"
+type: "professional"
 translationKey: "quadrant-travel-cloud"
 ---
 

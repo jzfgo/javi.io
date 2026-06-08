@@ -2,6 +2,7 @@
 title: "Quadrant Travel Cloud"
 description: "Plataforma de gestión de viajes corporativos que simplifica las reservas, la gestión de gastos y el cumplimiento de políticas."
 date: "Mar 01 2023"
+type: "professional"
 translationKey: "quadrant-travel-cloud"
 ---
 

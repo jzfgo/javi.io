@@ -2,6 +2,7 @@
 title: "Fuera de Juego"
 description: "Mobile-first single page app allowing users to predict football matches and win promotional prizes."
 date: "Aug 01 2017"
+type: "professional"
 translationKey: "fuera-de-juego"
 ---
 

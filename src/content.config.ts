@@ -56,6 +56,7 @@ const projectsSchema = z.object({
   title: z.string(),
   description: z.string(),
   date: z.coerce.date(),
+  type: z.enum(["personal", "professional"]),
   draft: z.boolean().optional(),
   demoURL: z.string().optional(),
   repoURL: z.string().optional(),

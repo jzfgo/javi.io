@@ -2,6 +2,7 @@
 title: "Minerales de LaLiga"
 description: "Interactive 3D data art experience for Solán de Cabras × LaLiga — parametric crystal generation, Three.js visualization, and video pipeline."
 date: "Jun 01 2024"
+type: "professional"
 demoURL: "https://mineralesdelaliga.solandecabras.es/"
 translationKey: "minerales-de-la-liga"
 ---

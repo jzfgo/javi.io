@@ -2,6 +2,7 @@
 title: "carroquesi"
 description: "Lista de la compra colaborativa con listas compartidas, historial de compras, escaneado de tickets con IA, búsqueda por código de barras y seguimiento de precios por producto."
 date: "Mar 26 2026"
+type: "personal"
 repoURL: "https://github.com/jzfgo/carroquesi"
 demoURL: "https://carroquesi.web.app/"
 translationKey: "carroquesi"
