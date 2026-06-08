@@ -1,14 +1,16 @@
 ---
 title: "Sony Pictures Spain"
-description: "Web platform for Sony Pictures Spain built on a headless CMS architecture with Next.js and Strapi."
+description: "Official Spanish website for Sony Pictures Entertainment — infrastructure migration from GCP to AWS, and ongoing maintenance and feature delivery."
 date: "Jan 01 2023"
 type: "professional"
 translationKey: "sony-pictures-spain"
 ---
 
-**Sony Pictures Spain** is the web platform developed for the Spanish division of **Sony Pictures**.
+**Sony Pictures Spain** (sonypictures.es) is the official Spanish website for **Sony Pictures Entertainment**, providing information about movies, TV shows, and entertainment content in Spain.
 
-As **Tech Lead** and **Full Stack Developer** at **Interacso**, I led the design and development of the platform.
+The site is built with **Next.js** and **React** on the frontend and **Strapi** as the headless CMS.
+
+As **Tech Lead** at **Interacso**, I joined the project in late 2023 to lead the migration of the platform from Interacso's infrastructure on **Google Cloud Platform** to Sony's own infrastructure on **Amazon Web Services**. After a successful migration, I became responsible for the ongoing maintenance and evolution of the site, working closely with the PM and Frontend Developer to deliver new features and bug fixes.
 
 ## Technologies
 

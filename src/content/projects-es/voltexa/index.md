@@ -1,21 +1,22 @@
 ---
 title: "Voltexa"
-description: "Plataforma web para una empresa global de inteligencia de materias primas que ofrece analítica en tiempo real para los mercados de petróleo, gas y energía."
+description: "MVP para una startup de energía renovable — portal de clientes, panel de administración, branding, landing page y flujo de registro desarrollados con un equipo de cinco personas."
 date: "Jan 01 2023"
 type: "professional"
 translationKey: "voltexa"
 ---
 
-**Voltexa** es una plataforma global de inteligencia de materias primas que proporciona analítica y datos en tiempo real para los mercados de petróleo, gas y energía.
+**Voltexa Energy** es una startup en el sector de las energías renovables, comprometida con democratizar el acceso a la energía verde en todo el mundo.
 
-Como **Tech Lead** y **Desarrollador Full Stack** en **Interacso**, lideré el desarrollo de la aplicación web de la plataforma.
+Trabajando con un equipo de cinco personas y aplicando la **metodología Lean Startup**, desarrollamos un Proof of Concept / MVP para el **Portal de Clientes y Panel de Administración** de la empresa con recursos muy limitados. Además del producto principal, también entregamos el **naming, branding, landing page y flujo de registro** de la compañía.
+
+Como **Tech Lead** en **Interacso**, fui responsable de la arquitectura, el desarrollo del panel de administración y el despliegue de todo el proyecto.
 
 ## Tecnologías
 
-- **React** y **TypeScript** para el frontend.
-- **Node.js** y **TypeScript** para los servicios backend.
-- **MongoDB** como base de datos principal.
-- **Payload CMS** para la gestión de contenidos.
+- **Next.js** y **TypeScript** para el frontend.
+- **Payload CMS** (Node.js) para el backend.
+- **MongoDB** como base de datos.
 - **Google Cloud Platform** para la infraestructura en la nube.
 
-![Voltexa – Plataforma de analítica](../../../assets/projects/voltexa/join.webp)
+![Voltexa – Portal de clientes](../../../assets/projects/voltexa/join.webp)
