@@ -1,7 +1,7 @@
 # agentic tooling
 .claude/
 cache/
-docs/superpowers/
+docs/{plans,specs,superpowers}/
 .superpowers/
 
 # Git worktrees
