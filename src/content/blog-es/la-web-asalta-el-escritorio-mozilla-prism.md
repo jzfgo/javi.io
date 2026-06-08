@@ -2,7 +2,6 @@
 title: "La web asalta el escritorio: Mozilla Prism"
 description: "Mozilla Prism permite a cualquier usuario convertir sus servicios web favoritos en aplicaciones de escritorio, de forma extremadamente sencilla y sin necesidad de programar."
 date: 2008-03-04
-assetSlug: "web-desktop-mozilla-prism"
 translationKey: "web-desktop-mozilla-prism"
 ---
 

@@ -22,7 +22,6 @@ const blogSchema = ({ image }: SchemaContext) =>
     draft: z.boolean().optional(),
     translationKey: z.string().optional(),
     hero: image().optional(),
-    assetSlug: z.string().optional(),
   });
 
 const blogEs = defineCollection({

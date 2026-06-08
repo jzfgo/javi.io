@@ -2,7 +2,6 @@
 title: "The Web Storms the Desktop: Silverlight"
 description: "Microsoft Silverlight — the Adobe AIR rival built on WPF and XAML — reviewed from the perspective of a web developer accustomed to open technologies."
 date: 2008-03-25
-assetSlug: "web-desktop-silverlight"
 translationKey: "web-desktop-silverlight"
 ---
 

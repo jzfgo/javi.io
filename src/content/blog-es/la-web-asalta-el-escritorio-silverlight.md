@@ -2,7 +2,6 @@
 title: "La web asalta el escritorio: Silverlight"
 description: "Microsoft Silverlight, el rival de Adobe AIR basado en WPF y XAML, analizado desde la perspectiva de un desarrollador web acostumbrado a las tecnologías abiertas."
 date: 2008-03-25
-assetSlug: "web-desktop-silverlight"
 translationKey: "web-desktop-silverlight"
 ---
 

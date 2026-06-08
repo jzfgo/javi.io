@@ -2,7 +2,6 @@
 title: "The Web Storms the Desktop: Mozilla Prism"
 description: "Mozilla Prism lets anyone turn their favourite web services into desktop applications — remarkably simply, and without writing a single line of code."
 date: 2008-03-04
-assetSlug: "web-desktop-mozilla-prism"
 translationKey: "web-desktop-mozilla-prism"
 ---
 

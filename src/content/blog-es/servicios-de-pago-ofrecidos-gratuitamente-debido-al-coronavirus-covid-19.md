@@ -3,7 +3,7 @@ title: "Servicios de pago ofrecidos gratuitamente debido al Coronavirus COVID-19
 description: "Recursos para sobrellevar el confinamiento."
 date: 2020-03-20
 translationKey: "coronafreemium"
-hero: "../../assets/blog/servicios-de-pago-ofrecidos-gratuitamente-debido-al-coronavirus-covid-19/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
+hero: "../../assets/blog/coronafreemium/fusion-medical-animation-EAgGqOiDDMg-unsplash.jpg"
 ---
 
 Desde el incio del estado de alarma tanto en España como en otros paises muchas empresas (grandes y pequeñas) están facilitando el acceso a sus servicios de pago de forma grauita, con el objetivo de ayudar a otras empresas, autónomos y demás ciudadanos a sobrellevar esta crisis.

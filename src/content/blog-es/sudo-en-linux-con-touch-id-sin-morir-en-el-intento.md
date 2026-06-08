@@ -3,7 +3,7 @@ title: "sudo en Linux con Touch ID (sin morir en el intento)"
 description: "Configura el agente SSH de 1Password para usar Touch ID en tu servidor Linux."
 date: 2026-05-01
 translationKey: "sudo-touch-id"
-hero: "../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/0a0a3aa8-69a7-43f9-8dbb-df2ab9e4c8c5.png"
+hero: "../../assets/blog/sudo-touch-id/0a0a3aa8-69a7-43f9-8dbb-df2ab9e4c8c5.png"
 ---
 
 **TL;DR**: Con el agente SSH de 1Password, `ForwardAgent yes` en el Mac y `pam_rssh` en Linux puedes usar Touch ID para autenticarte en servidores remotos, incluyendo `sudo`.
@@ -34,13 +34,13 @@ Que al hacer `ssh` a mi Linux box (Arch, btw) desde el Mac:
 
 ## El stack completo
 
-![Diagrama de flujo](../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/flow-diagram.png)
+![Diagrama de flujo](../../assets/blog/sudo-touch-id/flow-diagram.png)
 
 ---
 
 ## 1. Habilitar el agente SSH en 1Password
 
-![Ajustes de 1Password Agent](../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/1password-agent.png)
+![Ajustes de 1Password Agent](../../assets/blog/sudo-touch-id/1password-agent.png)
 
 En **1Password → Preferencias → Desarrollador**, activar:
 
@@ -139,7 +139,7 @@ grep -r SSH_AUTH_SOCK ~/.zshrc ~/.zprofile ~/.zlogin ~/.zshenv
 
 Ahí estaba. Una línea en `.zshenv` sobreescribía `SSH_AUTH_SOCK` **siempre**, incluso después de que SSH lo hubiera configurado correctamente. Como `.zshenv` se carga en todos los contextos de zsh (interactivo, no interactivo, login, no login), ganaba siempre y sin avisar.
 
-![Infinite facepalm](../../assets/blog/sudo-en-linux-con-touch-id-sin-morir-en-el-intento/facepalm-react.gif)
+![Infinite facepalm](../../assets/blog/sudo-touch-id/facepalm-react.gif)
 
 La solución fue simplemente eliminar esa línea. La había añadido en algún momento para un agente systemd que ya no uso y se me había olvidado por completo. A ti probablemente no te pasará exactamente esto, pero si el forwarding no funciona, lo primero que deberías revisar es si algo en tu shell config está pisando esa variable.
 

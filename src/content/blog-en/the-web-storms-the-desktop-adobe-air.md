@@ -2,7 +2,6 @@
 title: "The Web Storms the Desktop: Adobe AIR"
 description: "Adobe AIR lets web developers build cross-platform desktop applications using the same technologies they already know: HTML, JavaScript, and Flash."
 date: 2008-03-03
-assetSlug: "web-desktop-adobe-air"
 translationKey: "web-desktop-adobe-air"
 ---
 

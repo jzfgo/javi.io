@@ -2,7 +2,6 @@
 title: "La web asalta el escritorio: Adobe AIR"
 description: "Adobe AIR permite a los desarrolladores web crear aplicaciones de escritorio multiplataforma con las mismas tecnologías que ya conocen: HTML, JavaScript y Flash."
 date: 2008-03-03
-assetSlug: "web-desktop-adobe-air"
 translationKey: "web-desktop-adobe-air"
 ---
 
