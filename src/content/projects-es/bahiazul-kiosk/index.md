@@ -4,6 +4,7 @@ description: "Quiosco web mobile-first para Bahiazul Resort que permite a los hu
 date: "Jan 01 2020"
 type: "professional"
 translationKey: "bahiazul-kiosk"
+demoURL: "https://dk.bahiazul.com/"
 ---
 
 **El Quiosco Digital de Bahiazul** es una aplicación web mobile-first desarrollada para **Bahiazul Resort** con el fin de reemplazar los materiales impresos físicos por una alternativa digital.

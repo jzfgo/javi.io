@@ -7,6 +7,8 @@ dateEnd: "Current"
 
 Interacso specializes in custom web and mobile application development, offering services in software development, UX/UI design, and digital strategy.
 
+Among their main clients are companies such as IKEA, Clear Channel, Fundación Banco Sabadell, Grupo MediaPro and Grupo Porcelanosa.
+
 ## Responsibilities
 
 ### Systems Design

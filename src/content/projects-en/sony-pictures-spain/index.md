@@ -4,9 +4,10 @@ description: "Official Spanish website for Sony Pictures Entertainment — infra
 date: "Jan 01 2023"
 type: "professional"
 translationKey: "sony-pictures-spain"
+demoURL: "https://sonypictures.es/"
 ---
 
-**Sony Pictures Spain** (sonypictures.es) is the official Spanish website for **Sony Pictures Entertainment**, providing information about movies, TV shows, and entertainment content in Spain.
+**Sony Pictures Spain** is the official Spanish website for **Sony Pictures Entertainment**, providing information about movies, TV shows, and entertainment content in Spain.
 
 The site is built with **Next.js** and **React** on the frontend and **Strapi** as the headless CMS.
 

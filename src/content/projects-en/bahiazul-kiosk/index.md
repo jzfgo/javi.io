@@ -4,6 +4,7 @@ description: "Mobile-first web kiosk for Bahiazul Resort allowing guests to acce
 date: "Jan 01 2020"
 type: "professional"
 translationKey: "bahiazul-kiosk"
+demoURL: "https://dk.bahiazul.com/"
 ---
 
 **Bahiazul Digital Kiosk** is a mobile-first web application developed for **Bahiazul Resort** to replace physical printed materials with a digital alternative.

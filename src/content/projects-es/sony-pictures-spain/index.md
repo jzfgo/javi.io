@@ -4,9 +4,10 @@ description: "Web oficial en España de Sony Pictures Entertainment — migraci�
 date: "Jan 01 2023"
 type: "professional"
 translationKey: "sony-pictures-spain"
+demoURL: "https://sonypictures.es/"
 ---
 
-**Sony Pictures Spain** (sonypictures.es) es el sitio web oficial en España de **Sony Pictures Entertainment**, que ofrece información sobre películas, series y contenido de entretenimiento en España.
+**Sony Pictures Spain** es el sitio web oficial en España de **Sony Pictures Entertainment**, que ofrece información sobre películas, series y contenido de entretenimiento en España.
 
 El sitio está construido con **Next.js** y **React** en el frontend y **Strapi** como headless CMS.
 
