@@ -7,7 +7,7 @@ const lang = 'en' as const;
 const s = SECTIONS[lang];
 
 const work = (await getCollection('work-en'))
-  .filter(e => e.data.include?.cv !== false)
+  .filter(e => e.data.include.cv)
   .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
 
 function formatDate(d: Date): string {
@@ -33,7 +33,7 @@ const updatedLabel = cvUpdated
 const allTech = [...new Set(work.flatMap(e => e.data.tech ?? []))];
 
 type EduEntry = { institution: string; degree: string; year: string };
-const education = (profile.education as unknown as EduEntry[]);
+const education = (profile.education as unknown as EduEntry[]) ?? [];
 ---
 <!DOCTYPE html>
 <html lang="en">

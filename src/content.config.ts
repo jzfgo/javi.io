@@ -46,7 +46,7 @@ const workSchema = z.object({
   include: z.object({
     cv: z.boolean().default(true),
     web: z.boolean().default(true),
-  }).optional(),
+  }).default({ cv: true, web: true }),
 });
 
 const workEs = defineCollection({

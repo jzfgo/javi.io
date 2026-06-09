@@ -7,7 +7,7 @@ const lang = 'es' as const;
 const s = SECTIONS[lang];
 
 const work = (await getCollection('work-es'))
-  .filter(e => e.data.include?.cv !== false)
+  .filter(e => e.data.include.cv)
   .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
 
 function formatDate(d: Date): string {
@@ -32,10 +32,10 @@ const updatedLabel = cvUpdated
   : '';
 
 const allTech = [...new Set(work.flatMap(e => e.data.tech ?? []))];
-const locationEs = profile.location.replace('Spain', 'España');
+const locationEs = profile.location ? profile.location.replace('Spain', 'España') : '';
 
 type EduEntry = { institution: string; degree: string; year: string };
-const education = (profile.education as unknown as EduEntry[]);
+const education = (profile.education as unknown as EduEntry[]) ?? [];
 ---
 <!DOCTYPE html>
 <html lang="es">

@@ -7,10 +7,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync, copyFi
 import { join, resolve } from 'node:path';
 import matter from 'gray-matter';
 import { computeCvMeta } from './cv-meta.mjs';
-import { createRequire } from 'node:module';
-
-const require = createRequire(import.meta.url);
-const profilePublic = require('../src/content/profile/public.json');
+const profilePublic = JSON.parse(readFileSync(resolve('src/content/profile/public.json'), 'utf-8'));
 
 // Section labels inlined to avoid TS import issues in plain .mjs
 // If src/cv/sections.ts labels change, update these too.
@@ -34,8 +31,8 @@ function parseWorkFiles(dir) {
     })
     .filter(d => d.include?.cv !== false)
     .sort((a, b) => {
-      const da = new Date(a.dateStart.split('/').reverse().join('-'));
-      const db = new Date(b.dateStart.split('/').reverse().join('-'));
+      const da = parseDate(a.dateStart);
+      const db = parseDate(b.dateStart);
       return db - da;
     });
 }
@@ -59,21 +56,34 @@ function buildDoc(lang) {
   const children = [];
 
   // Header
+  const name = profilePublic.name || '';
+  const title = profilePublic.title || '';
+  const email = profilePublic.email || '';
+
+  const contactChildren = [
+    new TextRun({ text: email, size: 18 }),
+  ];
+  if (profilePublic.location) {
+    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.location, size: 18, color: '444444' }));
+  }
+  if (profilePublic.linkedin) {
+    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.linkedin.replace('https://', ''), size: 18, color: '444444' }));
+  }
+  if (profilePublic.github) {
+    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.github.replace('https://', ''), size: 18, color: '444444' }));
+  }
+
   children.push(
     new Paragraph({
-      children: [new TextRun({ text: profilePublic.name, bold: true, size: 36 })],
+      children: [new TextRun({ text: name, bold: true, size: 36 })],
       spacing: { after: 40 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: profilePublic.title, size: 20, color: '444444' })],
+      children: [new TextRun({ text: title, size: 20, color: '444444' })],
       spacing: { after: 40 },
     }),
     new Paragraph({
-      children: [
-        new TextRun({ text: profilePublic.email, size: 18 }),
-        new TextRun({ text: '  ·  ' + profilePublic.location, size: 18, color: '444444' }),
-        new TextRun({ text: '  ·  ' + profilePublic.linkedin.replace('https://', ''), size: 18, color: '444444' }),
-      ],
+      children: contactChildren,
       spacing: { after: 200 },
     }),
   );
@@ -125,6 +135,41 @@ function buildDoc(lang) {
           }),
         );
       }
+    }
+  }
+
+  // Education section
+  const education = profilePublic.education ?? [];
+  if (education.length > 0) {
+    children.push(
+      new Paragraph({
+        text: s.education.toUpperCase(),
+        heading: HeadingLevel.HEADING_2,
+        spacing: { before: 200, after: 80 },
+        border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: '111111' } },
+      }),
+    );
+
+    for (const edu of education) {
+      children.push(
+        new Paragraph({
+          children: [
+            new TextRun({ text: edu.institution, bold: true, size: 20 }),
+            new TextRun({ text: '\t' + edu.year, size: 18, color: '444444' }),
+          ],
+          tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
+          spacing: { before: 120, after: 20 },
+        }),
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: edu.degree,
+              size: 18, color: '333333',
+            }),
+          ],
+          spacing: { after: 40 },
+        }),
+      );
     }
   }
 
