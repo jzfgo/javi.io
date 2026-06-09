@@ -1,8 +1,20 @@
 ---
 company: "Bahiazul Resort"
 role: "Tech Lead & Creative Director"
+location: "Madrid, Spain"
 dateStart: "04/01/2020"
 dateEnd: "03/01/2021"
+bullets:
+  - "Redesigned resort website with Next.js, TypeScript, and Firebase, shipping SSR hosting with MDX-driven content"
+  - "Built an internal Design System used across all web and mobile products, ensuring visual consistency"
+  - "Delivered a Svelte-based mobile-first Digital Kiosk SPA, hosted on Firebase"
+tech:
+  - "Next.js"
+  - "TypeScript"
+  - "Firebase"
+  - "Svelte"
+  - "Design Systems"
+  - "MDX"
 ---
 
 After Piensa Diferente went down because of the COVID-19 pandemic, I was approached by Bahiazul to join them and keep working on their projects.

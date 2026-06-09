@@ -1,8 +1,20 @@
 ---
 company: "Sharemusic!"
 role: "Diseñador → Director Creativo"
+location: "Madrid, España"
 dateStart: "05/01/2006"
 dateEnd: "12/01/2010"
+bullets:
+  - "Coconstruí atopechavalote.com, una de las primeras redes sociales de ocio nocturno en España, con 25.000 usuarios registrados"
+  - "Evolucioné de diseñador a Director Creativo: lideré branding, diseño UX/UI y estrategia digital"
+  - "Conseguí patrocinios de eventos con Sony PlayStation, BBVA y Everlast"
+tech:
+  - "HTML"
+  - "CSS"
+  - "JavaScript"
+  - "Flash"
+  - "UX/UI"
+  - "branding"
 ---
 
 Sharemusic! es una productora de eventos y espectáculos musicales en Madrid. Fue pionera en la revolución de las redes sociales en España con atopechavalote.com (2005–2010), que alcanzó los 25.000 usuarios registrados.

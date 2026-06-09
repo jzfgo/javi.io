@@ -39,3 +39,6 @@ pnpm-debug.log*
 # Deployment targets
 .netlify/
 resources/
+
+# CV full profile (contains phone — never commit)
+src/content/profile/full.json

@@ -1,8 +1,20 @@
 ---
 company: "Piensa Diferente"
-role: "Director de Tecnología"
+role: "Head of Technology"
+location: "Madrid, España"
 dateStart: "07/01/2013"
 dateEnd: "03/01/2020"
+bullets:
+  - "Cofundé y lideré la tecnología de una startup hostelera durante 7 años, orientada a pequeños resorts y casas rurales"
+  - "Diseñé y construí de extremo a extremo un Sistema de Gestión de Propiedades (PMS) y webs para clientes"
+  - "Gestioné arquitectura cloud, infraestructura IT y coordinación de desarrolladores externos"
+tech:
+  - "PHP"
+  - "JavaScript"
+  - "MySQL"
+  - "AWS"
+  - "UX/UI"
+  - "arquitectura cloud"
 ---
 
 Piensa Diferente fue una joven startup que ofrecía servicios de consultoría a pequeños y medianos complejos turísticos y establecimientos B&B. Se especializó en ofrecer soluciones personalizadas pero asequibles para permitir a sus clientes competir directamente con las grandes cadenas hoteleras a través de la tecnología y la innovación.

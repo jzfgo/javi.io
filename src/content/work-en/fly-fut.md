@@ -1,8 +1,21 @@
 ---
 company: "Fly-Fut"
 role: "Tech Lead"
+location: "Madrid, Spain"
 dateStart: "04/01/2021"
 dateEnd: "10/01/2022"
+bullets:
+  - "Led architecture and development of the consumer platform (Fly-Fut Ligas): backend, fully automated AI video pipeline for drone-recorded football matches, management tools, and mobile app"
+  - "Designed and prototyped an iPad app for autonomous drone control in football training sessions"
+  - "Designed Fly-Fut Pro suite: iPad recording app and tactical analysis tool"
+tech:
+  - "Node.js"
+  - "TypeScript"
+  - "Swift/iOS"
+  - "AI/ML pipelines"
+  - "video encoding"
+  - "cloud infrastructure"
+  - "PostgreSQL"
 ---
 
 Fly-Fut is the first company in the world to protocolize the recording of football with drones, assisted by AI.
