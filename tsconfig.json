@@ -10,7 +10,8 @@
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@consts": ["./src/consts.ts"],
-      "@types": ["./src/types.ts"]
+      "@types": ["./src/types.ts"],
+      "@cv/*": ["./src/cv/*"]
     }
   }
 }
