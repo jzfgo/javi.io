@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100" height="100" rx="20" fill="#facc15" />
+  <path d="M50 20 C35 20 28 30 28 45 C28 55 35 60 38 65 C40 70 42 75 45 78 L55 78 C58 75 60 70 62 65 C65 60 72 55 72 45 C72 30 65 20 50 20 Z" fill="#1e293b" />
+  <path d="M45 78 L45 84 L55 84 L55 78 Z" fill="#475569" />
+  <path d="M50 28 L50 62 M38 45 L62 45 M42 35 L58 55 M42 55 L58 35" stroke="#facc15" stroke-width="2" stroke-linecap="round" />
+  <text x="50" y="94" font-family="system-ui, sans-serif" font-weight="bold" font-size="8" fill="#1e293b" text-anchor="middle">JUST JS</text>
+</svg>

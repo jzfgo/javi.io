@@ -1,0 +1,131 @@
+[
+  {
+    "id": "claude-code",
+    "institution": "Master.Dev",
+    "degree": "Claude Code",
+    "year": "2026",
+    "credentialUrl": "https://static.frontendmasters.com/ud/c/7e67eff295/ONCeVpyzkJ/claude-code-frontendmasters.pdf",
+    "skills": [
+      "Claude Code Subagents",
+      "Model Context Protocol (MCP)",
+      "Agent Teams",
+      "Agentic AI Development",
+      "Claude Agent SDK",
+      "Claude Skills",
+      "Anthropic Claude"
+    ]
+  },
+  {
+    "id": "claude-code-in-action",
+    "institution": "Anthropic",
+    "degree": "Claude Code in Action",
+    "year": "2026",
+    "credentialUrl": "https://verify.skilljar.com/c/3ckpq9rd8sad",
+    "skills": [
+      "Agentic AI Development",
+      "Agentic Workflows",
+      "Agentic Mode",
+      "Agentic Automation"
+    ]
+  },
+  {
+    "id": "mcp-advanced-topics",
+    "institution": "Anthropic",
+    "degree": "Model Context Protocol: Advanced Topics",
+    "year": "2026",
+    "credentialUrl": "https://verify.skilljar.com/c/shp4en64fkvs",
+    "skills": ["Model Context Protocol (MCP)"]
+  },
+  {
+    "id": "practical-guide-to-python",
+    "institution": "Master.Dev",
+    "degree": "Practical Guide to Python",
+    "year": "2026",
+    "credentialUrl": "https://static.frontendmasters.com/ud/c/7e67eff295/ZfBjFwyWWj/practical-python.pdf",
+    "skills": ["Python"]
+  },
+  {
+    "id": "nestjs-microservices",
+    "institution": "NestJS",
+    "degree": "NestJS Microservices",
+    "year": "2024",
+    "credentialUrl": "https://drive.google.com/file/d/1fyLYBOJnsaHpSTJAROJ2cNMcBX16Rnm7/view",
+    "skills": ["Microservices", "RabbitMQ", "NATS"]
+  },
+  {
+    "id": "nestjs-graphql-schema-first",
+    "institution": "NestJS",
+    "degree": "NestJS GraphQL — Schema-first approach",
+    "year": "2022",
+    "credentialUrl": "https://drive.google.com/file/d/1i44QkfqJAbu14iELqLbKZlr_GoXE09j4/view",
+    "skills": ["GraphQL"]
+  },
+  {
+    "id": "advanced-react-and-graphql",
+    "institution": "Bostype",
+    "degree": "Advanced React and GraphQL",
+    "year": "2020",
+    "skills": ["React.js", "GraphQL", "Next.js", "Node.js"]
+  },
+  {
+    "id": "javascript-mental-models",
+    "institution": "JustJavascript",
+    "degree": "JavaScript Mental Models (Season 1)",
+    "year": "2022",
+    "credentialUrl": "https://drive.google.com/file/d/1f37vGg5DhKnvQLvbfxH1UlAKVW1TSZns/view",
+    "skills": ["JavaScript"]
+  },
+
+  {
+    "id": "intro-to-subagents",
+    "institution": "Anthropic",
+    "degree": "Introduction to subagents",
+    "year": "2026",
+    "credentialUrl": "https://verify.skilljar.com/c/nvxtb9i3235q",
+    "skills": ["Artificial Intelligence (AI)", "Claude Code Subagents", "Agent Development"],
+    "include": { "cv": false, "web": false }
+  },
+  {
+    "id": "intro-to-agent-skills",
+    "institution": "Anthropic",
+    "degree": "Introduction to agent skills",
+    "year": "2026",
+    "credentialUrl": "https://verify.skilljar.com/c/72th29r9n9uj",
+    "include": { "cv": false, "web": false }
+  },
+  {
+    "id": "intro-to-mcp",
+    "institution": "Anthropic",
+    "degree": "Introduction to Model Context Protocol",
+    "year": "2026",
+    "credentialUrl": "https://verify.skilljar.com/c/d6atk3kzafae",
+    "skills": ["Model Context Protocol (MCP)"],
+    "include": { "cv": false, "web": false }
+  },
+  {
+    "id": "nestjs-graphql-code-first",
+    "institution": "NestJS",
+    "degree": "NestJS GraphQL — Code-first approach",
+    "year": "2022",
+    "credentialUrl": "https://drive.google.com/file/d/1Bim4KLqUd5xh-oHLGbhUEEo9UxaUfhqe/view",
+    "skills": ["GraphQL"],
+    "include": { "cv": false, "web": false }
+  },
+  {
+    "id": "tinyhouse",
+    "institution": "newline",
+    "degree": "TinyHouse: Fullstack React, TS & GraphQL",
+    "year": "2022",
+    "credentialUrl": "https://drive.google.com/file/d/1UmtGBGw1_G7Ai3WHbOZivXHAD_vyP836/view",
+    "include": { "cv": false, "web": false }
+  },
+  {
+    "id": "blockchain-fundamentals",
+    "institution": "Chainlink Labs",
+    "degree": "Blockchain Fundamentals",
+    "year": "2024",
+    "credentialUrl": "https://drive.google.com/file/d/1HyPgSb--JOK8Vy8OiHuNIFtxMwHfypnT/view",
+    "skills": ["Blockchain", "Cryptocurrency"],
+    "include": { "cv": false, "web": false }
+  }
+]

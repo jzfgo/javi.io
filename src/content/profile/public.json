@@ -6,5 +6,9 @@
   "linkedin": "https://www.linkedin.com/in/jzfgo",
   "github": "https://github.com/jzfgo",
   "website": "https://javi.io",
+  "summary": {
+    "en": "Senior Software Engineer, Tech Lead, and Founding Engineer with extensive experience as a Full-stack / backend engineer. Specialized in architecting scalable web applications, designing robust APIs, and leading collaborative engineering teams to deliver high-impact products.",
+    "es": "Ingeniero de software senior, Tech Lead y Founding Engineer con amplia experiencia como Full-stack / backend engineer. Especializado en diseñar la arquitectura de aplicaciones web escalables, APIs robustas y liderar equipos colaborativos de ingeniería."
+  },
   "education": []
 }

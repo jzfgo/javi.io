@@ -18,15 +18,25 @@ const work = await Promise.all(
 
 const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
 
-const cvHash = import.meta.env.PUBLIC_CV_HASH ?? 'latest';
-const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? '';
+const education = (await getCollection("education"))
+  .filter(e => e.data.include?.web !== false)
+  .sort((a, b) => Number(b.data.year) - Number(a.data.year));
+
+const educationIcons = getIconMap(import.meta.glob("/src/assets/education/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
+
+const cvHash = import.meta.env.PUBLIC_CV_HASH ?? "latest";
+const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? "";
 const updatedLabel = cvUpdated
   ? (() => {
-      const d = new Date(cvUpdated + 'T00:00:00Z');
-      return 'Updated ' + d.toLocaleString('en', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+      const d = new Date(cvUpdated + "T00:00:00Z");
+      return "Updated " + d.toLocaleString("en", { month: "long", year: "numeric", timeZone: "UTC" });
     })()
-  : '';
+  : "";
 
+const VALID_FILTERS = ["work", "certifications"] as const;
+type Filter = typeof VALID_FILTERS[number] | "all";
+const rawParam = Astro.url.searchParams.get("type");
+const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FILTERS[number]) ? rawParam as typeof VALID_FILTERS[number] : "all";
 ---
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
@@ -66,35 +76,209 @@ const updatedLabel = cvUpdated
           <p class="text-xs opacity-50">{updatedLabel}</p>
         )}
       </div>
-      <ul class="flex flex-col space-y-4">
-        {
-          work.map(entry => {
-            const { Content } = entry;
-            return (
-              <li id={idToSlug(entry.id)} class="animate flex gap-4">
-                {icons[idToSlug(entry.id)] && (
-                  <img src={icons[idToSlug(entry.id)]} alt="" class="size-16 rounded object-cover shrink-0 mt-1" />
-                )}
-                <div>
-                  <div class="text-sm opacity-75">
-                    {dateRange(entry.data.dateStart, entry.data.dateEnd, "en")}
+
+      <div id="work-tablist" role="tablist" aria-label="Filter experience by type" class="animate flex gap-6 border-b border-black/10 dark:border-white/10">
+        <button data-filter="all" role="tab" aria-selected={activeFilter === "all" ? "true" : "false"} tabindex={activeFilter === "all" ? 0 : -1} class="work-filter-tab">All</button>
+        <button data-filter="work" role="tab" aria-selected={activeFilter === "work" ? "true" : "false"} tabindex={activeFilter === "work" ? 0 : -1} class="work-filter-tab">Work</button>
+        <button data-filter="certifications" role="tab" aria-selected={activeFilter === "certifications" ? "true" : "false"} tabindex={activeFilter === "certifications" ? 0 : -1} class="work-filter-tab">Certifications</button>
+      </div>
+
+      <div id="work-content" class="animate">
+        <ul class="flex flex-col space-y-4">
+          {
+            work.map(entry => {
+              const { Content } = entry;
+              return (
+                <li id={idToSlug(entry.id)} class="flex gap-4">
+                  {icons[idToSlug(entry.id)] && (
+                    <img src={icons[idToSlug(entry.id)]} alt="" class="size-16 rounded object-cover shrink-0 mt-1" />
+                  )}
+                  <div>
+                    <div class="text-sm opacity-75">
+                      {dateRange(entry.data.dateStart, entry.data.dateEnd, "en")}
+                    </div>
+                    <div class="font-semibold text-black dark:text-white">
+                      {entry.data.company}
+                    </div>
+                    <div class="text-sm opacity-75">
+                      {entry.data.role}
+                    </div>
+                    <article>
+                      <Content />
+                    </article>
                   </div>
-                  <div class="font-semibold text-black dark:text-white">
-                    {entry.data.company}
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+
+      {education.length > 0 && (
+        <div id="certs-content">
+          <hr id="work-certs-divider" class="border-black/10 dark:border-white/10 my-10 animate" />
+          <section class="animate space-y-6">
+            <h2 id="certs-title" class="font-semibold text-black dark:text-white text-lg">Certifications</h2>
+            <ul class="flex flex-col space-y-6">
+              {education.map(cert => (
+                <li class="flex gap-4">
+                  {educationIcons[cert.id] && (
+                    <img
+                      src={educationIcons[cert.id]}
+                      alt={`${cert.data.institution} logo`}
+                      class="size-16 rounded object-cover shrink-0 mt-1"
+                    />
+                  )}
+                  <div class="space-y-1">
+                    <div class="font-semibold text-black dark:text-white leading-tight">
+                      {cert.data.degree}
+                    </div>
+                    <div class="text-sm text-black dark:text-white opacity-90 leading-tight">
+                      {cert.data.institution}
+                    </div>
+                    <div class="text-xs text-black/50 dark:text-white/50">
+                      Issued {cert.data.year}
+                    </div>
+                    {cert.data.credentialUrl && (
+                      <div class="text-xs pt-1">
+                        <a
+                          href={cert.data.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-1 py-1 px-3 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white transition-colors duration-200"
+                        >
+                          <span>Show credential</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="size-3 stroke-[1.5] fill-none stroke-current" viewBox="0 0 24 24">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                          </svg>
+                        </a>
+                      </div>
+                    )}
+                    {cert.data.skills && cert.data.skills.length > 0 && (
+                      <div class="text-xs text-black/60 dark:text-white/60 pt-1">
+                        <span class="font-semibold text-black dark:text-white">Skills:</span>{" "}
+                        {cert.data.skills.join(" · ")}
+                      </div>
+                    )}
                   </div>
-                  <div class="text-sm opacity-75">
-                    {entry.data.role}
-                  </div>
-                  <article>
-                    <Content />
-                  </article>
-                </div>
-              </li>
-            );
-          })
-        }
-      </ul>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      )}
     </div>
   </Container>
 </PageLayout>
+
+<style is:global>
+  .work-filter-tab {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: rgb(0 0 0 / 0.4);
+    border: none;
+    background: transparent;
+    padding-bottom: 12px;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+  .work-filter-tab[aria-selected="true"] {
+    font-weight: 600;
+    color: rgb(0 0 0);
+    border-bottom-color: rgb(0 0 0);
+  }
+  .dark .work-filter-tab {
+    color: rgb(255 255 255 / 0.4);
+  }
+  .dark .work-filter-tab[aria-selected="true"] {
+    color: rgb(255 255 255);
+    border-bottom-color: rgb(255 255 255);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var VALID = ["work", "certifications"];
+
+    function getFilter() {
+      var p = new URLSearchParams(window.location.search).get("type");
+      return VALID.indexOf(p) !== -1 ? p : "all";
+    }
+
+    function applyFilter(filter) {
+      var workDiv = document.querySelector("#work-content");
+      var certsDiv = document.querySelector("#certs-content");
+      var divider = document.querySelector("#work-certs-divider");
+      var certsTitle = document.querySelector("#certs-title");
+
+      if (filter === "all") {
+        if (workDiv) workDiv.style.display = "";
+        if (certsDiv) certsDiv.style.display = "";
+        if (divider) divider.style.display = "";
+        if (certsTitle) certsTitle.style.display = "";
+      } else if (filter === "work") {
+        if (workDiv) workDiv.style.display = "";
+        if (certsDiv) certsDiv.style.display = "none";
+        if (divider) divider.style.display = "none";
+      } else if (filter === "certifications") {
+        if (workDiv) workDiv.style.display = "none";
+        if (certsDiv) certsDiv.style.display = "";
+        if (divider) divider.style.display = "none";
+        if (certsTitle) certsTitle.style.display = "none";
+      }
+
+      document.querySelectorAll(".work-filter-tab").forEach(function (btn) {
+        var selected = btn.dataset.filter === filter;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
+        btn.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+    }
+
+    applyFilter(getFilter());
+
+    document.querySelectorAll(".work-filter-tab").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var filter = btn.dataset.filter;
+        var url = new URL(window.location.href);
+        if (filter === "all") {
+          url.searchParams.delete("type");
+        } else {
+          url.searchParams.set("type", filter);
+        }
+        history.pushState({}, "", url);
+        applyFilter(filter);
+      });
+    });
+
+    var tablist = document.querySelector("#work-tablist");
+    if (tablist) {
+      tablist.addEventListener("keydown", function (e) {
+        var tabs = Array.from(document.querySelectorAll(".work-filter-tab"));
+        var idx = tabs.indexOf(document.activeElement);
+        if (idx === -1) return;
+        var next = -1;
+        if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
+        else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = tabs.length - 1;
+        if (next === -1) return;
+        e.preventDefault();
+        tabs[next].focus();
+        tabs[next].click();
+      });
+    }
+
+    if (!window._workFilterListenerAttached) {
+      window._workFilterListenerAttached = true;
+      window.addEventListener("popstate", function () {
+        applyFilter(getFilter());
+      });
+    }
+  })();
+</script>
 

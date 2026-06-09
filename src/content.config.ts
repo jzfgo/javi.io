@@ -1,6 +1,6 @@
 import { defineCollection, type SchemaContext } from "astro:content";
 import { z } from "zod";
-import { glob } from "astro/loaders";
+import { glob, file } from "astro/loaders";
 
 const parseWorkDate = (val: string): Date => {
   const [m, d, y] = val.split("/").map(Number);
@@ -78,6 +78,21 @@ const projectsEn = defineCollection({
   schema: projectsSchema,
 });
 
+const education = defineCollection({
+  loader: file("src/data/education.json"),
+  schema: z.object({
+    institution: z.string(),
+    degree: z.string(),
+    year: z.string(),
+    credentialUrl: z.string().url().optional(),
+    skills: z.array(z.string()).optional(),
+    include: z.object({
+      cv: z.boolean().optional(),
+      web: z.boolean().optional(),
+    }).optional(),
+  }),
+});
+
 export const collections = {
   "blog-es": blogEs,
   "blog-en": blogEn,
@@ -85,4 +100,5 @@ export const collections = {
   "work-en": workEn,
   "projects-es": projectsEs,
   "projects-en": projectsEn,
+  "education": education,
 };

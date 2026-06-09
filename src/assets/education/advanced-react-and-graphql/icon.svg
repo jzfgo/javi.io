@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100" height="100" rx="20" fill="#1e1b4b" />
+  <ellipse cx="50" cy="50" rx="10" ry="28" fill="none" stroke="#06b6d4" stroke-width="2.5" transform="rotate(30 50 50)" />
+  <ellipse cx="50" cy="50" rx="10" ry="28" fill="none" stroke="#06b6d4" stroke-width="2.5" transform="rotate(90 50 50)" />
+  <ellipse cx="50" cy="50" rx="10" ry="28" fill="none" stroke="#06b6d4" stroke-width="2.5" transform="rotate(150 50 50)" />
+  <circle cx="50" cy="50" r="5" fill="#e10098" />
+  <text x="50" y="90" font-family="system-ui, sans-serif" font-weight="bold" font-size="9" fill="#818cf8" text-anchor="middle">BOSTYPE</text>
+</svg>
