@@ -3,19 +3,21 @@ import type { Metadata, Site, Socials } from "@types";
 export const SITE: Site = {
   NAME: "Hic sunt dracones",
   EMAIL: "javierzapata82@gmail.com",
-  NUM_POSTS_ON_HOMEPAGE: 3,
-  NUM_WORKS_ON_HOMEPAGE: 3,
-  NUM_PROJECTS_ON_HOMEPAGE: 3,
+  NUM_POSTS_ON_HOMEPAGE: 2,
+  NUM_WORKS_ON_HOMEPAGE: 2,
+  NUM_PROJECTS_ON_HOMEPAGE: 2,
 };
 
 export const HOME_EN: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Developer, tech lead, recovering designer. 20 years shipping things.",
+  DESCRIPTION:
+    "Developer, tech lead, recovering designer. 20 years shipping things.",
 };
 
 export const HOME_ES: Metadata = {
   TITLE: "Inicio",
-  DESCRIPTION: "Desarrollador, tech lead, diseñador en rehabilitación. 20 años construyendo cosas.",
+  DESCRIPTION:
+    "Desarrollador, tech lead, diseñador en rehabilitación. 20 años construyendo cosas.",
 };
 
 export const BLOG_EN: Metadata = {
