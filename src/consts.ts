@@ -10,12 +10,12 @@ export const SITE: Site = {
 
 export const HOME_EN: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Rambling.",
+  DESCRIPTION: "Developer, tech lead, recovering designer. 20 years shipping things.",
 };
 
 export const HOME_ES: Metadata = {
   TITLE: "Inicio",
-  DESCRIPTION: "Divagando.",
+  DESCRIPTION: "Desarrollador, tech lead, diseñador en rehabilitación. 20 años construyendo cosas.",
 };
 
 export const BLOG_EN: Metadata = {
