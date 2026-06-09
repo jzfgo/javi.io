@@ -26,24 +26,25 @@ if (!existsSync(distCv)) mkdirSync(distCv, { recursive: true });
 if (!existsSync(publicCv)) mkdirSync(publicCv, { recursive: true });
 
 const browser = await chromium.launch();
-
-for (const { lang, htmlPath } of configs) {
-  const outPath = join(distCv, `javier-zapata-${lang}-${hash}.pdf`);
-  const page = await browser.newPage();
-  await page.goto(pathToFileURL(htmlPath).href);
-  await page.evaluate(() => document.fonts.ready);
-  await page.pdf({
-    path: outPath,
-    printBackground: true,
-    format: 'A4',
-    displayHeaderFooter: false,
-    margin: { top: '16mm', bottom: '16mm', left: '14mm', right: '14mm' },
-  });
-  await page.close();
-  // Also copy to public/cv/ so `pnpm dev` can serve it
-  const publicPath = join(publicCv, `javier-zapata-${lang}-${hash}.pdf`);
-  copyFileSync(outPath, publicPath);
-  console.log(`Generated: ${outPath}`);
+try {
+  for (const { lang, htmlPath } of configs) {
+    const outPath = join(distCv, `javier-zapata-${lang}-${hash}.pdf`);
+    const page = await browser.newPage();
+    await page.goto(pathToFileURL(htmlPath).href);
+    await page.evaluate(() => document.fonts.ready);
+    await page.pdf({
+      path: outPath,
+      printBackground: true,
+      format: 'A4',
+      displayHeaderFooter: false,
+      margin: { top: '16mm', bottom: '16mm', left: '14mm', right: '14mm' },
+    });
+    await page.close();
+    // Also copy to public/cv/ so `pnpm dev` can serve it
+    const publicPath = join(publicCv, `javier-zapata-${lang}-${hash}.pdf`);
+    copyFileSync(outPath, publicPath);
+    console.log(`Generated: ${outPath}`);
+  }
+} finally {
+  await browser.close();
 }
-
-await browser.close();
