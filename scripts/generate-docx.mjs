@@ -3,7 +3,7 @@ import {
   Document, Packer, Paragraph, TextRun, HeadingLevel,
   AlignmentType, BorderStyle, TabStopPosition, TabStopType,
 } from 'docx';
-import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import matter from 'gray-matter';
 import { computeCvMeta } from './cv-meta.mjs';
@@ -21,7 +21,9 @@ const SECTIONS_DATA = {
 
 const { hash, updated } = computeCvMeta();
 const distCv = resolve('dist/cv');
+const publicCv = resolve('public/cv');
 if (!existsSync(distCv)) mkdirSync(distCv, { recursive: true });
+if (!existsSync(publicCv)) mkdirSync(publicCv, { recursive: true });
 
 function parseWorkFiles(dir) {
   return readdirSync(dir)
@@ -175,5 +177,7 @@ for (const lang of ['en', 'es']) {
   const buffer = await Packer.toBuffer(doc);
   const outPath = join(distCv, `javier-zapata-${lang}-${hash}.docx`);
   writeFileSync(outPath, buffer);
+  // Also copy to public/cv/ so `pnpm dev` can serve it
+  copyFileSync(outPath, join(publicCv, `javier-zapata-${lang}-${hash}.docx`));
   console.log(`Generated: ${outPath}`);
 }

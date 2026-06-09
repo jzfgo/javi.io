@@ -1,12 +1,14 @@
 // scripts/generate-pdf.mjs
 import { chromium } from 'playwright';
 import { resolve, join } from 'node:path';
-import { mkdirSync, existsSync } from 'node:fs';
+import { mkdirSync, existsSync, copyFileSync } from 'node:fs';
 import { computeCvMeta } from './cv-meta.mjs';
 
 const { hash } = computeCvMeta();
 const distCv = resolve('dist/cv');
+const publicCv = resolve('public/cv');
 if (!existsSync(distCv)) mkdirSync(distCv, { recursive: true });
+if (!existsSync(publicCv)) mkdirSync(publicCv, { recursive: true });
 
 const configs = [
   { lang: 'en', htmlPath: resolve('dist/en/cv/index.html') },
@@ -28,6 +30,9 @@ for (const { lang, htmlPath } of configs) {
     margin: { top: '16mm', bottom: '16mm', left: '14mm', right: '14mm' },
   });
   await page.close();
+  // Also copy to public/cv/ so `pnpm dev` can serve it
+  const publicPath = join(publicCv, `javier-zapata-${lang}-${hash}.pdf`);
+  copyFileSync(outPath, publicPath);
   console.log(`Generated: ${outPath}`);
 }
 
