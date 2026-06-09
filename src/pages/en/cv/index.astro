@@ -97,8 +97,8 @@ const education = (profile.education as unknown as EduEntry[]) ?? [];
     {profile.email}
     {profile.phone && <span> · {profile.phone}</span>}
     {profile.location && <span> · {profile.location}</span>}
-    {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace('https://', '')}</a></span>}
-    {profile.github && <span> · <a href={profile.github}>{profile.github.replace('https://', '')}</a></span>}
+    {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace(/^https?:\/\/(www\.)?/, '')}</a></span>}
+    {profile.github && <span> · <a href={profile.github}>{profile.github.replace(/^https?:\/\/(www\.)?/, '')}</a></span>}
   </p>
 
   <h2>{s.experience}</h2>

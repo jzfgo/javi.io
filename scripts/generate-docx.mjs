@@ -85,10 +85,10 @@ function buildDoc(lang) {
     contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.location, size: 18, color: '444444' }));
   }
   if (profilePublic.linkedin) {
-    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.linkedin.replace('https://', ''), size: 18, color: '444444' }));
+    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.linkedin.replace(/^https?:\/\/(www\.)?/, ''), size: 18, color: '444444' }));
   }
   if (profilePublic.github) {
-    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.github.replace('https://', ''), size: 18, color: '444444' }));
+    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.github.replace(/^https?:\/\/(www\.)?/, ''), size: 18, color: '444444' }));
   }
 
   children.push(
@@ -135,7 +135,7 @@ function buildDoc(lang) {
       new Paragraph({
         children: [
           new TextRun({
-            text: entry.role + (entry.location ? ' · ' + entry.location : ''),
+            text: (entry.role || '') + (entry.location ? ' · ' + entry.location : ''),
             size: 18, color: '333333',
           }),
         ],
@@ -143,7 +143,7 @@ function buildDoc(lang) {
       }),
     );
 
-    if (entry.bullets && entry.bullets.length > 0) {
+    if (Array.isArray(entry.bullets) && entry.bullets.length > 0) {
       for (const bullet of entry.bullets) {
         children.push(
           new Paragraph({
@@ -172,8 +172,8 @@ function buildDoc(lang) {
       children.push(
         new Paragraph({
           children: [
-            new TextRun({ text: edu.institution, bold: true, size: 20 }),
-            new TextRun({ text: '\t' + edu.year, size: 18, color: '444444' }),
+            new TextRun({ text: edu.institution || '', bold: true, size: 20 }),
+            new TextRun({ text: '\t' + (edu.year || ''), size: 18, color: '444444' }),
           ],
           tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
           spacing: { before: 120, after: 20 },
@@ -181,7 +181,7 @@ function buildDoc(lang) {
         new Paragraph({
           children: [
             new TextRun({
-              text: edu.degree,
+              text: edu.degree || '',
               size: 18, color: '333333',
             }),
           ],
@@ -192,8 +192,8 @@ function buildDoc(lang) {
   }
 
   // Skills section
-  if (entries.some(e => e.tech && e.tech.length > 0)) {
-    const allTech = [...new Set(entries.flatMap(e => e.tech ?? []))];
+  if (entries.some(e => Array.isArray(e.tech) && e.tech.length > 0)) {
+    const allTech = [...new Set(entries.flatMap(e => Array.isArray(e.tech) ? e.tech : []))];
     children.push(
       new Paragraph({
         text: s.skills.toUpperCase(),
