@@ -17,6 +17,16 @@ const work = await Promise.all(
 
 const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
 
+const cvHash = import.meta.env.PUBLIC_CV_HASH ?? 'latest';
+const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? '';
+const updatedLabel = cvUpdated
+  ? (() => {
+      const d = new Date(cvUpdated + 'T00:00:00Z');
+      const month = d.toLocaleString('es', { month: 'long', timeZone: 'UTC' });
+      return 'Actualizado ' + month + ' de ' + d.getUTCFullYear();
+    })()
+  : '';
+
 ---
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
@@ -53,6 +63,25 @@ const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: 
           })
         }
       </ul>
+      <div class="animate mt-10 flex flex-col gap-2">
+        <div class="text-sm font-semibold text-black dark:text-white">Descargar CV</div>
+        <div class="flex items-center gap-4">
+          <a
+            href={`/cv/javier-zapata-es-${cvHash}.pdf`}
+            download
+            class="text-sm underline underline-offset-4 decoration-dashed hover:opacity-60 transition-opacity"
+          >PDF</a>
+          <a
+            href={`/cv/javier-zapata-es-${cvHash}.docx`}
+            download
+            class="text-sm underline underline-offset-4 decoration-dashed hover:opacity-60 transition-opacity"
+          >DOCX</a>
+          {updatedLabel && (
+            <span class="text-xs opacity-50">{updatedLabel}</span>
+          )}
+        </div>
+      </div>
     </div>
   </Container>
 </PageLayout>
+
