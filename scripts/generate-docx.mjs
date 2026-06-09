@@ -48,7 +48,11 @@ function parseWorkFiles(dir) {
     });
 }
 
-function parseDate(dateStr) {
+function parseDate(dateVal) {
+  if (dateVal instanceof Date) {
+    return dateVal;
+  }
+  const dateStr = String(dateVal || '');
   const [m, d, y] = dateStr.split('/').map(Number);
   const date = new Date(Date.UTC(y, m - 1, d));
   if (isNaN(date.getTime())) {
@@ -118,7 +122,7 @@ function buildDoc(lang) {
 
   for (const entry of entries) {
     const start = formatDate(entry.dateStart, locale);
-    const endStr = ['current', 'actualidad'].includes((entry.dateEnd ?? '').trim().toLowerCase())
+    const endStr = ['current', 'actualidad'].includes(String(entry.dateEnd ?? '').trim().toLowerCase())
       ? s.present
       : formatDate(entry.dateEnd, locale);
     const dateRange = `${start} – ${endStr}`;
