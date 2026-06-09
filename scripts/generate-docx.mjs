@@ -1,9 +1,23 @@
 // scripts/generate-docx.mjs
 import {
-  Document, Packer, Paragraph, TextRun, HeadingLevel,
-  AlignmentType, BorderStyle, TabStopPosition, TabStopType,
+  Document,
+  Packer,
+  Paragraph,
+  TextRun,
+  HeadingLevel,
+  AlignmentType,
+  BorderStyle,
+  TabStopPosition,
+  TabStopType,
 } from "docx";
-import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from "node:fs";
+import {
+  readFileSync,
+  readdirSync,
+  writeFileSync,
+  mkdirSync,
+  existsSync,
+  copyFileSync,
+} from "node:fs";
 import { join, resolve } from "node:path";
 import matter from "gray-matter";
 import { computeCvMeta } from "./cv-meta.mjs";
@@ -15,8 +29,22 @@ const profilePublic = JSON.parse(readFileSync(profilePath, "utf-8"));
 // Section labels inlined to avoid TS import issues in plain .mjs
 // If src/cv/sections.ts labels change, update these too.
 const SECTIONS_DATA = {
-  en: { summary: "Summary", experience: "Professional Experience", education: "Education", skills: "Skills", present: "Present", updated: "Updated" },
-  es: { summary: "Resumen profesional", experience: "Experiencia profesional", education: "Educación", skills: "Aptitudes", present: "Actualidad", updated: "Actualizado" },
+  en: {
+    summary: "Summary",
+    experience: "Professional Experience",
+    education: "Education",
+    skills: "Skills",
+    present: "Present",
+    updated: "Updated",
+  },
+  es: {
+    summary: "Resumen profesional",
+    experience: "Experiencia profesional",
+    education: "Educación",
+    skills: "Aptitudes",
+    present: "Actualidad",
+    updated: "Actualizado",
+  },
 };
 
 const { hash, updated } = computeCvMeta();
@@ -27,8 +55,8 @@ if (!existsSync(publicCv)) mkdirSync(publicCv, { recursive: true });
 
 function parseWorkFiles(dir) {
   return readdirSync(dir)
-    .filter(f => f.endsWith(".md"))
-    .map(f => {
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => {
       const filePath = join(dir, f);
       const raw = readFileSync(filePath, "utf-8");
       const data = matter(raw).data;
@@ -40,7 +68,7 @@ function parseWorkFiles(dir) {
       }
       return data;
     })
-    .filter(d => d.include?.cv !== false)
+    .filter((d) => d.include?.cv !== false)
     .sort((a, b) => {
       const da = parseDate(a.dateStart);
       const db = parseDate(b.dateStart);
@@ -56,14 +84,20 @@ function parseDate(dateVal) {
   const [m, d, y] = dateStr.split("/").map(Number);
   const date = new Date(Date.UTC(y, m - 1, d));
   if (isNaN(date.getTime())) {
-    throw new Error("Invalid date format: \"" + dateStr + "\". Expected MM/DD/YYYY");
+    throw new Error(
+      'Invalid date format: "' + dateStr + '". Expected MM/DD/YYYY',
+    );
   }
   return date;
 }
 
 function formatDate(dateStr, locale) {
   const d = parseDate(dateStr);
-  return d.toLocaleString(locale, { month: "short", year: "numeric", timeZone: "UTC" });
+  return d.toLocaleString(locale, {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }
 
 function buildDoc(lang) {
@@ -79,20 +113,44 @@ function buildDoc(lang) {
   const title = profilePublic.title || "";
   const email = profilePublic.email || "";
 
-  const contactChildren = [
-    new TextRun({ text: email, size: 18 }),
-  ];
+  const contactChildren = [new TextRun({ text: email, size: 18 })];
   if (profilePublic.phone) {
-    contactChildren.push(new TextRun({ text: "  ·  " + profilePublic.phone, size: 18, color: "444444" }));
+    contactChildren.push(
+      new TextRun({
+        text: "  ·  " + profilePublic.phone,
+        size: 18,
+        color: "444444",
+      }),
+    );
   }
   if (profilePublic.location) {
-    contactChildren.push(new TextRun({ text: "  ·  " + profilePublic.location, size: 18, color: "444444" }));
+    contactChildren.push(
+      new TextRun({
+        text: "  ·  " + profilePublic.location,
+        size: 18,
+        color: "444444",
+      }),
+    );
   }
   if (profilePublic.linkedin) {
-    contactChildren.push(new TextRun({ text: "  ·  " + profilePublic.linkedin.replace(/^https?:\/\/(www\.)?/, ""), size: 18, color: "444444" }));
+    contactChildren.push(
+      new TextRun({
+        text:
+          "  ·  " + profilePublic.linkedin.replace(/^https?:\/\/(www\.)?/, ""),
+        size: 18,
+        color: "444444",
+      }),
+    );
   }
   if (profilePublic.github) {
-    contactChildren.push(new TextRun({ text: "  ·  " + profilePublic.github.replace(/^https?:\/\/(www\.)?/, ""), size: 18, color: "444444" }));
+    contactChildren.push(
+      new TextRun({
+        text:
+          "  ·  " + profilePublic.github.replace(/^https?:\/\/(www\.)?/, ""),
+        size: 18,
+        color: "444444",
+      }),
+    );
   }
 
   children.push(
@@ -117,10 +175,14 @@ function buildDoc(lang) {
         text: s.summary.toUpperCase(),
         heading: HeadingLevel.HEADING_2,
         spacing: { before: 200, after: 80 },
-        border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" } },
+        border: {
+          bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" },
+        },
       }),
       new Paragraph({
-        children: [new TextRun({ text: profilePublic.summary[lang], size: 18 })],
+        children: [
+          new TextRun({ text: profilePublic.summary[lang], size: 18 }),
+        ],
         spacing: { after: 120 },
       }),
     );
@@ -132,13 +194,19 @@ function buildDoc(lang) {
       text: s.experience.toUpperCase(),
       heading: HeadingLevel.HEADING_2,
       spacing: { before: 200, after: 80 },
-      border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" } },
+      border: {
+        bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" },
+      },
     }),
   );
 
   for (const entry of entries) {
     const start = formatDate(entry.dateStart, locale);
-    const endStr = ["current", "actualidad"].includes(String(entry.dateEnd ?? "").trim().toLowerCase())
+    const endStr = ["current", "actualidad"].includes(
+      String(entry.dateEnd ?? "")
+        .trim()
+        .toLowerCase(),
+    )
       ? s.present
       : formatDate(entry.dateEnd, locale);
     const dateRange = `${start} – ${endStr}`;
@@ -155,8 +223,11 @@ function buildDoc(lang) {
       new Paragraph({
         children: [
           new TextRun({
-            text: (entry.role || "") + (entry.location ? " · " + entry.location : ""),
-            size: 18, color: "333333",
+            text:
+              (entry.role || "") +
+              (entry.location ? " · " + entry.location : ""),
+            size: 18,
+            color: "333333",
           }),
         ],
         spacing: { after: 40 },
@@ -177,10 +248,12 @@ function buildDoc(lang) {
   }
 
   // Education section
-  const educationPath = resolve("src/data/education.json");
-  const educationData = existsSync(educationPath) ? JSON.parse(readFileSync(educationPath, "utf-8")) : [];
+  const educationPath = resolve("src/content/education/public.json");
+  const educationData = existsSync(educationPath)
+    ? JSON.parse(readFileSync(educationPath, "utf-8"))
+    : [];
   const education = educationData
-    .filter(e => e.include?.cv !== false)
+    .filter((e) => e.include?.cv !== false)
     .sort((a, b) => Number(b.year) - Number(a.year));
 
   if (education.length > 0) {
@@ -189,7 +262,9 @@ function buildDoc(lang) {
         text: s.education.toUpperCase(),
         heading: HeadingLevel.HEADING_2,
         spacing: { before: 200, after: 80 },
-        border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" } },
+        border: {
+          bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" },
+        },
       }),
     );
 
@@ -198,16 +273,23 @@ function buildDoc(lang) {
         new Paragraph({
           children: [
             new TextRun({ text: edu.institution || "", bold: true, size: 20 }),
-            new TextRun({ text: "\t" + (edu.year || ""), size: 18, color: "444444" }),
+            new TextRun({
+              text: "\t" + (edu.year || ""),
+              size: 18,
+              color: "444444",
+            }),
           ],
-          tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
+          tabStops: [
+            { type: TabStopType.RIGHT, position: TabStopPosition.MAX },
+          ],
           spacing: { before: 120, after: 20 },
         }),
         new Paragraph({
           children: [
             new TextRun({
               text: edu.degree || "",
-              size: 18, color: "333333",
+              size: 18,
+              color: "333333",
             }),
           ],
           spacing: { after: 40 },
@@ -217,14 +299,18 @@ function buildDoc(lang) {
   }
 
   // Skills section
-  if (entries.some(e => Array.isArray(e.tech) && e.tech.length > 0)) {
-    const allTech = [...new Set(entries.flatMap(e => Array.isArray(e.tech) ? e.tech : []))];
+  if (entries.some((e) => Array.isArray(e.tech) && e.tech.length > 0)) {
+    const allTech = [
+      ...new Set(entries.flatMap((e) => (Array.isArray(e.tech) ? e.tech : []))),
+    ];
     children.push(
       new Paragraph({
         text: s.skills.toUpperCase(),
         heading: HeadingLevel.HEADING_2,
         spacing: { before: 200, after: 80 },
-        border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" } },
+        border: {
+          bottom: { style: BorderStyle.SINGLE, size: 6, color: "111111" },
+        },
       }),
       new Paragraph({
         children: [new TextRun({ text: allTech.join(" · "), size: 18 })],
@@ -236,9 +322,20 @@ function buildDoc(lang) {
   // Updated date
   if (updated) {
     const d = new Date(updated + "T00:00:00Z");
-    const dateLabel = lang === "en"
-      ? s.updated + " " + d.toLocaleString("en", { month: "long", year: "numeric", timeZone: "UTC" })
-      : s.updated + " en " + d.toLocaleString("es", { month: "long", timeZone: "UTC" }) + " de " + d.getUTCFullYear();
+    const dateLabel =
+      lang === "en"
+        ? s.updated +
+          " " +
+          d.toLocaleString("en", {
+            month: "long",
+            year: "numeric",
+            timeZone: "UTC",
+          })
+        : s.updated +
+          " en " +
+          d.toLocaleString("es", { month: "long", timeZone: "UTC" }) +
+          " de " +
+          d.getUTCFullYear();
     children.push(
       new Paragraph({
         children: [new TextRun({ text: dateLabel, size: 16, color: "888888" })],
@@ -249,14 +346,16 @@ function buildDoc(lang) {
   }
 
   return new Document({
-    sections: [{
-      properties: {
-        page: {
-          margin: { top: 910, bottom: 910, left: 793, right: 793 }, // ~16mm / ~14mm in TWIPs
+    sections: [
+      {
+        properties: {
+          page: {
+            margin: { top: 910, bottom: 910, left: 793, right: 793 }, // ~16mm / ~14mm in TWIPs
+          },
         },
+        children,
       },
-      children,
-    }],
+    ],
   });
 }
 

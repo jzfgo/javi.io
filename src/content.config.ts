@@ -1,6 +1,6 @@
+import { file, glob } from "astro/loaders";
 import { defineCollection, type SchemaContext } from "astro:content";
 import { z } from "zod";
-import { glob, file } from "astro/loaders";
 
 const parseWorkDate = (val: string): Date => {
   const [m, d, y] = val.split("/").map(Number);
@@ -8,8 +8,14 @@ const parseWorkDate = (val: string): Date => {
     throw new Error(`Invalid date values in: "${val}". Expected MM/DD/YYYY`);
   }
   const date = new Date(Date.UTC(y, m - 1, d));
-  if (isNaN(date.getTime()) || date.getUTCMonth() !== m - 1 || date.getUTCDate() !== d) {
-    throw new Error(`Invalid date format or value: "${val}". Expected MM/DD/YYYY`);
+  if (
+    isNaN(date.getTime()) ||
+    date.getUTCMonth() !== m - 1 ||
+    date.getUTCDate() !== d
+  ) {
+    throw new Error(
+      `Invalid date format or value: "${val}". Expected MM/DD/YYYY`,
+    );
   }
   return date;
 };
@@ -37,16 +43,22 @@ const workSchema = z.object({
   company: z.string(),
   role: z.string(),
   dateStart: z.string().transform(parseWorkDate),
-  dateEnd: z.string().transform(val =>
-    ["current", "actualidad"].includes(val.trim().toLowerCase()) ? val : parseWorkDate(val)
-  ),
+  dateEnd: z
+    .string()
+    .transform((val) =>
+      ["current", "actualidad"].includes(val.trim().toLowerCase())
+        ? val
+        : parseWorkDate(val),
+    ),
   location: z.string().optional(),
   bullets: z.array(z.string()).optional(),
   tech: z.array(z.string()).optional(),
-  include: z.object({
-    cv: z.boolean().default(true),
-    web: z.boolean().default(true),
-  }).default({ cv: true, web: true }),
+  include: z
+    .object({
+      cv: z.boolean().default(true),
+      web: z.boolean().default(true),
+    })
+    .default({ cv: true, web: true }),
 });
 
 const workEs = defineCollection({
@@ -79,17 +91,19 @@ const projectsEn = defineCollection({
 });
 
 const education = defineCollection({
-  loader: file("src/data/education.json"),
+  loader: file("src/content/education/public.json"),
   schema: z.object({
     institution: z.string(),
     degree: z.string(),
     year: z.string(),
     credentialUrl: z.string().url().optional(),
     skills: z.array(z.string()).optional(),
-    include: z.object({
-      cv: z.boolean().optional(),
-      web: z.boolean().optional(),
-    }).optional(),
+    include: z
+      .object({
+        cv: z.boolean().optional(),
+        web: z.boolean().optional(),
+      })
+      .optional(),
   }),
 });
 
@@ -100,5 +114,5 @@ export const collections = {
   "work-en": workEn,
   "projects-es": projectsEs,
   "projects-en": projectsEn,
-  "education": education,
+  education: education,
 };

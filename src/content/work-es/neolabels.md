@@ -12,9 +12,6 @@ tech:
   - "HTML"
   - "CSS"
   - "JavaScript"
-  - "PHP"
-  - "MySQL"
-  - "web móvil"
   - "UX/UI"
 ---
 
