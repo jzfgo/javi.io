@@ -50,7 +50,11 @@ function parseWorkFiles(dir) {
 
 function parseDate(dateStr) {
   const [m, d, y] = dateStr.split('/').map(Number);
-  return new Date(Date.UTC(y, m - 1, d));
+  const date = new Date(Date.UTC(y, m - 1, d));
+  if (isNaN(date.getTime())) {
+    throw new Error('Invalid date format: "' + dateStr + '". Expected MM/DD/YYYY');
+  }
+  return date;
 }
 
 function formatDate(dateStr, locale) {
@@ -209,7 +213,7 @@ function buildDoc(lang) {
     const d = new Date(updated + 'T00:00:00Z');
     const dateLabel = lang === 'en'
       ? s.updated + ' ' + d.toLocaleString('en', { month: 'long', year: 'numeric', timeZone: 'UTC' })
-      : s.updated + ' ' + d.toLocaleString('es', { month: 'long', timeZone: 'UTC' }) + ' de ' + d.getUTCFullYear();
+      : s.updated + ' en ' + d.toLocaleString('es', { month: 'long', timeZone: 'UTC' }) + ' de ' + d.getUTCFullYear();
     children.push(
       new Paragraph({
         children: [new TextRun({ text: dateLabel, size: 16, color: '888888' })],

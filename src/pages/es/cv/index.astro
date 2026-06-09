@@ -37,7 +37,7 @@ const updatedLabel = cvUpdated
   ? (() => {
       const d = new Date(cvUpdated + 'T00:00:00Z');
       const month = d.toLocaleString('es', { month: 'long', timeZone: 'UTC' });
-      return s.updated + ' ' + month + ' de ' + d.getUTCFullYear();
+      return s.updated + ' en ' + month + ' de ' + d.getUTCFullYear();
     })()
   : '';
 
