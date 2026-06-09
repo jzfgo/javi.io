@@ -7,7 +7,10 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync, copyFi
 import { join, resolve } from 'node:path';
 import matter from 'gray-matter';
 import { computeCvMeta } from './cv-meta.mjs';
-const profilePublic = JSON.parse(readFileSync(resolve('src/content/profile/public.json'), 'utf-8'));
+const profilePath = existsSync(resolve('src/content/profile/full.json'))
+  ? resolve('src/content/profile/full.json')
+  : resolve('src/content/profile/public.json');
+const profilePublic = JSON.parse(readFileSync(profilePath, 'utf-8'));
 
 // Section labels inlined to avoid TS import issues in plain .mjs
 // If src/cv/sections.ts labels change, update these too.
@@ -26,8 +29,16 @@ function parseWorkFiles(dir) {
   return readdirSync(dir)
     .filter(f => f.endsWith('.md'))
     .map(f => {
-      const raw = readFileSync(join(dir, f), 'utf-8');
-      return matter(raw).data;
+      const filePath = join(dir, f);
+      const raw = readFileSync(filePath, 'utf-8');
+      const data = matter(raw).data;
+      if (!data.dateStart) {
+        throw new Error(`Missing "dateStart" in frontmatter of ${filePath}`);
+      }
+      if (!data.dateEnd) {
+        throw new Error(`Missing "dateEnd" in frontmatter of ${filePath}`);
+      }
+      return data;
     })
     .filter(d => d.include?.cv !== false)
     .sort((a, b) => {
@@ -63,6 +74,9 @@ function buildDoc(lang) {
   const contactChildren = [
     new TextRun({ text: email, size: 18 }),
   ];
+  if (profilePublic.phone) {
+    contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.phone, size: 18, color: '444444' }));
+  }
   if (profilePublic.location) {
     contactChildren.push(new TextRun({ text: '  ·  ' + profilePublic.location, size: 18, color: '444444' }));
   }

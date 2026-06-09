@@ -1,7 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import { SECTIONS } from '@cv/sections';
-import profile from '../../../content/profile/public.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const profile = JSON.parse(
+  fs.readFileSync(
+    fs.existsSync(path.resolve('src/content/profile/full.json'))
+      ? path.resolve('src/content/profile/full.json')
+      : path.resolve('src/content/profile/public.json'),
+    'utf-8'
+  )
+);
 
 const lang = 'es' as const;
 const s = SECTIONS[lang];
@@ -87,6 +97,7 @@ const education = (profile.education as unknown as EduEntry[]) ?? [];
   <p class="subtitle">{profile.title}</p>
   <p class="contact">
     {profile.email}
+    {profile.phone && <span> · {profile.phone}</span>}
     {locationEs && <span> · {locationEs}</span>}
     {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace('https://', '')}</a></span>}
     {profile.github && <span> · <a href={profile.github}>{profile.github.replace('https://', '')}</a></span>}
