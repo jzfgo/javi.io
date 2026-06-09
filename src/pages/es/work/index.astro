@@ -32,12 +32,9 @@ const updatedLabel = cvUpdated
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <div class="animate font-semibold text-black dark:text-white">
-        Experiencia
-      </div>
-      <div class="animate flex flex-col gap-2">
-        <div class="text-sm font-semibold text-black dark:text-white">Descargar CV</div>
-        <div class="flex items-center gap-4">
+      <div class="animate flex items-baseline justify-between gap-4">
+        <span class="font-semibold text-black dark:text-white">Experiencia</span>
+        <div class="flex items-center gap-4 shrink-0">
           <a
             href={`/cv/javier-zapata-es-${cvHash}.pdf`}
             download
