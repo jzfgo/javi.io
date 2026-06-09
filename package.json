@@ -15,7 +15,10 @@
     "astro": "astro",
     "deploy": "gh-pages --dotfiles -d dist",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "generate:pdf": "node scripts/generate-pdf.mjs",
+    "generate:docx": "node scripts/generate-docx.mjs",
+    "generate:cv": "pnpm run generate:pdf && pnpm run generate:docx"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.2.1",
@@ -39,11 +42,14 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "@typescript-eslint/eslint-plugin": "^8.60.0",
     "@typescript-eslint/parser": "^8.60.0",
+    "docx": "^9.7.1",
     "eslint": "^10.0.0",
     "eslint-plugin-astro": "^1.0.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "gh-pages": "^6.3.0",
     "globals": "^16.0.0",
+    "gray-matter": "^4.0.3",
+    "playwright": "^1.60.0",
     "typescript": "^6.0.0"
   }
 }

@@ -1,8 +1,23 @@
 ---
 company: "Interacso"
 role: "Tech Lead"
+location: "Madrid, Spain"
 dateStart: "11/01/2022"
 dateEnd: "Current"
+bullets:
+  - "Lead software architecture, cloud infrastructure design, and technical decision-making for clients including IKEA, Clear Channel, Grupo Porcelanosa, and Sony Pictures Spain"
+  - "Bootstrap new projects: frameworks, tooling, CI/CD pipelines, and test suites so teams hit the ground running"
+  - "Lead team through trust and mentorship: write production-quality code as a concrete standard, involve the team in technical decisions"
+tech:
+  - "TypeScript"
+  - "React"
+  - "Next.js"
+  - "Node.js"
+  - "AWS"
+  - "GCP"
+  - "PostgreSQL"
+  - "architecture"
+  - "team leadership"
 ---
 
 Interacso specializes in custom web and mobile application development, offering services in software development, UX/UI design, and digital strategy.

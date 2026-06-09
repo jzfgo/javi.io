@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import { SECTIONS } from '@cv/sections';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const profile = JSON.parse(
+  fs.readFileSync(
+    fs.existsSync(path.resolve('src/content/profile/full.json'))
+      ? path.resolve('src/content/profile/full.json')
+      : path.resolve('src/content/profile/public.json'),
+    'utf-8'
+  )
+);
+
+const lang = 'es' as const;
+const s = SECTIONS[lang];
+
+const work = (await getCollection('work-es'))
+  .filter(e => e.data.include.cv)
+  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
+
+function formatDate(d: Date): string {
+  return d.toLocaleString('es', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+}
+
+function fmtRange(entry: (typeof work)[number]): string {
+  const start = formatDate(entry.data.dateStart);
+  const end = typeof entry.data.dateEnd === 'string'
+    ? s.present
+    : formatDate(entry.data.dateEnd as Date);
+  return `${start} – ${end}`;
+}
+
+const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? '';
+const updatedLabel = cvUpdated
+  ? (() => {
+      const d = new Date(cvUpdated + 'T00:00:00Z');
+      const month = d.toLocaleString('es', { month: 'long', timeZone: 'UTC' });
+      return s.updated + ' en ' + month + ' de ' + d.getUTCFullYear();
+    })()
+  : '';
+
+const allTech = [...new Set(work.flatMap(e => e.data.tech ?? []))];
+const locationEs = profile.location ? profile.location.replace('Spain', 'España') : '';
+
+type EduEntry = { institution: string; degree: string; year: string };
+const education = (profile.education as unknown as EduEntry[]) ?? [];
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>{profile.name} — CV</title>
+  <style is:inline>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #111;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 18mm 0;
+    }
+    h1 { font-size: 18pt; font-weight: bold; margin-bottom: 2pt; }
+    .subtitle { font-size: 10pt; color: #333; margin-bottom: 4pt; }
+    .contact { font-size: 9pt; color: #333; }
+    .contact a { color: #333; text-decoration: none; }
+    h2 {
+      font-size: 10pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5pt;
+      border-bottom: 0.75pt solid #111;
+      padding-bottom: 2pt;
+      margin: 14pt 0 6pt;
+    }
+    .entry { margin-bottom: 9pt; }
+    .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .entry-company { font-weight: bold; font-size: 10pt; }
+    .entry-dates { font-size: 9pt; color: #444; white-space: nowrap; padding-left: 8pt; }
+    .entry-meta { font-size: 9pt; color: #444; margin-bottom: 3pt; }
+    .bullets { margin: 3pt 0 0 14pt; padding: 0; }
+    .bullets li { margin-bottom: 1.5pt; }
+    .skills { font-size: 9pt; line-height: 1.6; }
+    .updated { font-size: 8pt; color: #888; margin-top: 18pt; text-align: right; }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>{profile.name}</h1>
+  <p class="subtitle">{profile.title}</p>
+  <p class="contact">
+    {profile.email}
+    {profile.phone && <span> · {profile.phone}</span>}
+    {locationEs && <span> · {locationEs}</span>}
+    {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace(/^https?:\/\/(www\.)?/, '')}</a></span>}
+    {profile.github && <span> · <a href={profile.github}>{profile.github.replace(/^https?:\/\/(www\.)?/, '')}</a></span>}
+  </p>
+
+  <h2>{s.experience}</h2>
+  {work.map(entry => (
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-company">{entry.data.company}</span>
+        <span class="entry-dates">{fmtRange(entry)}</span>
+      </div>
+      <div class="entry-meta">
+        {entry.data.role}{entry.data.location ? ` · ${entry.data.location}` : ''}
+      </div>
+      {entry.data.bullets && entry.data.bullets.length > 0 && (
+        <ul class="bullets">
+          {entry.data.bullets.map(b => <li>{b}</li>)}
+        </ul>
+      )}
+    </div>
+  ))}
+
+  {education.length > 0 && (
+    <>
+      <h2>{s.education}</h2>
+      {education.map(edu => (
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-company">{edu.institution}</span>
+            <span class="entry-dates">{edu.year}</span>
+          </div>
+          <div class="entry-meta">{edu.degree}</div>
+        </div>
+      ))}
+    </>
+  )}
+
+  <h2>{s.skills}</h2>
+  <p class="skills">{allTech.join(' · ')}</p>
+
+  {updatedLabel && <p class="updated">{updatedLabel}</p>}
+</body>
+</html>

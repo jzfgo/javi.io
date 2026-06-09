@@ -6,6 +6,7 @@ import { dateRange, getIconMap, idToSlug } from "@lib/utils";
 import { WORK_EN as WORK } from "@consts";
 
 const collection = (await getCollection("work-en"))
+  .filter(e => e.data.include.web)
   .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
 
 const work = await Promise.all(
@@ -17,13 +18,53 @@ const work = await Promise.all(
 
 const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
 
+const cvHash = import.meta.env.PUBLIC_CV_HASH ?? 'latest';
+const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? '';
+const updatedLabel = cvUpdated
+  ? (() => {
+      const d = new Date(cvUpdated + 'T00:00:00Z');
+      return 'Updated ' + d.toLocaleString('en', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    })()
+  : '';
+
 ---
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <div class="animate font-semibold text-black dark:text-white">
-        Work
+      <div class="animate space-y-1">
+        <div class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-black dark:text-white">Work</span>
+          <div class="flex items-center gap-2 shrink-0">
+            <a
+              href={`/cv/javier-zapata-en-${cvHash}.pdf`}
+              download
+              title="Download CV as PDF"
+              class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current -rotate-90">
+                <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+                <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+              </svg>
+              <span class="text-sm">PDF</span>
+            </a>
+            <a
+              href={`/cv/javier-zapata-en-${cvHash}.docx`}
+              download
+              title="Download CV as Word document"
+              class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current -rotate-90">
+                <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+                <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+              </svg>
+              <span class="text-sm">DOCX</span>
+            </a>
+          </div>
+        </div>
+        {updatedLabel && (
+          <p class="text-xs opacity-50">{updatedLabel}</p>
+        )}
       </div>
       <ul class="flex flex-col space-y-4">
         {
@@ -56,3 +97,4 @@ const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: 
     </div>
   </Container>
 </PageLayout>
+

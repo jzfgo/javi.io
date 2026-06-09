@@ -40,6 +40,13 @@ const workSchema = z.object({
   dateEnd: z.string().transform(val =>
     ["current", "actualidad"].includes(val.trim().toLowerCase()) ? val : parseWorkDate(val)
   ),
+  location: z.string().optional(),
+  bullets: z.array(z.string()).optional(),
+  tech: z.array(z.string()).optional(),
+  include: z.object({
+    cv: z.boolean().default(true),
+    web: z.boolean().default(true),
+  }).default({ cv: true, web: true }),
 });
 
 const workEs = defineCollection({

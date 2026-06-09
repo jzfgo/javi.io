@@ -6,7 +6,7 @@ import { dateRange, idToSlug } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 
 export async function getStaticPaths() {
-  const work = await getCollection("work-es");
+  const work = (await getCollection("work-es")).filter((entry) => entry.data.include.web);
   return work.map((entry) => ({
     params: { slug: idToSlug(entry.id) },
     props: entry,

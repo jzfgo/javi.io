@@ -39,3 +39,9 @@ pnpm-debug.log*
 # Deployment targets
 .netlify/
 resources/
+
+# CV full profile (contains phone — never commit)
+src/content/profile/full.json
+
+# Generated CV documents (built by generate:cv — never commit binaries)
+public/cv/
