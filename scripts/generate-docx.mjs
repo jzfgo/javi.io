@@ -118,7 +118,7 @@ function buildDoc(lang) {
 
   for (const entry of entries) {
     const start = formatDate(entry.dateStart, locale);
-    const endStr = ['current', 'actualidad'].includes((entry.dateEnd ?? '').toLowerCase())
+    const endStr = ['current', 'actualidad'].includes((entry.dateEnd ?? '').trim().toLowerCase())
       ? s.present
       : formatDate(entry.dateEnd, locale);
     const dateRange = `${start} – ${endStr}`;
