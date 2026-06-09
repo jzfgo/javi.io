@@ -35,26 +35,32 @@ const updatedLabel = cvUpdated
       <div class="animate flex items-baseline justify-between gap-4">
         <span class="font-semibold text-black dark:text-white">Experiencia</span>
         <div class="flex items-center gap-2 shrink-0">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
           <a
             href={`/cv/javier-zapata-es-${cvHash}.pdf`}
             download
             title="Descargar CV en PDF"
-            class="text-sm underline underline-offset-4 decoration-dashed hover:opacity-60 transition-opacity"
-          >PDF</a>
-          <span class="text-neutral-300 dark:text-neutral-600" aria-hidden="true">&middot;</span>
+            class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current -rotate-90">
+              <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+              <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+            </svg>
+            <span class="text-sm">PDF</span>
+          </a>
           <a
             href={`/cv/javier-zapata-es-${cvHash}.docx`}
             download
             title="Descargar CV en Word"
-            class="text-sm underline underline-offset-4 decoration-dashed hover:opacity-60 transition-opacity"
-          >DOCX</a>
+            class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current -rotate-90">
+              <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+              <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+            </svg>
+            <span class="text-sm">DOCX</span>
+          </a>
           {updatedLabel && (
-            <span class="text-xs opacity-50 ml-1">{updatedLabel}</span>
+            <span class="text-xs opacity-50">{updatedLabel}</span>
           )}
         </div>
       </div>
