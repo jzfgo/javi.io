@@ -10,22 +10,24 @@ export const SITE: Site = {
 
 export const HOME_EN: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Rambling.",
+  DESCRIPTION: "Developer, tech lead, recovering designer. 20 years shipping things.",
 };
 
 export const HOME_ES: Metadata = {
   TITLE: "Inicio",
-  DESCRIPTION: "Divagando.",
+  DESCRIPTION: "Desarrollador, tech lead, diseñador en rehabilitación. 20 años construyendo cosas.",
 };
 
 export const BLOG_EN: Metadata = {
   TITLE: "Blog",
   DESCRIPTION: "Posts on tech, design, and whatever else.",
+  TAGLINE: "Rambling.",
 };
 
 export const BLOG_ES: Metadata = {
   TITLE: "Blog",
   DESCRIPTION: "Posts sobre tecnología, diseño y lo que sea.",
+  TAGLINE: "Divagando.",
 };
 
 export const WORK_EN: Metadata = {
@@ -64,10 +66,16 @@ export const CREDITS_ES: Metadata = {
 
 export const AUTHOR = {
   NAME: "Javier Zapata",
+  H1_EN: "Hi, I’m Javi.",
+  H1_ES: "Hola, soy Javi.",
   BIO_EN:
     "I’m a developer, tech lead, and recovering designer that has been shipping things for more than 20 years. Still learning, though.",
   BIO_ES:
     "Soy desarrollador, tech lead y diseñador en rehabilitación que lleva más de 20 años lanzando cosas. Aun así, sigo aprendiendo.",
+  BRIDGE_EN:
+    "Here you’ll find what I’m working on, what I’ve built, and the occasional write-up about code, AI, and tooling.",
+  BRIDGE_ES:
+    "Aquí encontrarás en qué trabajo, qué he construido y algún que otro artículo sobre código, IA y herramientas.",
   AVATAR: "/avatar.jpg",
 };
 
