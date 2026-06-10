@@ -44,7 +44,7 @@ if (blogDetailMatch) {
     ? `${prefix(otherLocale)}/projects/${slug}`
     : `${prefix(otherLocale)}/projects`;
 } else {
-  altPath = `${prefix(otherLocale)}${basePath}`;
+  altPath = `${prefix(otherLocale)}${basePath}` || "/";
 }
 
 const nav = locale === "es"
