@@ -13,7 +13,7 @@ const blog = (await getCollection("blog-es"))
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const work = (await getCollection("work-es"))
-  .filter(e => e.data.include.web)
+  .filter(e => e.data.include?.web)
   .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf())
   .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
