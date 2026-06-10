@@ -1,6 +1,6 @@
 ---
 company: "Interacso"
-role: "Fronted Developer → Tech Lead"
+role: "Frontend Developer → Tech Lead"
 location: "Madrid, Spain"
 dateStart: "11/01/2022"
 dateEnd: "Current"
