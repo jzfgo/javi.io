@@ -13,13 +13,15 @@ const otherLocale = locale === "es" ? "en" : "es";
 const prefix = (loc: string) => loc === "es" ? "" : "/en";
 
 const pathname = Astro.url.pathname;
-// Normalize pathname to ES-equivalent (strip /en prefix)
-const basePath = (locale === "en"
+// Normalize pathname to ES-equivalent (strip /en prefix), preserve trailing slash
+const basePath = locale === "en"
   ? pathname.replace(/^\/en(\/|$)/, "/")
-  : pathname).replace(/\/$/, "");
+  : pathname;
+// Strip trailing slash only for regex slug matching (avoids capturing it as part of the slug)
+const cleanPath = basePath.replace(/\/$/, "");
 
-const blogDetailMatch = basePath.match(/^\/blog\/(.+)$/);
-const projectDetailMatch = basePath.match(/^\/projects\/(.+)$/);
+const blogDetailMatch = cleanPath.match(/^\/blog\/(.+)$/);
+const projectDetailMatch = cleanPath.match(/^\/projects\/(.+)$/);
 
 let altPath = `${prefix(otherLocale)}/`;
 
@@ -27,14 +29,11 @@ if (blogDetailMatch) {
   const slug = blogDetailMatch[1];
   const currentPost = (await getCollection(`blog-${locale}` as "blog-en" | "blog-es"))
     .find(p => idToSlug(p.id) === slug);
+  altPath = `${prefix(otherLocale)}/blog`;
   if (currentPost?.data.translationKey) {
     const translation = (await getCollection(`blog-${otherLocale}` as "blog-en" | "blog-es"))
       .find(p => p.data.translationKey === currentPost.data.translationKey);
-    altPath = translation
-      ? `${prefix(otherLocale)}/blog/${idToSlug(translation.id)}`
-      : `${prefix(otherLocale)}/blog`;
-  } else {
-    altPath = `${prefix(otherLocale)}/blog`;
+    if (translation) altPath = `${prefix(otherLocale)}/blog/${idToSlug(translation.id)}`;
   }
 } else if (projectDetailMatch) {
   const slug = projectDetailMatch[1];
@@ -50,7 +49,7 @@ if (blogDetailMatch) {
     ? `${prefix(otherLocale)}/projects/${idToSlug(translation.id)}`
     : `${prefix(otherLocale)}/projects`;
 } else {
-  altPath = `${prefix(otherLocale)}${basePath || "/"}`;
+  altPath = `${prefix(otherLocale)}${basePath}`;
 }
 
 const nav = locale === "es"
