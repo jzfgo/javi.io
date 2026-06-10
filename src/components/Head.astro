@@ -27,7 +27,7 @@ const siteBase = (Astro.site?.href ?? "https://javi.io/").replace(/\/$/, "");
 const rawPath = Astro.url.pathname;
 const esPath = rawPath.replace(/^\/en(\/|$)/, "/");
 const hrefES = alternateUrls?.es ?? `${siteBase}${esPath}`;
-const hrefEN = alternateUrls?.en ?? `${siteBase}/en${esPath === "/" ? "/" : esPath}`;
+const hrefEN = alternateUrls?.en ?? `${siteBase}/en${esPath}`;
 
 const locale = Astro.currentLocale ?? "es";
 const rssHref = new URL(`${locale === "en" ? "/en" : ""}/rss.xml`, Astro.site ?? "https://javi.io/");
