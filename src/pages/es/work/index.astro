@@ -79,12 +79,12 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       </div>
 
       <div id="work-tablist" role="tablist" aria-label="Filtrar experiencia por tipo" class="animate flex gap-6 border-b border-black/10 dark:border-white/10">
-        <button data-filter="all" role="tab" aria-selected={activeFilter === "all" ? "true" : "false"} tabindex={activeFilter === "all" ? 0 : -1} class="work-filter-tab">Todo</button>
-        <button data-filter="work" role="tab" aria-selected={activeFilter === "work" ? "true" : "false"} tabindex={activeFilter === "work" ? 0 : -1} class="work-filter-tab">Experiencia</button>
-        <button data-filter="certifications" role="tab" aria-selected={activeFilter === "certifications" ? "true" : "false"} tabindex={activeFilter === "certifications" ? 0 : -1} class="work-filter-tab">Certificaciones</button>
+        <button id="tab-all" data-filter="all" role="tab" aria-controls="work-content certs-content" aria-selected={activeFilter === "all" ? "true" : "false"} tabindex={activeFilter === "all" ? 0 : -1} class="work-filter-tab">Todo</button>
+        <button id="tab-work" data-filter="work" role="tab" aria-controls="work-content" aria-selected={activeFilter === "work" ? "true" : "false"} tabindex={activeFilter === "work" ? 0 : -1} class="work-filter-tab">Experiencia</button>
+        <button id="tab-certifications" data-filter="certifications" role="tab" aria-controls="certs-content" aria-selected={activeFilter === "certifications" ? "true" : "false"} tabindex={activeFilter === "certifications" ? 0 : -1} class="work-filter-tab">Certificaciones</button>
       </div>
 
-      <div id="work-content" class="animate" style={activeFilter === "certifications" ? "display: none" : undefined}>
+      <div id="work-content" role="tabpanel" aria-labelledby="tab-work" class="animate" style={activeFilter === "certifications" ? "display: none" : undefined}>
         <ul class="flex flex-col space-y-4">
           {
             work.map(entry => {
@@ -116,7 +116,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       </div>
 
       {education.length > 0 && (
-        <div id="certs-content" style={activeFilter === "work" ? "display: none" : undefined}>
+        <div id="certs-content" role="tabpanel" aria-labelledby="tab-certifications" style={activeFilter === "work" ? "display: none" : undefined}>
           <hr id="work-certs-divider" class="border-black/10 dark:border-white/10 my-10 animate" style={activeFilter !== "all" ? "display: none" : undefined} />
           <section class="animate space-y-6">
             <h2 id="certs-title" class="font-semibold text-black dark:text-white text-lg" style={activeFilter === "certifications" ? "display: none" : undefined}>Certificaciones</h2>
@@ -149,7 +149,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
                           class="inline-flex items-center gap-1 py-1 px-3 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white transition-colors duration-200"
                         >
                           <span>Ver credencial</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" class="size-3 stroke-[1.5] fill-none stroke-current" viewBox="0 0 24 24">
+                          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="size-3 stroke-[1.5] fill-none stroke-current" viewBox="0 0 24 24">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                             <polyline points="15 3 21 3 21 9" />
                             <line x1="10" x2="21" y1="14" y2="3" />
