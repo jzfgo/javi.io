@@ -6,14 +6,16 @@ import { execSync } from "node:child_process";
 
 export function computeCvMeta() {
   const workDirs = ["src/content/work-en", "src/content/work-es"];
-  const files = workDirs
-    .flatMap((dir) =>
+  const files = [
+    ...workDirs.flatMap((dir) =>
       readdirSync(dir)
         .filter((f) => f.endsWith(".md"))
         .sort()
         .map((f) => join(dir, f)),
-    )
-    .sort();
+    ),
+    "src/content/education/public.json",
+    "src/content/profile/public.json",
+  ].sort();
 
   const hashInput = files.map((f) => readFileSync(f, "utf-8")).join("");
   const hash = createHash("sha256").update(hashInput).digest("hex").slice(0, 8);
