@@ -25,4 +25,4 @@ Ahora bien, ¿no estaría genial que —adicional o alternativamente— el usuar
 
 Pues **AIR hace esto posible**, y lo mejor de todo es que su desarrollo sería prácticamente igual al de cualquier website, en tiempo, esfuerzo y presupuesto. Además, por el mismo precio te olvidas de desarrollar una versión para Windows XP, otra para Vista, Mac, Linux, etc.
 
-En el siguiente capítulo hablaremos de la alternativa de la fundación Mozilla, [**Prism**](/es/blog/la-web-asalta-el-escritorio-mozilla-prism) y cerraremos con [**Silverlight**](/es/blog/la-web-asalta-el-escritorio-silverlight), la apuesta de Microsoft. **¡Así que no cambies de canal!**
+En el siguiente capítulo hablaremos de la alternativa de la fundación Mozilla, [**Prism**](/blog/la-web-asalta-el-escritorio-mozilla-prism) y cerraremos con [**Silverlight**](/blog/la-web-asalta-el-escritorio-silverlight), la apuesta de Microsoft. **¡Así que no cambies de canal!**

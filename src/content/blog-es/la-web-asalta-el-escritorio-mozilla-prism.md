@@ -7,7 +7,7 @@ translationKey: "web-desktop-mozilla-prism"
 
 La apuesta de la fundación Mozilla para esta particular conquista del escritorio se llama [Prism](http://labs.mozilla.com/2007/10/prism/).
 
-Aunque parte del mismo concepto que [Adobe AIR](/es/blog/la-web-asalta-el-escritorio-adobe-air) (la ejecución de aplicaciones web en el escritorio), a diferencia de este, la generación de dichas aplicaciones es llevada a cabo de una forma muy diferente.
+Aunque parte del mismo concepto que [Adobe AIR](/blog/la-web-asalta-el-escritorio-adobe-air) (la ejecución de aplicaciones web en el escritorio), a diferencia de este, la generación de dichas aplicaciones es llevada a cabo de una forma muy diferente.
 
 Anteriormente conocido como **WebRunner** el _leitmotiv_ de Prism es el de proveer al usuario de una herramienta para **crear aplicaciones de escritorio** a partir de cualquier aplicación web **de forma extremadamente sencilla**.
 
@@ -29,4 +29,4 @@ En definitiva, aunque como usuario Prism resulta muy atractivo y sobre todo úti
 
 Aunque aún está en fase de desarrollo, si quieres probarlo, puedes descargarlo desde [Mozilla Labs](http://labs.mozilla.com/).
 
-En el siguiente y último capítulo hablaremos del tercero en discordia, [**Silverlight de Microsoft**](/es/blog/la-web-asalta-el-escritorio-silverlight).
+En el siguiente y último capítulo hablaremos del tercero en discordia, [**Silverlight de Microsoft**](/blog/la-web-asalta-el-escritorio-silverlight).

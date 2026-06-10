@@ -5,11 +5,11 @@ date: 2008-03-25
 translationKey: "web-desktop-silverlight"
 ---
 
-Aunque como tal, Silverlight es realmente un plug-in para navegador (es **_el Flash de Microsoft_**, hablando rápido y mal), WPF (Windows Presentation Foundation), la tecnología sobre la que está creado, sí que podría situarse al mismo nivel que [AIR](/es/blog/la-web-asalta-el-escritorio-adobe-air).
+Aunque como tal, Silverlight es realmente un plug-in para navegador (es **_el Flash de Microsoft_**, hablando rápido y mal), WPF (Windows Presentation Foundation), la tecnología sobre la que está creado, sí que podría situarse al mismo nivel que [AIR](/blog/la-web-asalta-el-escritorio-adobe-air).
 
 Esto es porque WPF permite la creación de RIA (Rich Internet Applications) de escritorio a partir de cualquier aplicación Silverlight, [de hecho es —aparentemente— muy sencillo](http://weblogs.asp.net/scottgu/pages/silverlight-tutorial-part-8-creating-a-digg-desktop-application-using-wpf.aspx).
 
-Al igual que [Adobe AIR](/es/blog/la-web-asalta-el-escritorio-adobe-air) y [Mozilla Prism](/es/blog/la-web-asalta-el-escritorio-mozilla-prism), Silverlight es multi-navegador y multi-plataforma, se encuentra disponible para Windows y Mac y **cuenta con una versión para GNU/Linux** ([Moonlight](http://www.mono-project.com/Moonlight)) actualmente en desarrollo.
+Al igual que [Adobe AIR](/blog/la-web-asalta-el-escritorio-adobe-air) y [Mozilla Prism](/blog/la-web-asalta-el-escritorio-mozilla-prism), Silverlight es multi-navegador y multi-plataforma, se encuentra disponible para Windows y Mac y **cuenta con una versión para GNU/Linux** ([Moonlight](http://www.mono-project.com/Moonlight)) actualmente en desarrollo.
 
 Según comenta la propia Microsoft, una de sus ventajas frente a Flash, Flex o AIR es que es un poco más "accesible" y "seguro", ya que una aplicación Silverlight usa [XAML](http://es.wikipedia.org/wiki/XAML) (eXtensible Application Markup Language) para la creación del interfaz, **Javascript** para efectos dinámicos y WPF para la presentación de contenido multimedia. Es decir, lo que el Silverlight procesa es "texto plano" en lugar de código binario, como ocurre con Flash.
 

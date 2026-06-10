@@ -11,12 +11,7 @@ export default defineConfig({
   site: "https://javi.io",
   integrations: [
     mdx(),
-    sitemap({
-      i18n: {
-        defaultLocale: "es",
-        locales: { es: "es", en: "en" },
-      },
-    }),
+    sitemap(),
   ],
   vite: {
     plugins: [tailwindcss()],
@@ -34,8 +29,7 @@ export default defineConfig({
     defaultLocale: "es",
     locales: ["es", "en"],
     routing: {
-      prefixDefaultLocale: true,
-      redirectToDefaultLocale: false,
+      prefixDefaultLocale: false,
     },
   },
 });

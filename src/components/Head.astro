@@ -16,11 +16,21 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  alternateUrls?: { es: string; en: string };
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://javi.io");
 
-const { title, description, image = "/nano.png" } = Astro.props;
+const { title, description, image = "/nano.png", alternateUrls } = Astro.props;
+
+const siteBase = (Astro.site?.href ?? "https://javi.io/").replace(/\/$/, "");
+const rawPath = Astro.url.pathname;
+const esPath = rawPath.replace(/^\/en(\/|$)/, "/");
+const hrefES = alternateUrls?.es ?? `${siteBase}${esPath}`;
+const hrefEN = alternateUrls?.en ?? `${siteBase}/en${esPath}`;
+
+const locale = Astro.currentLocale ?? "es";
+const rssHref = new URL(`${locale === "en" ? "/en" : ""}/rss.xml`, Astro.site ?? "https://javi.io/");
 ---
 
 <!-- Global Metadata -->
@@ -37,6 +47,11 @@ const { title, description, image = "/nano.png" } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="es" href={hrefES} />
+<link rel="alternate" hreflang="en" href={hrefEN} />
+<link rel="alternate" hreflang="x-default" href={hrefES} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -60,7 +75,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <ClientRouter  />
 
 <!-- RSS Link -->
-<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(`/${Astro.currentLocale ?? "es"}/rss.xml`, Astro.site ?? "https://javi.io")} />
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={rssHref} />
 
 
 

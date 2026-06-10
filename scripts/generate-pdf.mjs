@@ -11,7 +11,7 @@ const publicCv = resolve("public/cv");
 
 const configs = [
   { lang: "en", htmlPath: resolve("dist/en/cv/index.html") },
-  { lang: "es", htmlPath: resolve("dist/es/cv/index.html") },
+  { lang: "es", htmlPath: resolve("dist/cv/index.html") },
 ];
 
 // Verify files exist first

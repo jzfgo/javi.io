@@ -33,7 +33,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
         {
           projects.map((project) => (
             <li data-type={project.data.type}>
-              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} tag={project.data.type} />
+              <ArrowCard entry={project} href={`/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} tag={project.data.type} />
             </li>
           ))
         }
@@ -72,22 +72,22 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
 
 <script is:inline>
   (function () {
-    var VALID = ["professional", "personal"];
+    const VALID = ["professional", "personal"];
 
     function getFilter() {
-      var p = new URLSearchParams(window.location.search).get("type");
+      const p = new URLSearchParams(window.location.search).get("type");
       return VALID.indexOf(p) !== -1 ? p : "all";
     }
 
     function applyFilter(filter) {
       document.querySelectorAll("#project-list li").forEach(function (li) {
-        var match = filter === "all" || li.dataset.type === filter;
+        const match = filter === "all" || li.dataset.type === filter;
         li.style.display = match ? "" : "none";
-        var label = li.querySelector(".type-label");
+        const label = li.querySelector(".type-label");
         if (label) label.style.display = filter === "all" ? "" : "none";
       });
       document.querySelectorAll(".projects-filter-tab").forEach(function (btn) {
-        var selected = btn.dataset.filter === filter;
+        const selected = btn.dataset.filter === filter;
         btn.setAttribute("aria-selected", selected ? "true" : "false");
         btn.setAttribute("tabindex", selected ? "0" : "-1");
       });
@@ -97,8 +97,8 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
 
     document.querySelectorAll(".projects-filter-tab").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var filter = btn.dataset.filter;
-        var url = new URL(window.location.href);
+        const filter = btn.dataset.filter;
+        const url = new URL(window.location.href);
         if (filter === "all") {
           url.searchParams.delete("type");
         } else {
@@ -109,13 +109,13 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       });
     });
 
-    var tablist = document.querySelector("[role=\"tablist\"]");
+    const tablist = document.querySelector("[role=\"tablist\"]");
     if (tablist) {
       tablist.addEventListener("keydown", function (e) {
-        var tabs = Array.from(document.querySelectorAll(".projects-filter-tab"));
-        var idx = tabs.indexOf(document.activeElement);
+        const tabs = Array.from(document.querySelectorAll(".projects-filter-tab"));
+        const idx = tabs.indexOf(document.activeElement);
         if (idx === -1) return;
-        var next = -1;
+        let next = -1;
         if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
         else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
         else if (e.key === "Home") next = 0;
