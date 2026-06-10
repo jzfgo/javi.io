@@ -4,6 +4,7 @@ description: "Mobile cooking application for Telefónica, developed in collabora
 date: "Jan 01 2012"
 type: "professional"
 translationKey: "adria-en-casa"
+hero: ../../../assets/projects/adria-en-casa/hero.jpg
 ---
 
 **Adrià en casa** was a mobile cooking application developed for **Telefónica**, in collaboration with world-renowned chef **Ferran Adrià**.
@@ -14,5 +15,3 @@ As **Technical Advisor** for **Neo Labels**, I provided technical consultancy th
 
 - **Android**
 - **iPadOS**
-
-![Adrià en casa – Mobile app](../../../assets/projects/adria-en-casa/adria.jpg)

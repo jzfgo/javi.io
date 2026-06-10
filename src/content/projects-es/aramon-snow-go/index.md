@@ -4,6 +4,7 @@ description: "Aplicación móvil para las estaciones de esquí de Aramón, desar
 date: "Jan 01 2012"
 type: "professional"
 translationKey: "aramon-snow-go"
+hero: ../../../assets/projects/aramon-snow-go/hero.jpg
 ---
 
 **Aramón Snow & Go** fue una aplicación móvil para las estaciones de esquí de **Aramón**, desarrollada para **Movistar**.
@@ -15,5 +16,3 @@ Como **Asesor Técnico** y **Desarrollador Backend** en **Neo Labels**, contribu
 - **Android**
 - **BlackBerry**
 - **iOS**
-
-![Aramón Snow & Go – Captura de la app](../../../assets/projects/aramon-snow-go/show-and-go.jpg)

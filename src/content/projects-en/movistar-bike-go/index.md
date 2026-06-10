@@ -4,6 +4,7 @@ description: "Mobile cycling companion app for Movistar, providing route navigat
 date: "Jan 01 2012"
 type: "professional"
 translationKey: "movistar-bike-go"
+hero: ../../../assets/projects/movistar-bike-go/hero.jpg
 ---
 
 **Movistar Bike & Go** was a mobile cycling application developed for **Movistar**.
@@ -14,5 +15,3 @@ As **Technical Advisor** and **Frontend Developer** at **Neo Labels**, I contrib
 
 - **Android**
 - **iOS**
-
-![Movistar Bike & Go – App screenshot](../../../assets/projects/movistar-bike-go/bike-and-go.jpg)

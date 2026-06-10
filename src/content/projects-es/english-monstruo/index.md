@@ -4,6 +4,7 @@ description: "Juego móvil tipo Brain Trainer para enseñar a estudiantes de ing
 date: "Mar 01 2013"
 type: "professional"
 translationKey: "english-monstruo"
+hero: ../../../assets/projects/english-monstruo/hero.jpg
 ---
 
 **English Monstruo** es una aplicación para iPhone desarrollada para **Cambridge University Press**.
@@ -13,6 +14,7 @@ Es un juego al estilo "Brain Trainer" diseñado para enseñar a los estudiantes 
 ## Diseño y Experiencia
 
 Como **Diseñador de Juego** y **Diseñador UX**, estuve a cargo de:
+
 - **Arquitectura de la Información (IA)** y diseño de flujos.
 - **Diseño UX**.
 - **Mecánicas de juego**, equilibrando el contenido educativo con un bucle de juego divertido.

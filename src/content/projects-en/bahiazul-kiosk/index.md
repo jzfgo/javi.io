@@ -5,6 +5,7 @@ date: "Jan 01 2020"
 type: "professional"
 translationKey: "bahiazul-kiosk"
 demoURL: "https://dk.bahiazul.com/"
+hero: ../../../assets/projects/bahiazul-kiosk/hero.png
 ---
 
 **Bahiazul Digital Kiosk** is a mobile-first web application developed for **Bahiazul Resort** to replace physical printed materials with a digital alternative.

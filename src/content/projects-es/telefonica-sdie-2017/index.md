@@ -4,6 +4,7 @@ description: "Aplicación web de página única con visualización interactiva d
 date: "Jan 01 2017"
 type: "professional"
 translationKey: "telefonica-sdie-2017"
+hero: ../../../assets/projects/telefonica-sdie-2017/hero.png
 ---
 
 **Telefónica SDiE 2017** fue una aplicación web interactiva desarrollada para **Fundación Telefónica** para presentar los datos y conclusiones de su informe anual sobre la sociedad digital en España.

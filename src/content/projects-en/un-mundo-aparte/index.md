@@ -4,6 +4,7 @@ description: "Mobile application for Las Colinas Golf & Country Club, serving as
 date: "Jan 01 2018"
 type: "professional"
 translationKey: "un-mundo-aparte"
+hero: ../../../assets/projects/un-mundo-aparte/hero.jpg
 ---
 
 **Un Mundo Aparte** was a mobile application developed for **Las Colinas Golf & Country Club**, a luxury golf and country club resort in Murcia, Spain.
@@ -13,6 +14,7 @@ The app served as a digital companion for guests, providing access to resort ser
 ## My Role
 
 As **Tech Lead** and **UX Lead**, I was responsible for:
+
 - Overall system architecture and technical direction of the project.
 - UX design of the mobile application.
 - Leading the development team.

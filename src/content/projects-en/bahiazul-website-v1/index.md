@@ -4,6 +4,7 @@ description: "First version of Bahiazul Resort's website — a full-stack PHP pl
 date: "Jan 01 2014"
 type: "professional"
 translationKey: "bahiazul-website-v1"
+hero: ../../../assets/projects/bahiazul-website-v1/hero.jpg
 ---
 
 The first version of the **Bahiazul Resort** website was developed as the company's primary digital presence and main booking platform.
@@ -17,9 +18,8 @@ Designed the visual identity and user interface of the website using **Sketch**,
 ## Development
 
 Built the platform using a traditional server-side stack:
+
 - **PHP** with **CodeIgniter** as the web framework.
 - **jQuery** for frontend interactivity.
 
 This website was later replaced by a modernized [v2](/en/projects/bahiazul-website) built with Next.js and TypeScript.
-
-![Bahiazul Resort website (2013)](../../../assets/projects/bahiazul-website-v1/bahiazul-web-2013.jpg)

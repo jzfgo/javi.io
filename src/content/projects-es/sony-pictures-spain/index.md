@@ -5,6 +5,7 @@ date: "Jan 01 2023"
 type: "professional"
 translationKey: "sony-pictures-spain"
 demoURL: "https://sonypictures.es/"
+hero: ../../../assets/projects/sony-pictures-spain/hero.webp
 ---
 
 **Sony Pictures Spain** es el sitio web oficial en España de **Sony Pictures Entertainment**, que ofrece información sobre películas, series y contenido de entretenimiento en España.
@@ -20,5 +21,3 @@ Como **Tech Lead** en **Interacso**, me incorporé al proyecto a finales de 2023
 - **PostgreSQL** como base de datos.
 - **Tailwind CSS** para los estilos.
 - **TypeScript** en todo el stack.
-
-![Sony Pictures Spain – Plataforma web](../../../assets/projects/sony-pictures-spain/sony-pictures-spain.webp)

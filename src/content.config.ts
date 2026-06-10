@@ -70,16 +70,18 @@ const workEn = defineCollection({
   schema: workSchema,
 });
 
-const projectsSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  date: z.coerce.date(),
-  type: z.enum(["personal", "professional"]),
-  draft: z.boolean().optional(),
-  demoURL: z.string().optional(),
-  repoURL: z.string().optional(),
-  translationKey: z.string().optional(),
-});
+const projectsSchema = ({ image }: SchemaContext) =>
+  z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    type: z.enum(["personal", "professional"]),
+    draft: z.boolean().optional(),
+    demoURL: z.string().optional(),
+    repoURL: z.string().optional(),
+    translationKey: z.string().optional(),
+    hero: image().optional(),
+  });
 
 const projectsEs = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects-es" }),
