@@ -24,12 +24,18 @@ const enPosts = await getCollection("blog-en", ({ data }) => !data.draft);
 const translation = post.data.translationKey
   ? enPosts.find(p => p.data.translationKey === post.data.translationKey)
   : enPosts.find(p => idToSlug(p.id) === idToSlug(post.id));
+
+const siteBase = (Astro.site?.href ?? "https://javi.io/").replace(/\/$/, "");
+const alternateUrls = {
+  es: `${siteBase}/blog/${idToSlug(post.id)}`,
+  en: translation ? `${siteBase}/en/blog/${idToSlug(translation.id)}` : `${siteBase}/en/blog`,
+};
 ---
 
-<PageLayout title={post.data.title} description={post.data.description} image={post.data.hero?.src}>
+<PageLayout title={post.data.title} description={post.data.description} image={post.data.hero?.src} alternateUrls={alternateUrls}>
   <Container>
     <div class="animate">
-      <BackToPrev href="/es/blog">
+      <BackToPrev href="/blog">
         Volver al blog
       </BackToPrev>
     </div>

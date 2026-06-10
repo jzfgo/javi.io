@@ -1,6 +1,6 @@
 ---
 company: "Interacso"
-role: "Frontend Developer → Tech Lead"
+role: "Tech Lead"
 location: "Madrid, España"
 dateStart: "11/01/2022"
 dateEnd: "Actualidad"
@@ -38,8 +38,8 @@ Lidero con confianza: el equipo es dueño de su trabajo y siempre estoy disponib
 
 ## Proyectos Clave
 
-- [**Porcelanosa Ecommerce**](/es/projects/porcelanosa-ecommerce)
-- [**Minerales de LaLiga**](/es/projects/minerales-de-la-liga)
-- [**Quadrant Travel Cloud**](/es/projects/quadrant-travel-cloud)
-- [**Sony Pictures Spain**](/es/projects/sony-pictures-spain)
-- [**Voltexa**](/es/projects/voltexa)
+- [**Porcelanosa Ecommerce**](/projects/porcelanosa-ecommerce)
+- [**Minerales de LaLiga**](/projects/minerales-de-la-liga)
+- [**Quadrant Travel Cloud**](/projects/quadrant-travel-cloud)
+- [**Sony Pictures Spain**](/projects/sony-pictures-spain)
+- [**Voltexa**](/projects/voltexa)

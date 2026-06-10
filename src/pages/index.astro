@@ -1,35 +1,105 @@
 ---
-import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
 import Container from "@components/Container.astro";
-import { SITE } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import { SITE, HOME_ES as HOME, AUTHOR } from "@consts";
+import { getIconMap, idToSlug } from "@lib/utils";
+
+const blog = (await getCollection("blog-es"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+
+const work = (await getCollection("work-es"))
+  .filter(e => e.data.include.web)
+  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf())
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
+
+const projects = (await getCollection("projects-es"))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
+const blogIcons = getIconMap(import.meta.glob("/src/assets/blog/*/icon.*", { eager: true }));
+const workIcons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: true }));
+const projectIcons = getIconMap(import.meta.glob("/src/assets/projects/*/icon.*", { eager: true }));
 ---
 
-<PageLayout title={SITE.NAME} description="Choose your language / Elige tu idioma">
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <div class="flex flex-col items-center justify-center min-h-[50vh] space-y-8 text-center">
-      <p class="animate text-sm text-black/50 dark:text-white/50 uppercase tracking-widest">
-        Choose your language
-      </p>
-      <div class="animate flex gap-6 text-2xl font-semibold">
-        <a
-          href="/es/"
-          class="text-black dark:text-white hover:underline underline-offset-4 decoration-black/30 dark:decoration-white/30 transition-colors duration-300"
-        >
-          Español
-        </a>
-        <span class="text-black/20 dark:text-white/20">/</span>
-        <a
-          href="/en/"
-          class="text-black dark:text-white hover:underline underline-offset-4 decoration-black/30 dark:decoration-white/30 transition-colors duration-300"
-        >
-          English
-        </a>
-      </div>
+    <div class="space-y-16">
+      <section>
+        <article class="space-y-4">
+          <h1 class="animate text-3xl font-semibold text-black dark:text-white">
+            {AUTHOR.H1_ES}
+          </h1>
+          <p class="animate">
+            {AUTHOR.BIO_ES}
+          </p>
+          <p class="animate">
+            {AUTHOR.PRODUCT_ES}
+          </p>
+          <p class="animate">
+            {AUTHOR.BRIDGE_ES}
+          </p>
+        </article>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Últimas entradas
+          </h5>
+          <Link href="/blog">
+            Ver todas
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {blog.map(post => (
+            <li>
+              <ArrowCard entry={post} href={`/blog/${idToSlug(post.id)}`} icon={blogIcons[post.data.translationKey ?? idToSlug(post.id)]} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Experiencia
+          </h5>
+          <Link href="/work">
+            Ver todo
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {work.map(entry => (
+            <li>
+              <ArrowCard entry={entry} href={`/work#${idToSlug(entry.id)}`} icon={workIcons[idToSlug(entry.id)]} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Proyectos
+          </h5>
+          <Link href="/projects">
+            Ver todos
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {projects.map(project => (
+            <li>
+              <ArrowCard entry={project} href={`/projects/${idToSlug(project.id)}`} icon={projectIcons[idToSlug(project.id)]} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   </Container>
 </PageLayout>
-
-<script is:inline>
-  var lang = (navigator.language || "es").toLowerCase();
-  window.location.replace(lang.startsWith("en") ? "/en/" : "/es/");
-</script>

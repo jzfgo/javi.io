@@ -9,13 +9,13 @@ export const SITE: Site = {
 };
 
 export const HOME_EN: Metadata = {
-  TITLE: "Home",
+  TITLE: "Javier Zapata — Developer & Tech Lead",
   DESCRIPTION:
     "Developer, tech lead, recovering designer. 20 years shipping things.",
 };
 
 export const HOME_ES: Metadata = {
-  TITLE: "Inicio",
+  TITLE: "Javier Zapata — Desarrollador & Tech Lead",
   DESCRIPTION:
     "Desarrollador, tech lead, diseñador en rehabilitación. 20 años construyendo cosas.",
 };
@@ -71,9 +71,13 @@ export const AUTHOR = {
   H1_EN: "Hi, I’m Javi.",
   H1_ES: "Hola, soy Javi.",
   BIO_EN:
-    "I’m a developer, tech lead, and recovering designer that has been shipping things for more than 20 years. Still learning, though.",
+    "I’m a developer, tech lead, and recovering designer who has been shipping things for more than 20 years. Still learning, though.",
   BIO_ES:
     "Soy desarrollador, tech lead y diseñador en rehabilitación que lleva más de 20 años lanzando cosas. Aun así, sigo aprendiendo.",
+  PRODUCT_EN:
+    "I build products people actually want to use, not just software that technically works.",
+  PRODUCT_ES:
+    "Construyo productos que la gente quiere usar, no solo software que técnicamente funciona.",
   BRIDGE_EN:
     "Here you’ll find what I’m working on, what I’ve built, and the occasional write-up about code, AI, and tooling.",
   BRIDGE_ES:

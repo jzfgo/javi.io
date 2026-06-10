@@ -35,6 +35,6 @@ Para el Quiosco Digital, elegí Svelte, una biblioteca rápida y ligera para con
 
 ## Proyectos Clave
 
-- [**Sitio Web**](/es/projects/bahiazul-website)
-- [**Campañas de Email Marketing**](/es/projects/bahiazul-email-marketing)
-- [**Quiosco Digital**](/es/projects/bahiazul-kiosk)
+- [**Sitio Web**](/projects/bahiazul-website)
+- [**Campañas de Email Marketing**](/projects/bahiazul-email-marketing)
+- [**Quiosco Digital**](/projects/bahiazul-kiosk)

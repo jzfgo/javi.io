@@ -28,9 +28,9 @@ Supervisé todos los aspectos técnicos del negocio, incluyendo la arquitectura 
 
 ## Proyectos Clave
 
-- [**Un Mundo Aparte**](/es/projects/un-mundo-aparte)
-- [**Fuera de Juego**](/es/projects/fuera-de-juego)
-- [**Telefónica SDiE 2017**](/es/projects/telefonica-sdie-2017)
-- [**Bahiazul Website (v1)**](/es/projects/bahiazul-website-v1)
-- [**Bahiazul PMS**](/es/projects/bahiazul-pms)
+- [**Un Mundo Aparte**](/projects/un-mundo-aparte)
+- [**Fuera de Juego**](/projects/fuera-de-juego)
+- [**Telefónica SDiE 2017**](/projects/telefonica-sdie-2017)
+- [**Bahiazul Website (v1)**](/projects/bahiazul-website-v1)
+- [**Bahiazul PMS**](/projects/bahiazul-pms)
 - **Diseño de Marca**

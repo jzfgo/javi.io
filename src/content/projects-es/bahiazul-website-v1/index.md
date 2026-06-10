@@ -22,4 +22,4 @@ Construí la plataforma con un stack tradicional del lado del servidor:
 - **PHP** con **CodeIgniter** como framework web.
 - **jQuery** para la interactividad frontend.
 
-Este sitio web fue posteriormente reemplazado por una [versión 2](/es/projects/bahiazul-website) construida con Next.js y TypeScript.
+Este sitio web fue posteriormente reemplazado por una [versión 2](/projects/bahiazul-website) construida con Next.js y TypeScript.

@@ -33,7 +33,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
         {
           projects.map((project) => (
             <li data-type={project.data.type}>
-              <ArrowCard entry={project} href={`/es/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} tag={project.data.type} />
+              <ArrowCard entry={project} href={`/projects/${idToSlug(project.id)}`} icon={icons[idToSlug(project.id)]} tag={project.data.type} />
             </li>
           ))
         }

@@ -17,6 +17,6 @@ Evolucioné de diseñador a Director Creativo, impulsando la marca, el diseño U
 
 ## Proyectos Clave
 
-- [**Atopechavalote!**](/es/projects/atopechavalote)
+- [**Atopechavalote!**](/projects/atopechavalote)
 - **PlayStation MegaPanic**
 - **Madrid Traffic Festival**

@@ -41,7 +41,7 @@ const icons = getIconMap(import.meta.glob("/src/assets/blog/*/icon.*", { eager: 
             <ul class="flex flex-col gap-4">
               {posts[year].map((post) => (
                 <li>
-                  <ArrowCard entry={post} href={`/es/blog/${idToSlug(post.id)}`} icon={icons[post.data.translationKey ?? idToSlug(post.id)]} />
+                  <ArrowCard entry={post} href={`/blog/${idToSlug(post.id)}`} icon={icons[post.data.translationKey ?? idToSlug(post.id)]} />
                 </li>
               ))}
             </ul>

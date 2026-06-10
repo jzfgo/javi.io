@@ -9,47 +9,42 @@ import { idToSlug } from "@lib/utils";
 const locale = Astro.currentLocale ?? "es";
 const otherLocale = locale === "es" ? "en" : "es";
 
-// Attempt to resolve a translated equivalent for content detail pages
-const pathname = Astro.url.pathname.replace(/\/$/, "");
-const blogDetailMatch = pathname.match(/^\/(en|es)\/blog\/(.+)$/);
-const projectDetailMatch = pathname.match(/^\/(en|es)\/projects\/(.+)$/);
+// With prefixDefaultLocale: false, ES lives at root, EN at /en
+const prefix = (loc: string) => loc === "es" ? "" : "/en";
 
-let altPath = `/${otherLocale}/`;
+const pathname = Astro.url.pathname;
+// Normalize pathname to ES-equivalent (strip /en prefix)
+const basePath = locale === "en"
+  ? pathname.replace(/^\/en(\/|$)/, "/")
+  : pathname;
+
+const blogDetailMatch = basePath.match(/^\/blog\/(.+)$/);
+const projectDetailMatch = basePath.match(/^\/projects\/(.+)$/);
+
+let altPath = `${prefix(otherLocale)}/`;
 
 if (blogDetailMatch) {
-  const slug = blogDetailMatch[2];
+  const slug = blogDetailMatch[1];
   const currentPost = (await getCollection(`blog-${locale}` as "blog-en" | "blog-es"))
     .find(p => idToSlug(p.id) === slug);
   if (currentPost?.data.translationKey) {
     const translation = (await getCollection(`blog-${otherLocale}` as "blog-en" | "blog-es"))
       .find(p => p.data.translationKey === currentPost.data.translationKey);
     altPath = translation
-      ? `/${otherLocale}/blog/${idToSlug(translation.id)}`
-      : `/${otherLocale}/blog`;
+      ? `${prefix(otherLocale)}/blog/${idToSlug(translation.id)}`
+      : `${prefix(otherLocale)}/blog`;
   } else {
-    altPath = `/${otherLocale}/blog`;
+    altPath = `${prefix(otherLocale)}/blog`;
   }
 } else if (projectDetailMatch) {
-  const slug = projectDetailMatch[2];
+  const slug = projectDetailMatch[1];
   const currentProject = (await getCollection(`projects-${locale}` as "projects-en" | "projects-es"))
     .find(p => idToSlug(p.id) === slug);
-  if (currentProject?.data.translationKey) {
-    const translation = (await getCollection(`projects-${otherLocale}` as "projects-en" | "projects-es"))
-      .find(p => p.data.translationKey === currentProject.data.translationKey);
-    altPath = translation
-      ? `/${otherLocale}/projects/${idToSlug(translation.id)}`
-      : `/${otherLocale}/projects`;
-  } else if (currentProject) {
-    const translation = (await getCollection(`projects-${otherLocale}` as "projects-en" | "projects-es"))
-      .find(p => idToSlug(p.id) === idToSlug(currentProject.id));
-    altPath = translation
-      ? `/${otherLocale}/projects/${idToSlug(translation.id)}`
-      : `/${otherLocale}/projects`;
-  } else {
-    altPath = `/${otherLocale}/projects`;
-  }
-} else if (pathname.startsWith(`/${locale}/`)) {
-  altPath = pathname.replace(`/${locale}/`, `/${otherLocale}/`);
+  altPath = currentProject
+    ? `${prefix(otherLocale)}/projects/${slug}`
+    : `${prefix(otherLocale)}/projects`;
+} else {
+  altPath = `${prefix(otherLocale)}${basePath}`;
 }
 
 const nav = locale === "es"
@@ -60,19 +55,19 @@ const nav = locale === "es"
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href={`/${locale}/`} underline={false} aria-label={SITE.NAME}>
+      <Link href={`${prefix(locale)}/`} underline={false} aria-label={SITE.NAME}>
         <Logo />
       </Link>
       <nav class="flex gap-1 items-center">
-        <Link href={`/${locale}/blog`}>
+        <Link href={`${prefix(locale)}/blog`}>
           {nav.blog}
         </Link>
         <span>{`/`}</span>
-        <Link href={`/${locale}/work`}>
+        <Link href={`${prefix(locale)}/work`}>
           {nav.work}
         </Link>
         <span>{`/`}</span>
-        <Link href={`/${locale}/projects`}>
+        <Link href={`${prefix(locale)}/projects`}>
           {nav.projects}
         </Link>
         <span>{`/`}</span>

@@ -5,6 +5,7 @@ import BackToTop from "@components/BackToTop.astro";
 
 const year = new Date().getFullYear();
 const locale = Astro.currentLocale ?? "es";
+const prefix = (loc: string) => loc === "es" ? "" : "/en";
 const labels = locale === "es"
   ? { light: "Tema claro", dark: "Tema oscuro", system: "Tema del sistema" }
   : { light: "Light theme", dark: "Dark theme", system: "System theme" };
@@ -24,7 +25,7 @@ const labels = locale === "es"
         </div>
         <span class="text-neutral-300 dark:text-neutral-600">&middot;</span>
         <a
-          href={`/${locale}/credits`}
+          href={`${prefix(locale)}/credits`}
           class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"
         >
           {locale === "es" ? "Créditos" : "Credits"}
