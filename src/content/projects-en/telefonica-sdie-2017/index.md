@@ -4,6 +4,7 @@ description: "Interactive data visualization single-page application for Fundaci
 date: "Jan 01 2017"
 type: "professional"
 translationKey: "telefonica-sdie-2017"
+hero: ../../../assets/projects/telefonica-sdie-2017/hero.png
 ---
 
 **Telefónica SDiE 2017** was an interactive web application developed for **Fundación Telefónica** to present the data and findings of their annual report on digital society in Spain.

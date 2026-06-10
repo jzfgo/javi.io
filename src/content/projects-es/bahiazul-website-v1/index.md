@@ -4,6 +4,7 @@ description: "Primera versión del sitio web de Bahiazul Resort — una platafor
 date: "Jan 01 2014"
 type: "professional"
 translationKey: "bahiazul-website-v1"
+hero: ../../../assets/projects/bahiazul-website-v1/hero.jpg
 ---
 
 La primera versión del sitio web de **Bahiazul Resort** fue desarrollada como la presencia digital principal y la plataforma de reservas de la empresa.
@@ -17,9 +18,8 @@ Diseñé la identidad visual y la interfaz de usuario del sitio web con **Sketch
 ## Desarrollo
 
 Construí la plataforma con un stack tradicional del lado del servidor:
+
 - **PHP** con **CodeIgniter** como framework web.
 - **jQuery** para la interactividad frontend.
 
 Este sitio web fue posteriormente reemplazado por una [versión 2](/es/projects/bahiazul-website) construida con Next.js y TypeScript.
-
-![Sitio web Bahiazul Resort (2013)](../../../assets/projects/bahiazul-website-v1/bahiazul-web-2013.jpg)

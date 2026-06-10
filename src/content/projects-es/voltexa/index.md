@@ -4,6 +4,7 @@ description: "MVP para una startup de energía renovable — portal de clientes,
 date: "Jan 01 2023"
 type: "professional"
 translationKey: "voltexa"
+hero: ../../../assets/projects/voltexa/hero.webp
 ---
 
 **Voltexa Energy** es una startup en el sector de las energías renovables, comprometida con democratizar el acceso a la energía verde en todo el mundo.
@@ -18,5 +19,3 @@ Como **Tech Lead** en **Interacso**, fui responsable de la arquitectura, el desa
 - **Payload CMS** (Node.js) para el backend.
 - **MongoDB** como base de datos.
 - **Google Cloud Platform** para la infraestructura en la nube.
-
-![Voltexa – Portal de clientes](../../../assets/projects/voltexa/join.webp)

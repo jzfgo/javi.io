@@ -4,6 +4,7 @@ description: "Aplicación móvil para Las Colinas Golf & Country Club que actúa
 date: "Jan 01 2018"
 type: "professional"
 translationKey: "un-mundo-aparte"
+hero: ../../../assets/projects/un-mundo-aparte/hero.jpg
 ---
 
 **Un Mundo Aparte** fue una aplicación móvil desarrollada para **Las Colinas Golf & Country Club**, un exclusivo resort de golf y country club en Murcia, España.
@@ -13,6 +14,7 @@ La aplicación servía como compañero digital para los huéspedes, proporcionan
 ## Mi Rol
 
 Como **Líder Técnico** y **Líder de UX**, fui responsable de:
+
 - La arquitectura del sistema y la dirección técnica general del proyecto.
 - El diseño UX de la aplicación móvil.
 - La dirección del equipo de desarrollo.

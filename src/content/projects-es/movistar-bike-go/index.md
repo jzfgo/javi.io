@@ -4,6 +4,7 @@ description: "Aplicación móvil de ciclismo para Movistar que ofrece navegació
 date: "Jan 01 2012"
 type: "professional"
 translationKey: "movistar-bike-go"
+hero: ../../../assets/projects/movistar-bike-go/hero.jpg
 ---
 
 **Movistar Bike & Go** fue una aplicación móvil de ciclismo desarrollada para **Movistar**.
@@ -14,5 +15,3 @@ Como **Asesor Técnico** y **Desarrollador Frontend** en **Neo Labels**, contrib
 
 - **Android**
 - **iOS**
-
-![Movistar Bike & Go – Captura de la app](../../../assets/projects/movistar-bike-go/bike-and-go.jpg)
