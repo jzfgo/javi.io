@@ -1,17 +1,19 @@
 export const SECTIONS = {
   en: {
-    experience: 'Experience',
-    education: 'Education',
-    skills: 'Skills',
-    updated: 'Updated',
-    present: 'Present',
+    summary: "Summary",
+    experience: "Professional Experience",
+    skills: "Skills",
+    education: "Education",
+    updated: "Updated",
+    present: "Present",
   },
   es: {
-    experience: 'Experiencia',
-    education: 'Educación',
-    skills: 'Conocimientos',
-    updated: 'Actualizado',
-    present: 'Actualidad',
+    summary: "Resumen profesional",
+    experience: "Experiencia profesional",
+    skills: "Aptitudes",
+    education: "Educación",
+    updated: "Actualizado",
+    present: "Actualidad",
   },
 } as const;
 

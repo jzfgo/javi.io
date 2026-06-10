@@ -11,11 +11,10 @@ bullets:
 tech:
   - "Node.js"
   - "TypeScript"
-  - "Swift/iOS"
-  - "AI/ML pipelines"
-  - "video encoding"
-  - "cloud infrastructure"
   - "PostgreSQL"
+  - "AI/ML pipelines"
+  - "Video Encoding"
+  - "Cloud Infrastructure"
 ---
 
 Fly-Fut is the first company in the world to protocolize the recording of football with drones, assisted by AI.

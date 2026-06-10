@@ -1,49 +1,50 @@
 ---
-import { getCollection } from 'astro:content';
-import { SECTIONS } from '@cv/sections';
-import fs from 'node:fs';
-import path from 'node:path';
+import { getCollection } from "astro:content";
+import { SECTIONS } from "@cv/sections";
+import fs from "node:fs";
+import path from "node:path";
 
 const profile = JSON.parse(
   fs.readFileSync(
-    fs.existsSync(path.resolve('src/content/profile/full.json'))
-      ? path.resolve('src/content/profile/full.json')
-      : path.resolve('src/content/profile/public.json'),
-    'utf-8'
+    fs.existsSync(path.resolve("src/content/profile/full.json"))
+      ? path.resolve("src/content/profile/full.json")
+      : path.resolve("src/content/profile/public.json"),
+    "utf-8"
   )
 );
 
-const lang = 'en' as const;
+const lang = "en" as const;
 const s = SECTIONS[lang];
 
-const work = (await getCollection('work-en'))
+const work = (await getCollection("work-en"))
   .filter(e => e.data.include.cv)
   .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf());
 
 function formatDate(d: Date): string {
-  return d.toLocaleString('en', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  return d.toLocaleString("en", { month: "short", year: "numeric", timeZone: "UTC" });
 }
 
 function fmtRange(entry: (typeof work)[number]): string {
   const start = formatDate(entry.data.dateStart);
-  const end = typeof entry.data.dateEnd === 'string'
+  const end = typeof entry.data.dateEnd === "string"
     ? s.present
     : formatDate(entry.data.dateEnd as Date);
   return `${start} – ${end}`;
 }
 
-const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? '';
+const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? "";
 const updatedLabel = cvUpdated
   ? (() => {
-      const d = new Date(cvUpdated + 'T00:00:00Z');
-      return s.updated + ' ' + d.toLocaleString('en', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+      const d = new Date(cvUpdated + "T00:00:00Z");
+      return s.updated + " " + d.toLocaleString("en", { month: "long", year: "numeric", timeZone: "UTC" });
     })()
-  : '';
+  : "";
 
 const allTech = [...new Set(work.flatMap(e => e.data.tech ?? []))];
 
-type EduEntry = { institution: string; degree: string; year: string };
-const education = (profile.education as unknown as EduEntry[]) ?? [];
+const education = (await getCollection("education"))
+  .filter(e => e.data.include?.cv !== false)
+  .sort((a, b) => Number(b.data.year) - Number(a.data.year));
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -83,6 +84,7 @@ const education = (profile.education as unknown as EduEntry[]) ?? [];
     .entry-meta { font-size: 9pt; color: #444; margin-bottom: 3pt; }
     .bullets { margin: 3pt 0 0 14pt; padding: 0; }
     .bullets li { margin-bottom: 1.5pt; }
+    .summary { font-size: 10pt; line-height: 1.45; }
     .skills { font-size: 9pt; line-height: 1.6; }
     .updated { font-size: 8pt; color: #888; margin-top: 18pt; text-align: right; }
     @media print {
@@ -97,9 +99,16 @@ const education = (profile.education as unknown as EduEntry[]) ?? [];
     {profile.email}
     {profile.phone && <span> · {profile.phone}</span>}
     {profile.location && <span> · {profile.location}</span>}
-    {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace(/^https?:\/\/(www\.)?/, '')}</a></span>}
-    {profile.github && <span> · <a href={profile.github}>{profile.github.replace(/^https?:\/\/(www\.)?/, '')}</a></span>}
+    {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace(/^https?:\/\/(www\.)?/, "")}</a></span>}
+    {profile.github && <span> · <a href={profile.github}>{profile.github.replace(/^https?:\/\/(www\.)?/, "")}</a></span>}
   </p>
+
+  {profile.summary && profile.summary[lang] && (
+    <>
+      <h2>{s.summary}</h2>
+      <p class="summary">{profile.summary[lang]}</p>
+    </>
+  )}
 
   <h2>{s.experience}</h2>
   {work.map(entry => (
@@ -109,7 +118,7 @@ const education = (profile.education as unknown as EduEntry[]) ?? [];
         <span class="entry-dates">{fmtRange(entry)}</span>
       </div>
       <div class="entry-meta">
-        {entry.data.role}{entry.data.location ? ` · ${entry.data.location}` : ''}
+        {entry.data.role}{entry.data.location ? ` · ${entry.data.location}` : ""}
       </div>
       {entry.data.bullets && entry.data.bullets.length > 0 && (
         <ul class="bullets">
@@ -125,17 +134,17 @@ const education = (profile.education as unknown as EduEntry[]) ?? [];
       {education.map(edu => (
         <div class="entry">
           <div class="entry-header">
-            <span class="entry-company">{edu.institution}</span>
-            <span class="entry-dates">{edu.year}</span>
+            <span class="entry-company">{edu.data.institution}</span>
+            <span class="entry-dates">{edu.data.year}</span>
           </div>
-          <div class="entry-meta">{edu.degree}</div>
+          <div class="entry-meta">{edu.data.degree}</div>
         </div>
       ))}
     </>
   )}
 
   <h2>{s.skills}</h2>
-  <p class="skills">{allTech.join(' · ')}</p>
+  <p class="skills">{allTech.join(" · ")}</p>
 
   {updatedLabel && <p class="updated">{updatedLabel}</p>}
 </body>

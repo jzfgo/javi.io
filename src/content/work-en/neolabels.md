@@ -12,9 +12,7 @@ tech:
   - "HTML"
   - "CSS"
   - "JavaScript"
-  - "PHP"
-  - "MySQL"
-  - "mobile web"
+  - "Mobile Web"
   - "UX/UI"
 ---
 

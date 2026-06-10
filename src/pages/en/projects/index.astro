@@ -109,7 +109,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       });
     });
 
-    var tablist = document.querySelector('[role="tablist"]');
+    var tablist = document.querySelector("[role=\"tablist\"]");
     if (tablist) {
       tablist.addEventListener("keydown", function (e) {
         var tabs = Array.from(document.querySelectorAll(".projects-filter-tab"));

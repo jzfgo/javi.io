@@ -1,23 +1,23 @@
 // scripts/generate-pdf.mjs
-import { chromium } from 'playwright';
-import { resolve, join } from 'node:path';
-import { mkdirSync, existsSync, copyFileSync } from 'node:fs';
-import { computeCvMeta } from './cv-meta.mjs';
-import { pathToFileURL } from 'node:url';
+import { chromium } from "playwright";
+import { resolve, join } from "node:path";
+import { mkdirSync, existsSync, copyFileSync } from "node:fs";
+import { computeCvMeta } from "./cv-meta.mjs";
+import { pathToFileURL } from "node:url";
 
 const { hash } = computeCvMeta();
-const distCv = resolve('dist/cv');
-const publicCv = resolve('public/cv');
+const distCv = resolve("dist/cv");
+const publicCv = resolve("public/cv");
 
 const configs = [
-  { lang: 'en', htmlPath: resolve('dist/en/cv/index.html') },
-  { lang: 'es', htmlPath: resolve('dist/es/cv/index.html') },
+  { lang: "en", htmlPath: resolve("dist/en/cv/index.html") },
+  { lang: "es", htmlPath: resolve("dist/es/cv/index.html") },
 ];
 
 // Verify files exist first
 for (const { htmlPath } of configs) {
   if (!existsSync(htmlPath)) {
-    console.error('Error: HTML file not found at ' + htmlPath + '. Did you run pnpm build first?');
+    console.error("Error: HTML file not found at " + htmlPath + ". Did you run pnpm build first?");
     process.exit(1);
   }
 }
@@ -35,9 +35,9 @@ try {
     await page.pdf({
       path: outPath,
       printBackground: true,
-      format: 'A4',
+      format: "A4",
       displayHeaderFooter: false,
-      margin: { top: '16mm', bottom: '16mm', left: '14mm', right: '14mm' },
+      margin: { top: "16mm", bottom: "16mm", left: "14mm", right: "14mm" },
     });
     await page.close();
     // Also copy to public/cv/ so `pnpm dev` can serve it
