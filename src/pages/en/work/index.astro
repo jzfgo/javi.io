@@ -203,18 +203,18 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
 
 <script is:inline>
   (function () {
-    var VALID = ["work", "certifications"];
+    const VALID = ["work", "certifications"];
 
     function getFilter() {
-      var p = new URLSearchParams(window.location.search).get("type");
+      const p = new URLSearchParams(window.location.search).get("type");
       return VALID.indexOf(p) !== -1 ? p : "all";
     }
 
     function applyFilter(filter) {
-      var workDiv = document.querySelector("#work-content");
-      var certsDiv = document.querySelector("#certs-content");
-      var divider = document.querySelector("#work-certs-divider");
-      var certsTitle = document.querySelector("#certs-title");
+      const workDiv = document.querySelector("#work-content");
+      const certsDiv = document.querySelector("#certs-content");
+      const divider = document.querySelector("#work-certs-divider");
+      const certsTitle = document.querySelector("#certs-title");
 
       if (filter === "all") {
         if (workDiv) workDiv.style.display = "";
@@ -233,7 +233,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       }
 
       document.querySelectorAll(".work-filter-tab").forEach(function (btn) {
-        var selected = btn.dataset.filter === filter;
+        const selected = btn.dataset.filter === filter;
         btn.setAttribute("aria-selected", selected ? "true" : "false");
         btn.setAttribute("tabindex", selected ? "0" : "-1");
       });
@@ -243,8 +243,8 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
 
     document.querySelectorAll(".work-filter-tab").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var filter = btn.dataset.filter;
-        var url = new URL(window.location.href);
+        const filter = btn.dataset.filter;
+        const url = new URL(window.location.href);
         if (filter === "all") {
           url.searchParams.delete("type");
         } else {
@@ -255,13 +255,13 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       });
     });
 
-    var tablist = document.querySelector("#work-tablist");
+    const tablist = document.querySelector("#work-tablist");
     if (tablist) {
       tablist.addEventListener("keydown", function (e) {
-        var tabs = Array.from(document.querySelectorAll(".work-filter-tab"));
-        var idx = tabs.indexOf(document.activeElement);
+        const tabs = Array.from(document.querySelectorAll(".work-filter-tab"));
+        const idx = tabs.indexOf(document.activeElement);
         if (idx === -1) return;
-        var next = -1;
+        let next = -1;
         if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
         else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
         else if (e.key === "Home") next = 0;
