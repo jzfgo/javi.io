@@ -42,7 +42,9 @@ if (blogDetailMatch) {
     .find(p => idToSlug(p.id) === slug);
   const translation = currentProject
     ? (await getCollection(`projects-${otherLocale}` as "projects-en" | "projects-es"))
-        .find(p => (currentProject.data.translationKey && p.data.translationKey === currentProject.data.translationKey) || idToSlug(p.id) === slug)
+        .find(p => currentProject.data.translationKey
+          ? p.data.translationKey === currentProject.data.translationKey
+          : idToSlug(p.id) === slug)
     : undefined;
   altPath = translation
     ? `${prefix(otherLocale)}/projects/${idToSlug(translation.id)}`
