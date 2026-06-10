@@ -83,7 +83,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
         <button data-filter="certifications" role="tab" aria-selected={activeFilter === "certifications" ? "true" : "false"} tabindex={activeFilter === "certifications" ? 0 : -1} class="work-filter-tab">Certifications</button>
       </div>
 
-      <div id="work-content" class="animate">
+      <div id="work-content" class="animate" style={activeFilter === "certifications" ? "display: none" : undefined}>
         <ul class="flex flex-col space-y-4">
           {
             work.map(entry => {
@@ -115,10 +115,10 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       </div>
 
       {education.length > 0 && (
-        <div id="certs-content">
-          <hr id="work-certs-divider" class="border-black/10 dark:border-white/10 my-10 animate" />
+        <div id="certs-content" style={activeFilter === "work" ? "display: none" : undefined}>
+          <hr id="work-certs-divider" class="border-black/10 dark:border-white/10 my-10 animate" style={activeFilter !== "all" ? "display: none" : undefined} />
           <section class="animate space-y-6">
-            <h2 id="certs-title" class="font-semibold text-black dark:text-white text-lg">Certifications</h2>
+            <h2 id="certs-title" class="font-semibold text-black dark:text-white text-lg" style={activeFilter === "certifications" ? "display: none" : undefined}>Certifications</h2>
             <ul class="flex flex-col space-y-6">
               {education.map(cert => (
                 <li class="flex gap-4">
