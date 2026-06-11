@@ -102,6 +102,9 @@ function formatDate(dateStr, locale) {
 
 function formatEduDate(isoDate, locale) {
   const d = new Date(isoDate);
+  if (isNaN(d.getTime())) {
+    throw new Error(`Invalid education date: "${isoDate}". Expected YYYY-MM-DD`);
+  }
   return d.toLocaleString(locale, {
     month: "short",
     year: "numeric",
