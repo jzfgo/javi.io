@@ -263,7 +263,7 @@ function buildDoc(lang) {
     : [];
   const education = educationData
     .filter((e) => e.include?.cv !== false)
-    .sort((a, b) => new Date(b.date + "T00:00:00Z") - new Date(a.date + "T00:00:00Z"));
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
   if (education.length > 0) {
     children.push(
