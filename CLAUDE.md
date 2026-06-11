@@ -27,7 +27,7 @@ pnpm lint             # ESLint
 pnpm lint:fix         # ESLint with auto-fix
 pnpm astro check      # TypeScript / Astro type-checking only (faster than full build)
 pnpm generate:cv      # generate CV PDF + DOCX from src/cv/
-pnpm deploy           # build + push dist/ to GitHub Pages
+pnpm deploy           # push dist/ to GitHub Pages (run pnpm build first)
 ```
 
 **Validation before any push:** `pnpm lint && pnpm build` — `pnpm build` runs `astro check` internally, so a passing build means types are clean too.
@@ -104,7 +104,7 @@ A task is complete only when **all** of the following are true:
 
 - [ ] Worktree confirmed active (not on `master`) before any file was touched
 - [ ] `pnpm lint && pnpm build` passes
-- [ ] Bilingual: any new content exists in both `*-es` and `*-en` with a matching `translationKey`
+- [ ] Bilingual: any new content exists in both `*-es` and `*-en` (matching `translationKey` for blog/projects, identical filename for work)
 - [ ] CV output regenerated if `src/cv/` was touched
 - [ ] Only intentional files changed
 
