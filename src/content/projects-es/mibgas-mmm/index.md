@@ -23,7 +23,7 @@ Monorepo (Turborepo) con 6 aplicaciones desplegadas en **Google Cloud Platform**
 
 ## Decisiones técnicas
 
-- **gRPC unario** para toda la comunicación inter-servicios. Se evaluó Pub/Sub pero se descartó por falta de recursos; gRPC resultó suficiente para el volumen de datos y simplificó el stack.
+- **gRPC unario** para toda la comunicación inter-servicios. Se evaluó Pub/Sub pero se descartó por limitaciones de recursos; gRPC resultó suficiente para el volumen de datos y simplificó el stack.
 - **BFF pattern**: el frontend nunca llama directamente a los microservicios. Las API routes de Next.js actúan como proxy seguro, centralizando autenticación y autorización.
 - **Servicios sin estado (stateless) en compliance y reporting**: sin base de datos en estos servicios; toda persistencia delegada al backend, simplificando el despliegue y el escalado.
 - **Mutex estáticos** para proteger contra cálculos de compliance concurrentes duplicados sobre el mismo periodo.
