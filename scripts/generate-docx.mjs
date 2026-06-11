@@ -100,6 +100,18 @@ function formatDate(dateStr, locale) {
   });
 }
 
+function formatEduDate(isoDate, locale) {
+  const d = new Date(isoDate);
+  if (isNaN(d.getTime())) {
+    throw new Error(`Invalid education date: "${isoDate}". Expected YYYY-MM-DD`);
+  }
+  return d.toLocaleString(locale, {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 function buildDoc(lang) {
   const s = SECTIONS_DATA[lang];
   const locale = lang === "en" ? "en" : "es";
@@ -254,7 +266,7 @@ function buildDoc(lang) {
     : [];
   const education = educationData
     .filter((e) => e.include?.cv !== false)
-    .sort((a, b) => Number(b.year) - Number(a.year));
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
   if (education.length > 0) {
     children.push(
@@ -274,7 +286,7 @@ function buildDoc(lang) {
           children: [
             new TextRun({ text: edu.institution || "", bold: true, size: 20 }),
             new TextRun({
-              text: "\t" + (edu.year || ""),
+              text: "\t" + (edu.date ? formatEduDate(edu.date, locale) : ""),
               size: 18,
               color: "444444",
             }),
