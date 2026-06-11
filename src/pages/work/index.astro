@@ -20,7 +20,7 @@ const icons = getIconMap(import.meta.glob("/src/assets/work/*/icon.*", { eager: 
 
 const education = (await getCollection("education"))
   .filter(e => e.data.include?.web !== false)
-  .sort((a, b) => Number(b.data.year) - Number(a.data.year));
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const educationIcons = getIconMap(import.meta.glob("/src/assets/education/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
 
@@ -138,7 +138,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
                       {cert.data.institution}
                     </div>
                     <div class="text-xs text-black/50 dark:text-white/50">
-                      Expedición: {cert.data.year}
+                      Expedición: {cert.data.date.toLocaleString("es", { month: "short", year: "numeric", timeZone: "UTC" })}
                     </div>
                     {cert.data.credentialUrl && (
                       <div class="text-xs pt-1">

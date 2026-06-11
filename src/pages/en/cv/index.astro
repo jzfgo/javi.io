@@ -44,7 +44,7 @@ const allTech = [...new Set(work.flatMap(e => e.data.tech ?? []))];
 
 const education = (await getCollection("education"))
   .filter(e => e.data.include?.cv !== false)
-  .sort((a, b) => Number(b.data.year) - Number(a.data.year));
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -135,7 +135,7 @@ const education = (await getCollection("education"))
         <div class="entry">
           <div class="entry-header">
             <span class="entry-company">{edu.data.institution}</span>
-            <span class="entry-dates">{edu.data.year}</span>
+            <span class="entry-dates">{formatDate(edu.data.date)}</span>
           </div>
           <div class="entry-meta">{edu.data.degree}</div>
         </div>
