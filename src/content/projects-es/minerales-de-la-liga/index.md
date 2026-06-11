@@ -8,7 +8,7 @@ translationKey: "minerales-de-la-liga"
 
 **Minerales de LaLiga** es una aplicación web interactiva desarrollada para **Solán de Cabras** y **LaLiga**, orientada a promover los beneficios de los minerales presentes en el agua mineral natural **Solán de Cabras** y su impacto en el rendimiento deportivo.
 
-Basándonos en datos reales de los jugadores de **LaLiga**, diseñamos un sistema capaz de generar representaciones de cristales para todos los equipos de **LaLiga EA Sports** y **LaLiga HyperMotion**. Estos cristales se pueden ver y manipular en **tres dimensiones** dentro de la aplicación web, diseñada con un enfoque _mobile-first_.
+Basándonos en datos reales de los jugadores de **LaLiga**, diseñamos un sistema capaz de generar representaciones de cristales para todos los equipos de **LaLiga EA Sports** y **LaLiga HyperMotion**. Estos cristales podían verse y manipularse en **tres dimensiones** dentro de la aplicación web, diseñada con un enfoque _mobile-first_.
 
 Además de explorar y comparar los cristales y los valores que representan, los usuarios podían acceder a un **ranking de jugadores** para cada uno de estos parámetros. La campaña también incluía una promoción que permitía a los usuarios ganar una **camiseta oficial de su equipo favorito** mediante una integración con el CRM de **Solán de Cabras**.
 
@@ -25,11 +25,15 @@ Para optimizar el desarrollo y permitir iteraciones rápidas, creamos varias **h
 - **Next.js** y **Payload CMS** para la aplicación web.
 - **Three.js (React Three Fiber)** para la **visualización 3D** de los cristales.
 - **Remotion** para la generación paramétrica de vídeo utilizando **React**.
+- **Turborepo** como **orquestador del monorepo**, con 5 paquetes independientes: frontend, backend CMS, design system, generador de vídeo y gestor de datos.
+- **Docker** y **Nginx** para la contenedorización y el enrutamiento en producción.
 - Todo el **procesamiento de datos** se implementó en **Python**, mientras que el **desarrollo web** se realizó en **TypeScript**.
 
 ## Infraestructura
 
 El despliegue inicial se llevó a cabo utilizando servicios independientes en **Cloud Run**, con **Cloud SQL** como servicio de base de datos y **Cloud Storage** para los recursos multimedia. Más tarde, a petición del cliente, realizamos una **migración de Google Cloud Platform a AWS**, adoptando una arquitectura de contenedores en **EC2, RDS y S3**.
+
+Para gestionar la **rotación automática de contraseñas** de AWS RDS —a través de **AWS Secrets Manager**—, implementamos un patrón de autorecuperación: cuando la contraseña rota, el _healthcheck_ de Docker detecta el fallo de conexión del _backend_ y un servicio _autoheal_ lo relanza automáticamente. Al reiniciarse, el servicio obtiene la nueva credencial desde Secrets Manager sin intervención manual.
 
 ## Mi Rol en el Proyecto
 
