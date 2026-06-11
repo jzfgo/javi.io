@@ -2,8 +2,8 @@
 company: "Fly-Fut"
 role: "Tech Lead"
 location: "Madrid, España"
-dateStart: "04/01/2021"
-dateEnd: "11/01/2022"
+dateStart: 2021-04-01
+dateEnd: 2022-11-01
 bullets:
   - "Lideré la arquitectura y el desarrollo de la plataforma de consumo (Fly-Fut Ligas): backend, pipeline de vídeo automatizado con IA para partidos grabados con drones, herramientas de gestión y app móvil"
   - "Diseñé y prototipé una app iPad para el control autónomo de drones en entrenamientos de fútbol"

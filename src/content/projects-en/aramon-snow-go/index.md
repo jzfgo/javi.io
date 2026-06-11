@@ -1,7 +1,7 @@
 ---
 title: "Aramón Snow & Go"
 description: "Mobile companion app for Aramón ski resorts developed for Movistar, providing resort information and navigation for skiers across multiple platforms."
-date: "Jan 01 2012"
+date: 2012-01-01
 type: "professional"
 translationKey: "aramon-snow-go"
 hero: ../../../assets/projects/aramon-snow-go/hero.jpg

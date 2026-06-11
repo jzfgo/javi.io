@@ -1,7 +1,7 @@
 ---
 title: "English Monstruo"
 description: "Brain Trainer-style mobile game to teach English learners the most common mistakes in the First Certificate Exam (FCE)."
-date: "Mar 01 2013"
+date: 2013-03-01
 type: "professional"
 translationKey: "english-monstruo"
 hero: ../../../assets/projects/english-monstruo/hero.jpg

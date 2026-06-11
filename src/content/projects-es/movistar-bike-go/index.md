@@ -1,7 +1,7 @@
 ---
 title: "Movistar Bike & Go"
 description: "Aplicación móvil de ciclismo para Movistar que ofrece navegación de rutas y seguimiento de actividad para ciclistas."
-date: "Jan 01 2012"
+date: 2012-01-01
 type: "professional"
 translationKey: "movistar-bike-go"
 hero: ../../../assets/projects/movistar-bike-go/hero.jpg

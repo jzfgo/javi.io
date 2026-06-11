@@ -2,8 +2,8 @@
 company: "Neo Labels"
 role: "Designer → R&D Consultant"
 location: "Madrid, Spain"
-dateStart: "05/01/2006"
-dateEnd: "06/01/2013"
+dateStart: 2006-05-01
+dateEnd: 2013-06-01
 bullets:
   - "Delivered end-to-end product work for 7 years: UX/UI design through full-stack development for digital campaigns and applications"
   - "Designed and built products for brands including Ferran Adrià (Adrià en casa), Telefónica Movistar, and Aramón"

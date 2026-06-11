@@ -2,24 +2,6 @@ import { file, glob } from "astro/loaders";
 import { defineCollection, type SchemaContext } from "astro:content";
 import { z } from "zod";
 
-const parseWorkDate = (val: string): Date => {
-  const [m, d, y] = val.split("/").map(Number);
-  if (isNaN(m) || isNaN(d) || isNaN(y) || m < 1 || m > 12 || d < 1 || d > 31) {
-    throw new Error(`Invalid date values in: "${val}". Expected MM/DD/YYYY`);
-  }
-  const date = new Date(Date.UTC(y, m - 1, d));
-  if (
-    isNaN(date.getTime()) ||
-    date.getUTCMonth() !== m - 1 ||
-    date.getUTCDate() !== d
-  ) {
-    throw new Error(
-      `Invalid date format or value: "${val}". Expected MM/DD/YYYY`,
-    );
-  }
-  return date;
-};
-
 const blogSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
@@ -42,14 +24,11 @@ const blogEn = defineCollection({
 const workSchema = z.object({
   company: z.string(),
   role: z.string(),
-  dateStart: z.string().transform(parseWorkDate),
-  dateEnd: z
-    .string()
-    .transform((val) =>
-      ["current", "actualidad"].includes(val.trim().toLowerCase())
-        ? val
-        : parseWorkDate(val),
-    ),
+  dateStart: z.coerce.date(),
+  dateEnd: z.union([
+    z.string().refine(s => ["current", "actualidad"].includes(s.trim().toLowerCase())),
+    z.coerce.date(),
+  ]),
   location: z.string().optional(),
   bullets: z.array(z.string()).optional(),
   tech: z.array(z.string()).optional(),

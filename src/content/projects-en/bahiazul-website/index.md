@@ -1,7 +1,7 @@
 ---
 title: "Bahiazul Website"
 description: "Next.js and TypeScript redesign of the resort's main website featuring rich media elements and a personalized booking experience."
-date: "Dec 01 2020"
+date: 2020-12-01
 type: "professional"
 translationKey: "bahiazul-website"
 ---

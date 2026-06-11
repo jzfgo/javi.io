@@ -1,7 +1,7 @@
 ---
 title: "Voltexa"
 description: "MVP para una startup de energía renovable — portal de clientes, panel de administración, branding, landing page y flujo de registro desarrollados con un equipo de cinco personas."
-date: "Jan 01 2023"
+date: 2023-01-01
 type: "professional"
 translationKey: "voltexa"
 hero: ../../../assets/projects/voltexa/hero.webp

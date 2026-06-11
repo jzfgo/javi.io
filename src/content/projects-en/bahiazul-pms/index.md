@@ -1,7 +1,7 @@
 ---
 title: "Bahiazul PMS"
 description: "Custom Property Management System for Bahiazul Resort, centralizing reservations, guest management, and internal operations."
-date: "Jan 01 2015"
+date: 2015-01-01
 type: "professional"
 translationKey: "bahiazul-pms"
 hero: ../../../assets/projects/bahiazul-pms/hero.png

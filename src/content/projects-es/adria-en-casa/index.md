@@ -1,7 +1,7 @@
 ---
 title: "Adrià en casa"
 description: "Aplicación móvil de cocina para Telefónica, desarrollada en colaboración con el chef de fama mundial Ferran Adrià."
-date: "Jan 01 2012"
+date: 2012-01-01
 type: "professional"
 translationKey: "adria-en-casa"
 hero: ../../../assets/projects/adria-en-casa/hero.jpg

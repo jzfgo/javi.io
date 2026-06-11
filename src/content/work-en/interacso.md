@@ -2,7 +2,7 @@
 company: "Interacso"
 role: "Tech Lead"
 location: "Madrid, Spain"
-dateStart: "11/01/2022"
+dateStart: 2022-11-01
 dateEnd: "Current"
 bullets:
   - "Lead software architecture, cloud infrastructure design, and technical decision-making for clients including Grupo Porcelanosa, Mediapro Brands, Mercado Ibérico del Gas (MIBGAS), and Sony Pictures Spain"

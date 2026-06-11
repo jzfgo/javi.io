@@ -1,7 +1,7 @@
 ---
 title: "Telefónica SDiE 2017"
 description: "Aplicación web de página única con visualización interactiva de datos para el informe anual sobre la sociedad digital en España de Fundación Telefónica."
-date: "Jan 01 2017"
+date: 2017-01-01
 type: "professional"
 translationKey: "telefonica-sdie-2017"
 hero: ../../../assets/projects/telefonica-sdie-2017/hero.png

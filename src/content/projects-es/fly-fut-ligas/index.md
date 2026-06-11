@@ -1,7 +1,7 @@
 ---
 title: "Fly-Fut Ligas"
 description: "Plataforma de fútbol de consumo con producción de vídeo asistida por IA y aplicación móvil."
-date: "Oct 01 2021"
+date: 2021-10-01
 type: "professional"
 translationKey: "fly-fut-ligas"
 hero: ../../../assets/projects/fly-fut-ligas/hero.png
