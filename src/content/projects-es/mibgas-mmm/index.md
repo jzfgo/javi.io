@@ -16,14 +16,14 @@ Monorepo (Turborepo) con 6 aplicaciones desplegadas en **Google Cloud Platform**
 
 - **Frontend** (Next.js 15 / React 19): interfaz para operadores con visualización de datos de mercado, inicio manual de la ingesta de datos y descarga de informes.
 - **Backend BFF** (NestJS / PostgreSQL): API REST con JWT. Puerta de entrada única del frontend; los microservicios nunca se exponen directamente.
-- **Collection Service** (NestJS / gRPC / SOAP): ingesta diaria de libros de órdenes, ofertas y operaciones desde la API externa de MIBGAS vía SOAP. Iniciado por Cloud Scheduler o manualmente desde el frontend.
+- **Collection Service** (NestJS / gRPC / SOAP): ingesta diaria de libros de órdenes, ofertas y operaciones desde la API externa de MIBGAS vía SOAP. Iniciada por Cloud Scheduler o manualmente desde el frontend.
 - **Compliance Service** (NestJS / gRPC / stateless): algoritmo de cumplimiento implementado desde cero siguiendo la normativa regulatoria oficial española.
 - **Reporting Service** (NestJS / gRPC / stateless): generación de PDF (Puppeteer + Handlebars), Excel (ExcelJS), almacenamiento en GCS y envío por email (SendGrid).
 - **Backtesting** (React / Vite / standalone): herramienta interna para validar cambios en el algoritmo de cumplimiento mediante comparación de datasets CSV con métricas estadísticas (MAE, RMSE, MAPE).
 
 ## Decisiones técnicas
 
-- **gRPC unario** para toda la comunicación inter-servicios. Se evaluó Pub/Sub pero se descartó por limitaciones de recursos; gRPC resultó suficiente para el volumen de datos y simplificó el stack.
+- **gRPC unario** para toda la comunicación interservicios. Se evaluó Pub/Sub pero se descartó por limitaciones de recursos; gRPC resultó suficiente para el volumen de datos y simplificó el stack.
 - **BFF pattern**: el frontend nunca llama directamente a los microservicios. Las API routes de Next.js actúan como proxy seguro, centralizando autenticación y autorización.
 - **Servicios sin estado (stateless) en cumplimiento y reporting**: sin base de datos en estos servicios; toda persistencia delegada al backend, simplificando el despliegue y el escalado.
 - **Mutex estáticos** para proteger contra cálculos de cumplimiento concurrentes duplicados sobre el mismo periodo.
