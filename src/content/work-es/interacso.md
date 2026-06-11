@@ -12,7 +12,10 @@ tech:
   - "TypeScript"
   - "React"
   - "Next.js"
+  - "NestJS"
   - "Node.js"
+  - "gRPC"
+  - "Turborepo"
   - "AWS"
   - "GCP"
   - "PostgreSQL"
@@ -39,6 +42,7 @@ Lidero con confianza: el equipo es dueño de su trabajo y siempre estoy disponib
 ## Proyectos Clave
 
 - [**Porcelanosa Ecommerce**](/projects/porcelanosa-ecommerce)
+- [**MIBGAS Market Maker Monitoring**](/projects/mibgas-mmm)
 - [**Minerales de LaLiga**](/projects/minerales-de-la-liga)
 - [**Quadrant Travel Cloud**](/projects/quadrant-travel-cloud)
 - [**Sony Pictures Spain**](/projects/sony-pictures-spain)
