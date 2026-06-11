@@ -9,7 +9,7 @@ export const SITE: Site = {
 };
 
 export const HOME_EN: Metadata = {
-  TITLE: "Javier Zapata — Developer & Tech Lead",
+  TITLE: "Javier Zapata — Software Developer & Tech Lead",
   DESCRIPTION:
     "Developer, tech lead, recovering designer. 20 years shipping things.",
 };

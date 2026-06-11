@@ -32,7 +32,7 @@ const SECTIONS_DATA = {
   en: {
     summary: "Summary",
     experience: "Professional Experience",
-    education: "Education",
+    education: "Certifications",
     skills: "Skills",
     present: "Present",
     updated: "Updated",
@@ -40,7 +40,7 @@ const SECTIONS_DATA = {
   es: {
     summary: "Resumen profesional",
     experience: "Experiencia profesional",
-    education: "Educación",
+    education: "Certificaciones",
     skills: "Aptitudes",
     present: "Actualidad",
     updated: "Actualizado",
@@ -85,7 +85,7 @@ function parseDate(dateVal) {
   const date = new Date(Date.UTC(y, m - 1, d));
   if (isNaN(date.getTime())) {
     throw new Error(
-      'Invalid date format: "' + dateStr + '". Expected MM/DD/YYYY',
+      `Invalid date format: "${dateStr}". Expected MM/DD/YYYY`,
     );
   }
   return date;
