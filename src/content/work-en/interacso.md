@@ -48,3 +48,4 @@ I lead with trust: the team owns their work, and I'm always available when they 
 - [**Quadrant Travel Cloud**](/en/projects/quadrant-travel-cloud)
 - [**Sony Pictures Spain**](/en/projects/sony-pictures-spain)
 - [**Voltexa**](/en/projects/voltexa)
+- [**Market Maker Monitoring**](/en/projects/mibgas-mmm)
