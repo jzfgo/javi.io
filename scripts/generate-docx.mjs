@@ -101,7 +101,7 @@ function formatDate(dateStr, locale) {
 }
 
 function formatEduDate(isoDate, locale) {
-  const d = new Date(isoDate + "T00:00:00Z");
+  const d = new Date(isoDate);
   return d.toLocaleString(locale, {
     month: "short",
     year: "numeric",
