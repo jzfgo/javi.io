@@ -25,7 +25,7 @@ Monorepo (Turborepo) con 6 aplicaciones desplegadas en **Google Cloud Platform**
 
 - **gRPC unario** para toda la comunicación interservicios. Se evaluó Pub/Sub pero se descartó por limitaciones de recursos; gRPC resultó suficiente para el volumen de datos y simplificó el stack.
 - **BFF pattern**: el frontend nunca llama directamente a los microservicios. Las API routes de Next.js actúan como proxy seguro, centralizando autenticación y autorización.
-- **Servicios sin estado de Compliance y Reporting**: sin base de datos en estos servicios; toda persistencia delegada al backend, simplificando el despliegue y el escalado.
+- **Servicios sin estado de Compliance y Reporting**: sin base de datos en estos servicios; toda persistencia delegada a la única instancia PostgreSQL del Backend BFF, simplificando el despliegue y el escalado.
 - **Mutex estáticos** para proteger contra cálculos de cumplimiento concurrentes duplicados sobre el mismo periodo (instancia única de Cloud Run por diseño — suficiente para el volumen de ~10 Market Makers).
 - PostgreSQL estándar (TimescaleDB evaluado y descartado).
 
