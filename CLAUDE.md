@@ -39,7 +39,7 @@ pnpm deploy           # push dist/ to GitHub Pages (run pnpm build first)
 | Collection                    | Path                                | Format         |
 | ----------------------------- | ----------------------------------- | -------------- |
 | `blog-es` / `blog-en`         | `src/content/blog-{es,en}/`         | `.md` / `.mdx` |
-| `work-es` / `work-en`         | `src/content/work-{es,en}/`         | `.md`          |
+| `work-es` / `work-en`         | `src/content/work-{es,en}/`         | `.md` / `.mdx` |
 | `projects-es` / `projects-en` | `src/content/projects-{es,en}/`     | `.md` / `.mdx` |
 | `education`                   | `src/content/education/public.json` | JSON array     |
 
