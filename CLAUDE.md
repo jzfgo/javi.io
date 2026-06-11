@@ -43,7 +43,7 @@ pnpm deploy           # push dist/ to GitHub Pages (run pnpm build first)
 | `projects-es` / `projects-en` | `src/content/projects-{es,en}/`     | `.md` / `.mdx` |
 | `education`                   | `src/content/education/public.json` | JSON array     |
 
-Schema is enforced via Zod in `src/content.config.ts`.
+Schema is enforced via Zod in `src/content.config.ts`. Note: the `education` collection represents professional courses and certifications, not academic degrees — user-facing labels use "Certifications / Certificaciones" accordingly, despite schema field names like `institution` and `degree`.
 
 ### Bilingual content rule
 
@@ -62,7 +62,10 @@ translationKey: "hello-world"
 
 ### Visibility flags
 
-Both `work` and `education` entries support `include: { cv: bool, web: bool }` to control where they appear. Defaults are `true` for both. Use these to hide entries from the website without removing them from the CV, or vice versa.
+Both `work` and `education` entries support `include: { cv: bool, web: bool }` to control where they appear. Use these to hide entries from the website without removing them from the CV, or vice versa.
+
+- `work`: defaults enforced by the Zod schema (`true` for both). Safe to omit.
+- `education`: the entire `include` object and its fields are optional with no defaults. Consuming code handles `undefined` as `true`, but be aware when writing new rendering logic.
 
 ### Projects frontmatter
 
