@@ -1,7 +1,7 @@
 ---
 title: "Market Maker Monitoring"
 description: "Internal MIBGAS system to automate regulatory oversight of Market Makers in Spain's organised natural gas market — from market data ingestion to compliance report generation."
-date: 2024-01-01
+date: 2024-10-01
 type: "professional"
 translationKey: "mibgas-mmm"
 ---

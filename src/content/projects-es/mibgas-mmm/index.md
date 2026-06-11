@@ -1,7 +1,7 @@
 ---
 title: "Market Maker Monitoring"
 description: "Sistema interno de MIBGAS para automatizar la vigilancia regulatoria de Market Makers en el mercado organizado de gas natural en España — desde la ingesta de datos hasta la generación de informes de compliance."
-date: 2024-01-01
+date: 2024-10-01
 type: "professional"
 translationKey: "mibgas-mmm"
 ---
