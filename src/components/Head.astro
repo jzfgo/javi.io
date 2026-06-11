@@ -21,7 +21,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://javi.io");
 
-const { title, description, image = "/nano.png", alternateUrls } = Astro.props;
+const { title, description, image = "/og-image.jpg", alternateUrls } = Astro.props;
 
 const siteBase = (Astro.site?.href ?? "https://javi.io/").replace(/\/$/, "");
 const rawPath = Astro.url.pathname;
