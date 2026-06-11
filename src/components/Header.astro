@@ -23,7 +23,7 @@ const cleanPath = basePath.replace(/\/$/, "");
 const blogDetailMatch = cleanPath.match(/^\/blog\/(.+)$/);
 const projectDetailMatch = cleanPath.match(/^\/projects\/(.+)$/);
 
-let altPath = `${prefix(otherLocale)}/`;
+let altPath: string;
 
 if (blogDetailMatch) {
   const slug = blogDetailMatch[1];

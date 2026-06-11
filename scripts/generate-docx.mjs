@@ -85,7 +85,7 @@ function parseDate(dateVal) {
   const date = new Date(Date.UTC(y, m - 1, d));
   if (isNaN(date.getTime())) {
     throw new Error(
-      'Invalid date format: "' + dateStr + '". Expected MM/DD/YYYY',
+      `Invalid date format: "${dateStr}". Expected MM/DD/YYYY`,
     );
   }
   return date;
