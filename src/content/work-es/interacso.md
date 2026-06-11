@@ -12,7 +12,7 @@ tech:
   - "TypeScript"
   - "React"
   - "Next.js"
-  - "PayloadCMS"
+  - "Payload CMS"
   - "NestJS"
   - "Node.js"
   - "gRPC"

@@ -33,7 +33,7 @@ Para optimizar el desarrollo y permitir iteraciones rápidas, creamos varias **h
 
 El despliegue inicial se llevó a cabo utilizando servicios independientes en **Cloud Run**, con **Cloud SQL** como servicio de base de datos y **Cloud Storage** para los recursos multimedia. Más tarde, a petición del cliente, realizamos una **migración de Google Cloud Platform a AWS**, adoptando una arquitectura de contenedores en **EC2, RDS y S3**.
 
-Para gestionar la **rotación automática de contraseñas** de AWS RDS —a través de **AWS Secrets Manager**—, implementamos un patrón de autorecuperación: cuando la contraseña rota, el _healthcheck_ de Docker detecta el fallo de conexión del _backend_ y un servicio _autoheal_ lo relanza automáticamente. Al reiniciarse, el servicio obtiene la nueva credencial desde Secrets Manager sin intervención manual.
+Para gestionar la **rotación automática de contraseñas** de AWS RDS —a través de **AWS Secrets Manager**—, implementamos un patrón de autorrecuperación: cuando se rota la contraseña, el _healthcheck_ de Docker detecta el fallo de conexión del _backend_ y un servicio _autoheal_ lo relanza automáticamente. Al reiniciarse, el servicio obtiene la nueva credencial desde Secrets Manager sin intervención manual.
 
 ## Mi Rol en el Proyecto
 
