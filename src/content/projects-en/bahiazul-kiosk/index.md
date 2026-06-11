@@ -1,7 +1,7 @@
 ---
 title: "Bahiazul Digital Kiosk"
 description: "Mobile-first web kiosk for Bahiazul Resort allowing guests to access brochures and resort materials by scanning QR codes."
-date: "Jan 01 2020"
+date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-kiosk"
 demoURL: "https://dk.bahiazul.com/"

@@ -2,8 +2,8 @@
 company: "Piensa Diferente"
 role: "Head of Technology"
 location: "Madrid, Spain"
-dateStart: "07/01/2013"
-dateEnd: "03/01/2020"
+dateStart: 2013-07-01
+dateEnd: 2020-03-01
 bullets:
   - "Co-founded and led technology for a hospitality startup serving small resorts and B&Bs for 7 years"
   - "Designed and built a custom Property Management System (PMS) and client websites end-to-end"

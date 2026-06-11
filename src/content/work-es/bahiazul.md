@@ -2,8 +2,8 @@
 company: "Bahiazul Resort"
 role: "Tech Lead & Creative Director"
 location: "Madrid, España"
-dateStart: "04/01/2020"
-dateEnd: "03/01/2021"
+dateStart: 2020-04-01
+dateEnd: 2021-03-01
 bullets:
   - "Rediseñé la web del resort con Next.js, TypeScript y Firebase, incluyendo SSR y contenido gestionado con MDX"
   - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles para garantizar coherencia visual"

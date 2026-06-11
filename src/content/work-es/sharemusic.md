@@ -2,8 +2,8 @@
 company: "Sharemusic!"
 role: "Diseñador → Director Creativo"
 location: "Madrid, España"
-dateStart: "05/01/2006"
-dateEnd: "12/01/2010"
+dateStart: 2006-05-01
+dateEnd: 2010-12-01
 bullets:
   - "Coconstruí atopechavalote.com, una de las primeras redes sociales de ocio nocturno en España, con 25.000 usuarios registrados"
   - "Evolucioné de diseñador a Director Creativo: lideré branding, diseño UX/UI y estrategia digital"

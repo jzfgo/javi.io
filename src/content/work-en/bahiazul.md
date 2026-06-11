@@ -2,8 +2,8 @@
 company: "Bahiazul Resort"
 role: "Tech Lead & Creative Director"
 location: "Madrid, Spain"
-dateStart: "04/01/2020"
-dateEnd: "03/01/2021"
+dateStart: 2020-04-01
+dateEnd: 2021-03-01
 bullets:
   - "Redesigned resort website with Next.js, TypeScript, and Firebase, shipping SSR hosting with MDX-driven content"
   - "Built an internal Design System used across all web and mobile products, ensuring visual consistency"

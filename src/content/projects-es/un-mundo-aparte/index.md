@@ -1,7 +1,7 @@
 ---
 title: "Un Mundo Aparte"
 description: "Aplicación móvil para Las Colinas Golf & Country Club que actúa como compañero digital para los huéspedes del resort."
-date: "Jan 01 2018"
+date: 2018-01-01
 type: "professional"
 translationKey: "un-mundo-aparte"
 hero: ../../../assets/projects/un-mundo-aparte/hero.jpg

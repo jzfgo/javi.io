@@ -1,7 +1,7 @@
 ---
 title: "Telefónica SDiE 2017"
 description: "Interactive data visualization single-page application for Fundación Telefónica's annual digital society report."
-date: "Jan 01 2017"
+date: 2017-01-01
 type: "professional"
 translationKey: "telefonica-sdie-2017"
 hero: ../../../assets/projects/telefonica-sdie-2017/hero.png

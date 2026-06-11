@@ -77,18 +77,13 @@ function parseWorkFiles(dir) {
 }
 
 function parseDate(dateVal) {
-  if (dateVal instanceof Date) {
-    return dateVal;
-  }
+  if (dateVal instanceof Date) return dateVal;
   const dateStr = String(dateVal || "");
-  const [m, d, y] = dateStr.split("/").map(Number);
-  const date = new Date(Date.UTC(y, m - 1, d));
-  if (isNaN(date.getTime())) {
-    throw new Error(
-      `Invalid date format: "${dateStr}". Expected MM/DD/YYYY`,
-    );
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) {
+    throw new Error(`Invalid date: "${dateStr}". Expected YYYY-MM-DD`);
   }
-  return date;
+  return d;
 }
 
 function formatDate(dateStr, locale) {

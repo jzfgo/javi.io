@@ -1,7 +1,7 @@
 ---
 title: "Quiosco Digital Bahiazul"
 description: "Quiosco web mobile-first para Bahiazul Resort que permite a los huéspedes acceder a folletos y materiales del resort escaneando códigos QR."
-date: "Jan 01 2020"
+date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-kiosk"
 demoURL: "https://dk.bahiazul.com/"

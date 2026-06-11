@@ -1,7 +1,7 @@
 ---
 title: "Sony Pictures Spain"
 description: "Official Spanish website for Sony Pictures Entertainment — infrastructure migration from GCP to AWS, and ongoing maintenance and feature delivery."
-date: "Jan 01 2023"
+date: 2023-01-01
 type: "professional"
 translationKey: "sony-pictures-spain"
 demoURL: "https://sonypictures.es/"

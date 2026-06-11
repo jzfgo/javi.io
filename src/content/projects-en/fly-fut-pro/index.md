@@ -1,7 +1,7 @@
 ---
 title: "Fly-Fut Pro"
 description: "Professional football analysis system with autonomous drone controls and tactical video analysis."
-date: "Jun 01 2022"
+date: 2022-06-01
 type: "professional"
 translationKey: "fly-fut-pro"
 hero: ../../../assets/projects/fly-fut-pro/hero.png

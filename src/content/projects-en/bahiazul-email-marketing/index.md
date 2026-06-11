@@ -1,7 +1,7 @@
 ---
 title: "Bahiazul Email Marketing"
 description: "Series of targeted email marketing campaigns to drive post-pandemic bookings for Bahiazul Resort, using segmentation, A/B testing, and automation."
-date: "Jan 01 2020"
+date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-email-marketing"
 ---

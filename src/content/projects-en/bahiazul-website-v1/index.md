@@ -1,7 +1,7 @@
 ---
 title: "Bahiazul Website (v1)"
 description: "First version of Bahiazul Resort's website — a full-stack PHP platform with custom UI design built as the company's primary online presence and booking platform."
-date: "Jan 01 2014"
+date: 2014-01-01
 type: "professional"
 translationKey: "bahiazul-website-v1"
 hero: ../../../assets/projects/bahiazul-website-v1/hero.jpg

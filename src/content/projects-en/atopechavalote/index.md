@@ -1,7 +1,7 @@
 ---
 title: "Atopechavalote!"
 description: "Social networking platform that pioneered online community building around Madrid's nightlife scene, reaching 25,000 registered users."
-date: "Jan 01 2007"
+date: 2007-01-01
 type: "professional"
 translationKey: "atopechavalote"
 hero: ../../../assets/projects/atopechavalote/hero.jpg

@@ -1,7 +1,7 @@
 ---
 title: "Bahiazul PMS"
 description: "Sistema de gestión hotelera (PMS) desarrollado a medida para Bahiazul Resort, que centraliza reservas, gestión de huéspedes y operaciones internas."
-date: "Jan 01 2015"
+date: 2015-01-01
 type: "professional"
 translationKey: "bahiazul-pms"
 hero: ../../../assets/projects/bahiazul-pms/hero.png

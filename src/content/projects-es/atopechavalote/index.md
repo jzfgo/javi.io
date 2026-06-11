@@ -1,7 +1,7 @@
 ---
 title: "Atopechavalote!"
 description: "Plataforma de red social pionera en la construcción de comunidades online en torno al ocio nocturno de Madrid, que alcanzó 25.000 usuarios registrados."
-date: "Jan 01 2007"
+date: 2007-01-01
 type: "professional"
 translationKey: "atopechavalote"
 hero: ../../../assets/projects/atopechavalote/hero.jpg

@@ -1,7 +1,7 @@
 ---
 title: "Porcelanosa Ecommerce"
 description: "Migración de un Ecommerce global en Magento a una arquitectura headless en Adobe Commerce Cloud con Next.js y Payload CMS."
-date: "Jul 01 2025"
+date: 2025-07-01
 type: "professional"
 translationKey: "porcelanosa-ecommerce"
 demoURL: "https://store.porcelanosa.com/"

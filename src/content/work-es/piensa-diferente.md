@@ -2,8 +2,8 @@
 company: "Piensa Diferente"
 role: "Head of Technology"
 location: "Madrid, España"
-dateStart: "07/01/2013"
-dateEnd: "03/01/2020"
+dateStart: 2013-07-01
+dateEnd: 2020-03-01
 bullets:
   - "Cofundé y lideré la tecnología de una startup hostelera durante 7 años, orientada a pequeños resorts y casas rurales"
   - "Diseñé y construí de extremo a extremo un Sistema de Gestión de Propiedades (PMS) y webs para clientes"
