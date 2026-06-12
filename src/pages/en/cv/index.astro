@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { SECTIONS } from "@cv/sections";
+import { computeSkillWeights } from "@utils/skills";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -40,11 +41,20 @@ const updatedLabel = cvUpdated
     })()
   : "";
 
-const allTech = [...new Set(work.flatMap(e => e.data.tech ?? []))];
-
 const education = (await getCollection("education"))
   .filter(e => e.data.include?.cv !== false)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const projects = (await getCollection("projects-en")).filter(e => !e.data.draft);
+
+const allSkills = computeSkillWeights([
+  ...work.map(e => ({
+    skills: e.data.skills,
+    date: typeof e.data.dateEnd === "string" ? new Date() : e.data.dateEnd as Date,
+  })),
+  ...projects.map(e => ({ skills: e.data.skills, date: e.data.date })),
+  ...education.map(e => ({ skills: e.data.skills, date: e.data.date })),
+]);
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -144,7 +154,7 @@ const education = (await getCollection("education"))
   )}
 
   <h2>{s.skills}</h2>
-  <p class="skills">{allTech.join(" · ")}</p>
+  <p class="skills">{allSkills.join(" · ")}</p>
 
   {updatedLabel && <p class="updated">{updatedLabel}</p>}
 </body>

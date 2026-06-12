@@ -31,7 +31,7 @@ const workSchema = z.object({
   ]),
   location: z.string().optional(),
   bullets: z.array(z.string()).optional(),
-  tech: z.array(z.string()).optional(),
+  skills: z.array(z.string()).optional(),
   include: z
     .object({
       cv: z.boolean().default(true),
@@ -60,6 +60,7 @@ const projectsSchema = ({ image }: SchemaContext) =>
     repoURL: z.string().optional(),
     translationKey: z.string().optional(),
     hero: image().optional(),
+    skills: z.array(z.string()).optional(),
   });
 
 const projectsEs = defineCollection({
