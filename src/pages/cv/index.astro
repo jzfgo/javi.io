@@ -53,7 +53,7 @@ const projects = (await getCollection("projects-es")).filter(e => !e.data.draft)
 const allSkills = computeSkillWeights([
   ...work.map(e => ({
     skills: e.data.skills,
-    date: typeof e.data.dateEnd === "string" ? new Date() : e.data.dateEnd as Date,
+    date: e.data.dateEnd instanceof Date ? e.data.dateEnd : new Date(),
   })),
   ...projects.map(e => ({ skills: e.data.skills, date: e.data.date })),
   ...education.map(e => ({ skills: e.data.skills, date: e.data.date })),
