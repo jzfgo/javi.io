@@ -4,6 +4,14 @@ description: "Serie de campañas de email marketing segmentadas para impulsar la
 date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-email-marketing"
+skills:
+  - "A/B Testing"
+  - "Analytics"
+  - "Automation"
+  - "Campaign Monitor"
+  - "Dynamic Email Content"
+  - "Subscriber Segmentation"
+  - "Email Templates"
 ---
 
 Durante mi etapa en **Bahiazul Resort**, lideré una serie de **campañas de email marketing** segmentadas con el objetivo de atraer huéspedes de vuelta al resort tras las disrupciones causadas por la pandemia de COVID-19.

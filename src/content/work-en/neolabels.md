@@ -9,11 +9,11 @@ bullets:
   - "Designed and built products for brands including Ferran Adrià (Adrià en casa), Telefónica Movistar, and Aramón"
   - "Led R&D and frontend mobile development during the agency's final growth stage before its acquisition by IPG Mediabrands"
 skills:
-  - "HTML"
-  - "CSS"
-  - "JavaScript"
-  - "Mobile Web"
-  - "UX/UI"
+  - "Consulting"
+  - "UI Design"
+  - "UX Design"
+  - "Full Stack Development"
+  - "R&D&i"
 ---
 
 Neo Labels was an online marketing agency focused on helping brands enter the digital age of media, social networks, and applications in Spain. Born from the experience gained through Sharemusic!, it was acquired by IPG Mediabrands in April 2021.

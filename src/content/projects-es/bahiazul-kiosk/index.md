@@ -4,6 +4,12 @@ description: "Quiosco web mobile-first para Bahiazul Resort que permite a los hu
 date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-kiosk"
+skills:
+  - "Design Systems"
+  - "Firebase"
+  - "JavaScript"
+  - "Sketch"
+  - "Svelte"
 demoURL: "https://dk.bahiazul.com/"
 hero: ../../../assets/projects/bahiazul-kiosk/hero.png
 ---

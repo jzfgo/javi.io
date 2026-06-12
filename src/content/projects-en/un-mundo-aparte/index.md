@@ -4,6 +4,8 @@ description: "Mobile application for Las Colinas Golf & Country Club, serving as
 date: 2018-01-01
 type: "professional"
 translationKey: "un-mundo-aparte"
+skills:
+  - "Sketch"
 hero: ../../../assets/projects/un-mundo-aparte/hero.jpg
 ---
 

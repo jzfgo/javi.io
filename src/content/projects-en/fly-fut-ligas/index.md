@@ -4,6 +4,18 @@ description: "Consumer football platform with AI-assisted video production and m
 date: 2021-10-01
 type: "professional"
 translationKey: "fly-fut-ligas"
+skills:
+  - "Cloud Architecture"
+  - "DDD"
+  - "Firebase"
+  - "GCP"
+  - "NestJS"
+  - "Node.js"
+  - "REST API Design"
+  - "OpenAPI"
+  - "PostgreSQL"
+  - "Software Architecture"
+  - "TypeScript"
 hero: ../../../assets/projects/fly-fut-ligas/hero.png
 ---
 

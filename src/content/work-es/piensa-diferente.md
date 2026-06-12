@@ -8,6 +8,13 @@ bullets:
   - "Cofundé y lideré la tecnología de una startup hostelera durante 7 años, orientada a pequeños resorts y casas rurales"
   - "Diseñé y construí de extremo a extremo un Sistema de Gestión de Propiedades (PMS) y webs para clientes"
   - "Gestioné arquitectura cloud, infraestructura IT y coordinación de desarrolladores externos"
+skills:
+  - "Arquitectura Cloud"
+  - "Arquitectura de Software"
+  - "Diseño UI"
+  - "Diseño UX"
+  - "Desarrollo Full Stack"
+  - "Liderazgo Técnico"
 ---
 
 Piensa Diferente fue una joven startup que ofrecía servicios de consultoría a pequeños y medianos complejos turísticos y establecimientos B&B. Se especializó en ofrecer soluciones personalizadas pero asequibles para permitir a sus clientes competir directamente con las grandes cadenas hoteleras a través de la tecnología y la innovación.

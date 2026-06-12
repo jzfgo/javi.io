@@ -4,6 +4,15 @@ description: "Migration of a global Magento Ecommerce to a headless architecture
 date: 2025-07-01
 type: "professional"
 translationKey: "porcelanosa-ecommerce"
+skills:
+  - "GCP"
+  - "GraphQL"
+  - "Next.js"
+  - "Node.js"
+  - "Payload CMS"
+  - "PostgreSQL"
+  - "React"
+  - "TypeScript"
 demoURL: "https://store.porcelanosa.com/"
 ---
 

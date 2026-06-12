@@ -4,6 +4,17 @@ description: "Juego móvil tipo Brain Trainer para enseñar a estudiantes de ing
 date: 2013-03-01
 type: "professional"
 translationKey: "english-monstruo"
+skills:
+  - "Adobe Photoshop"
+  - "Apple Developer Program"
+  - "Apple Human Interface Guidelines"
+  - "Apple App Review Guidelines"
+  - "Apple App Store Publishing"
+  - "Balsamiq Mockups"
+  - "Game Design"
+  - "Google Play Store Publishing"
+  - "TestFlight"
+  - "Xcode"
 hero: ../../../assets/projects/english-monstruo/hero.jpg
 ---
 

@@ -4,6 +4,15 @@ description: "Corporate travel management platform simplifying booking, expense 
 date: 2023-03-01
 type: "professional"
 translationKey: "quadrant-travel-cloud"
+skills:
+  - "API Blueprint"
+  - "Jest"
+  - "Next.js"
+  - "React"
+  - "React Query"
+  - "Tailwind CSS"
+  - "Testing Library"
+  - "TypeScript"
 ---
 
 **Quadrant Travel Cloud** is a comprehensive corporate travel management platform that simplifies travel booking, expense management, and policy compliance while offering robust reporting and analytics to optimize spending and enhance efficiency.

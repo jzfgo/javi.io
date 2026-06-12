@@ -6,9 +6,33 @@ type: "personal"
 repoURL: "https://github.com/jzfgo/carroquesi"
 demoURL: "https://carroquesi.web.app/"
 translationKey: "carroquesi"
+skills:
+  - "Alembic"
+  - "Cloud Run"
+  - "Docker"
+  - "Edge AI"
+  - "FastAPI"
+  - "Firebase"
+  - "Firebase AI"
+  - "GCP"
+  - "Gemini"
+  - "Gemini Nano"
+  - "Just"
+  - "Neon"
+  - "OCR"
+  - "Pydantic"
+  - "PostgreSQL"
+  - "SQLite"
+  - "Python"
+  - "React"
+  - "Spec Driven Development"
+  - "TDD"
+  - "TypeScript"
+  - "UV"
+  - "Vite"
 ---
 
-*Juntos compramos mejor · Together we shop better*
+_Juntos compramos mejor_
 
 Una lista de la compra colaborativa. Varios usuarios comparten listas, marcan artículos como comprados y reciben sugerencias inteligentes de productos basadas en el historial de compras. Incluye registro de precios con historial por producto, búsqueda por código de barras, escaneo de tickets con IA y totales de coste acumulados por sesión de compra.
 

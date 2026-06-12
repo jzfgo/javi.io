@@ -4,6 +4,12 @@ description: "First version of Bahiazul Resort's website — a full-stack PHP pl
 date: 2014-01-01
 type: "professional"
 translationKey: "bahiazul-website-v1"
+skills:
+  - "CodeIgniter"
+  - "JavaScript"
+  - "PHP"
+  - "Sketch"
+  - "jQuery"
 hero: ../../../assets/projects/bahiazul-website-v1/hero.jpg
 ---
 

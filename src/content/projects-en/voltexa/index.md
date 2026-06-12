@@ -4,6 +4,12 @@ description: "MVP for a renewable energy startup — customer portal, admin pane
 date: 2023-01-01
 type: "professional"
 translationKey: "voltexa"
+skills:
+  - "GCP"
+  - "MongoDB"
+  - "Payload CMS"
+  - "React"
+  - "TypeScript"
 hero: ../../../assets/projects/voltexa/hero.webp
 ---
 

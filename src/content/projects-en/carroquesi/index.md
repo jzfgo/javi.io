@@ -6,9 +6,33 @@ type: "personal"
 repoURL: "https://github.com/jzfgo/carroquesi"
 demoURL: "https://carroquesi.web.app/"
 translationKey: "carroquesi"
+skills:
+  - "Alembic"
+  - "Cloud Run"
+  - "Docker"
+  - "Edge AI"
+  - "FastAPI"
+  - "Firebase"
+  - "Firebase AI"
+  - "GCP"
+  - "Gemini"
+  - "Gemini Nano"
+  - "Just"
+  - "Neon"
+  - "OCR"
+  - "Pydantic"
+  - "PostgreSQL"
+  - "SQLite"
+  - "Python"
+  - "React"
+  - "Spec Driven Development"
+  - "TDD"
+  - "TypeScript"
+  - "UV"
+  - "Vite"
 ---
 
-*Juntos compramos mejor · Together we shop better*
+_Together we shop better_
 
 A collaborative grocery shopping list. Multiple users share lists, mark items as purchased, and get smart product suggestions based on purchase history. Includes price logging with per-item history, barcode lookup, AI-powered receipt scanning, and running cost totals per shopping session.
 

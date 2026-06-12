@@ -4,6 +4,15 @@ description: "Plataforma de gestión de viajes corporativos que simplifica las r
 date: 2023-03-01
 type: "professional"
 translationKey: "quadrant-travel-cloud"
+skills:
+  - "API Blueprint"
+  - "Jest"
+  - "Next.js"
+  - "React"
+  - "React Query"
+  - "Tailwind CSS"
+  - "Testing Library"
+  - "TypeScript"
 ---
 
 **Quadrant Travel Cloud** es una plataforma integral de gestión de viajes corporativos que simplifica la reserva de viajes, la gestión de gastos y el cumplimiento de políticas, al tiempo que ofrece sólidos informes y análisis para optimizar el gasto y mejorar la eficiencia.

@@ -4,6 +4,16 @@ description: "Next.js and TypeScript redesign of the resort's main website featu
 date: 2020-12-01
 type: "professional"
 translationKey: "bahiazul-website"
+skills:
+  - "Design Systems"
+  - "Firebase"
+  - "MDX"
+  - "Next.js"
+  - "React"
+  - "Sass"
+  - "Sketch"
+  - "SSR"
+  - "TypeScript"
 ---
 
 The **Bahiazul Website** redesign served as the resort's primary online presence, historically responsible for more than 50% of its bookings.
@@ -13,6 +23,7 @@ The goal of the project was to overhaul the outdated 2013 version and replace it
 ## Key Features & Implementation
 
 As the **Full Stack Developer**, I led the technical development:
+
 - Built the platform using **Next.js** and **TypeScript** to achieve server-side rendering (SSR) and strong SEO performance.
 - Used **Firebase Hosting** and **Cloud Functions** for deployment and server rendering logic.
 - Incorporated **Sass** for bespoke, responsive styling based on a custom internal **Design System**.

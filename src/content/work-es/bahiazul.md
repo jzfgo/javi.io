@@ -9,12 +9,12 @@ bullets:
   - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles para garantizar coherencia visual"
   - "Entregué un Quiosco Digital SPA basado en Svelte, mobile-first, alojado en Firebase"
 skills:
-  - "Next.js"
-  - "TypeScript"
-  - "Firebase"
-  - "Svelte"
-  - "Design Systems"
-  - "MDX"
+  - "Diseño UI"
+  - "Diseño UX"
+  - "Campaign Monitor"
+  - "CRO"
+  - "Email Marketing"
+  - "Marketing Automation"
 ---
 
 Después de que Piensa Diferente cerrara debido a la pandemia de COVID-19, Bahiazul me propuso unirme a ellos para seguir trabajando en sus proyectos.
@@ -29,7 +29,7 @@ Junto a esto, creé un Sistema de Diseño interno para facilitar el desarrollo d
 
 ### Desarrollo
 
-La nueva versión del sitio web se desarrolló con NextJS y TypeScript, alojada con una combinación de Firebase Hosting y Cloud Functions (para SSR). Utilizaba MDX para contenido estático y Firebase Storage para el alojamiento de medios.
+La nueva versión del sitio web se desarrolló con Next.js y TypeScript, alojada con una combinación de Firebase Hosting y Cloud Functions (para SSR). Utilizaba MDX para contenido estático y Firebase Storage para el alojamiento de medios.
 
 Para el Quiosco Digital, elegí Svelte, una biblioteca rápida y ligera para construir interfaces frontend con JavaScript. Es una SPA (Single Page Application) mobile-first alojada en Firebase.
 

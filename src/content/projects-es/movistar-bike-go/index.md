@@ -4,6 +4,16 @@ description: "Aplicación móvil de ciclismo para Movistar que ofrece navegació
 date: 2012-01-01
 type: "professional"
 translationKey: "movistar-bike-go"
+skills:
+  - "Apple Developer Program"
+  - "Apple Human Interface Guidelines"
+  - "Apple App Review Guidelines"
+  - "Apple App Store Publishing"
+  - "CSS"
+  - "Google Play Store Publishing"
+  - "HTML"
+  - "TestFlight"
+  - "Xcode"
 hero: ../../../assets/projects/movistar-bike-go/hero.jpg
 ---
 

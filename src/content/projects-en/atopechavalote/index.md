@@ -4,6 +4,11 @@ description: "Social networking platform that pioneered online community buildin
 date: 2007-01-01
 type: "professional"
 translationKey: "atopechavalote"
+skills:
+  - "Adobe Photoshop"
+  - "CodeIgniter"
+  - "MySQL"
+  - "PHP"
 hero: ../../../assets/projects/atopechavalote/hero.jpg
 ---
 

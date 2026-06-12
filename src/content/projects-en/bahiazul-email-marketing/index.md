@@ -4,6 +4,14 @@ description: "Series of targeted email marketing campaigns to drive post-pandemi
 date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-email-marketing"
+skills:
+  - "A/B Testing"
+  - "Analytics"
+  - "Automation"
+  - "Campaign Monitor"
+  - "Dynamic Email Content"
+  - "Subscriber Segmentation"
+  - "Email Templates"
 ---
 
 During my time at **Bahiazul Resort**, I led a series of targeted **email marketing campaigns** aimed at bringing guests back to the resort following the disruptions caused by the COVID-19 pandemic.

@@ -4,6 +4,15 @@ description: "Sistema de análisis de fútbol profesional con controles de drone
 date: 2022-06-01
 type: "professional"
 translationKey: "fly-fut-pro"
+skills:
+  - "Figma"
+  - "Firebase"
+  - "Firestore"
+  - "Nuxt"
+  - "Sass"
+  - "TypeScript"
+  - "Vue"
+  - "WebSockets"
 hero: ../../../assets/projects/fly-fut-pro/hero.png
 ---
 
@@ -18,5 +27,5 @@ Como **Arquitecto de Sistemas**, **Diseñador UX/UI** y **Desarrollador Frontend
 Aspectos clave de la implementación:
 
 - Diseño de interfaces y experiencias de usuario con **Figma**.
-- Desarrollo de las interfaces web frontend utilizando **NuxtJS** y **VueJS** en combinación con **TypeScript** y estilos con **Sass**.
+- Desarrollo de las interfaces web frontend utilizando **Nuxt** y **Vue** en combinación con **TypeScript** y estilos con **Sass**.
 - Uso de **Firebase** y **Firestore** para la sincronización de estado en tiempo real.

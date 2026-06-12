@@ -4,6 +4,21 @@ description: "Experiencia interactiva de arte de datos en 3D para Solán de Cabr
 date: 2024-06-01
 type: "professional"
 translationKey: "minerales-de-la-liga"
+skills:
+  - "AWS"
+  - "Data Art"
+  - "DataViz"
+  - "Docker"
+  - "GCP"
+  - "Next.js"
+  - "Node.js"
+  - "Payload CMS"
+  - "React"
+  - "React Three Fiber"
+  - "Remotion"
+  - "Three.js"
+  - "Turborepo"
+  - "TypeScript"
 ---
 
 **Minerales de LaLiga** es una aplicación web interactiva desarrollada para **Solán de Cabras** y **LaLiga**, orientada a promover los beneficios de los minerales presentes en el agua mineral natural **Solán de Cabras** y su impacto en el rendimiento deportivo.

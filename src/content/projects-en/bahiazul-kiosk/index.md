@@ -4,6 +4,12 @@ description: "Mobile-first web kiosk for Bahiazul Resort allowing guests to acce
 date: 2020-01-01
 type: "professional"
 translationKey: "bahiazul-kiosk"
+skills:
+  - "Design Systems"
+  - "Firebase"
+  - "JavaScript"
+  - "Sketch"
+  - "Svelte"
 demoURL: "https://dk.bahiazul.com/"
 hero: ../../../assets/projects/bahiazul-kiosk/hero.png
 ---

@@ -4,6 +4,15 @@ description: "Professional football analysis system with autonomous drone contro
 date: 2022-06-01
 type: "professional"
 translationKey: "fly-fut-pro"
+skills:
+  - "Figma"
+  - "Firebase"
+  - "Firestore"
+  - "Nuxt"
+  - "Sass"
+  - "TypeScript"
+  - "Vue"
+  - "WebSockets"
 hero: ../../../assets/projects/fly-fut-pro/hero.png
 ---
 

@@ -9,12 +9,9 @@ bullets:
   - "Diseñé y prototipé una app iPad para el control autónomo de drones en entrenamientos de fútbol"
   - "Diseñé la suite Fly-Fut Pro: app de grabación para iPad y herramienta de análisis táctico"
 skills:
-  - "Node.js"
-  - "TypeScript"
-  - "PostgreSQL"
-  - "Pipelines de IA/ML"
-  - "Encoding de vídeo"
-  - "Infraestructura Cloud"
+  - "Arquitectura Cloud"
+  - "Arquitectura de Software"
+  - "Liderazgo Técnico"
 ---
 
 Fly-Fut es la primera empresa del mundo en protocolizar la grabación de fútbol con drones, asistida por IA.
