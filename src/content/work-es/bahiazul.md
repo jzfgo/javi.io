@@ -9,11 +9,14 @@ bullets:
   - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles para garantizar coherencia visual"
   - "Entregué un Quiosco Digital SPA basado en Svelte, mobile-first, alojado en Firebase"
 skills:
-  - "Diseño UI"
-  - "Diseño UX"
+  - "Arquitectura Cloud"
+  - "Arquitectura de Software"
   - "Campaign Monitor"
   - "CRO"
+  - "Diseño UI"
+  - "Diseño UX"
   - "Email Marketing"
+  - "Liderazgo Técnico"
   - "Marketing Automation"
 ---
 

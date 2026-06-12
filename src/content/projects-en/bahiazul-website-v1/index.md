@@ -7,9 +7,9 @@ translationKey: "bahiazul-website-v1"
 skills:
   - "CodeIgniter"
   - "JavaScript"
+  - "jQuery"
   - "PHP"
   - "Sketch"
-  - "jQuery"
 hero: ../../../assets/projects/bahiazul-website-v1/hero.jpg
 ---
 

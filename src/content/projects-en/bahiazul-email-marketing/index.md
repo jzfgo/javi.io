@@ -8,7 +8,6 @@ skills:
   - "A/B Testing"
   - "Analytics"
   - "Automation"
-  - "Campaign Monitor"
   - "Dynamic Email Content"
   - "Subscriber Segmentation"
   - "Email Templates"

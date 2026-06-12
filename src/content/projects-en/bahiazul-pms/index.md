@@ -8,9 +8,9 @@ hero: ../../../assets/projects/bahiazul-pms/hero.png
 skills:
   - "Balsamiq Mockups"
   - "JavaScript"
+  - "jQuery"
   - "PHP"
   - "Yii Framework"
-  - "jQuery"
 ---
 
 **Bahiazul PMS** is a custom **Property Management System** developed for **Bahiazul Resort Fuerteventura** to centralize and streamline the resort's internal operations, including reservations, guest management, and day-to-day administrative tasks.

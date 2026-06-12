@@ -64,16 +64,16 @@ const { Content } = await render(project);
           )}
         </nav>
       )}
-      {project.data.skills && project.data.skills.length > 0 && (
-        <div class="animate flex flex-wrap gap-2 mt-3">
-          {project.data.skills.map(s => (
-            <span class="text-sm">{s}</span>
-          ))}
-        </div>
-      )}
     </div>
     <article class="animate">
       <Content />
     </article>
+    {project.data.skills && project.data.skills.length > 0 && (
+      <div class="animate flex flex-wrap gap-2 mt-10">
+        {project.data.skills.map(s => (
+          <span class="text-xs py-1 px-3 rounded-full border border-black/10 dark:border-white/10 text-black/60 dark:text-white/60">{s}</span>
+        ))}
+      </div>
+    )}
   </Container>
 </PageLayout>

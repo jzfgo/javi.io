@@ -9,12 +9,15 @@ bullets:
   - "Built an internal Design System used across all web and mobile products, ensuring visual consistency"
   - "Delivered a Svelte-based mobile-first Digital Kiosk SPA, hosted on Firebase"
 skills:
-  - "UX Design"
-  - "UI Design"
   - "Campaign Monitor"
+  - "Cloud Architecture"
   - "CRO"
   - "Email Marketing"
   - "Marketing Automation"
+  - "Software Architecture"
+  - "Team Leadership"
+  - "UI Design"
+  - "UX Design"
 ---
 
 After Piensa Diferente went down because of the COVID-19 pandemic, I was approached by Bahiazul to join them and keep working on their projects.
