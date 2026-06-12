@@ -64,6 +64,13 @@ const { Content } = await render(project);
           )}
         </nav>
       )}
+      {project.data.skills && project.data.skills.length > 0 && (
+        <div class="animate flex flex-wrap gap-2 mt-3">
+          {project.data.skills.map(s => (
+            <span class="text-sm">{s}</span>
+          ))}
+        </div>
+      )}
     </div>
     <article class="animate">
       <Content />
