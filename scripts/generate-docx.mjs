@@ -21,6 +21,31 @@ import {
 import { join, resolve } from "node:path";
 import matter from "gray-matter";
 import { computeCvMeta } from "./cv-meta.mjs";
+
+const HALF_LIFE_YEARS = 3;
+const MAX_TECH_AGE_YEARS = 10;
+const RECENCY_THRESHOLD = Math.pow(0.5, MAX_TECH_AGE_YEARS / HALF_LIFE_YEARS);
+
+function decayScore(date) {
+  const yearsAgo = (Date.now() - date.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+  return Math.pow(0.5, yearsAgo / HALF_LIFE_YEARS);
+}
+
+function computeSkillWeights(entries) {
+  const totals = new Map();
+  const peaks = new Map();
+  for (const { skills, date } of entries) {
+    const score = decayScore(date);
+    for (const s of skills ?? []) {
+      totals.set(s, (totals.get(s) ?? 0) + score);
+      peaks.set(s, Math.max(peaks.get(s) ?? 0, score));
+    }
+  }
+  return [...totals.entries()]
+    .filter(([name]) => (peaks.get(name) ?? 0) >= RECENCY_THRESHOLD)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name]) => name);
+}
 const profilePath = existsSync(resolve("src/content/profile/full.json"))
   ? resolve("src/content/profile/full.json")
   : resolve("src/content/profile/public.json");
@@ -52,6 +77,19 @@ const distCv = resolve("dist/cv");
 const publicCv = resolve("public/cv");
 if (!existsSync(distCv)) mkdirSync(distCv, { recursive: true });
 if (!existsSync(publicCv)) mkdirSync(publicCv, { recursive: true });
+
+function parseProjectFiles(dir) {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => {
+      const filePath = join(dir, d.name, "index.md");
+      if (!existsSync(filePath)) return null;
+      return matter(readFileSync(filePath, "utf-8")).data;
+    })
+    .filter(Boolean)
+    .filter((d) => !d.draft);
+}
 
 function parseWorkFiles(dir) {
   return readdirSync(dir)
@@ -112,6 +150,7 @@ function buildDoc(lang) {
   const locale = lang === "en" ? "en" : "es";
   const workDir = `src/content/work-${lang}`;
   const entries = parseWorkFiles(workDir);
+  const projectEntries = parseProjectFiles(`src/content/projects-${lang}`);
 
   const children = [];
 
@@ -306,10 +345,19 @@ function buildDoc(lang) {
   }
 
   // Skills section
-  if (entries.some((e) => Array.isArray(e.tech) && e.tech.length > 0)) {
-    const allTech = [
-      ...new Set(entries.flatMap((e) => (Array.isArray(e.tech) ? e.tech : []))),
-    ];
+  const allSkills = computeSkillWeights([
+    ...entries.map((e) => ({
+      skills: e.skills,
+      date: e.dateEnd instanceof Date
+        ? e.dateEnd
+        : ["current", "actualidad"].includes(String(e.dateEnd ?? "").trim().toLowerCase())
+          ? new Date()
+          : parseDate(e.dateEnd),
+    })),
+    ...projectEntries.map((e) => ({ skills: e.skills, date: parseDate(e.date) })),
+    ...education.map((e) => ({ skills: e.skills, date: new Date(e.date) })),
+  ]);
+  if (allSkills.length > 0) {
     children.push(
       new Paragraph({
         text: s.skills.toUpperCase(),
@@ -320,7 +368,7 @@ function buildDoc(lang) {
         },
       }),
       new Paragraph({
-        children: [new TextRun({ text: allTech.join(" · "), size: 18 })],
+        children: [new TextRun({ text: allSkills.join(" · "), size: 18 })],
         spacing: { after: 80 },
       }),
     );
