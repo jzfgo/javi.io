@@ -8,7 +8,7 @@ bullets:
   - "Delivered end-to-end product work for 7 years: UX/UI design through full-stack development for digital campaigns and applications"
   - "Designed and built products for brands including Ferran Adrià (Adrià en casa), Telefónica Movistar, and Aramón"
   - "Led R&D and frontend mobile development during the agency's final growth stage before its acquisition by IPG Mediabrands"
-tech:
+skills:
   - "HTML"
   - "CSS"
   - "JavaScript"

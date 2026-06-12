@@ -8,7 +8,7 @@ bullets:
   - "Lideré la arquitectura y el desarrollo de la plataforma de consumo (Fly-Fut Ligas): backend, pipeline de vídeo automatizado con IA para partidos grabados con drones, herramientas de gestión y app móvil"
   - "Diseñé y prototipé una app iPad para el control autónomo de drones en entrenamientos de fútbol"
   - "Diseñé la suite Fly-Fut Pro: app de grabación para iPad y herramienta de análisis táctico"
-tech:
+skills:
   - "Node.js"
   - "TypeScript"
   - "PostgreSQL"

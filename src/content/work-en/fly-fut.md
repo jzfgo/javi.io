@@ -8,7 +8,7 @@ bullets:
   - "Led architecture and development of the consumer platform (Fly-Fut Ligas): backend, fully automated AI video pipeline for drone-recorded football matches, management tools, and mobile app"
   - "Designed and prototyped an iPad app for autonomous drone control in football training sessions"
   - "Designed Fly-Fut Pro suite: iPad recording app and tactical analysis tool"
-tech:
+skills:
   - "Node.js"
   - "TypeScript"
   - "PostgreSQL"

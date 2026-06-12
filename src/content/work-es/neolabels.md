@@ -8,7 +8,7 @@ bullets:
   - "Desarrollé productos de extremo a extremo durante 7 años: desde diseño UX/UI hasta desarrollo full-stack para campañas y aplicaciones digitales"
   - "Diseñé y construí productos para marcas como Ferran Adrià (Adrià en casa), Telefónica Movistar y Aramón"
   - "Lideré I+D y desarrollo frontend móvil en la última etapa de crecimiento de la agencia, antes de su adquisición por IPG Mediabrands"
-tech:
+skills:
   - "HTML"
   - "CSS"
   - "JavaScript"

@@ -8,7 +8,7 @@ bullets:
   - "Redesigned resort website with Next.js, TypeScript, and Firebase, shipping SSR hosting with MDX-driven content"
   - "Built an internal Design System used across all web and mobile products, ensuring visual consistency"
   - "Delivered a Svelte-based mobile-first Digital Kiosk SPA, hosted on Firebase"
-tech:
+skills:
   - "Next.js"
   - "TypeScript"
   - "Firebase"
