@@ -4,6 +4,12 @@ description: "Aplicación web mobile-first de página única que permite a los u
 date: 2017-08-01
 type: "professional"
 translationKey: "fuera-de-juego"
+skills:
+  - "JavaScript"
+  - "LoopBack"
+  - "React"
+  - "Redux"
+  - "Sketch"
 hero: ../../../assets/projects/fuera-de-juego/hero.jpg
 ---
 

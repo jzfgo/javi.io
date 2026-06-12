@@ -4,6 +4,19 @@ description: "Internal MIBGAS system to automate regulatory oversight of Market 
 date: 2024-10-01
 type: "professional"
 translationKey: "mibgas-mmm"
+skills:
+  - "BFF Pattern"
+  - "Cloud Scheduler"
+  - "GCP"
+  - "gRPC"
+  - "Microservices"
+  - "NestJS"
+  - "Next.js"
+  - "PostgreSQL"
+  - "Puppeteer"
+  - "React"
+  - "Turborepo"
+  - "TypeScript"
 ---
 
 **MIBGAS** operates the organized natural gas market in Spain and is subject to official regulation requiring continuous monitoring of Market Makers operating on its platform. **MMM (Market Maker Monitoring)** is the internal system that automates this oversight — from market data ingestion to regulatory compliance report generation.

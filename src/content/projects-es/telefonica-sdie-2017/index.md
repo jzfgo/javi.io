@@ -4,6 +4,9 @@ description: "Aplicación web de página única con visualización interactiva d
 date: 2017-01-01
 type: "professional"
 translationKey: "telefonica-sdie-2017"
+skills:
+  - "React"
+  - "Recharts"
 hero: ../../../assets/projects/telefonica-sdie-2017/hero.png
 ---
 

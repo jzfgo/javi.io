@@ -4,6 +4,9 @@ description: "Interactive data visualization single-page application for Fundaci
 date: 2017-01-01
 type: "professional"
 translationKey: "telefonica-sdie-2017"
+skills:
+  - "React"
+  - "Recharts"
 hero: ../../../assets/projects/telefonica-sdie-2017/hero.png
 ---
 
