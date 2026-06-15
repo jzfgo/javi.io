@@ -27,7 +27,7 @@ const MAX_TECH_AGE_YEARS = 10;
 const RECENCY_THRESHOLD = Math.pow(0.5, MAX_TECH_AGE_YEARS / HALF_LIFE_YEARS);
 
 function decayScore(date) {
-  const yearsAgo = (Date.now() - date.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+  const yearsAgo = Math.max(0, (Date.now() - date.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
   return Math.pow(0.5, yearsAgo / HALF_LIFE_YEARS);
 }
 
@@ -43,7 +43,7 @@ function computeSkillWeights(entries) {
   }
   return [...totals.entries()]
     .filter(([name]) => (peaks.get(name) ?? 0) >= RECENCY_THRESHOLD)
-    .sort((a, b) => b[1] - a[1])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .map(([name]) => name);
 }
 const profilePath = existsSync(resolve("src/content/profile/full.json"))
