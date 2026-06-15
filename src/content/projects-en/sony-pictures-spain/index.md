@@ -4,6 +4,15 @@ description: "Official Spanish website for Sony Pictures Entertainment — infra
 date: 2023-01-01
 type: "professional"
 translationKey: "sony-pictures-spain"
+skills:
+  - "Amazon Web Services (AWS)"
+  - "Blue-Green Deployment"
+  - "Google Cloud Platform (GCP)"
+  - "Next.js"
+  - "PostgreSQL"
+  - "React"
+  - "Strapi"
+  - "TypeScript"
 demoURL: "https://sonypictures.es/"
 hero: ../../../assets/projects/sony-pictures-spain/hero.webp
 ---
@@ -12,7 +21,7 @@ hero: ../../../assets/projects/sony-pictures-spain/hero.webp
 
 The site is built with **Next.js** and **React** on the frontend and **Strapi** as the headless CMS.
 
-As **Tech Lead** at **Interacso**, I joined the project in late 2023 to lead the migration of the platform from Interacso's infrastructure on **Google Cloud Platform** to Sony's own infrastructure on **Amazon Web Services**. After a successful migration, I became responsible for the ongoing maintenance and evolution of the site, working closely with the PM and Frontend Developer to deliver new features and bug fixes.
+As **Tech Lead** at **Interacso**, I joined the project in late 2023 to lead the migration of the platform from Interacso's infrastructure on **Google Cloud Platform** to Sony's own infrastructure on **Amazon Web Services**. After the migration, I became responsible for the ongoing maintenance and evolution of the site, working closely with the PM and Frontend Developer to deliver new features and bug fixes.
 
 ## Technologies
 

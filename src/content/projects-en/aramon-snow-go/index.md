@@ -4,7 +4,21 @@ description: "Mobile companion app for Aramón ski resorts developed for Movista
 date: 2012-01-01
 type: "professional"
 translationKey: "aramon-snow-go"
+skills:
+  - "Adobe Fireworks"
+  - "Adobe Photoshop"
+  - "Android Studio"
+  - "Apple Developer Program"
+  - "Apple Human Interface Guidelines"
+  - "Apple App Review Guidelines"
+  - "Apple App Store Publishing"
+  - "Balsamiq Mockups"
+  - "Design Systems"
+  - "Google Play Store Publishing"
+  - "TestFlight"
+  - "Xcode"
 hero: ../../../assets/projects/aramon-snow-go/hero.jpg
+demoURL: https://www.youtube.com/watch?v=CUl49qlDsGM
 ---
 
 **Aramón Snow & Go** was a mobile companion application for **Aramón** ski resorts, developed for **Movistar**.

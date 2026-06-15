@@ -1,29 +1,42 @@
 ---
 title: "Fly-Fut Ligas"
-description: "Consumer football platform with AI-assisted video production and mobile application."
-date: 2021-10-01
+description: "Consumer football platform with cloud-based video production and mobile application."
+date: 2022-09-01
 type: "professional"
 translationKey: "fly-fut-ligas"
+skills:
+  - "App Engine"
+  - "Apple In-App Purchases"
+  - "Cloud Build"
+  - "DDD"
+  - "Firebase"
+  - "Google Cloud Platform (GCP)"
+  - "NestJS"
+  - "Node.js"
+  - "OpenAPI"
+  - "PostgreSQL"
+  - "RBAC"
+  - "REST API Design"
+  - "Stripe"
+  - "TypeORM"
+  - "TypeScript"
 hero: ../../../assets/projects/fly-fut-ligas/hero.png
 ---
 
-**Fly-Fut Ligas** is the company's consumer product. It allows amateur football teams to have their matches professionally recorded and produced using drones, and subsequently view and share highlights with family and friends through a mobile app.
+**Fly-Fut Ligas** is the company's consumer product. It allows amateur football teams to have their matches professionally recorded and produced using drones, and subsequently view and share highlights through a mobile app.
 
-The platform is composed of:
-
-- A consumer-facing mobile application.
-- A cloud-based video authoring pipeline assisted by AI.
-- Internal administrative and management tools.
+The platform is composed of a consumer-facing mobile application, a cloud-based video production pipeline, and internal administrative and management tools.
 
 ## Architecture & Implementation
 
-As the **System Architect** and **Backend Developer**, I was responsible for designing and developing the entire backend infrastructure of the consumer platform.
+As **System Architect** and **Backend Developer**, I solely designed and developed the entire backend infrastructure of the platform.
 
-Key highlights of the implementation:
+Key implementation details:
 
-- Built the core backend services using **NestJS** and **TypeScript**, adhering to **Domain-Driven Design (DDD)** principles and securing APIs with **OpenAPI** specifications.
-- Developed the video pipeline that automates video intake, encoding, and publishing using **Google Cloud Platform**.
-- Created an **AI pipeline** to detect relevant match events from raw video footage, accelerating the highlight generation process.
-- Implemented real-time synchronization and database storage with **Firebase** and **PostgreSQL**.
+- Modular REST API in **NestJS** with three distinct scopes (mobile app, back-office, and internal services), each with its own authentication strategy using **Firebase Auth** and configurable **RBAC** with a hierarchical role tree.
+- Full domain model in **PostgreSQL** and **TypeORM** (85 entities, 175 migrations), following **DDD** principles with APIs documented via **OpenAPI**.
+- Dual payment and subscription system integrating **Stripe** (Android) and **Apple In-App Purchases** (iOS), with webhooks, state reconciliation, and automated expiration management.
+- Video production pipeline on **Google Cloud Platform** automating recording, processing, and publishing, orchestrated by 22 scheduled tasks on **App Engine Cron**.
+- Three fully isolated environments (dev/staging/production) with CI/CD on **Cloud Build** and runtime secret management via **GCP Secret Manager**.
 
 ![Fly-Fut Ligas iOS App](../../../assets/projects/fly-fut-ligas/fly-fut-ligas.png)

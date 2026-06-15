@@ -1,30 +1,39 @@
 ---
-title: "agents"
-description: "Skills agénticas para flujos de trabajo de desarrollo profesional — 1:1s estructurados, revisiones con contexto de git y seguimiento de acciones. Compatible con Claude Code, Cursor, Codex y más."
+title: "AI Agent Skills"
+description: "Biblioteca personal de skills de agentes IA con desarrollo guiado por evals y arquitectura multi-harness — Claude Code, Codex, Cursor, Google Antigravity, OpenCode y Pi desde una única fuente."
 date: 2026-05-30
 type: "personal"
 repoURL: "https://github.com/jzfgo/agents"
 demoURL: "https://www.skills.sh/jzfgo/agents"
 translationKey: "agents"
+skills:
+  - "AI Engineering"
+  - "Agentic AI Development"
+  - "Claude Code"
+  - "Spec Driven Development"
 ---
 
-Skills de IA personal de Javier Zapata, conformes con el [estándar abierto AgentSkills](https://agentskills.io). Compatible con cualquier harness de agentes que implemente el estándar.
+Una biblioteca personal de skills de agentes IA. Cada skill es compatible con seis harnesses de agentes de código distintos desde una única fuente, usando interfaces bien definidas, desarrollo guiado por evals y bloqueo de dependencias.
+
+## Desarrollo guiado por evals
+
+Cada skill incluye dos suites de tests:
+
+- **`evals.json`** — tests funcionales que definen qué debe producir el skill ante una entrada dada
+- **`trigger_eval.json`** — tests de activación que especifican cuándo debe y no debe dispararse el skill
+
+Este enfoque fuerza precisión en la descripción del skill (que impulsa la invocación automática), previene regresiones a medida que los skills evolucionan y hace la intención explícita y verificable.
+
+## Arquitectura multi-harness
+
+El mismo skill funciona en Claude Code, Codex, Cursor, Google Antigravity, OpenCode y Pi. Cada harness tiene un mecanismo de descubrimiento de plugins distinto — manifiestos, symlinks, entradas de configuración o referencias en `GEMINI.md` — por lo que la arquitectura separa la lógica del skill (un `SKILL.md`) de los adaptadores de harness (un manifiesto por ecosistema).
 
 ## Skills
 
-| Skill | Descripción |
-|-------|-------------|
-| [1on1](https://github.com/jzfgo/agents/blob/main/skills/1on1/SKILL.md) | Check-ins profesionales 1:1 estructurados — revisa cómo tú y tu agente de IA habéis estado trabajando juntos |
+### [1on1](https://github.com/jzfgo/agents/blob/main/skills/1on1/SKILL.md)
 
-## Instalación
+Una revisión profesional 1:1 estructurada entre el usuario y su agente IA. Antes de que comience la entrevista, el agente se prepara en silencio: lee `git log`, escanea el codebase en busca de señales recientes y revisa los action items anteriores. Luego conduce una entrevista guiada una pregunta a la vez, reflexiona honestamente sobre su propio rendimiento, persiste los action items en el fichero de configuración del agente y entrega un informe escrito.
 
-Los skills son autodescubiertos por cualquier harness [compatible con AgentSkills](https://agentskills.io). Para los que requieren instalación explícita:
+## Gestión de dependencias
 
-| Harness | Instalar |
-|---------|---------|
-| **Claude Code** | `claude mcp add javito-skills@git+https://github.com/jzfgo/agents.git` |
-| **OpenCode** | Añadir `"plugin": ["javito-skills@git+https://github.com/jzfgo/agents.git"]` a `opencode.json` |
-| **Gemini CLI** | Añadir entradas `@./skills/<name>/SKILL.md` a `GEMINI.md` |
-| **Pi** | Autodescubierto vía symlinks `.agents/skills/` |
-| **Codex** | Autodescubierto vía `.codex-plugin/plugin.json` |
-| **Cursor** | Autodescubierto vía `.cursor-plugin/plugin.json` |
+`skills-lock.json` rastrea los skills externos instalados en el repo — modelado sobre `package-lock.json` — haciendo que el entorno de skills sea reproducible y auditable. La colección usa el skill oficial de Anthropic [Skill Creator](https://github.com/anthropics/skills) para construir e iterar sobre sus propios skills.

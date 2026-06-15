@@ -1,33 +1,75 @@
 ---
 title: "Porcelanosa Ecommerce"
-description: "Migration of a global Magento Ecommerce to a headless architecture on Adobe Commerce Cloud with Next.js and Payload CMS."
-date: 2025-07-01
+description: "Global headless ecommerce platform for Porcelanosa — Next.js 15 with Payload CMS as BFF, three production markets, and Google Cloud Run deployment."
+date: 2025-12-01
 type: "professional"
 translationKey: "porcelanosa-ecommerce"
+skills:
+  - "Adobe Commerce"
+  - "Apollo"
+  - "BFF Pattern"
+  - "Cloud Run"
+  - "Docker"
+  - "Feature Flags"
+  - "Google Cloud Platform (GCP)"
+  - "GraphQL"
+  - "NextAuth"
+  - "Next.js"
+  - "Node.js"
+  - "OAuth"
+  - "Payload CMS"
+  - "PostgreSQL"
+  - "React"
+  - "Redis"
+  - "Sentry"
+  - "Monorepo"
+  - "TypeScript"
 demoURL: "https://store.porcelanosa.com/"
 ---
 
-**Porcelanosa** is a Spanish company and a leading manufacturer of ceramics, kitchen furniture, and bathroom elements. With a presence in over 150 countries, it is synonymous with quality and design in the construction and architecture sector.
+**Porcelanosa** is a Spanish manufacturer of ceramics, kitchen furniture, and bathroom elements, with a presence in over 150 countries.
 
-We developed a new version of its **Ecommerce** with the goal of providing a more personalized shopping experience tailored to customer needs, streamlining and unifying the management of its global product catalog, and modernizing the platform's technical aspects.
+The project migrated its global ecommerce from **Magento _on-premise_** to a **_headless_** architecture on **Adobe Commerce Cloud**, replacing the existing frontend with a **Next.js 15** platform using **Payload CMS** as BFF. As **Tech Lead** at **Interacso**, I led the 5-person frontend team. The Adobe Commerce backend had its own Tech Lead on the Porcelanosa side.
 
-To achieve this, we worked closely with **Porcelanosa's** technical team to migrate its current architecture, based on **Magento _on-premise_**, to a **_headless_** architecture on **Adobe Commerce Cloud**.
+## BFF Architecture
 
-In addition to providing technical consulting based on our extensive experience in **_cloud_** architectures and **_headless_** development, we built the front end of the new platform as well as a content management system that enables a much higher level of customization than what **Adobe Commerce** offers.
+**Payload CMS** serves as the Backend For Frontend: it manages content owned by the frontend (pages, blog, configuration, feature flags) and holds references to the Adobe Commerce catalog. The catalog itself lives in Adobe. This model decouples the frontend from Adobe Commerce and centralizes authentication, caching, and data transformation at a single entry point.
 
-## Technologies Used
+The Adobe Commerce integration follows a layered model:
 
-- **Next.js** (**React**) for the web application, with a strong emphasis on **performance optimization** and **user experience**.
-- **Payload CMS** for the content management system, focusing on **ease of use** and **customization**.
-- **Adobe Commerce Cloud** as the platform's **backend**, using a **headless** architecture that allows us to **integrate** and **customize** business logic and data.
-- **GraphQL** as the primary communication technology between the _frontend_ and _backend_.
-- **Google Cloud Platform** for the infrastructure of the _frontend_ and content management system.
+```
+Frontend → Next.js API routes (proxy) → Payload services → Apollo → Adobe Commerce GraphQL
+```
+
+The API routes act as a secure proxy: the frontend never calls Adobe Commerce directly. Authentication and authorization are resolved in the BFF.
+
+## Rendering
+
+**React Server Components** is the default pattern: components are async server components unless they require state or interactivity, where `'use client'` is applied selectively. ISR is the primary rendering strategy, with three revalidation tiers configured via environment variables (10 / 30 / 120 minutes depending on content type). The production cache layer uses **Redis**. Payload includes an admin view to purge the cache without redeploying.
+
+## Multi-market
+
+Three markets in production: **us**, **uk**, and **fr**. Locale detection is handled in the Next.js middleware, with cookie-based persistence and server-side translation via **next-intl**. Each market has its own store code for Adobe Commerce API calls.
+
+## Catalog Sync
+
+I designed the incremental sync architecture from Adobe Commerce REST (**OAuth 1.0a**) to Payload PostgreSQL: timestamp-based delta sync, paginated at 100 items, covering categories, products, and variants. A colleague implemented the first version; I later refactored it.
 
 ## Infrastructure
 
-- **Google Cloud Platform** for deploying the web application and content management system.
-- **Adobe Commerce Cloud** as the platform's _backend_, with a _headless_ architecture that enables **integration** and **customization** of data and business logic.
+I designed and set up the infrastructure on **Google Cloud Platform**: deployment on **Cloud Run** with Next.js standalone output containerized in **Docker**. Error monitoring via **Sentry**, integrated in both server and client runtimes.
 
-## My Role in the Project
+## Technologies
 
-As **Tech Lead**, I was responsible for leading the development team and coordinating communication between the various teams involved. Additionally, I oversaw the platform's **functional and technical architecture**, developed the _backend_ and content management system, and managed **integration** with **Adobe Commerce Cloud** and other third-party services.
+- **Next.js 15** and **React 19** for the frontend.
+- **Payload CMS** as BFF and CMS.
+- **Adobe Commerce Cloud** as catalog and commerce backend.
+- **Apollo Client** for GraphQL queries to Adobe Commerce.
+- **TanStack React Query** for client-side state (cart, wishlist, profile).
+- **NextAuth** for customer authentication.
+- **next-intl** for multi-market internationalization.
+- **Tailwind CSS** and a design system based on Shadcn and Radix UI.
+- **PostgreSQL** as Payload's database.
+- **Redis** as the production cache layer.
+- **Google Cloud Platform** — Cloud Run, Docker, Sentry.
+- **Turborepo** as the monorepo orchestrator.

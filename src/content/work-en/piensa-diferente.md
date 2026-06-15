@@ -8,6 +8,13 @@ bullets:
   - "Co-founded and led technology for a hospitality startup serving small resorts and B&Bs for 7 years"
   - "Designed and built a custom Property Management System (PMS) and client websites end-to-end"
   - "Owned cloud architecture, IT infrastructure, and coordination of external contractors"
+skills:
+  - "Cloud Architecture"
+  - "Full Stack Development"
+  - "Software Architecture"
+  - "Team Leadership"
+  - "UI Design"
+  - "UX Design"
 ---
 
 Piensa Diferente was an early startup that provided consulting services to small to medium-sized resorts and B&Bs. It specialized in offering tailored yet affordable solutions to enable its clients to compete directly with the big hospitality chains through technology and innovation.

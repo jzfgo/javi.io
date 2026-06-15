@@ -4,6 +4,12 @@ description: "Mobile-first single page app allowing users to predict football ma
 date: 2017-08-01
 type: "professional"
 translationKey: "fuera-de-juego"
+skills:
+  - "JavaScript"
+  - "LoopBack"
+  - "React"
+  - "Redux"
+  - "Sketch"
 hero: ../../../assets/projects/fuera-de-juego/hero.jpg
 ---
 

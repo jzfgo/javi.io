@@ -1,9 +1,24 @@
 ---
 title: "Minerales de LaLiga"
 description: "Interactive 3D data art experience for Solán de Cabras × LaLiga — parametric crystal generation, Three.js visualization, and video pipeline."
-date: 2024-06-01
+date: 2024-12-01
 type: "professional"
 translationKey: "minerales-de-la-liga"
+skills:
+  - "Amazon Web Services (AWS)"
+  - "Data Art"
+  - "DataViz"
+  - "Docker"
+  - "Google Cloud Platform (GCP)"
+  - "Next.js"
+  - "Node.js"
+  - "Payload CMS"
+  - "React"
+  - "React Three Fiber"
+  - "Remotion"
+  - "Three.js"
+  - "Monorepo"
+  - "TypeScript"
 ---
 
 **Minerales de LaLiga** is an interactive web application developed for **Solán de Cabras** and **LaLiga**, aimed at promoting the benefits of the minerals present in **Solán de Cabras** natural mineral water and their impact on sports performance.

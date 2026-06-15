@@ -5,6 +5,12 @@ date: 2015-01-01
 type: "professional"
 translationKey: "bahiazul-pms"
 hero: ../../../assets/projects/bahiazul-pms/hero.png
+skills:
+  - "Balsamiq Mockups"
+  - "JavaScript"
+  - "jQuery"
+  - "PHP"
+  - "Yii Framework"
 ---
 
 **Bahiazul PMS** es un **Sistema de Gestión Hotelera** (PMS) desarrollado a medida para **Bahiazul Resort Fuerteventura**, con el objetivo de centralizar y optimizar las operaciones internas del resort, incluyendo reservas, gestión de huéspedes y tareas administrativas del día a día.

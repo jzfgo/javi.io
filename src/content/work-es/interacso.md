@@ -8,26 +8,13 @@ bullets:
   - "Lidero la arquitectura de software, diseño de infraestructura cloud y toma de decisiones técnicas para clientes como Grupo Porcelanosa, Mediapro Brands, Mercado Ibérico del Gas (MIBGAS) y Sony Pictures Spain"
   - "Arranco nuevos proyectos: frameworks, tooling, pipelines CI/CD y suites de tests para que los equipos arranquen desde el primer día"
   - "Dirijo el equipo con confianza y mentoría: escribo código de producción como estándar concreto e involucro al equipo en las decisiones técnicas"
-tech:
-  - "TypeScript"
-  - "React"
-  - "Next.js"
-  - "Payload CMS"
-  - "NestJS"
-  - "Node.js"
-  - "gRPC"
-  - "Three.js"
-  - "React Three Fiber"
-  - "Remotion"
-  - "Turborepo"
-  - "Docker"
-  - "AWS"
-  - "GCP"
-  - "PostgreSQL"
-  - "React Query"
-  - "Storybook"
-  - "Arquitectura"
+skills:
+  - "Arquitectura Cloud"
+  - "Arquitectura de Software"
+  - "Code Review"
+  - "Kanban"
   - "Liderazgo Técnico"
+  - "Mentoría"
 ---
 
 Interacso se especializa en el desarrollo de aplicaciones web y móviles personalizadas, ofreciendo servicios de desarrollo de software, diseño UX/UI y estrategia digital.

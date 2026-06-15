@@ -1,9 +1,23 @@
 ---
 title: "Market Maker Monitoring"
 description: "Sistema interno de MIBGAS para automatizar la vigilancia regulatoria de Market Makers en el mercado organizado de gas natural en España — desde la ingesta de datos hasta la generación de informes de cumplimiento normativo."
-date: 2024-10-01
+date: 2025-12-01
 type: "professional"
 translationKey: "mibgas-mmm"
+skills:
+  - "BFF Pattern"
+  - "Cloud Scheduler"
+  - "Google Cloud Platform (GCP)"
+  - "gRPC"
+  - "Microservices"
+  - "NestJS"
+  - "Next.js"
+  - "PostgreSQL"
+  - "Puppeteer"
+  - "React"
+  - "REST API Design"
+  - "Monorepo"
+  - "TypeScript"
 ---
 
 **MIBGAS** opera el mercado organizado de gas natural en España y está sujeta a regulación oficial que exige monitorizar el comportamiento de los Market Makers que operan en su plataforma. El **MMM (Market Maker Monitoring)** es el sistema interno que automatiza esa vigilancia, desde la ingesta de datos de mercado hasta la generación de informes de cumplimiento normativo.
@@ -27,7 +41,6 @@ Monorepo (Turborepo) con 6 aplicaciones desplegadas en **Google Cloud Platform**
 - **BFF pattern**: el frontend nunca llama directamente a los microservicios. Las API routes de Next.js actúan como proxy seguro, centralizando autenticación y autorización.
 - **Servicios _stateless_ de Compliance y Reporting**: sin base de datos en estos servicios; toda persistencia delegada a la única instancia PostgreSQL del Backend BFF, simplificando el despliegue y el escalado.
 - **Mutex estáticos** para proteger contra cálculos de cumplimiento concurrentes duplicados sobre el mismo periodo (instancia única de Cloud SQL por diseño).
-- PostgreSQL estándar.
 
 ## Resultado
 

@@ -73,7 +73,7 @@
     "institution": "Bostype",
     "degree": "Advanced React and GraphQL",
     "date": "2020-11-25",
-    "skills": ["React.js", "GraphQL", "Next.js", "Node.js"]
+    "skills": ["React", "GraphQL", "Next.js", "Node.js"]
   },
   {
     "id": "javascript-mental-models",

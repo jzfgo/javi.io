@@ -11,7 +11,8 @@
       "@assets/*": ["./src/assets/*"],
       "@consts": ["./src/consts.ts"],
       "@types": ["./src/types.ts"],
-      "@cv/*": ["./src/cv/*"]
+      "@cv/*": ["./src/cv/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }

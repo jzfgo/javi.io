@@ -4,6 +4,12 @@ description: "Primera versión del sitio web de Bahiazul Resort — una platafor
 date: 2014-01-01
 type: "professional"
 translationKey: "bahiazul-website-v1"
+skills:
+  - "CodeIgniter"
+  - "JavaScript"
+  - "jQuery"
+  - "PHP"
+  - "Sketch"
 hero: ../../../assets/projects/bahiazul-website-v1/hero.jpg
 ---
 

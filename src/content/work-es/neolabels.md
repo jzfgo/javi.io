@@ -8,11 +8,12 @@ bullets:
   - "Desarrollé productos de extremo a extremo durante 7 años: desde diseño UX/UI hasta desarrollo full-stack para campañas y aplicaciones digitales"
   - "Diseñé y construí productos para marcas como Ferran Adrià (Adrià en casa), Telefónica Movistar y Aramón"
   - "Lideré I+D y desarrollo frontend móvil en la última etapa de crecimiento de la agencia, antes de su adquisición por IPG Mediabrands"
-tech:
-  - "HTML"
-  - "CSS"
-  - "JavaScript"
-  - "UX/UI"
+skills:
+  - "Consultoría"
+  - "Diseño UI"
+  - "Diseño UX"
+  - "Desarrollo Full Stack"
+  - "I+D+i"
 ---
 
 Neo Labels fue una agencia de marketing online enfocada en ayudar a las marcas a entrar en la era de los medios digitales, redes sociales y aplicaciones en España. Nacida de la experiencia obtenida a través de Sharemusic!, fue adquirida por IPG Mediabrands en abril de 2021.

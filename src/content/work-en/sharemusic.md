@@ -7,6 +7,10 @@ dateEnd: 2010-12-01
 bullets:
   - "Co-built atopechavalote.com, one of Spain's first social networks for nightlife, reaching 25,000 registered users"
   - "Evolved from designer to Creative Director: led branding, UX/UI design, and digital strategy"
+skills:
+  - "Full Stack Development"
+  - "UI Design"
+  - "UX Design"
 ---
 
 Sharemusic! is a nightlife event organizer in Madrid. It pioneered the social networking revolution in Spain with atopechavalote.com (2005–2010), reaching 25,000 registered users.

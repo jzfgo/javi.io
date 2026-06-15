@@ -1,9 +1,18 @@
 ---
 title: "Fly-Fut Pro"
 description: "Professional football analysis system with autonomous drone controls and tactical video analysis."
-date: 2022-06-01
+date: 2022-10-01
 type: "professional"
 translationKey: "fly-fut-pro"
+skills:
+  - "Figma"
+  - "Firebase"
+  - "Firestore"
+  - "Nuxt"
+  - "Sass"
+  - "TypeScript"
+  - "Vue"
+  - "WebSockets"
 hero: ../../../assets/projects/fly-fut-pro/hero.png
 ---
 
@@ -15,7 +24,7 @@ The platform is composed of autonomous drones, an iPad App for drone command & c
 
 As the **System Architect**, **UX/UI Designer**, and **Frontend Developer**, I designed the new suite of professional applications and led the development of the prototype version of the drone control app.
 
-Key highlights of the implementation:
+Key implementation details:
 
 - Designed user interfaces and experiences using **Figma**.
 - Developed the frontend web interfaces using **NuxtJS** and **VueJS** combined with **TypeScript** and styled with **Sass**.

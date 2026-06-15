@@ -4,7 +4,16 @@ description: "Aplicación móvil de cocina para Telefónica, desarrollada en col
 date: 2012-01-01
 type: "professional"
 translationKey: "adria-en-casa"
+skills:
+  - "Adobe Photoshop"
+  - "Apple Developer Program"
+  - "Apple Human Interface Guidelines"
+  - "Apple App Review Guidelines"
+  - "Apple App Store Publishing"
+  - "Google Play Store Publishing"
+  - "TestFlight"
 hero: ../../../assets/projects/adria-en-casa/hero.jpg
+demoURL: https://www.youtube.com/watch?v=FbqvLAkttxA
 ---
 
 **Adrià en casa** fue una aplicación móvil de cocina desarrollada para **Telefónica**, en colaboración con el chef de fama mundial **Ferran Adrià**.

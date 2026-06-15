@@ -4,6 +4,11 @@ description: "Plataforma de red social pionera en la construcción de comunidade
 date: 2007-01-01
 type: "professional"
 translationKey: "atopechavalote"
+skills:
+  - "Adobe Photoshop"
+  - "CodeIgniter"
+  - "MySQL"
+  - "PHP"
 hero: ../../../assets/projects/atopechavalote/hero.jpg
 ---
 

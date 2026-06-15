@@ -4,6 +4,12 @@ description: "MVP para una startup de energía renovable — portal de clientes,
 date: 2023-01-01
 type: "professional"
 translationKey: "voltexa"
+skills:
+  - "Google Cloud Platform (GCP)"
+  - "MongoDB"
+  - "Payload CMS"
+  - "React"
+  - "TypeScript"
 hero: ../../../assets/projects/voltexa/hero.webp
 ---
 
