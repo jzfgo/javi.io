@@ -31,7 +31,7 @@ The platform is composed of:
 
 As the **System Architect** and **Backend Developer**, I was responsible for designing and developing the entire backend infrastructure of the consumer platform.
 
-Key highlights of the implementation:
+Key implementation details:
 
 - Built the core backend services using **NestJS** and **TypeScript**, adhering to **Domain-Driven Design (DDD)** principles and securing APIs with **OpenAPI** specifications.
 - Developed the video pipeline that automates video intake, encoding, and publishing using **Google Cloud Platform**.

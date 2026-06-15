@@ -22,7 +22,7 @@ hero: ../../../assets/projects/sony-pictures-spain/hero.webp
 
 El sitio está construido con **Next.js** y **React** en el frontend y **Strapi** como headless CMS.
 
-Como **Tech Lead** en **Interacso**, me incorporé al proyecto a finales de 2023 para liderar la migración de la plataforma desde la infraestructura de Interacso en **Google Cloud Platform** hacia la infraestructura propia de Sony en **Amazon Web Services**. Tras una migración exitosa, asumí la responsabilidad del mantenimiento y la evolución continua del sitio, colaborando estrechamente con el PM y el Desarrollador Frontend para entregar nuevas funcionalidades y correcciones.
+Como **Tech Lead** en **Interacso**, me incorporé al proyecto a finales de 2023 para liderar la migración de la plataforma desde la infraestructura de Interacso en **Google Cloud Platform** hacia la infraestructura propia de Sony en **Amazon Web Services**. Tras la migración, asumí la responsabilidad del mantenimiento y la evolución continua del sitio, colaborando estrechamente con el PM y el Desarrollador Frontend para entregar nuevas funcionalidades y correcciones.
 
 ## Tecnologías
 

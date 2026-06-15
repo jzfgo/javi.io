@@ -18,7 +18,7 @@ skills:
   - "Skill Creator"
 ---
 
-Una biblioteca personal de skills de agentes IA — cada uno compatible con seis harnesses de agentes de código distintos desde una única fuente. Construida con el mismo rigor de ingeniería que se aplica a sistemas en producción: interfaces bien definidas, desarrollo guiado por evals y bloqueo de dependencias.
+Una biblioteca personal de skills de agentes IA. Cada skill es compatible con seis harnesses de agentes de código distintos desde una única fuente, usando interfaces bien definidas, desarrollo guiado por evals y bloqueo de dependencias.
 
 ## Desarrollo guiado por evals
 
@@ -27,11 +27,11 @@ Cada skill incluye dos suites de tests:
 - **`evals.json`** — tests funcionales que definen qué debe producir el skill ante una entrada dada
 - **`trigger_eval.json`** — tests de activación que especifican cuándo debe y no debe dispararse el skill
 
-Esto es TDD aplicado al comportamiento de agentes IA. Fuerza precisión en la descripción del skill (que impulsa la invocación automática), previene regresiones a medida que los skills evolucionan y hace la intención explícita. Es la misma disciplina que hace mantenible el código en producción — aplicada a un área donde la mayoría improvisa.
+Este enfoque fuerza precisión en la descripción del skill (que impulsa la invocación automática), previene regresiones a medida que los skills evolucionan y hace la intención explícita y verificable.
 
 ## Arquitectura multi-harness
 
-El mismo skill funciona en Claude Code, Codex, Cursor, Google Antigravity, OpenCode y Pi. Cada harness tiene un mecanismo de descubrimiento de plugins distinto — manifiestos, symlinks, entradas de configuración o referencias en `GEMINI.md` — por lo que la arquitectura separa la lógica del skill (un `SKILL.md`) de los adaptadores de harness (un manifiesto por ecosistema). Se escribe una vez, se despliega en todas partes.
+El mismo skill funciona en Claude Code, Codex, Cursor, Google Antigravity, OpenCode y Pi. Cada harness tiene un mecanismo de descubrimiento de plugins distinto — manifiestos, symlinks, entradas de configuración o referencias en `GEMINI.md` — por lo que la arquitectura separa la lógica del skill (un `SKILL.md`) de los adaptadores de harness (un manifiesto por ecosistema).
 
 ## Skills
 

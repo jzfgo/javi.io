@@ -18,7 +18,7 @@ skills:
   - "Skill Creator"
 ---
 
-A personal library of AI agent skills — each compatible with six different coding agent harnesses from a single source. Built with the same engineering discipline applied to production systems: well-defined interfaces, eval-driven development, and dependency locking.
+A personal library of AI agent skills. Each skill is compatible with six different coding agent harnesses from a single source, using well-defined interfaces, eval-driven development, and dependency locking.
 
 ## Eval-driven development
 
@@ -27,11 +27,11 @@ Every skill ships with two test suites:
 - **`evals.json`** — functional tests defining what the skill must produce for a given input
 - **`trigger_eval.json`** — trigger tests specifying when the skill should and should not fire
 
-This is TDD applied to AI agent behavior. It forces precision in the skill description (which drives automatic invocation), prevents regressions as skills evolve, and makes intent explicit. It's the same discipline that makes production code maintainable — applied to an area where most teams wing it.
+This approach forces precision in the skill description (which drives automatic invocation), prevents regressions as skills evolve, and makes intent explicit and verifiable.
 
 ## Multi-harness architecture
 
-The same skill works across Claude Code, Codex, Cursor, Google Antigravity, OpenCode, and Pi. Each harness has a different plugin discovery mechanism — manifests, symlinks, config entries, or `GEMINI.md` references — so the architecture separates skill logic (one `SKILL.md`) from harness adapters (one manifest per ecosystem). Write once, deploy everywhere.
+The same skill works across Claude Code, Codex, Cursor, Google Antigravity, OpenCode, and Pi. Each harness has a different plugin discovery mechanism — manifests, symlinks, config entries, or `GEMINI.md` references — so the architecture separates skill logic (one `SKILL.md`) from harness adapters (one manifest per ecosystem).
 
 ## Skills
 

@@ -5,13 +5,17 @@ date: 2025-07-01
 type: "professional"
 translationKey: "porcelanosa-ecommerce"
 skills:
+  - "BFF Pattern"
   - "GCP"
   - "GraphQL"
+  - "ISR"
   - "Next.js"
   - "Node.js"
   - "Payload CMS"
   - "PostgreSQL"
   - "React"
+  - "SSG"
+  - "SSR"
   - "TypeScript"
 demoURL: "https://store.porcelanosa.com/"
 ---
@@ -22,20 +26,20 @@ We developed a new version of its **Ecommerce** with the goal of providing a mor
 
 To achieve this, we worked closely with **Porcelanosa's** technical team to migrate its current architecture, based on **Magento _on-premise_**, to a **_headless_** architecture on **Adobe Commerce Cloud**.
 
-In addition to providing technical consulting based on our extensive experience in **_cloud_** architectures and **_headless_** development, we built the front end of the new platform as well as a content management system that enables a much higher level of customization than what **Adobe Commerce** offers.
+In addition to providing technical consulting, we built the front end of the new platform and a custom content management system using **Payload CMS**.
 
 ## Technologies Used
 
-- **Next.js** (**React**) for the web application, with a strong emphasis on **performance optimization** and **user experience**.
-- **Payload CMS** for the content management system, focusing on **ease of use** and **customization**.
-- **Adobe Commerce Cloud** as the platform's **backend**, using a **headless** architecture that allows us to **integrate** and **customize** business logic and data.
-- **GraphQL** as the primary communication technology between the _frontend_ and _backend_.
+- **Next.js** (**React**) for the web application.
+- **Payload CMS** for the content management system.
+- **Adobe Commerce Cloud** as the platform's **backend**, with a **headless** architecture.
+- **GraphQL** for communication between _frontend_ and _backend_.
 - **Google Cloud Platform** for the infrastructure of the _frontend_ and content management system.
 
 ## Infrastructure
 
 - **Google Cloud Platform** for deploying the web application and content management system.
-- **Adobe Commerce Cloud** as the platform's _backend_, with a _headless_ architecture that enables **integration** and **customization** of data and business logic.
+- **Adobe Commerce Cloud** as the platform's _backend_.
 
 ## My Role in the Project
 

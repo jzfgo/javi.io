@@ -5,13 +5,17 @@ date: 2025-07-01
 type: "professional"
 translationKey: "porcelanosa-ecommerce"
 skills:
+  - "BFF Pattern"
   - "GCP"
   - "GraphQL"
+  - "ISR"
   - "Next.js"
   - "Node.js"
   - "Payload CMS"
   - "PostgreSQL"
   - "React"
+  - "SSG"
+  - "SSR"
   - "TypeScript"
 demoURL: "https://store.porcelanosa.com/"
 ---
@@ -22,20 +26,20 @@ Desarrollamos una nueva versión de su **Ecommerce** con el objetivo de proporci
 
 Para lograrlo, trabajamos en estrecha colaboración con el equipo técnico de **Porcelanosa** para migrar su arquitectura actual, basada en **Magento _on-premise_**, a una arquitectura **_headless_** en **Adobe Commerce Cloud**.
 
-Además de proporcionar consultoría técnica basada en nuestra amplia experiencia en arquitecturas **_cloud_** y desarrollo **_headless_**, construimos el front-end de la nueva plataforma, así como un sistema de gestión de contenidos que permite un nivel de personalización mucho mayor que el que ofrece **Adobe Commerce**.
+Además de proporcionar consultoría técnica, construimos el front-end de la nueva plataforma y un sistema de gestión de contenidos con **Payload CMS**.
 
 ## Tecnologías Utilizadas
 
-- **Next.js** (**React**) para la aplicación web, con un fuerte énfasis en la **optimización del rendimiento** y la **experiencia del usuario**.
-- **Payload CMS** para el sistema de gestión de contenidos, centrado en la **facilidad de uso** y la **personalización**.
-- **Adobe Commerce Cloud** como **backend** de la plataforma, utilizando una arquitectura **headless** que nos permite **integrar** y **personalizar** la lógica de negocio y los datos.
-- **GraphQL** como tecnología de comunicación principal entre el _frontend_ y el _backend_.
+- **Next.js** (**React**) para la aplicación web.
+- **Payload CMS** para el sistema de gestión de contenidos.
+- **Adobe Commerce Cloud** como **backend** de la plataforma con arquitectura **headless**.
+- **GraphQL** como tecnología de comunicación entre _frontend_ y _backend_.
 - **Google Cloud Platform** para la infraestructura del _frontend_ y el sistema de gestión de contenidos.
 
 ## Infraestructura
 
 - **Google Cloud Platform** para el despliegue de la aplicación web y el sistema de gestión de contenidos.
-- **Adobe Commerce Cloud** como _backend_ de la plataforma, con una arquitectura _headless_ que permite la **integración** y **personalización** de datos y lógica de negocio.
+- **Adobe Commerce Cloud** como _backend_ de la plataforma.
 
 ## Mi Rol en el Proyecto
 
