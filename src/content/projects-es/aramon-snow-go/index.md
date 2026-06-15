@@ -18,6 +18,7 @@ skills:
   - "TestFlight"
   - "Xcode"
 hero: ../../../assets/projects/aramon-snow-go/hero.jpg
+demoURL: https://www.youtube.com/watch?v=CUl49qlDsGM
 ---
 
 **Aramón Snow & Go** fue una aplicación móvil para las estaciones de esquí de **Aramón**, desarrollada para **Movistar**.

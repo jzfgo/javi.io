@@ -15,11 +15,12 @@ skills:
   - "TestFlight"
   - "Xcode"
 hero: ../../../assets/projects/movistar-bike-go/hero.jpg
+demoURL: https://x.com/Bike_and_Go
 ---
 
 **Movistar Bike & Go** fue una aplicación móvil de ciclismo desarrollada para **Movistar**.
 
-Como **Asesor Técnico** y **Desarrollador Frontend** en **Neo Labels**, contribuí al diseño técnico y al desarrollo frontend de la aplicación.
+Como **Asesor Técnico** y **Desarrollador Frontend** en **Neo Labels**, contribuí al diseño técnico de la aplicación y desarrollé la _landing page_.
 
 ## Plataformas
 

@@ -13,7 +13,7 @@ skills:
   - "Google Play Store Publishing"
   - "TestFlight"
 hero: ../../../assets/projects/adria-en-casa/hero.jpg
-demoURL: https://play.google.com/store/apps/details?id=com.telefonica.adriaencasa
+demoURL: https://www.youtube.com/watch?v=CUl49qlDsGM
 ---
 
 **Adrià en casa** was a mobile cooking application developed for **Telefónica**, in collaboration with world-renowned chef **Ferran Adrià**.

@@ -40,7 +40,6 @@ Monorepo (Turborepo) con 6 aplicaciones desplegadas en **Google Cloud Platform**
 - **BFF pattern**: el frontend nunca llama directamente a los microservicios. Las API routes de Next.js actúan como proxy seguro, centralizando autenticación y autorización.
 - **Servicios _stateless_ de Compliance y Reporting**: sin base de datos en estos servicios; toda persistencia delegada a la única instancia PostgreSQL del Backend BFF, simplificando el despliegue y el escalado.
 - **Mutex estáticos** para proteger contra cálculos de cumplimiento concurrentes duplicados sobre el mismo periodo (instancia única de Cloud SQL por diseño).
-- PostgreSQL estándar.
 
 ## Resultado
 

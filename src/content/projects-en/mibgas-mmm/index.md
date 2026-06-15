@@ -40,8 +40,7 @@ Turborepo monorepo with 6 applications deployed on **Google Cloud Platform**:
 - **BFF pattern**: the frontend never calls microservices directly. Next.js API routes act as a secure proxy, centralizing authentication and authorization.
 - **Stateless Compliance and Reporting services**: no database in these services; all persistence delegated to the Backend BFF's single shared PostgreSQL instance, simplifying deployment and scaling.
 - **Static mutexes** to prevent duplicate concurrent compliance calculations for the same period (single Cloud SQL instance by design).
-- Standard PostgreSQL (TimescaleDB evaluated and discarded).
 
-## Outcome
+# Outcome
 
 System in production monitoring ~10 Market Makers, with automated generation of regulatory compliance reports per Spanish regulation.

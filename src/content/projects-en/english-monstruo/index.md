@@ -16,6 +16,7 @@ skills:
   - "TestFlight"
   - "Xcode"
 hero: ../../../assets/projects/english-monstruo/hero.jpg
+demoURL: https://www.youtube.com/watch?v=APXe6YBxmrE
 ---
 
 **English Monstruo** is an iPhone application built for **Cambridge University Press**.

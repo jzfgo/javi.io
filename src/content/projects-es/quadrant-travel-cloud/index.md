@@ -1,23 +1,26 @@
 ---
 title: "Quadrant Travel Cloud"
-description: "Plataforma de gestión de viajes corporativos que simplifica las reservas, la gestión de gastos y el cumplimiento de políticas."
+description: "Plataforma de gestión de viajes que simplifica las reservas, la gestión de gastos y el cumplimiento de políticas."
 date: 2023-03-01
 type: "professional"
 translationKey: "quadrant-travel-cloud"
 skills:
   - "API Blueprint"
+  - "BFF Pattern"
   - "Jest"
   - "Next.js"
   - "React"
   - "React Query"
+  - "React Server Components"
+  - "SSR"
   - "Tailwind CSS"
   - "Testing Library"
   - "TypeScript"
 ---
 
-**Quadrant Travel Cloud** es una plataforma integral de gestión de viajes corporativos que simplifica la reserva de viajes, la gestión de gastos y el cumplimiento de políticas, al tiempo que ofrece sólidos informes y análisis para optimizar el gasto y mejorar la eficiencia.
+**Quadrant Travel Cloud** es una plataforma integral de gestión de viajes que simplifica la reserva de viajes, la gestión de gastos y el cumplimiento de políticas, al tiempo que ofrece sólidos informes y análisis para optimizar el gasto y mejorar la eficiencia.
 
-El proyecto duró 9 meses e involucró a un equipo de aproximadamente 40 personas. Inicialmente me uní como **Desarrollador Frontend** y pasé a desempeñar un papel de liderazgo frontend, colaborando estrechamente con el **Manager de Ingeniería Frontend** y los líderes de las tribus.
+Mi participación en el proyecto duró 9 meses e involucró a un equipo de aproximadamente 40 personas. Inicialmente me uní como **Desarrollador Frontend** y pasé a desempeñar un papel de liderazgo frontend, colaborando estrechamente con el **Manager de Ingeniería Frontend** y los líderes de las tribus.
 
 ## Contribuciones Clave
 
