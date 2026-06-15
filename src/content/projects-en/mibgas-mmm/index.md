@@ -15,6 +15,7 @@ skills:
   - "PostgreSQL"
   - "Puppeteer"
   - "React"
+  - "REST API Design"
   - "Monorepo"
   - "TypeScript"
 ---

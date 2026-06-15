@@ -24,6 +24,7 @@ skills:
   - "Open Food Facts"
   - "PostgreSQL"
   - "PWA"
+  - "REST API Design"
   - "Pydantic"
   - "Python"
   - "React"

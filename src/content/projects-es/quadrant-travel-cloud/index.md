@@ -6,6 +6,7 @@ type: "professional"
 translationKey: "quadrant-travel-cloud"
 skills:
   - "API Blueprint"
+  - "REST API Design"
   - "Scrum"
   - "BFF Pattern"
   - "Jest"
