@@ -75,9 +75,9 @@ export const AUTHOR = {
   BIO_ES:
     "Soy desarrollador, tech lead y diseñador en rehabilitación que lleva más de 20 años lanzando cosas. Aun así, sigo aprendiendo.",
   PRODUCT_EN:
-    "I build products people actually want to use, not just software that technically works.",
+    "I'm passionate about building products people actually want to use, not just software that technically works.",
   PRODUCT_ES:
-    "Construyo productos que la gente quiere usar, no solo software que técnicamente funciona.",
+    "Me apasiona construir productos que la gente quiera usar, no solo software que técnicamente funcione.",
   BRIDGE_EN:
     "Here you’ll find what I’m working on, what I’ve built, and the occasional write-up about code, AI, and tooling.",
   BRIDGE_ES:
