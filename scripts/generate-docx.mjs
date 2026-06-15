@@ -23,15 +23,19 @@ import matter from "gray-matter";
 import { computeCvMeta } from "./cv-meta.mjs";
 
 const HALF_LIFE_YEARS = 3;
-const MAX_TECH_AGE_YEARS = 10;
+const MAX_TECH_AGE_YEARS = 5;
 const RECENCY_THRESHOLD = Math.pow(0.5, MAX_TECH_AGE_YEARS / HALF_LIFE_YEARS);
+const DEFAULT_LIMIT = 25;
 
 function decayScore(date) {
-  const yearsAgo = Math.max(0, (Date.now() - date.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+  const yearsAgo = Math.max(
+    0,
+    (Date.now() - date.getTime()) / (365.25 * 24 * 60 * 60 * 1000),
+  );
   return Math.pow(0.5, yearsAgo / HALF_LIFE_YEARS);
 }
 
-function computeSkillWeights(entries) {
+function computeSkillWeights(entries, limit = DEFAULT_LIMIT) {
   const totals = new Map();
   const peaks = new Map();
   for (const { skills, date } of entries) {
@@ -44,8 +48,10 @@ function computeSkillWeights(entries) {
   return [...totals.entries()]
     .filter(([name]) => (peaks.get(name) ?? 0) >= RECENCY_THRESHOLD)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
     .map(([name]) => name);
 }
+
 const profilePath = existsSync(resolve("src/content/profile/full.json"))
   ? resolve("src/content/profile/full.json")
   : resolve("src/content/profile/public.json");
@@ -136,7 +142,9 @@ function formatDate(dateStr, locale) {
 function formatEduDate(isoDate, locale) {
   const d = new Date(isoDate);
   if (isNaN(d.getTime())) {
-    throw new Error(`Invalid education date: "${isoDate}". Expected YYYY-MM-DD`);
+    throw new Error(
+      `Invalid education date: "${isoDate}". Expected YYYY-MM-DD`,
+    );
   }
   return d.toLocaleString(locale, {
     month: "short",
@@ -348,13 +356,21 @@ function buildDoc(lang) {
   const allSkills = computeSkillWeights([
     ...entries.map((e) => ({
       skills: e.skills,
-      date: e.dateEnd instanceof Date
-        ? e.dateEnd
-        : ["current", "actualidad"].includes(String(e.dateEnd ?? "").trim().toLowerCase())
-          ? new Date()
-          : parseDate(e.dateEnd),
+      date:
+        e.dateEnd instanceof Date
+          ? e.dateEnd
+          : ["current", "actualidad"].includes(
+                String(e.dateEnd ?? "")
+                  .trim()
+                  .toLowerCase(),
+              )
+            ? new Date()
+            : parseDate(e.dateEnd),
     })),
-    ...projectEntries.map((e) => ({ skills: e.skills, date: parseDate(e.date) })),
+    ...projectEntries.map((e) => ({
+      skills: e.skills,
+      date: parseDate(e.date),
+    })),
     ...education.map((e) => ({ skills: e.skills, date: new Date(e.date) })),
   ]);
   if (allSkills.length > 0) {
