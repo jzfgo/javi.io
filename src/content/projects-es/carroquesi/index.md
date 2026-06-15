@@ -7,38 +7,30 @@ repoURL: "https://github.com/jzfgo/carroquesi"
 demoURL: "https://carroquesi.web.app/"
 translationKey: "carroquesi"
 skills:
-  - "ADR"
+  - "Architectural Decision Records (ADR)"
+  - "Agentic AI Development"
+  - "AI Engineering"
   - "Alembic"
-  - "App Check"
+  - "Claude Code"
   - "Cloud Run"
   - "Docker"
-  - "DX"
-  - "Edge AI"
   - "FastAPI"
   - "Feature Flags"
   - "Firebase"
-  - "Firebase AI"
-  - "GCP"
-  - "Gemini"
-  - "Gemini Nano"
+  - "Google Cloud Platform (GCP)"
   - "GitHub Actions"
-  - "IndexedDB"
-  - "Just"
-  - "Neon"
+  - "LLM Integration"
   - "OCR"
-  - "Offline-First"
   - "Open Food Facts"
   - "PostgreSQL"
   - "PWA"
   - "Pydantic"
   - "Python"
   - "React"
-  - "SQLite"
-  - "SQLModel"
   - "Spec Driven Development"
   - "TDD"
   - "TypeScript"
-  - "UV"
+  - "uv"
   - "Vite"
 ---
 
@@ -51,13 +43,13 @@ usuario.
 
 ## Stack
 
-| Capa | Tecnología |
-|---|---|
-| Frontend | React 19 · TypeScript · Vite 8 |
-| Backend | Python 3.13 · FastAPI · SQLModel |
-| Base de datos | PostgreSQL (producción) · SQLite (tests y local) |
-| Auth / IA | Firebase Auth · Gemini 3.5 Flash via Firebase AI SDK |
-| Despliegue | Firebase Hosting · Google Cloud Run · Docker |
+| Capa          | Tecnología                                           |
+| ------------- | ---------------------------------------------------- |
+| Frontend      | React 19 · TypeScript · Vite 8                       |
+| Backend       | Python 3.13 · FastAPI · SQLModel                     |
+| Base de datos | PostgreSQL (producción) · SQLite (tests y local)     |
+| Auth / IA     | Firebase Auth · Gemini 3.5 Flash via Firebase AI SDK |
+| Despliegue    | Firebase Hosting · Google Cloud Run · Docker         |
 
 ## Arquitectura
 
@@ -89,7 +81,7 @@ carroquesi/
 - **Historial de precios normalizado:** Los precios se normalizan a €/kg cuando hay unidades SI
   compatibles, permitiendo comparar registros de formatos distintos en el mismo gráfico.
 - **Sugerencias de reposición:** Algoritmo SQL que calcula la ventana `[0,9 × mediana, 1,5 ×
-  mediana]` del intervalo de compra y solo sugiere artículos dentro de ese rango. Sin ML externo.
+mediana]` del intervalo de compra y solo sugiere artículos dentro de ese rango. Sin ML externo.
 - **Escaneado de tickets:** Gemini extrae tienda, fecha, total y líneas (clasificación
   UNIT/KILOGRAM/MULTI). El resultado pasa por un pipeline de dos fases — lookup exacto en mapeos
   aprendidos de confirmaciones previas, luego fuzzy matching — antes de aplicar precios en bloque.

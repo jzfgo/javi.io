@@ -5,14 +5,13 @@ date: 2023-01-01
 type: "professional"
 translationKey: "sony-pictures-spain"
 skills:
-  - "AWS"
+  - "Amazon Web Services (AWS)"
   - "Blue-Green Deployment"
-  - "GCP"
+  - "Google Cloud Platform (GCP)"
   - "Next.js"
   - "PostgreSQL"
   - "React"
   - "Strapi"
-  - "Tailwind CSS"
   - "TypeScript"
 demoURL: "https://sonypictures.es/"
 hero: ../../../assets/projects/sony-pictures-spain/hero.webp

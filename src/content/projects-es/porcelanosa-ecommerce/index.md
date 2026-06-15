@@ -1,7 +1,7 @@
 ---
 title: "Porcelanosa Ecommerce"
 description: "Plataforma headless de ecommerce global para Porcelanosa — Next.js 15 con Payload CMS como BFF, tres markets en producción y despliegue en Google Cloud Run."
-date: 2024-10-01
+date: 2025-12-01
 type: "professional"
 translationKey: "porcelanosa-ecommerce"
 skills:
@@ -11,10 +11,8 @@ skills:
   - "Cloud Run"
   - "Docker"
   - "Feature Flags"
-  - "GCP"
+  - "Google Cloud Platform (GCP)"
   - "GraphQL"
-  - "i18n"
-  - "ISR"
   - "NextAuth"
   - "Next.js"
   - "Node.js"
@@ -22,13 +20,9 @@ skills:
   - "Payload CMS"
   - "PostgreSQL"
   - "React"
-  - "React Query"
-  - "React Server Components"
   - "Redis"
   - "Sentry"
-  - "SSR"
-  - "Tailwind CSS"
-  - "Turborepo"
+  - "Monorepo"
   - "TypeScript"
 demoURL: "https://store.porcelanosa.com/"
 ---

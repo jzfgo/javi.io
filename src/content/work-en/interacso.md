@@ -10,6 +10,9 @@ bullets:
   - "Lead team through trust and mentorship: write production-quality code as a concrete standard, involve the team in technical decisions"
 skills:
   - "Cloud Architecture"
+  - "Code Review"
+  - "Kanban"
+  - "Mentoring"
   - "Software Architecture"
   - "Team Leadership"
 ---

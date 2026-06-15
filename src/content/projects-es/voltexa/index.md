@@ -5,7 +5,7 @@ date: 2023-01-01
 type: "professional"
 translationKey: "voltexa"
 skills:
-  - "GCP"
+  - "Google Cloud Platform (GCP)"
   - "MongoDB"
   - "Payload CMS"
   - "React"

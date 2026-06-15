@@ -1,6 +1,7 @@
 const HALF_LIFE_YEARS = 3;
-const MAX_TECH_AGE_YEARS = 10;
+const MAX_TECH_AGE_YEARS = 5;
 const RECENCY_THRESHOLD = Math.pow(0.5, MAX_TECH_AGE_YEARS / HALF_LIFE_YEARS);
+const DEFAULT_LIMIT = 25;
 
 export type SkillEntry = { skills?: string[]; date: Date };
 
@@ -9,7 +10,7 @@ function decayScore(date: Date): number {
   return Math.pow(0.5, yearsAgo / HALF_LIFE_YEARS);
 }
 
-export function computeSkillWeights(entries: SkillEntry[]): string[] {
+export function computeSkillWeights(entries: SkillEntry[], limit = DEFAULT_LIMIT): string[] {
   const totals = new Map<string, number>();
   const peaks  = new Map<string, number>();
 
@@ -24,5 +25,6 @@ export function computeSkillWeights(entries: SkillEntry[]): string[] {
   return [...totals.entries()]
     .filter(([name]) => (peaks.get(name) ?? 0) >= RECENCY_THRESHOLD)
     .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
     .map(([name]) => name);
 }

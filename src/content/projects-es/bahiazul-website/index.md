@@ -12,7 +12,6 @@ skills:
   - "React"
   - "Sass"
   - "Sketch"
-  - "SSR"
   - "TypeScript"
 ---
 

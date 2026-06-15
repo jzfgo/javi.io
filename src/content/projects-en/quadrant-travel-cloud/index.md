@@ -1,19 +1,16 @@
 ---
 title: "Quadrant Travel Cloud"
 description: "Travel management platform simplifying booking, expense management, and policy compliance."
-date: 2023-03-01
+date: 2023-07-01
 type: "professional"
 translationKey: "quadrant-travel-cloud"
 skills:
   - "API Blueprint"
+  - "Scrum"
   - "BFF Pattern"
   - "Jest"
   - "Next.js"
   - "React"
-  - "React Query"
-  - "React Server Components"
-  - "SSR"
-  - "Tailwind CSS"
   - "Testing Library"
   - "TypeScript"
 ---

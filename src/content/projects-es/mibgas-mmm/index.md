@@ -1,13 +1,13 @@
 ---
 title: "Market Maker Monitoring"
 description: "Sistema interno de MIBGAS para automatizar la vigilancia regulatoria de Market Makers en el mercado organizado de gas natural en España — desde la ingesta de datos hasta la generación de informes de cumplimiento normativo."
-date: 2024-10-01
+date: 2025-12-01
 type: "professional"
 translationKey: "mibgas-mmm"
 skills:
   - "BFF Pattern"
   - "Cloud Scheduler"
-  - "GCP"
+  - "Google Cloud Platform (GCP)"
   - "gRPC"
   - "Microservices"
   - "NestJS"
@@ -15,7 +15,7 @@ skills:
   - "PostgreSQL"
   - "Puppeteer"
   - "React"
-  - "Turborepo"
+  - "Monorepo"
   - "TypeScript"
 ---
 

@@ -7,38 +7,30 @@ repoURL: "https://github.com/jzfgo/carroquesi"
 demoURL: "https://carroquesi.web.app/"
 translationKey: "carroquesi"
 skills:
-  - "ADR"
+  - "Architectural Decision Records (ADR)"
+  - "Agentic AI Development"
+  - "AI Engineering"
   - "Alembic"
-  - "App Check"
+  - "Claude Code"
   - "Cloud Run"
   - "Docker"
-  - "DX"
-  - "Edge AI"
   - "FastAPI"
   - "Feature Flags"
   - "Firebase"
-  - "Firebase AI"
-  - "GCP"
-  - "Gemini"
-  - "Gemini Nano"
+  - "Google Cloud Platform (GCP)"
   - "GitHub Actions"
-  - "IndexedDB"
-  - "Just"
-  - "Neon"
+  - "LLM Integration"
   - "OCR"
-  - "Offline-First"
   - "Open Food Facts"
   - "PostgreSQL"
   - "PWA"
   - "Pydantic"
   - "Python"
   - "React"
-  - "SQLite"
-  - "SQLModel"
   - "Spec Driven Development"
   - "TDD"
   - "TypeScript"
-  - "UV"
+  - "uv"
   - "Vite"
 ---
 
@@ -50,13 +42,13 @@ item needs restocking based on the user's median purchase interval.
 
 ## Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 19 · TypeScript · Vite 8 |
-| Backend | Python 3.13 · FastAPI · SQLModel |
-| Database | PostgreSQL (production) · SQLite (tests & local) |
-| Auth / AI | Firebase Auth · Gemini 3.5 Flash via Firebase AI SDK |
-| Deployment | Firebase Hosting · Google Cloud Run · Docker |
+| Layer      | Technology                                           |
+| ---------- | ---------------------------------------------------- |
+| Frontend   | React 19 · TypeScript · Vite 8                       |
+| Backend    | Python 3.13 · FastAPI · SQLModel                     |
+| Database   | PostgreSQL (production) · SQLite (tests & local)     |
+| Auth / AI  | Firebase Auth · Gemini 3.5 Flash via Firebase AI SDK |
+| Deployment | Firebase Hosting · Google Cloud Run · Docker         |
 
 ## Architecture
 

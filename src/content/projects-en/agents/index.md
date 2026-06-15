@@ -7,15 +7,10 @@ repoURL: "https://github.com/jzfgo/agents"
 demoURL: "https://www.skills.sh/jzfgo/agents"
 translationKey: "agents"
 skills:
-  - "Agent Skill Engineering"
-  - "Agent Eval Engineering"
+  - "AI Engineering"
+  - "Agentic AI Development"
   - "Claude Code"
-  - "Cursor IDE"
-  - "Google Antigravity"
-  - "OpenAI Codex"
-  - "OpenCode"
-  - "Pi Coding Agent"
-  - "Skill Creator"
+  - "Spec Driven Development"
 ---
 
 A personal library of AI agent skills. Each skill is compatible with six different coding agent harnesses from a single source, using well-defined interfaces, eval-driven development, and dependency locking.

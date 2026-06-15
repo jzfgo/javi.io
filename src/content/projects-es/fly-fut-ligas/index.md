@@ -1,7 +1,7 @@
 ---
 title: "Fly-Fut Ligas"
 description: "Plataforma de fútbol de consumo con producción de vídeo en la nube y aplicación móvil."
-date: 2021-10-01
+date: 2022-09-01
 type: "professional"
 translationKey: "fly-fut-ligas"
 skills:
@@ -11,7 +11,7 @@ skills:
   - "Cloud Build"
   - "DDD"
   - "Firebase"
-  - "GCP"
+  - "Google Cloud Platform (GCP)"
   - "NestJS"
   - "Node.js"
   - "OpenAPI"

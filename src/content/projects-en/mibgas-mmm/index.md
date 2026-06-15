@@ -1,13 +1,13 @@
 ---
 title: "Market Maker Monitoring"
 description: "Internal MIBGAS system to automate regulatory oversight of Market Makers in Spain's organized natural gas market — from market data ingestion to compliance report generation."
-date: 2024-10-01
+date: 2025-12-01
 type: "professional"
 translationKey: "mibgas-mmm"
 skills:
   - "BFF Pattern"
   - "Cloud Scheduler"
-  - "GCP"
+  - "Google Cloud Platform (GCP)"
   - "gRPC"
   - "Microservices"
   - "NestJS"
@@ -15,7 +15,7 @@ skills:
   - "PostgreSQL"
   - "Puppeteer"
   - "React"
-  - "Turborepo"
+  - "Monorepo"
   - "TypeScript"
 ---
 

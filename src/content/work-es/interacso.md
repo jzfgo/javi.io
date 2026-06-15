@@ -11,7 +11,10 @@ bullets:
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
+  - "Code Review"
+  - "Kanban"
   - "Liderazgo Técnico"
+  - "Mentoría"
 ---
 
 Interacso se especializa en el desarrollo de aplicaciones web y móviles personalizadas, ofreciendo servicios de desarrollo de software, diseño UX/UI y estrategia digital.

@@ -1,26 +1,23 @@
 ---
 title: "Minerales de LaLiga"
 description: "Experiencia interactiva de arte de datos en 3D para Solán de Cabras × LaLiga: generación paramétrica de cristales, visualización en Three.js y pipeline de vídeo."
-date: 2024-06-01
+date: 2024-12-01
 type: "professional"
 translationKey: "minerales-de-la-liga"
 skills:
-  - "AWS"
+  - "Amazon Web Services (AWS)"
   - "Data Art"
   - "DataViz"
   - "Docker"
-  - "GCP"
-  - "ISR"
+  - "Google Cloud Platform (GCP)"
   - "Next.js"
   - "Node.js"
   - "Payload CMS"
   - "React"
   - "React Three Fiber"
   - "Remotion"
-  - "SSG"
-  - "SSR"
   - "Three.js"
-  - "Turborepo"
+  - "Monorepo"
   - "TypeScript"
 ---
 
