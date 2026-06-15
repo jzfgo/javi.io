@@ -371,7 +371,7 @@ function buildDoc(lang) {
       skills: e.skills,
       date: parseDate(e.date),
     })),
-    ...education.map((e) => ({ skills: e.skills, date: new Date(e.date) })),
+    ...education.map((e) => ({ skills: e.skills, date: parseDate(e.date) })),
   ]);
   if (allSkills.length > 0) {
     children.push(
