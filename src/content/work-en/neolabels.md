@@ -5,9 +5,9 @@ location: "Madrid, Spain"
 dateStart: 2006-05-01
 dateEnd: 2013-06-01
 bullets:
-  - "Delivered end-to-end product work for 7 years: UX/UI design through full-stack development for digital campaigns and mobile applications"
-  - "Designed and built products for brands including Ferran Adrià (Adrià en casa), Telefónica Movistar, and Aramón"
-  - "Did R&D&i and full-stack development during the agency's final growth stage"
+  - "Delivered digital products end-to-end — from UX to full-stack — for digital campaigns and mobile applications across seven years"
+  - "Designed the game mechanics and UX for English Monstruo (Cambridge University Press): a Brain Trainer mobile game that won the Smile Award 2013 and a 5-star rating on Apple's App Store"
+  - "Technical Advisor on mobile apps for Telefónica Movistar (Bike & Go, Aramón Snow & Go) and Telefónica's collaboration with chef Ferran Adrià (Adrià en casa)"
 skills:
   - "Consulting"
   - "UI Design"

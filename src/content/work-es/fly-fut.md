@@ -5,8 +5,9 @@ location: "Madrid, España"
 dateStart: 2021-04-01
 dateEnd: 2022-11-01
 bullets:
-  - "Lideré la arquitectura y el desarrollo de la plataforma de consumo (Fly-Fut Ligas): backend, pipeline de vídeo automatizado con IA para partidos grabados con drones, herramientas de gestión y app móvil"
-  - "Diseñé y prototipé una app iPad para el control autónomo de drones en entrenamientos de fútbol"
+  - "Diseñé y construí en solitario el backend de Fly-Fut Ligas: API NestJS modular con tres ámbitos de autenticación y RBAC jerárquico, sistema de pagos dual (Stripe + Apple In-App Purchases), modelo de dominio en PostgreSQL (85 entidades, 175 migraciones) y tres entornos completamente aislados con CI/CD"
+  - "Construí el pipeline de orquestación de vídeo que coordina la ingesta, detección de eventos con IA (SoccerNet, YOLOv5), codificación y publicación del metraje de drones a la app de consumo — automatizado con 22 tareas programadas en App Engine Cron"
+  - "Diseñé y construí el PoC de la app iPad de control autónomo de drones de Fly-Fut Pro (Vue/Nuxt, sincronización en tiempo real con Firebase)"
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"

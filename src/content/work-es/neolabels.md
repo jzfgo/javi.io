@@ -5,9 +5,9 @@ location: "Madrid, España"
 dateStart: 2006-05-01
 dateEnd: 2013-06-01
 bullets:
-  - "Desarrollé productos de extremo a extremo durante 7 años: desde diseño UX/UI hasta desarrollo full-stack para campañas y aplicaciones móviles"
-  - "Diseñé y construí productos para marcas como Ferran Adrià (Adrià en casa), Telefónica Movistar y Aramón"
-  - "Me dediqué a I+D+i y desarrollo full-stack en la última etapa de crecimiento de la agencia"
+  - "Entregué productos digitales de extremo a extremo — desde UX hasta full-stack — para campañas y aplicaciones móviles a lo largo de siete años"
+  - "Diseñé la mecánica de juego y el UX de English Monstruo (Cambridge University Press): un juego móvil estilo Brain Trainer que ganó el Smile Award 2013 y una valoración de 5 estrellas en el App Store de Apple"
+  - "Asesor Técnico en apps móviles para Telefónica Movistar (Bike & Go, Aramón Snow & Go) y la colaboración de Telefónica con el chef Ferran Adrià (Adrià en casa)"
 skills:
   - "Consultoría"
   - "Diseño UI"

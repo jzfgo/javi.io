@@ -5,8 +5,8 @@ location: "Madrid, Spain"
 dateStart: 2006-05-01
 dateEnd: 2010-12-01
 bullets:
-  - "Co-built atopechavalote.com, one of Spain's first social networks for nightlife, reaching 25,000 registered users"
-  - "Evolved from designer to Creative Director: led branding, UX/UI design, and digital strategy"
+  - "Performed a full code rewrite and UI redesign of atopechavalote.com (PHP/CodeIgniter/MySQL) — one of Spain's first social networks for nightlife, reaching 25,000 registered users"
+  - "Evolved from UI Designer to Creative Director: led branding, UX/UI design, and digital strategy"
 skills:
   - "Full Stack Development"
   - "UI Design"

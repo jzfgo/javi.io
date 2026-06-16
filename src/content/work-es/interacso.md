@@ -5,9 +5,9 @@ location: "Madrid, España"
 dateStart: 2022-11-01
 dateEnd: "Actualidad"
 bullets:
-  - "Lidero la arquitectura de software, diseño de infraestructura cloud y toma de decisiones técnicas para clientes como Grupo Porcelanosa, Mediapro Brands, Mercado Ibérico del Gas (MIBGAS) y Sony Pictures Spain"
-  - "Arranco nuevos proyectos: frameworks, tooling, pipelines CI/CD y suites de tests para que los equipos arranquen desde el primer día"
-  - "Dirijo el equipo con confianza y mentoría: escribo código de producción como estándar concreto e involucro al equipo en las decisiones técnicas"
+  - "Lidero la arquitectura técnica para clientes enterprise: ecommerce headless para Porcelanosa (Next.js 15 + Adobe Commerce, 3 mercados globales), sistema de cumplimiento normativo para MIBGAS (en producción, monitorizando el mercado español de gas natural) y experiencia de data art 3D para Solán de Cabras × LaLiga"
+  - "Lideré la estandarización de APIs y la creación de un squad fundacional en Quadrant Travel Cloud (equipo de 40 personas), y lideré la migración de infraestructura de Sony Pictures Spain de GCP a AWS"
+  - "Arranco nuevos proyectos desde cero: monorepos, CI/CD, suites de tests y clientes API type-safe — y luego lidero al equipo con el código como estándar concreto y decisiones técnicas colaborativas"
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"

@@ -5,8 +5,8 @@ location: "Madrid, España"
 dateStart: 2006-05-01
 dateEnd: 2010-12-01
 bullets:
-  - "Coconstruí atopechavalote.com, una de las primeras redes sociales de ocio nocturno en España, con 25.000 usuarios registrados"
-  - "Evolucioné de diseñador a Director Creativo: lideré branding, diseño UX/UI y estrategia digital"
+  - "Realicé una reescritura completa del código y un rediseño de UI de atopechavalote.com (PHP/CodeIgniter/MySQL) — una de las primeras redes sociales de ocio nocturno en España, con 25.000 usuarios registrados"
+  - "Evolucioné de Diseñador UI a Director Creativo: lideré branding, diseño UX/UI y estrategia digital"
 skills:
   - "Desarrollo Full Stack"
   - "Diseño UI"

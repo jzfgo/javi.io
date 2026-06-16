@@ -5,9 +5,9 @@ location: "Madrid, Spain"
 dateStart: 2020-04-01
 dateEnd: 2021-03-01
 bullets:
-  - "Redesigned resort website with Next.js, TypeScript, and Firebase, shipping SSR hosting with MDX-driven content"
-  - "Built an internal Design System used across all web and mobile products, ensuring visual consistency"
-  - "Delivered a Svelte-based mobile-first Digital Kiosk SPA, hosted on Firebase"
+  - "Redesigned the resort's primary booking website (Next.js, TypeScript, Firebase SSR) — historically responsible for over 50% of bookings — with rich media, mobile-first design, and MDX-driven content"
+  - "Built an internal Design System used across all web and mobile products"
+  - "Delivered two additional digital products: a Svelte mobile-first Digital Kiosk (QR-based guest guide) and post-COVID email marketing campaigns with A/B testing and audience segmentation"
 skills:
   - "Cloud Architecture"
   - "Email Marketing"

@@ -5,9 +5,9 @@ location: "Madrid, España"
 dateStart: 2020-04-01
 dateEnd: 2021-03-01
 bullets:
-  - "Rediseñé la web del resort con Next.js, TypeScript y Firebase, incluyendo SSR y contenido gestionado con MDX"
-  - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles para garantizar coherencia visual"
-  - "Entregué un Quiosco Digital SPA basado en Svelte, mobile-first, alojado en Firebase"
+  - "Rediseñé la web principal de reservas del resort (Next.js, TypeScript, Firebase SSR) — históricamente responsable de más del 50% de las reservas — con contenido multimedia enriquecido, diseño mobile-first y contenido gestionado con MDX"
+  - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles"
+  - "Entregué dos productos digitales adicionales: un Quiosco Digital Svelte mobile-first (guía de huéspedes por QR) y campañas de email marketing post-COVID con tests A/B y segmentación de audiencias"
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
