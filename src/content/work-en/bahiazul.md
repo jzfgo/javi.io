@@ -14,7 +14,7 @@ skills:
   - "Full Stack Development"
   - "Marketing Automation"
   - "Software Architecture"
-  - "Team Leadership"
+  - "Technology Leadership"
   - "UI Design"
   - "UX Design"
 ---

@@ -12,7 +12,7 @@ skills:
   - "Cloud Architecture"
   - "Full Stack Development"
   - "Software Architecture"
-  - "Team Leadership"
+  - "Technology Leadership"
   - "UI Design"
   - "UX Design"
 ---

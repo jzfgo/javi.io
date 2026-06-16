@@ -16,7 +16,7 @@ skills:
   - "Diseño UX"
   - "Email Marketing"
   - "Liderazgo Técnico"
-  - "Marketing Automation"
+  - "Automatización de Marketing"
 ---
 
 Después de que Piensa Diferente cerrara debido a la pandemia de COVID-19, Bahiazul me propuso unirme a ellos para seguir trabajando en sus proyectos.
