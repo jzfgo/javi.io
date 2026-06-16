@@ -11,12 +11,12 @@ bullets:
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
+  - "Automatización de Marketing"
   - "Desarrollo Full Stack"
   - "Diseño UI"
   - "Diseño UX"
   - "Email Marketing"
   - "Liderazgo Técnico"
-  - "Automatización de Marketing"
 ---
 
 Después de que Piensa Diferente cerrara debido a la pandemia de COVID-19, Bahiazul me propuso unirme a ellos para seguir trabajando en sus proyectos.
