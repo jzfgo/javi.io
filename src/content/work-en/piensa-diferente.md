@@ -5,14 +5,14 @@ location: "Madrid, Spain"
 dateStart: 2013-07-01
 dateEnd: 2020-03-01
 bullets:
-  - "Co-founded and led technology for a hospitality startup serving small resorts and B&Bs for 7 years"
-  - "Designed and built a custom Property Management System (PMS) and client websites end-to-end"
-  - "Owned cloud architecture, IT infrastructure, and coordination of external contractors"
+  - "Co-founded and led technology at a hospitality startup: built the Bahiazul Resort website (PHP/CodeIgniter) and a custom PMS from scratch, managing a rotating team and external contractors throughout 7 years"
+  - "Led architecture and UX/UI on projects outside the hospitality core: mobile companion app for Las Colinas Golf & Country Club (React Native + LoopBack), LaLiga promo for Mahou (React/Redux), and data visualization for Fundación Telefónica"
+  - "Owned cloud architecture, IT operations, and supervised external contractors across all client projects"
 skills:
   - "Cloud Architecture"
   - "Full Stack Development"
   - "Software Architecture"
-  - "Team Leadership"
+  - "Technology Leadership"
   - "UI Design"
   - "UX Design"
 ---

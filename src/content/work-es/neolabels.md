@@ -1,13 +1,13 @@
 ---
 company: "Neo Labels"
-role: "Diseñador → Consultor de I+D"
+role: "Diseñador → Consultor de I+D+i"
 location: "Madrid, España"
 dateStart: 2006-05-01
 dateEnd: 2013-06-01
 bullets:
-  - "Desarrollé productos de extremo a extremo durante 7 años: desde diseño UX/UI hasta desarrollo full-stack para campañas y aplicaciones digitales"
-  - "Diseñé y construí productos para marcas como Ferran Adrià (Adrià en casa), Telefónica Movistar y Aramón"
-  - "Lideré I+D y desarrollo frontend móvil en la última etapa de crecimiento de la agencia, antes de su adquisición por IPG Mediabrands"
+  - "Entregué productos digitales de extremo a extremo — desde UX hasta full-stack — para campañas y aplicaciones móviles a lo largo de siete años"
+  - "Diseñé la mecánica de juego y el UX de English Monstruo (Cambridge University Press): un juego móvil estilo Brain Trainer que ganó el Smile Award 2013 y una valoración de 5 estrellas en el App Store de Apple"
+  - "Asesor Técnico en apps móviles para Telefónica Movistar (Bike & Go, Aramón Snow & Go) y la colaboración de Telefónica con el chef Ferran Adrià (Adrià en casa)"
 skills:
   - "Consultoría"
   - "Diseño UI"
@@ -16,11 +16,11 @@ skills:
   - "I+D+i"
 ---
 
-Neo Labels fue una agencia de marketing online enfocada en ayudar a las marcas a entrar en la era de los medios digitales, redes sociales y aplicaciones en España. Nacida de la experiencia obtenida a través de Sharemusic!, fue adquirida por IPG Mediabrands en abril de 2021.
+Neo Labels fue una agencia de marketing online enfocada en ayudar a las marcas a entrar en la era de los medios digitales, redes sociales y aplicaciones móviles en España. Nacida de la experiencia obtenida a través de Sharemusic!, fue adquirida por IPG Mediabrands en abril de 2021.
 
 ## Evolución de Roles
 
-A lo largo de siete años, desempeñé una gran variedad de roles que abarcaron desde el diseño UX y UI hasta el desarrollo frontend/backend. Durante la etapa final, ejercí como consultor de I+D y desarrollador móvil frontend.
+A lo largo de siete años, desempeñé una gran variedad de roles que abarcaron desde el diseño UX y UI hasta el desarrollo full-stack. Durante la etapa final, ejercí como consultor de I+D+i y desarrollador full-stack.
 
 ## Proyectos Clave
 

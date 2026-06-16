@@ -112,6 +112,7 @@ const allSkills = computeSkillWeights([
     {profile.email}
     {profile.phone && <span> · {profile.phone}</span>}
     {locationEs && <span> · {locationEs}</span>}
+    {profile.website && <span> · <a href={profile.website}>{profile.website.replace(/^https?:\/\/(www\.)?/, "")}</a></span>}
     {profile.linkedin && <span> · <a href={profile.linkedin}>{profile.linkedin.replace(/^https?:\/\/(www\.)?/, "")}</a></span>}
     {profile.github && <span> · <a href={profile.github}>{profile.github.replace(/^https?:\/\/(www\.)?/, "")}</a></span>}
   </p>

@@ -5,15 +5,15 @@ location: "Madrid, España"
 dateStart: 2013-07-01
 dateEnd: 2020-03-01
 bullets:
-  - "Cofundé y lideré la tecnología de una startup hostelera durante 7 años, orientada a pequeños resorts y casas rurales"
-  - "Diseñé y construí de extremo a extremo un Sistema de Gestión de Propiedades (PMS) y webs para clientes"
-  - "Gestioné arquitectura cloud, infraestructura IT y coordinación de desarrolladores externos"
+  - "Cofundé y lideré la tecnología de una startup hostelera: construí la web de Bahiazul Resort (PHP/CodeIgniter) y un PMS personalizado desde cero, gestionando un equipo rotativo y desarrolladores externos durante 7 años"
+  - "Lideré arquitectura y diseño UX/UI en proyectos fuera del núcleo hostelero: app móvil para Las Colinas Golf & Country Club (React Native + LoopBack), promoción de LaLiga para Mahou (React/Redux) y visualización de datos para Fundación Telefónica"
+  - "Gestioné la arquitectura cloud, las operaciones IT y la supervisión de desarrolladores externos en todos los proyectos"
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
+  - "Desarrollo Full Stack"
   - "Diseño UI"
   - "Diseño UX"
-  - "Desarrollo Full Stack"
   - "Liderazgo Técnico"
 ---
 

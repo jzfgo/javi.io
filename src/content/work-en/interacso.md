@@ -5,16 +5,17 @@ location: "Madrid, Spain"
 dateStart: 2022-11-01
 dateEnd: "Current"
 bullets:
-  - "Lead software architecture, cloud infrastructure design, and technical decision-making for clients including Grupo Porcelanosa, Mediapro Brands, Mercado Ibérico del Gas (MIBGAS), and Sony Pictures Spain"
-  - "Bootstrap new projects: frameworks, tooling, CI/CD pipelines, and test suites so teams hit the ground running"
-  - "Lead team through trust and mentorship: write production-quality code as a concrete standard, involve the team in technical decisions"
+  - "Lead technical architecture for enterprise clients: headless ecommerce for Porcelanosa (Next.js 15 + Adobe Commerce, 3 global markets), regulatory compliance system for MIBGAS (monitoring Spain's natural gas market, in production), and 3D data art experience for Solán de Cabras × LaLiga"
+  - "Led API standardization and foundational squad creation at Quadrant Travel Cloud (40-person team), and led the Sony Pictures Spain infrastructure migration from GCP to AWS"
+  - "Lead new projects from zero: monorepos, CI/CD, test suites, and type-safe API clients — then mentor the team through code-as-standard and collaborative technical decisions"
 skills:
   - "Cloud Architecture"
   - "Code Review"
+  - "Full Stack Development"
   - "Kanban"
   - "Mentoring"
   - "Software Architecture"
-  - "Team Leadership"
+  - "Technology Leadership"
 ---
 
 Interacso specializes in custom web and mobile application development, offering services in software development, UX/UI design, and digital strategy.
