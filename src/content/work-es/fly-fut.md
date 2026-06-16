@@ -7,10 +7,12 @@ dateEnd: 2022-11-01
 bullets:
   - "Lideré la arquitectura y el desarrollo de la plataforma de consumo (Fly-Fut Ligas): backend, pipeline de vídeo automatizado con IA para partidos grabados con drones, herramientas de gestión y app móvil"
   - "Diseñé y prototipé una app iPad para el control autónomo de drones en entrenamientos de fútbol"
-  - "Diseñé la suite Fly-Fut Pro: app de grabación para iPad y herramienta de análisis táctico"
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
+  - "Desarrollo Full Stack"
+  - "Diseño UI"
+  - "Diseño UX"
   - "Liderazgo Técnico"
 ---
 
@@ -20,15 +22,15 @@ Fly-Fut es la primera empresa del mundo en protocolizar la grabación de fútbol
 
 ### Diseño de Sistemas
 
-Estuve a cargo del diseño de la nueva suite de aplicaciones profesionales de la compañía (Fly-Fut Pro), que incluye una aplicación para iPad para grabar sesiones de entrenamiento de fútbol con un dron autónomo y una herramienta para el análisis táctico de las sesiones grabadas.
+Lideré el diseño de la nueva versión de la plataforma para el producto de consumo de la empresa (Fly-Fut Ligas), que daba soporte a las aplicaciones móviles del usuario final, un pipeline de creación de vídeo en la nube asistido por IA (SoccerNet, YOLOv5) y varias herramientas de gestión.
 
-Anteriormente, lideré el diseño de la nueva versión de la plataforma para el producto de consumo de la empresa (Fly-Fut Ligas), que daba soporte a la aplicación móvil del usuario final, un pipeline de creación de vídeo en la nube asistido por IA y varias herramientas de gestión.
+Posteriormente, estuve a cargo del diseño de la nueva suite de aplicaciones profesionales de la compañía (Fly-Fut Pro), que incluye una aplicación para iPad para grabar sesiones de entrenamiento de fútbol con un dron autónomo y una herramienta para el análisis táctico de las sesiones grabadas.
 
 ### Desarrollo
 
-Lideré el desarrollo de una versión prototipo de la aplicación de control de drones.
+Desarrollé toda la infraestructura backend de la plataforma de consumo, incluyendo el pipeline de creación de vídeo, las herramientas de gestión y la aplicación móvil.
 
-Anteriormente, desarrollé toda la infraestructura backend de la plataforma de consumo, incluyendo el pipeline de creación de vídeo, las herramientas de gestión y la aplicación móvil.
+Posteriormente, lideré el desarrollo de una versión prototipo de la aplicación de control de drones.
 
 ### Gestión
 

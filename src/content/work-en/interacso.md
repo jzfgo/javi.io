@@ -11,6 +11,7 @@ bullets:
 skills:
   - "Cloud Architecture"
   - "Code Review"
+  - "Full Stack Development"
   - "Kanban"
   - "Mentoring"
   - "Software Architecture"

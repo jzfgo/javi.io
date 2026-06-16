@@ -11,9 +11,9 @@ bullets:
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
+  - "Desarrollo Full Stack"
   - "Diseño UI"
   - "Diseño UX"
-  - "Desarrollo Full Stack"
   - "Liderazgo Técnico"
 ---
 

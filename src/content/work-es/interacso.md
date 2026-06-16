@@ -12,6 +12,7 @@ skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
   - "Code Review"
+  - "Desarrollo Full Stack"
   - "Kanban"
   - "Liderazgo Técnico"
   - "Mentoría"

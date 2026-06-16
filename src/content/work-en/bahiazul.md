@@ -9,10 +9,9 @@ bullets:
   - "Built an internal Design System used across all web and mobile products, ensuring visual consistency"
   - "Delivered a Svelte-based mobile-first Digital Kiosk SPA, hosted on Firebase"
 skills:
-  - "Campaign Monitor"
   - "Cloud Architecture"
-  - "CRO"
   - "Email Marketing"
+  - "Full Stack Development"
   - "Marketing Automation"
   - "Software Architecture"
   - "Team Leadership"

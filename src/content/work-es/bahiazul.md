@@ -11,8 +11,7 @@ bullets:
 skills:
   - "Arquitectura Cloud"
   - "Arquitectura de Software"
-  - "Campaign Monitor"
-  - "CRO"
+  - "Desarrollo Full Stack"
   - "Diseño UI"
   - "Diseño UX"
   - "Email Marketing"
