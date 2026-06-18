@@ -22,7 +22,7 @@ const education = (await getCollection("education"))
   .filter(e => e.data.include?.web !== false)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const educationIcons = getIconMap(import.meta.glob("/src/assets/education/*.*", { eager: true }) as Record<string, { default: { src: string } }>);
+const educationIcons = getIconMap(import.meta.glob("/src/assets/education/*.svg", { eager: true }) as Record<string, { default: { src: string } }>);
 
 const cvHash = import.meta.env.PUBLIC_CV_HASH ?? "latest";
 const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? "";

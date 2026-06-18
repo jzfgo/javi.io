@@ -42,7 +42,7 @@ export function getIconMap(globResult: Record<string, { default: { src: string }
       const filename = p.split("/").at(-1)!;
       // folder-based icons (work): key is the parent folder name
       // flat icons (education institutions): key is the filename without extension
-      const key = filename === "icon.svg" || filename.startsWith("icon.")
+      const key = filename.startsWith("icon.")
         ? p.split("/").at(-2)!
         : filename.replace(/\.[^.]+$/, "");
       return [key, mod.default.src];
