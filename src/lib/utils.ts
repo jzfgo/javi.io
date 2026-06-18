@@ -53,7 +53,7 @@ export function getIconMap(globResult: Record<string, { default: { src: string }
 export function institutionToSlug(institution: string): string {
   return institution
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
