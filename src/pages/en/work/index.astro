@@ -2,7 +2,7 @@
 import { getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { dateRange, getIconMap, idToSlug } from "@lib/utils";
+import { dateRange, getIconMap, idToSlug, institutionToSlug } from "@lib/utils";
 import { WORK_EN as WORK } from "@consts";
 
 const collection = (await getCollection("work-en"))
@@ -22,7 +22,7 @@ const education = (await getCollection("education"))
   .filter(e => e.data.include?.web !== false)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const educationIcons = getIconMap(import.meta.glob("/src/assets/education/*/icon.*", { eager: true }) as Record<string, { default: { src: string } }>);
+const educationIcons = getIconMap(import.meta.glob("/src/assets/education/*.*", { eager: true }) as Record<string, { default: { src: string } }>);
 
 const cvHash = import.meta.env.PUBLIC_CV_HASH ?? "latest";
 const cvUpdated = import.meta.env.PUBLIC_CV_UPDATED ?? "";
@@ -122,9 +122,9 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
             <ul class="flex flex-col space-y-6">
               {education.map(cert => (
                 <li class="flex gap-4">
-                  {educationIcons[cert.id] && (
+                  {educationIcons[institutionToSlug(cert.data.institution)] && (
                     <img
-                      src={educationIcons[cert.id]}
+                      src={educationIcons[institutionToSlug(cert.data.institution)]}
                       alt={`${cert.data.institution} logo`}
                       class="size-16 rounded object-cover shrink-0 mt-1"
                     />
