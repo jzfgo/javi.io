@@ -38,9 +38,23 @@ export function idToSlug(id: string): string {
 
 export function getIconMap(globResult: Record<string, { default: { src: string } }>): Record<string, string> {
   return Object.fromEntries(
-    Object.entries(globResult).map(([p, mod]) => [
-      p.split("/").at(-2)!,
-      mod.default.src,
-    ])
+    Object.entries(globResult).map(([p, mod]) => {
+      const filename = p.split("/").at(-1)!;
+      // folder-based icons (work): key is the parent folder name
+      // flat icons (education institutions): key is the filename without extension
+      const key = filename.startsWith("icon.")
+        ? p.split("/").at(-2)!
+        : filename.replace(/\.[^.]+$/, "");
+      return [key, mod.default.src];
+    })
   );
+}
+
+export function institutionToSlug(institution: string): string {
+  return institution
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
