@@ -1,5 +1,18 @@
 [
   {
+    "id": "google-cloud-generative-ai-leader",
+    "institution": "Google Cloud",
+    "degree": "Generative AI Leader",
+    "date": "2026-06-19",
+    "credentialUrl": "https://www.credly.com/badges/62a0a8cc-05d7-4a87-b858-494a8c28e662",
+    "skills": [
+      "Artificial Intelligence (AI)",
+      "Generative AI",
+      "Cloud Computing",
+      "Google Cloud Platform (GCP)"
+    ]
+  },
+  {
     "id": "playwright-automated-testing-and-ai-workflows",
     "institution": "Master.Dev",
     "degree": "Playwright: Automated Testing & AI Workflows",
