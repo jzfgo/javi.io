@@ -5,8 +5,8 @@ location: "Madrid, España"
 dateStart: 2013-07-01
 dateEnd: 2020-03-01
 bullets:
-  - "Cofundé y lideré la tecnología de una startup hostelera: construí la web de Bahiazul Resort (PHP/CodeIgniter) y un PMS personalizado desde cero, gestionando un equipo rotativo y desarrolladores externos durante 7 años"
-  - "Lideré arquitectura y diseño UX/UI en proyectos fuera del núcleo hostelero: app móvil para Las Colinas Golf & Country Club (React Native + LoopBack), promoción de LaLiga para Mahou (React/Redux) y visualización de datos para Fundación Telefónica"
+  - "Cofundé y lideré la tecnología de una startup hostelera: construí la web de Bahiazul Resort (PHP/CodeIgniter) y un PMS personalizado desde cero (PHP/Yii), gestionando un equipo rotativo y desarrolladores externos durante 7 años"
+  - "Lideré arquitectura, desarrollo frontend y diseño UX/UI en proyectos dentro y fuera del núcleo hostelero: app móvil para Las Colinas Golf & Country Club (Un Mundo Aparte, Sketch), promoción de LaLiga para Mahou (React/Redux) y visualización de datos para Fundación Telefónica (SDiE 2017, React)"
   - "Gestioné la arquitectura cloud, las operaciones IT y la supervisión de desarrolladores externos en todos los proyectos"
 skills:
   - "Arquitectura Cloud"
@@ -23,11 +23,11 @@ Piensa Diferente fue una joven startup que ofrecía servicios de consultoría a 
 
 ### Desarrollo
 
-Desde la creación de la empresa, ejercí como desarrollador principal de todas las soluciones hoteleras, incluyendo los sistemas de Bahiazul y Las Colinas Resort.
+Desde la creación de la empresa, ejercí como arquitecto de todas las soluciones hoteleras, además del líder de desarrollo de todas las soluciones para Bahiazul.
 
 ### Diseño UX / UI
 
-Responsable del diseño UX/UI de la web y del Property Management System (PMS) de Bahiazul, del diseño UX para el Backoffice de UMA, y del diseño de branding y logotipos (incluyendo los logotipos de Piensa Diferente y Bahiazul).
+Responsable del diseño UX/UI de la web de Bahiazul, del diseño UX para el Backoffice de Un Mundo Aparte, y del diseño de branding y logotipos de Piensa Diferente y Bahiazul.
 
 ### Gestión
 

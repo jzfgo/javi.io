@@ -36,7 +36,7 @@ Aspectos clave de la implementación:
 - API REST modular en **NestJS** con tres scopes diferenciados (app móvil, backoffice y servicios internos), autenticación por **Firebase Auth** y control de acceso por roles (**RBAC**) con árbol jerárquico de permisos.
 - Modelado de dominio completo con **PostgreSQL** y **TypeORM** (85 entidades, 175 migraciones), siguiendo principios de **DDD** con interfaces documentadas en **OpenAPI**.
 - Integración dual de pagos y suscripciones: **Stripe** (Android) y **Apple In-App Purchases** (iOS), con webhooks, reconciliación de estados y gestión de expiración automatizada.
-- Pipeline de vídeo en **Google Cloud Platform** que automatiza la grabación, procesamiento y publicación, orquestado por 22 tareas programadas en **App Engine Cron**.
+- Pipeline de vídeo en **Google Cloud Platform** que automatiza la grabación, procesamiento y publicación.
 - Tres entornos completamente aislados (dev/staging/producción) con CI/CD en **Cloud Build** y gestión de secretos en runtime con **GCP Secret Manager**.
 
 ![Aplicación iOS Fly-Fut Ligas](../../../assets/projects/fly-fut-ligas/fly-fut-ligas.png)

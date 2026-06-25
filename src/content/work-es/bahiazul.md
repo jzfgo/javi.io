@@ -6,7 +6,7 @@ dateStart: 2020-04-01
 dateEnd: 2021-03-01
 bullets:
   - "Rediseñé la web principal de reservas del resort (Next.js, TypeScript, Firebase SSR) — históricamente responsable de más del 50% de las reservas — con contenido multimedia enriquecido, diseño mobile-first y contenido gestionado con MDX"
-  - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles"
+  - "Construí un Sistema de Diseño interno usado en todos los productos web y móviles (Sketch)"
   - "Entregué dos productos digitales adicionales: un Quiosco Digital Svelte mobile-first (guía de huéspedes por QR) y campañas de email marketing post-COVID con tests A/B y segmentación de audiencias"
 skills:
   - "Arquitectura Cloud"

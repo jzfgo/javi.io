@@ -6,7 +6,7 @@ import globals from "globals";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default [
-  { ignores: [".astro/", ".vscode/", "dist/", "node_modules/", "public/"] },
+  { ignores: [".astro/", ".cache/", ".vscode/", ".worktrees/", "dist/", "node_modules/", "public/"] },
   {
     plugins: {
       "@stylistic": stylistic,

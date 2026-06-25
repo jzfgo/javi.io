@@ -5,8 +5,8 @@ location: "Madrid, Spain"
 dateStart: 2013-07-01
 dateEnd: 2020-03-01
 bullets:
-  - "Co-founded and led technology at a hospitality startup: built the Bahiazul Resort website (PHP/CodeIgniter) and a custom PMS from scratch, managing a rotating team and external contractors throughout 7 years"
-  - "Led architecture and UX/UI on projects outside the hospitality core: mobile companion app for Las Colinas Golf & Country Club (React Native + LoopBack), LaLiga promo for Mahou (React/Redux), and data visualization for Fundación Telefónica"
+  - "Co-founded and led technology at a hospitality startup: built the Bahiazul Resort website (PHP/CodeIgniter) and a custom PMS from scratch (PHP/Yii), managing a rotating team and external contractors throughout 7 years"
+  - "Led architecture, frontend development, and UX/UI on projects both inside and outside the hospitality core: mobile companion app for Las Colinas Golf & Country Club (Un Mundo Aparte, Sketch), LaLiga promo for Mahou (React/Redux), and data visualization for Fundación Telefónica (SDiE 2017, React)"
   - "Owned cloud architecture, IT operations, and supervised external contractors across all client projects"
 skills:
   - "Cloud Architecture"
@@ -23,11 +23,11 @@ Piensa Diferente was an early startup that provided consulting services to small
 
 ### Development
 
-Since the creation of the company, I served as the lead developer of all hospitality solutions, including Bahiazul and Las Colinas Resort systems.
+Since the creation of the company, I served as the architect of all hospitality solutions, as well as the lead developer of all of Bahiazul's solutions.
 
 ### UX / UI Design
 
-I was responsible for the UX/UI design of the Bahiazul website and Property Management System (PMS), UX design for the UMA Backoffice, and branding/logo design (including Piensa Diferente and Bahiazul logos).
+I was responsible for the UX/UI design of the Bahiazul website, UX design for Un Mundo Aparte's Backoffice, and branding/logo design for Piensa Diferente and Bahiazul.
 
 ### Management
 
