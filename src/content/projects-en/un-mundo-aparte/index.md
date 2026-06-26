@@ -18,7 +18,7 @@ The app served as a digital companion for guests, providing access to resort ser
 As **Tech Lead** and **UX Lead**, I was responsible for:
 
 - Overall system architecture and technical direction of the project.
-- UX design of the mobile application.
+- UX design of the management backoffice.
 - Leading the development team.
 
 ## Technologies

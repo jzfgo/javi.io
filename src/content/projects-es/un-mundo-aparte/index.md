@@ -18,7 +18,7 @@ La aplicación servía como compañero digital para los huéspedes, proporcionan
 Como **Líder Técnico** y **Líder de UX**, fui responsable de:
 
 - La arquitectura del sistema y la dirección técnica general del proyecto.
-- El diseño UX de la aplicación móvil.
+- El diseño UX del backoffice de gestión.
 - La dirección del equipo de desarrollo.
 
 ## Tecnologías
