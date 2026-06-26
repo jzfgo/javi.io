@@ -17,7 +17,7 @@ skills:
   - "Kanban"
   - "Liderazgo Técnico"
   - "Mentoría"
-  - "Solución de Problemas"
+  - "Resolución de Problemas"
 ---
 
 Interacso se especializa en el desarrollo de aplicaciones web y móviles personalizadas, ofreciendo servicios de desarrollo de software, diseño UX/UI y estrategia digital.
