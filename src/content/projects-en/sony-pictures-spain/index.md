@@ -23,7 +23,7 @@ As **Tech Lead** at **Interacso**, I joined the project in late 2023 to unblock 
 
 The blocker was the database: the project ran on **SQLite** and AWS required an RDS-compatible engine, for which **PostgreSQL** was chosen. The team had exhausted Strapi's native migration tools and asked me to find an alternative.
 
-After analysing the problem and researching solutions, I found [pgloader](https://pgloader.io/), an open-source tool for migrating databases to PostgreSQL. I implemented a script in its DSL covering type conversions (`datetime→timestamp` with epoch normalisation, `integer→serial`, `json→jsonb`), sequence regeneration, indexes and foreign keys, and post-load cleanup. The migration was transparent: Strapi kept running without any change from the CMS's perspective.
+After analyzing the problem and researching solutions, I found [pgloader](https://pgloader.io/), an open-source tool for migrating databases to PostgreSQL. I implemented a script in its DSL covering type conversions (`datetime→timestamp` with epoch normalization, `integer→serial`, `json→jsonb`), sequence regeneration, indexes and foreign keys, and post-load cleanup. The migration was transparent: Strapi kept running without any change from the CMS's perspective.
 
 After the migration, I took over ongoing maintenance and evolution of the site, working with the PM and frontend developer to deliver new features and bug fixes.
 
