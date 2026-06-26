@@ -14,6 +14,7 @@ skills:
   - "React"
   - "Testing Library"
   - "TypeScript"
+hero: ../../../assets/projects/quadrant-travel-cloud/hero.webp
 ---
 
 **Quadrant Travel Cloud** is a comprehensive travel management platform that simplifies travel booking, expense management, and policy compliance while offering robust reporting and analytics to optimize spending and enhance efficiency.
