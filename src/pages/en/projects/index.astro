@@ -70,7 +70,7 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
   }
 </style>
 
-<script is:inline>
+<script is:inline data-astro-rerun>
   (function () {
     const VALID = ["professional", "personal"];
 
@@ -127,11 +127,15 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       });
     }
 
-    if (!window._projectsFilterListenerAttached) {
-      window._projectsFilterListenerAttached = true;
-      window.addEventListener("popstate", function () {
-        applyFilter(getFilter());
-      });
+    function handlePopState() {
+      applyFilter(getFilter());
     }
+
+    window.addEventListener("popstate", handlePopState);
+
+    document.addEventListener("astro:before-swap", function cleanup() {
+      window.removeEventListener("popstate", handlePopState);
+      document.removeEventListener("astro:before-swap", cleanup);
+    }, { once: true });
   })();
 </script>
