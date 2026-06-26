@@ -6,7 +6,8 @@ dateStart: 2022-11-01
 dateEnd: "Current"
 bullets:
   - "Lead technical architecture for enterprise clients: headless ecommerce for Porcelanosa (Next.js 15 + Adobe Commerce, 3 global markets), regulatory compliance system for MIBGAS (NestJS 11 + Next.js 15, monitoring Spain's natural gas market), and 3D data art experience for Solán de Cabras × LaLiga (Next.js 15 + Three.js)"
-  - "Led API standardization (API Blueprint) and foundational squad creation at Quadrant Travel Cloud (40-person team), and unlocked the Sony Pictures Spain migration from GCP (GCE + SQLite) to AWS (ECS + RDS)"
+  - "Led API standardization (API Blueprint) and foundational squad creation at Quadrant Travel Cloud (40-person team)"
+  - "Unblocked the Sony Pictures Spain migration from GCP to AWS (ECS + RDS) by solving the SQLite-to-PostgreSQL database migration with pgloader"
   - "Lead new projects from scratch: monorepos, CI/CD, test suites, and integrations — then mentor the team by example and collaborative technical decisions"
 skills:
   - "Cloud Architecture"
@@ -14,6 +15,7 @@ skills:
   - "Full Stack Development"
   - "Kanban"
   - "Mentoring"
+  - "Problem Solving"
   - "Software Architecture"
   - "Technology Leadership"
 ---

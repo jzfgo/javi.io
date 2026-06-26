@@ -17,11 +17,15 @@ demoURL: "https://sonypictures.es/"
 hero: ../../../assets/projects/sony-pictures-spain/hero.webp
 ---
 
-**Sony Pictures Spain** es el sitio web oficial en España de **Sony Pictures Entertainment**, que ofrece información sobre películas, series y contenido de entretenimiento en España.
+**Sony Pictures Spain** es el sitio web oficial de **Sony Pictures Entertainment** en España, con información sobre películas, series y contenido de entretenimiento.
 
-El sitio está construido con **Next.js** y **React** en el frontend y **Strapi** como headless CMS.
+Como **Tech Lead** en **Interacso**, me incorporé al proyecto a finales de 2023 para desbloquear la migración de la plataforma desde la infraestructura de Interacso en **Google Cloud Platform** a la de Sony en **Amazon Web Services**.
 
-Como **Tech Lead** en **Interacso**, me incorporé al proyecto a finales de 2023 para liderar la migración de la plataforma desde la infraestructura de Interacso en **Google Cloud Platform** hacia la infraestructura propia de Sony en **Amazon Web Services**. Tras la migración, asumí la responsabilidad del mantenimiento y la evolución continua del sitio, colaborando estrechamente con el PM y el Desarrollador Frontend para entregar nuevas funcionalidades y correcciones.
+El obstáculo era la base de datos: el proyecto usaba **SQLite** y AWS exigía un motor compatible con RDS, para lo cual se eligió **PostgreSQL**. El equipo había agotado las herramientas nativas de migración de Strapi y me pidió buscar alternativas.
+
+Tras analizar el problema y buscar soluciones encontré [pgloader](https://pgloader.io/), una herramienta open source para migración a PostgreSQL. Implementé un script en su DSL que cubría la conversión de tipos (`datetime→timestamp` con normalización de epoch, `integer→serial`, `json→jsonb`), la regeneración de secuencias, índices y claves foráneas, y la limpieza posterior. La migración resultó transparente: Strapi continuó operando sin ningún cambio desde el punto de vista del CMS.
+
+Tras la migración, asumí el mantenimiento y la evolución continua del sitio, colaborando con el PM y el desarrollador frontend para entregar nuevas funcionalidades y correcciones.
 
 ## Tecnologías
 

@@ -6,7 +6,8 @@ dateStart: 2022-11-01
 dateEnd: "Actualidad"
 bullets:
   - "Lidero la arquitectura técnica para clientes enterprise: ecommerce headless para Porcelanosa (Next.js 15 + Adobe Commerce, 3 mercados globales), sistema de cumplimiento normativo para MIBGAS (NestJS 11 + Next.js 15, monitorizando el mercado español de gas natural) y experiencia de data art 3D para Solán de Cabras × LaLiga (Next.js 15 + Three.js)"
-  - "Lideré la estandarización de APIs (API Blueprint) y la creación de un squad fundacional en Quadrant Travel Cloud (equipo de 40 personas), y desbloqueé la migración de Sony Pictures Spain de GCP (GCE + SQLite) a AWS (ECS + RDS)"
+  - "Lideré la estandarización de APIs (API Blueprint) y la creación de un squad fundacional en Quadrant Travel Cloud (equipo de 40 personas)"
+  - "Desbloqueé la migración de Sony Pictures Spain de GCP a AWS (ECS + RDS) resolviendo la migración de base de datos de SQLite a PostgreSQL con pgloader"
   - "Arranco nuevos proyectos desde cero: monorepos, CI/CD, suites de tests e integraciones — y luego lidero al equipo con el código como estándar concreto y decisiones técnicas colaborativas"
 skills:
   - "Arquitectura Cloud"
@@ -16,6 +17,7 @@ skills:
   - "Kanban"
   - "Liderazgo Técnico"
   - "Mentoría"
+  - "Solución de Problemas"
 ---
 
 Interacso se especializa en el desarrollo de aplicaciones web y móviles personalizadas, ofreciendo servicios de desarrollo de software, diseño UX/UI y estrategia digital.

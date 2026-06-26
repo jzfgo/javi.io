@@ -25,6 +25,7 @@ skills:
   - "Monorepo"
   - "TypeScript"
 demoURL: "https://store.porcelanosa.com/"
+hero: ../../../assets/projects/porcelanosa-ecommerce/hero.webp
 ---
 
 **Porcelanosa** es una empresa española fabricante de cerámica, mobiliario de cocina y elementos de baño, con presencia en más de 150 países.

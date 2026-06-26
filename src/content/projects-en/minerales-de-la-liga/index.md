@@ -19,6 +19,7 @@ skills:
   - "Three.js"
   - "Monorepo"
   - "TypeScript"
+hero: ../../../assets/projects/minerales-de-la-liga/hero.webp
 ---
 
 **Minerales de LaLiga** is an interactive web application developed for **Solán de Cabras** and **LaLiga**, aimed at promoting the benefits of the minerals present in **Solán de Cabras** natural mineral water and their impact on sports performance.

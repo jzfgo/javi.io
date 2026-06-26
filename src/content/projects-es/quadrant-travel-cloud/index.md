@@ -14,6 +14,7 @@ skills:
   - "React"
   - "Testing Library"
   - "TypeScript"
+hero: ../../../assets/projects/quadrant-travel-cloud/hero.webp
 ---
 
 **Quadrant Travel Cloud** es una plataforma integral de gestión de viajes que simplifica la reserva de viajes, la gestión de gastos y el cumplimiento de políticas, al tiempo que ofrece sólidos informes y análisis para optimizar el gasto y mejorar la eficiencia.
