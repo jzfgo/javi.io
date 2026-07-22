@@ -1,0 +1,47 @@
+name: CI
+
+# `deploy.yml` sólo se dispara en push a master, así que hasta ahora un PR no se
+# validaba hasta DESPUÉS de mergearlo. Este workflow adelanta esa señal al PR.
+#
+# El paso decisivo es `pnpm install --frozen-lockfile`: además de comprobar que el
+# lockfile está sincronizado, aplica el `minimumReleaseAge` de pnpm-workspace.yaml.
+# Un PR de Dependabot abierto el mismo día en que se publicó el paquete fallará
+# aquí, en vez de tumbar el deploy de master tras el merge.
+
+on:
+  pull_request:
+    branches: [master]
+
+# Un push nuevo al PR cancela la ejecución anterior: sin colas inútiles.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      # Node 24 y caché de pnpm igual que en deploy.yml: si divergen, CI puede
+      # pasar y el deploy fallar, que es justo lo que este workflow evita.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      # `pnpm build` ejecuta `astro check` internamente, así que esto cubre
+      # también el type-checking.
+      - name: Build
+        run: pnpm build
