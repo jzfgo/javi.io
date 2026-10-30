@@ -1,5 +1,21 @@
 [
   {
+    "id": "python-for-professional-developers",
+    "institution": "Master.Dev",
+    "degree": "Python for Professional Developers",
+    "date": "2026-08-12",
+    "credentialUrl": "https://cdn.master.dev/ud/c/7e67eff295/rMqhOQLwOe/pro-python-masterdev.pdf",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "SQLModel",
+      "Alembic",
+      "Pytest",
+      "JWT Authentication"
+    ]
+  },
+  {
     "id": "google-cloud-generative-ai-leader",
     "institution": "Google Cloud",
     "degree": "Generative AI Leader",
