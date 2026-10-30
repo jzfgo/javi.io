@@ -3,9 +3,6 @@
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@11.5.1",
-  "overrides": {
-    "vite": "7.3.2"
-  },
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
@@ -21,17 +18,17 @@
     "generate:cv": "pnpm run generate:pdf && pnpm run generate:docx"
   },
   "dependencies": {
-    "@astrojs/markdown-satteri": "^0.2.1",
-    "@astrojs/mdx": "^6.0.1",
+    "@astrojs/markdown-satteri": "^0.4.5",
+    "@astrojs/mdx": "^8.1.1",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource/inter": "^5.0.17",
     "@fontsource/lora": "^5.0.16",
     "@tailwindcss/typography": "^0.5.10",
     "@tailwindcss/vite": "^4.0.0",
-    "astro": "^6.4.8",
+    "astro": "^7.4.2",
     "clsx": "^2.1.0",
-    "sharp": "^0.34.0",
+    "sharp": "^0.35.4",
     "tailwind-merge": "^2.2.2",
     "tailwindcss": "^4.0.0",
     "zod": "^4.6.6"
