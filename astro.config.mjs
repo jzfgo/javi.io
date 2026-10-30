@@ -9,9 +9,6 @@ const { hash: CV_HASH, updated: CV_UPDATED } = computeCvMeta();
 
 export default defineConfig({
   site: "https://javi.io",
-  // Astro 7 defaults to "jsx", which trims whitespace between inline elements
-  // and breaks visible spacing (nav separators, footer "· Créditos").
-  compressHTML: true,
   integrations: [
     mdx(),
     sitemap(),
