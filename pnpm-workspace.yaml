@@ -2,3 +2,7 @@ allowBuilds:
   esbuild: true
   sharp: true
 minimumReleaseAge: 10080
+overrides:
+  # @tailwindcss/typography pins 6.0.10 exactly (still true in 0.5.20);
+  # 6.1.5 fixes GHSA-rj75-hqrm-r3gf. Drop once typography widens its range.
+  "@tailwindcss/typography>postcss-selector-parser": "^6.1.5"
