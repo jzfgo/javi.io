@@ -6,7 +6,7 @@ This file provides guidance to coding agents (Claude Code, Codex CLI, etc.) and 
 
 **javi.io** is Javier Zapata's personal website — portfolio, blog, CV, and work history. It is a fully static site with no backend or database.
 
-- Stack: **Astro 6**, **Tailwind CSS v4**, **TypeScript**, **pnpm**
+- Stack: **Astro 7**, **Tailwind CSS v4**, **TypeScript**, **pnpm**
 - Deployed to **GitHub Pages** via `pnpm deploy` (`gh-pages`)
 - Bilingual: Spanish (default, no URL prefix) and English (`/en/`)
 
