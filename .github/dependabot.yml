@@ -5,13 +5,19 @@ version: 2
 # Este archivo existe únicamente para AGRUPAR esos PRs de seguridad en uno solo.
 #
 # Para activar version updates, sustituir `open-pull-requests-limit: 0` por un
-# número > 0 y añadir un bloque `schedule:` (y opcionalmente `cooldown:`).
+# número > 0 (y opcionalmente añadir `cooldown:`).
 
 updates:
   # `npm` es también el ecosistema de pnpm — no existe un valor `pnpm`.
   # Dependabot detecta el gestor por el lockfile (aquí lockfileVersion 9.0).
   - package-ecosystem: "npm"
     directory: "/"
+
+    # `schedule` es OBLIGATORIO aunque las version updates estén apagadas: sin él
+    # el archivo es inválido y Dependabot lo ignora entero (grupos, labels,
+    # prefijo). Con `open-pull-requests-limit: 0` no abre ningún PR semanal.
+    schedule:
+      interval: "weekly"
 
     # 0 desactiva las version updates. Los security updates siguen llegando:
     # tienen su propio límite interno de 10 PRs abiertos, no configurable.
