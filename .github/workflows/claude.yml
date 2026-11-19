@@ -46,9 +46,9 @@ jobs:
       pull-requests: read
       issues: read
       id-token: write
-      actions: read # lets the reviewer read CI results
+      actions: read # permite al revisor leer los resultados del CI
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 1
       - uses: anthropics/claude-code-action@v1
