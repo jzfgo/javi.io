@@ -30,11 +30,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
       # Node 24 y caché de pnpm igual que en deploy.yml: si divergen, CI puede
       # pasar y el deploy fallar, que es justo lo que este workflow evita.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
@@ -62,7 +62,7 @@ jobs:
           echo "key=${key}" >> "$GITHUB_OUTPUT"
 
       - name: Cache Playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: ${{ steps.pw-key.outputs.key }}

@@ -30,9 +30,9 @@ jobs:
         with:
           fetch-depth: 0  # Required for git log --format=%cs to find correct commit
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
@@ -54,7 +54,7 @@ jobs:
       # entrada). Sin restore-keys a propósito: restaurar una caché vieja haría
       # que `playwright install` añadiera el Chromium nuevo junto al antiguo.
       - name: Cache Playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: ${{ steps.pw-key.outputs.key }}
