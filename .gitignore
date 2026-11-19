@@ -1,5 +1,7 @@
 # agentic tooling
-.claude/
+# .claude/ is versioned (the skills symlink). Only local state stays out.
+.claude/settings.local.json
+.claude/worktrees/
 cache/
 docs/{plans,specs,superpowers}/
 .superpowers/
