@@ -4,17 +4,23 @@ on:
   push:
     branches: [master]
 
-# Dos merges seguidos no deben pisarse al hacer push a gh-pages: los deploys van
-# en fila. Sin cancel-in-progress para no cortar un push a medias.
+# Dos merges seguidos no deben pisarse al hacer push a gh-pages. GitHub deja
+# terminar el deploy en curso y guarda como mucho UNO en espera: si llega otro,
+# el que esperaba se cancela y sólo se publica el más reciente (basta, porque
+# cada build contiene todo el sitio). Sin cancel-in-progress para no cortar un
+# push a medias.
 concurrency:
   group: deploy-pages
   cancel-in-progress: false
 
 jobs:
   deploy:
-    # Fijado temporalmente: Playwright aún no soporta Ubuntu 26.04 (el actual
-    # ubuntu-latest). Volver a ubuntu-latest cuando lo soporte, a la vez que en
-    # ci.yml: ambos workflows deben correr en la misma imagen.
+    # TODO(ubuntu-26.04): fijado temporalmente porque Playwright 1.60 no soporta
+    # Ubuntu 26.04 (el actual ubuntu-latest). Cuando una versión de Playwright
+    # lo soporte, subir `playwright` en package.json a esa versión y volver a
+    # ubuntu-latest aquí y en ci.yml a la vez: ambos deben usar la misma imagen.
+    # Ojo: `^1.60.0` en package.json no avisa cuando el lockfile sube a una
+    # versión con soporte, así que hay que comprobarlo a mano.
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -32,14 +38,25 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # `ImageOS` (p. ej. `ubuntu24`) es una variable del runner, no del workflow:
+      # `${{ env.ImageOS }}` sale vacío, así que se lee desde el shell.
+      - name: Compute Playwright cache key
+        id: pw-key
+        run: |
+          pw_version="$(pnpm exec playwright --version | awk '{print $2}')"
+          key="playwright-chromium-${ImageOS}-${pw_version}"
+          echo "Playwright cache key: ${key}"
+          echo "key=${key}" >> "$GITHUB_OUTPUT"
+
+      # La clave lleva la imagen (no restaurar un Chromium de otra versión de
+      # Ubuntu) y la versión de Playwright (una sola versión de Chromium por
+      # entrada). Sin restore-keys a propósito: restaurar una caché vieja haría
+      # que `playwright install` añadiera el Chromium nuevo junto al antiguo.
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          # El SO y la imagen van en la clave para no restaurar un Chromium
-          # descargado para otra versión de Ubuntu.
-          key: playwright-chromium-${{ runner.os }}-${{ env.ImageOS }}-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: playwright-chromium-${{ runner.os }}-${{ env.ImageOS }}-
+          key: ${{ steps.pw-key.outputs.key }}
 
       - name: Install Playwright Chromium
         run: pnpm exec playwright install --with-deps chromium
