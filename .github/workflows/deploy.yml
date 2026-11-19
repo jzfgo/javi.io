@@ -4,8 +4,17 @@ on:
   push:
     branches: [master]
 
+# Dos merges seguidos no deben pisarse al hacer push a gh-pages: los deploys van
+# en fila. Sin cancel-in-progress para no cortar un push a medias.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
+    # Fijado temporalmente: Playwright aún no soporta Ubuntu 26.04 (el actual
+    # ubuntu-latest). Volver a ubuntu-latest cuando lo soporte, a la vez que en
+    # ci.yml: ambos workflows deben correr en la misma imagen.
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -27,8 +36,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-chromium-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: playwright-chromium-
+          # El SO y la imagen van en la clave para no restaurar un Chromium
+          # descargado para otra versión de Ubuntu.
+          key: playwright-chromium-${{ runner.os }}-${{ env.ImageOS }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: playwright-chromium-${{ runner.os }}-${{ env.ImageOS }}-
 
       - name: Install Playwright Chromium
         run: pnpm exec playwright install --with-deps chromium

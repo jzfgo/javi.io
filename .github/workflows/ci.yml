@@ -22,7 +22,9 @@ permissions:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    # Misma imagen que deploy.yml (fijada a 24.04 hasta que Playwright soporte
+    # 26.04). Si divergen, CI puede pasar y el deploy fallar.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
