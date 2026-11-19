@@ -22,7 +22,11 @@ permissions:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    # Misma imagen que deploy.yml (fijada a 24.04 hasta que Playwright soporte
+    # 26.04). Si divergen, CI puede pasar y el deploy fallar. Junto con los
+    # pasos de Playwright y del CV de abajo, esto detecta en el PR fallos como
+    # el de #44 (Playwright sin soporte para la imagen del runner).
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
@@ -45,3 +49,26 @@ jobs:
       # también el type-checking.
       - name: Build
         run: pnpm build
+
+      # Mismos pasos de Playwright y del CV que deploy.yml, para que un fallo
+      # suyo aparezca en el PR y no después del merge. La clave de caché se
+      # calcula igual; ver los comentarios en deploy.yml.
+      - name: Compute Playwright cache key
+        id: pw-key
+        run: |
+          pw_version="$(pnpm exec playwright --version | awk '{print $2}')"
+          key="playwright-chromium-${ImageOS}-${pw_version}"
+          echo "Playwright cache key: ${key}"
+          echo "key=${key}" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ steps.pw-key.outputs.key }}
+
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Generate CV documents
+        run: node scripts/generate-pdf.mjs && node scripts/generate-docx.mjs
