@@ -15,14 +15,7 @@ concurrency:
 
 jobs:
   deploy:
-    # TODO(ubuntu-26.04): fijado temporalmente porque Playwright 1.60 no soporta
-    # Ubuntu 26.04 (el actual ubuntu-latest). Cuando una versión de Playwright
-    # lo soporte, subir `playwright` en package.json a esa versión y volver a
-    # ubuntu-latest aquí y en ci.yml a la vez: ambos deben usar la misma imagen.
-    # Ojo: `^1.60.0` en package.json no avisa cuando el lockfile sube a una
-    # versión con soporte, así que hay que comprobarlo a mano. Seguimiento en
-    # Linear: JAV-252.
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
