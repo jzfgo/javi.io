@@ -30,9 +30,8 @@ jobs:
         contains(github.event.review.body, '@claude') &&
         contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.review.author_association) &&
         contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.pull_request.author_association))
-    # Misma imagen que ci.yml y deploy.yml, para que el cambio a ubuntu-latest
-    # cuando Playwright soporte 26.04 (JAV-252) incluya también este fichero.
-    runs-on: ubuntu-24.04
+    # Misma imagen que ci.yml y deploy.yml.
+    runs-on: ubuntu-latest
     timeout-minutes: 30
     # Un solo run por PR a la vez: un segundo `@claude` espera al primero. Va
     # en el job y no en el workflow para que los comentarios sin `@claude` no
