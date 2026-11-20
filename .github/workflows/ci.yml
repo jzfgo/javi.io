@@ -23,9 +23,9 @@ permissions:
 jobs:
   checks:
     # Misma imagen que deploy.yml. Si divergen, CI puede pasar y el deploy
-    # fallar. Junto con los
-    # pasos de Playwright y del CV de abajo, esto detecta en el PR fallos como
-    # el de #44 (Playwright sin soporte para la imagen del runner).
+    # fallar. Junto con los pasos de Playwright y del CV de abajo, esto detecta
+    # en el PR fallos como el de #44 (Playwright sin soporte para la imagen del
+    # runner).
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
