@@ -1,12 +1,6 @@
 {
   "version": 2,
   "skills": {
-    "babysit-pr": {
-      "source": "jzfgo/agents",
-      "sourceType": "github",
-      "skillPath": "skills/babysit-pr/SKILL.md",
-      "computedHash": "4b703fca7ba184c86fe1e67972404b1f00b49a7e6d421b970c5825794fc2c07c"
-    },
     "writing-clearly-and-concisely": {
       "source": "obra/the-elements-of-style",
       "sourceType": "github",
