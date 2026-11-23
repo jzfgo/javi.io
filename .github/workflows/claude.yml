@@ -121,8 +121,10 @@ jobs:
 
       # Las acciones de este job van fijadas a un SHA, no a un tag: un tag se
       # puede mover a otro código, y este job tiene el token de Claude del repo.
-      # Para subir una, resuelve el tag nuevo a su commit, actualiza el
-      # comentario y respeta la cuarentena de 7 días del resto de dependencias.
+      # Dependabot las sube con un PR mensual (bloque `github-actions` de
+      # dependabot.yml, con 8 días de cooldown). Para subir una a mano,
+      # resuelve el tag nuevo a su commit, actualiza el comentario y respeta la
+      # cuarentena de 7 días del resto de dependencias.
       #
       # `persist-credentials: false`: la acción escribe su propio token en el
       # checkout antes de arrancar Claude, así que el token del job no tiene por
