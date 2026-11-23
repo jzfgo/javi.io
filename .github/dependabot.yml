@@ -1,11 +1,14 @@
 version: 2
 
-# Este repo NO usa version updates: sólo recibe security updates, que GitHub
-# dispara desde los advisories y que NO respetan `schedule` ni `cooldown`.
-# Este archivo existe únicamente para AGRUPAR esos PRs de seguridad en uno solo.
+# Las dependencias npm NO usan version updates: sólo reciben security updates,
+# que GitHub dispara desde los advisories y que NO respetan `schedule` ni
+# `cooldown`. El bloque `npm` existe únicamente para AGRUPAR esos PRs de
+# seguridad en uno solo.
 #
-# Para activar version updates, sustituir `open-pull-requests-limit: 0` por un
-# número > 0 (y opcionalmente añadir `cooldown:`).
+# Para activar version updates de npm, sustituir `open-pull-requests-limit: 0`
+# por un número > 0 (y opcionalmente añadir `cooldown:`).
+#
+# Las GitHub Actions sí tienen version updates (bloque `github-actions`, abajo).
 
 updates:
   # `npm` es también el ecosistema de pnpm — no existe un valor `pnpm`.
@@ -36,3 +39,31 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "chore(deps)"
+
+  # ── GitHub Actions ────────────────────────────────────────────────────────
+  # Version updates activas, a diferencia de npm. `claude.yml` fija sus actions
+  # a un SHA, y sin esto nadie las subiría nunca; Dependabot actualiza el SHA y
+  # el comentario `# vX.Y.Z` a la vez. El resto de workflows usan tags de major
+  # (`@v7`) y solo recibirán PRs al salir un major nuevo.
+  #
+  # El `cooldown` de 8 días cubre la cuarentena de 7 que aplica el resto de
+  # dependencias: un tag de action comprometido es una vía directa al CI, que
+  # tiene el token de Claude y el de deploy. Un PR agrupado al mes.
+  #
+  # No cubre el `ref:` del plugin de revisión en `claude.yml`: ese se mueve a
+  # mano (ver el comentario junto a él).
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    cooldown:
+      default-days: 8
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    groups:
+      actions:
+        patterns: ["*"]
