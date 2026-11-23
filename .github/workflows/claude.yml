@@ -221,6 +221,13 @@ jobs:
           # input `model`, y `claude_args` es una sola cadena, así que comparte
           # línea con la lista de herramientas.
           #
+          # `--permission-mode acceptEdits`: desde v1.0.273 la acción arranca en
+          # modo `auto`, donde un clasificador decide las llamadas que ninguna
+          # regla cubre en vez de denegarlas. Las defensas de abajo (WebFetch
+          # fuera, sin Bash) dependen de que lo no listado vuelva denegado, así
+          # que se fija el modo anterior. La acción añade este `claude_args` al
+          # final y gana el último `--permission-mode`.
+          #
           # `--allowedTools` es una lista de AUTOAPROBACIÓN, no de
           # disponibilidad: una herramienta que no está en ella existe, pero pide
           # permiso, y en CI nadie puede darlo, así que vuelve denegada. WebSearch
@@ -252,14 +259,15 @@ jobs:
           # paso). En los runs de `pull_request` se deniegan además los comandos
           # de escritura de git que permite el modo tag (`add`, `commit`, `rm`) y
           # las herramientas de edición que permitiría su `acceptEdits`: la
-          # revisión automática solo lee y comenta. El modo tag también permite su
-          # wrapper `scripts/git-push.sh`, que no se deniega: sin commit, en un PR
+          # revisión automática solo lee y comenta. El modo tag ejecuta esos
+          # comandos con sus wrappers `scripts/git-*.sh`, y la acción traduce
+          # estas denegaciones a los wrappers. El de push no se deniega: sin commit, en un PR
           # abierto no tiene nada que empujar. No se deniega todo `Bash`,
           # porque bloquearía `git diff` y `git log`, que es como el modo tag ve
           # el diff. Una regla de denegación gana a la lista de permitidos de la
           # acción. Un run de `@claude` conserva la escritura y la edición, así
           # que puede hacer push de un arreglo si se le pide.
-          claude_args: '--model claude-opus-5-5 --plugin-dir ${{ github.workspace }}/.review-plugins/plugins/code-review --allowedTools "mcp__github_inline_comment__create_inline_comment,WebSearch" --disallowedTools "${{ github.event_name == ''pull_request'' && ''ScheduleWakeup,Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Edit,MultiEdit,Write,NotebookEdit'' || ''ScheduleWakeup'' }}"'
+          claude_args: '--model claude-opus-5-5 --permission-mode acceptEdits --plugin-dir ${{ github.workspace }}/.review-plugins/plugins/code-review --allowedTools "mcp__github_inline_comment__create_inline_comment,WebSearch" --disallowedTools "${{ github.event_name == ''pull_request'' && ''ScheduleWakeup,Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Edit,MultiEdit,Write,NotebookEdit'' || ''ScheduleWakeup'' }}"'
         # Los subagentes deben ir en primer plano. En segundo plano, el agente
         # principal acaba su turno "esperándolos", la sesión headless sale ahí y
         # mueren antes de publicar, así que el run acaba en verde sin revisión.
