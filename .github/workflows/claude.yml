@@ -250,7 +250,9 @@ jobs:
           # paso). En los runs de `pull_request` se deniegan además los comandos
           # de escritura de git que permite el modo tag (`add`, `commit`, `rm`) y
           # las herramientas de edición que permitiría su `acceptEdits`: la
-          # revisión automática solo lee y comenta. No se deniega todo `Bash`,
+          # revisión automática solo lee y comenta. El modo tag también permite su
+          # wrapper `scripts/git-push.sh`, que no se deniega: sin commit, en un PR
+          # abierto no tiene nada que empujar. No se deniega todo `Bash`,
           # porque bloquearía `git diff` y `git log`, que es como el modo tag ve
           # el diff. Una regla de denegación gana a la lista de permitidos de la
           # acción. Un run de `@claude` conserva la escritura y la edición, así
@@ -359,6 +361,9 @@ jobs:
       - name: Comment when the review posted nothing
         env:
           GH_TOKEN: ${{ github.token }}
+          # Este job no hace checkout, y `gh pr comment` sin repo git ni GH_REPO
+          # falla con "not a git repository".
+          GH_REPO: ${{ github.repository }}
           PR: ${{ github.event.pull_request.number }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
