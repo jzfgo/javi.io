@@ -27,6 +27,7 @@ pnpm lint             # ESLint
 pnpm lint:fix         # ESLint with auto-fix
 pnpm astro check      # TypeScript / Astro type-checking only (faster than full build)
 pnpm generate:cv      # generate CV PDF + DOCX from src/cv/
+pnpm test:e2e         # Playwright check of the ?type= filters + language switch (needs pnpm build)
 pnpm deploy           # push dist/ to GitHub Pages (run pnpm build first)
 ```
 
@@ -98,6 +99,7 @@ Before pushing any change:
 
 - [ ] `pnpm lint` passes
 - [ ] `pnpm build` passes (includes `astro check`)
+- [ ] If filter tabs, `Header.astro` or `/work`·`/projects` pages changed: `pnpm test:e2e` passes (`PW_CHANNEL=chrome` locally if Playwright's Chromium isn't installed)
 - [ ] If `src/cv/` changed: `pnpm generate:cv` run and output committed
 - [ ] Only intentional files changed (no `pnpm-lock.yaml` platform churn)
 

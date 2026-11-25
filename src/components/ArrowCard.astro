@@ -25,7 +25,7 @@ const description = "company" in entry.data ? entry.data.role : entry.data.descr
     <div class="text-sm truncate">
       {description}
     </div>
-    {tag && <span class="type-label text-xs uppercase tracking-widest text-black/30 dark:text-white/30 mt-0.5">{tag}</span>}
+    {tag && <span data-filter-show="all" class="type-label text-xs uppercase tracking-widest text-black/30 dark:text-white/30 mt-0.5">{tag}</span>}
   </div>
   <svg
     xmlns="http://www.w3.org/2000/svg"

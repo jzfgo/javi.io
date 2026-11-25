@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
+import FilterTabs from "@components/FilterTabs.astro";
 import { dateRange, getIconMap, idToSlug, institutionToSlug } from "@lib/utils";
 import { WORK_EN as WORK } from "@consts";
 
@@ -33,10 +34,6 @@ const updatedLabel = cvUpdated
     })()
   : "";
 
-const VALID_FILTERS = ["work", "certifications"] as const;
-type Filter = typeof VALID_FILTERS[number] | "all";
-const rawParam = Astro.url.searchParams.get("type");
-const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FILTERS[number]) ? rawParam as typeof VALID_FILTERS[number] : "all";
 ---
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
@@ -77,13 +74,16 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
         )}
       </div>
 
-      <div id="work-tablist" role="tablist" aria-label="Filter experience by type" class="animate flex gap-6 border-b border-black/10 dark:border-white/10">
-        <button id="tab-all" data-filter="all" role="tab" aria-controls="work-content certs-content" aria-selected={activeFilter === "all" ? "true" : "false"} tabindex={activeFilter === "all" ? 0 : -1} class="work-filter-tab">All</button>
-        <button id="tab-work" data-filter="work" role="tab" aria-controls="work-content" aria-selected={activeFilter === "work" ? "true" : "false"} tabindex={activeFilter === "work" ? 0 : -1} class="work-filter-tab">Work</button>
-        <button id="tab-certifications" data-filter="certifications" role="tab" aria-controls="certs-content" aria-selected={activeFilter === "certifications" ? "true" : "false"} tabindex={activeFilter === "certifications" ? 0 : -1} class="work-filter-tab">Certifications</button>
-      </div>
+      <FilterTabs
+        ariaLabel="Filter experience by type"
+        tabs={[
+          { value: "all", label: "All", controls: "work-content certs-content" },
+          { value: "work", label: "Work", controls: "work-content" },
+          { value: "certifications", label: "Certifications", controls: "certs-content" },
+        ]}
+      />
 
-      <div id="work-content" role="tabpanel" aria-labelledby="tab-work" class="animate" style={activeFilter === "certifications" ? "display: none" : undefined}>
+      <div id="work-content" role="tabpanel" aria-labelledby="tab-work" class="animate" data-filter-show="all work">
         <ul class="flex flex-col space-y-4">
           {
             work.map(entry => {
@@ -115,10 +115,10 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
       </div>
 
       {education.length > 0 && (
-        <div id="certs-content" role="tabpanel" aria-labelledby="tab-certifications" style={activeFilter === "work" ? "display: none" : undefined}>
-          <hr id="work-certs-divider" class="border-black/10 dark:border-white/10 my-10 animate" style={activeFilter !== "all" ? "display: none" : undefined} />
+        <div id="certs-content" role="tabpanel" aria-labelledby="tab-certifications" data-filter-show="all certifications">
+          <hr id="work-certs-divider" class="border-black/10 dark:border-white/10 my-10 animate" data-filter-show="all" />
           <section class="animate space-y-6">
-            <h2 id="certs-title" class="font-semibold text-black dark:text-white text-lg" style={activeFilter === "certifications" ? "display: none" : undefined}>Certifications</h2>
+            <h2 id="certs-title" class="font-semibold text-black dark:text-white text-lg" data-filter-show="all work">Certifications</h2>
             <ul class="flex flex-col space-y-6">
               {education.map(cert => (
                 <li class="flex gap-4">
@@ -172,117 +172,3 @@ const activeFilter: Filter = VALID_FILTERS.includes(rawParam as typeof VALID_FIL
     </div>
   </Container>
 </PageLayout>
-
-<style is:global>
-  .work-filter-tab {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 500;
-    color: rgb(0 0 0 / 0.4);
-    border: none;
-    background: transparent;
-    padding-bottom: 12px;
-    margin-bottom: -1px;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-  }
-  .work-filter-tab[aria-selected="true"] {
-    font-weight: 600;
-    color: rgb(0 0 0);
-    border-bottom-color: rgb(0 0 0);
-  }
-  .dark .work-filter-tab {
-    color: rgb(255 255 255 / 0.4);
-  }
-  .dark .work-filter-tab[aria-selected="true"] {
-    color: rgb(255 255 255);
-    border-bottom-color: rgb(255 255 255);
-  }
-</style>
-
-<script is:inline data-astro-rerun>
-  (function () {
-    const VALID = ["work", "certifications"];
-
-    function getFilter() {
-      const p = new URLSearchParams(window.location.search).get("type");
-      return VALID.indexOf(p) !== -1 ? p : "all";
-    }
-
-    function applyFilter(filter) {
-      const workDiv = document.querySelector("#work-content");
-      const certsDiv = document.querySelector("#certs-content");
-      const divider = document.querySelector("#work-certs-divider");
-      const certsTitle = document.querySelector("#certs-title");
-
-      if (filter === "all") {
-        if (workDiv) workDiv.style.display = "";
-        if (certsDiv) certsDiv.style.display = "";
-        if (divider) divider.style.display = "";
-        if (certsTitle) certsTitle.style.display = "";
-      } else if (filter === "work") {
-        if (workDiv) workDiv.style.display = "";
-        if (certsDiv) certsDiv.style.display = "none";
-        if (divider) divider.style.display = "none";
-      } else if (filter === "certifications") {
-        if (workDiv) workDiv.style.display = "none";
-        if (certsDiv) certsDiv.style.display = "";
-        if (divider) divider.style.display = "none";
-        if (certsTitle) certsTitle.style.display = "none";
-      }
-
-      document.querySelectorAll(".work-filter-tab").forEach(function (btn) {
-        const selected = btn.dataset.filter === filter;
-        btn.setAttribute("aria-selected", selected ? "true" : "false");
-        btn.setAttribute("tabindex", selected ? "0" : "-1");
-      });
-    }
-
-    applyFilter(getFilter());
-
-    document.querySelectorAll(".work-filter-tab").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        const filter = btn.dataset.filter;
-        const url = new URL(window.location.href);
-        if (filter === "all") {
-          url.searchParams.delete("type");
-        } else {
-          url.searchParams.set("type", filter);
-        }
-        history.pushState({}, "", url);
-        applyFilter(filter);
-      });
-    });
-
-    const tablist = document.querySelector("#work-tablist");
-    if (tablist) {
-      tablist.addEventListener("keydown", function (e) {
-        const tabs = Array.from(document.querySelectorAll(".work-filter-tab"));
-        const idx = tabs.indexOf(document.activeElement);
-        if (idx === -1) return;
-        let next = -1;
-        if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
-        else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
-        else if (e.key === "Home") next = 0;
-        else if (e.key === "End") next = tabs.length - 1;
-        if (next === -1) return;
-        e.preventDefault();
-        tabs[next].focus();
-        tabs[next].click();
-      });
-    }
-
-    function handlePopState() {
-      applyFilter(getFilter());
-    }
-
-    window.addEventListener("popstate", handlePopState);
-
-    document.addEventListener("astro:before-swap", function cleanup() {
-      window.removeEventListener("popstate", handlePopState);
-      document.removeEventListener("astro:before-swap", cleanup);
-    }, { once: true });
-  })();
-</script>
-

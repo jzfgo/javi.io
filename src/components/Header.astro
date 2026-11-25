@@ -85,20 +85,23 @@ const nav = locale === "es"
 </header>
 
 <script>
-  // The language link is built at compile time, so it can't know about
-  // client-side query params like the ?type= filter on /work and /projects.
-  // Carry the current query string over just before ClientRouter handles the
-  // click. Capture phase on document runs ahead of ClientRouter's listener,
-  // and a bundled module script runs once, so this covers every navigation.
-  document.addEventListener(
-    "click",
-    (e) => {
-      const link = (e.target as Element | null)?.closest<HTMLAnchorElement>("a[data-lang-switch]");
-      if (!link) return;
-      const url = new URL(link.href);
-      url.search = window.location.search;
-      link.href = url.toString();
-    },
-    { capture: true },
-  );
+  // The language link is built at compile time, so it can't know the ?type=
+  // filter that /work and /projects keep in the URL client-side. Keep its href
+  // in sync instead of patching it on click, so middle-click, "Copy link" and
+  // the hover preview all get the right URL. FilterTabs dispatches
+  // filter:change on every filter change (tab click, back/forward, page load);
+  // astro:page-load covers pages without filters and clears a stale ?type=.
+  // A bundled module script runs once, so these listeners are never doubled.
+  function syncLangLink() {
+    const link = document.querySelector<HTMLAnchorElement>("a[data-lang-switch]");
+    if (!link) return;
+    const url = new URL(link.href);
+    const type = new URLSearchParams(window.location.search).get("type");
+    if (type) url.searchParams.set("type", type);
+    else url.searchParams.delete("type");
+    link.href = url.toString();
+  }
+
+  document.addEventListener("astro:page-load", syncLangLink);
+  document.addEventListener("filter:change", syncLangLink);
 </script>

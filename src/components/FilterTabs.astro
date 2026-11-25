@@ -1,0 +1,152 @@
+---
+/**
+ * Tab bar that filters page content through the `?type=` query param.
+ *
+ * Shared by /work and /projects in both locales. Filterable elements opt in
+ * declaratively with `data-filter-show="<space-separated filter values>"`:
+ * they are visible only while the active filter is one of those values
+ * (`"all"` is the unfiltered state, chosen when `?type=` is absent or invalid).
+ *
+ * Every change dispatches `filter:change` on `document`, which the header's
+ * language switch listens to so its link always carries the active filter.
+ */
+type Tab = {
+  value: string;
+  label: string;
+  /** Space-separated ids of the tabpanels this tab shows, for aria-controls. */
+  controls?: string;
+};
+
+type Props = {
+  ariaLabel: string;
+  /** The first tab must be `"all"`. */
+  tabs: Tab[];
+};
+
+const { ariaLabel, tabs } = Astro.props;
+
+// Visibility lives in CSS, keyed on <html data-active-filter>, so the script
+// only has to set one attribute. <html> exists before any of the body is
+// parsed, so filtered content is hidden on first paint even though it comes
+// after this component in the document.
+const visibilityRules = tabs
+  .map(({ value }) =>
+    `html[data-active-filter="${value}"] [data-filter-show]:not([data-filter-show~="${value}"]) { display: none; }`)
+  .join("\n");
+---
+
+<style is:inline set:html={visibilityRules}></style>
+
+<div data-filter-tabs role="tablist" aria-label={ariaLabel} class="animate flex gap-6 border-b border-black/10 dark:border-white/10">
+  {tabs.map(tab => (
+    <button
+      id={`tab-${tab.value}`}
+      type="button"
+      data-filter={tab.value}
+      role="tab"
+      aria-controls={tab.controls}
+      aria-selected={tab.value === "all" ? "true" : "false"}
+      tabindex={tab.value === "all" ? 0 : -1}
+      class="filter-tab"
+    >
+      {tab.label}
+    </button>
+  ))}
+</div>
+
+<style is:global>
+  .filter-tab {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: rgb(0 0 0 / 0.4);
+    border: none;
+    background: transparent;
+    padding-bottom: 12px;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+  .filter-tab[aria-selected="true"] {
+    font-weight: 600;
+    color: rgb(0 0 0);
+    border-bottom-color: rgb(0 0 0);
+  }
+  .dark .filter-tab {
+    color: rgb(255 255 255 / 0.4);
+  }
+  .dark .filter-tab[aria-selected="true"] {
+    color: rgb(255 255 255);
+    border-bottom-color: rgb(255 255 255);
+  }
+</style>
+
+<!--
+  is:inline so the filter applies while the page parses, with no flash of
+  unfiltered content. data-astro-rerun because ClientRouter skips an inline
+  script it has already run, and this one is identical on every page that
+  uses it: without it, tabs lose their listeners after a client-side
+  navigation (e.g. switching language).
+-->
+<script is:inline data-astro-rerun>
+  (function () {
+    const tablist = document.querySelector("[data-filter-tabs]");
+    if (!tablist) return;
+
+    const tabs = Array.from(tablist.querySelectorAll("[data-filter]"));
+    const valid = tabs.map(function (t) { return t.dataset.filter; });
+
+    function getFilter() {
+      const p = new URLSearchParams(window.location.search).get("type");
+      return p && p !== "all" && valid.indexOf(p) !== -1 ? p : "all";
+    }
+
+    function applyFilter(filter) {
+      document.documentElement.dataset.activeFilter = filter;
+      tabs.forEach(function (btn) {
+        const selected = btn.dataset.filter === filter;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
+        btn.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+      document.dispatchEvent(new CustomEvent("filter:change"));
+    }
+
+    applyFilter(getFilter());
+
+    tabs.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const filter = btn.dataset.filter;
+        const url = new URL(window.location.href);
+        if (filter === "all") url.searchParams.delete("type");
+        else url.searchParams.set("type", filter);
+        history.pushState({}, "", url);
+        applyFilter(filter);
+      });
+    });
+
+    tablist.addEventListener("keydown", function (e) {
+      const idx = tabs.indexOf(document.activeElement);
+      if (idx === -1) return;
+      let next = -1;
+      if (e.key === "ArrowRight") next = (idx + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+      else if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = tabs.length - 1;
+      if (next === -1) return;
+      e.preventDefault();
+      tabs[next].focus();
+      tabs[next].click();
+    });
+
+    // One popstate handler per page, removed before the next swap so it
+    // doesn't keep acting on a page that is gone.
+    function handlePopState() {
+      applyFilter(getFilter());
+    }
+    window.addEventListener("popstate", handlePopState);
+    document.addEventListener("astro:before-swap", function () {
+      window.removeEventListener("popstate", handlePopState);
+    }, { once: true });
+  })();
+</script>

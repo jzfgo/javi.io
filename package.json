@@ -15,7 +15,8 @@
     "lint:fix": "eslint . --fix",
     "generate:pdf": "node scripts/generate-pdf.mjs",
     "generate:docx": "node scripts/generate-docx.mjs",
-    "generate:cv": "pnpm run generate:pdf && pnpm run generate:docx"
+    "generate:cv": "pnpm run generate:pdf && pnpm run generate:docx",
+    "test:e2e": "node scripts/test-filters.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.10",
