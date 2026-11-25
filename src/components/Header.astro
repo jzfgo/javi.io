@@ -76,10 +76,29 @@ const nav = locale === "es"
           {nav.projects}
         </Link>
         <span>{`/`}</span>
-        <Link href={altPath} aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
+        <Link href={altPath} data-lang-switch aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
           {otherLocale.toUpperCase()}
         </Link>
       </nav>
     </div>
   </Container>
 </header>
+
+<script>
+  // The language link is built at compile time, so it can't know about
+  // client-side query params like the ?type= filter on /work and /projects.
+  // Carry the current query string over just before ClientRouter handles the
+  // click. Capture phase on document runs ahead of ClientRouter's listener,
+  // and a bundled module script runs once, so this covers every navigation.
+  document.addEventListener(
+    "click",
+    (e) => {
+      const link = (e.target as Element | null)?.closest<HTMLAnchorElement>("a[data-lang-switch]");
+      if (!link) return;
+      const url = new URL(link.href);
+      url.search = window.location.search;
+      link.href = url.toString();
+    },
+    { capture: true },
+  );
+</script>
