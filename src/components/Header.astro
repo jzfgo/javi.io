@@ -95,11 +95,13 @@ const nav = locale === "es"
   function syncLangLink() {
     const link = document.querySelector<HTMLAnchorElement>("a[data-lang-switch]");
     if (!link) return;
-    const url = new URL(link.href);
-    const type = new URLSearchParams(window.location.search).get("type");
-    if (type) url.searchParams.set("type", type);
+    // data-active-filter is set (and validated) only on pages with FilterTabs,
+    // so a stray or invalid ?type= elsewhere is never carried over.
+    const filter = document.documentElement.dataset.activeFilter;
+    const url = new URL(link.getAttribute("href") ?? "", window.location.origin);
+    if (filter && filter !== "all") url.searchParams.set("type", filter);
     else url.searchParams.delete("type");
-    link.href = url.toString();
+    link.setAttribute("href", url.pathname + url.search);
   }
 
   document.addEventListener("astro:page-load", syncLangLink);

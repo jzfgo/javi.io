@@ -7,8 +7,13 @@
  * they are visible only while the active filter is one of those values
  * (`"all"` is the unfiltered state, chosen when `?type=` is absent or invalid).
  *
- * Every change dispatches `filter:change` on `document`, which the header's
- * language switch listens to so its link always carries the active filter.
+ * The active filter is mirrored on `<html data-active-filter>` (only on pages
+ * that render this component; ClientRouter drops it on other pages), and every
+ * change dispatches `filter:change` on `document`. The header's language
+ * switch reads both so its link always carries the active filter.
+ *
+ * One instance per page: the script, the `<html>` attribute and the
+ * `tab-<value>` ids all assume it.
  */
 type Tab = {
   value: string;
@@ -120,6 +125,10 @@ const visibilityRules = tabs
         const url = new URL(window.location.href);
         if (filter === "all") url.searchParams.delete("type");
         else url.searchParams.set("type", filter);
+        // Not null: ClientRouter ignores popstate for null-state entries, so
+        // coming Back from another page would change the URL but leave that
+        // page on screen. The cost of {} is that Back between two filters of
+        // this page re-swaps it; the re-run script then reads the URL.
         history.pushState({}, "", url);
         applyFilter(filter);
       });

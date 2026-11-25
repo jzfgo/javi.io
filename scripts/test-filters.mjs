@@ -166,6 +166,7 @@ try {
     const s = await state();
     assert.equal(s.selected, "all");
     assert.deepEqual([s.work, s.certs], [true, true]);
+    assert.equal(s.lang, "/work");
   });
 
   console.log("/projects");
@@ -198,6 +199,17 @@ try {
     await page.goto(`${BASE}/work?type=work`);
     await navigateBy(() => page.click("header a[href=\"/blog\"]"));
     assert.equal((await state()).lang, "/en/blog");
+  });
+
+  await step("a stray ?type= on a page without filters is not carried over", async () => {
+    await page.goto(`${BASE}/blog?type=work`);
+    assert.equal((await state()).lang, "/en/blog");
+  });
+
+  await step("the language link stays relative", async () => {
+    await page.goto(`${BASE}/work?type=certifications`);
+    const href = await page.getAttribute("a[data-lang-switch]", "href");
+    assert.match(href, /^\/en\/work\/?\?type=certifications$/);
   });
 } finally {
   await browser?.close();
