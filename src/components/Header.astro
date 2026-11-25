@@ -76,10 +76,34 @@ const nav = locale === "es"
           {nav.projects}
         </Link>
         <span>{`/`}</span>
-        <Link href={altPath} aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
+        <Link href={altPath} data-lang-switch aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
           {otherLocale.toUpperCase()}
         </Link>
       </nav>
     </div>
   </Container>
 </header>
+
+<script>
+  // The language link is built at compile time, so it can't know the ?type=
+  // filter that /work and /projects keep in the URL client-side. Keep its href
+  // in sync instead of patching it on click, so middle-click, "Copy link" and
+  // the hover preview all get the right URL. FilterTabs dispatches
+  // filter:change on every filter change (tab click, back/forward, page load);
+  // astro:page-load covers pages without filters and clears a stale ?type=.
+  // A bundled module script runs once, so these listeners are never doubled.
+  function syncLangLink() {
+    const link = document.querySelector<HTMLAnchorElement>("a[data-lang-switch]");
+    if (!link) return;
+    // data-active-filter is set (and validated) only on pages with FilterTabs,
+    // so a stray or invalid ?type= elsewhere is never carried over.
+    const filter = document.documentElement.dataset.activeFilter;
+    const url = new URL(link.getAttribute("href") ?? "", window.location.origin);
+    if (filter && filter !== "all") url.searchParams.set("type", filter);
+    else url.searchParams.delete("type");
+    link.setAttribute("href", url.pathname + url.search);
+  }
+
+  document.addEventListener("astro:page-load", syncLangLink);
+  document.addEventListener("filter:change", syncLangLink);
+</script>

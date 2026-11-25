@@ -72,3 +72,9 @@ jobs:
 
       - name: Generate CV documents
         run: node scripts/generate-pdf.mjs && node scripts/generate-docx.mjs
+
+      # Los filtros ?type= de /work y /projects y el cambio de idioma solo
+      # fallan en un navegador real tras navegar con ClientRouter (#28, #56);
+      # `pnpm build` no puede detectarlo. Reutiliza el Chromium de arriba.
+      - name: Test filter tabs and language switch
+        run: pnpm test:e2e
